@@ -30,8 +30,7 @@ vtopol <pr2>.topol
 La tabla correspondiente:
 |Maquina| IP | Comentarios
 |--|--|--|
-| VM1 | 192.168.0.1/24 |Añadir router como encamiVM2 | 192.168.0.2/24 | Añadir router como encamidor  conado por defecto |
-| VM3 - Router | 192.168.0.3/24 (eth0) 172.16.0.3/24 (eth1)| Añadir forwarding de paquetes |
+| VM1 | 192.168.0.1/24 |Añadir router como encamiVM2 | 192.168.0.2/24 | Añadir router como encamidor  coVM3 - Router | 192.168.0.3/24 (eth0) 172.16.0.3/24 (eth1)| Añadir forwarding de paquetes |
 | VM4 | 172.16.0.1/24 |Añadir router como encaminado por defecto |
 # Estados de una conexión TCP
 En esta práctica ueremosramienta Netcat, que permite leer y escribir en conexiones de red. Netcat es muy útil para investigar y depurar el comportamiento de la red en la capa de transporte, ya que permite especificar un gran número de los parámetro |  |
@@ -51,10 +50,10 @@ Consultar las páginas de manual de nc y netstat. En particular, consultar las s
 ### Ejercicio 3
 **(ESTABLISHED)** En VM2, iniciar una conexión cliente al servidor ardo eip link.
 ### Ejercicio 3
-Arrancar la herramienta wireshark y activar la captura en el interfaz de red. Comprobar la conectividad entre VM1 y VM2 con la orden ping. Observa eico geneado,especialmente los protocolos encapsularancado en el ejercicio anterior usandos en cada datagrama y las direcciones origen y destino.
+Arrancar la herramienta wireshark y activar la captura en el interfaz de red. Comprobar la conectividad entre VM1 y VM2 con la orden ping. Observa eico gead,especialmente los protocolos encapsularancado en el ejercicio anterior usandos en cada datagrama y las direcciones origen y destino.
 Completar la siguiente tabla para todos los mensajes intera ta corresndiente
 Maquina IP  oentarios
- VM1  .12 airutermamiadol comando nc 192.168.0.1 7777.
+ VM1  .12 airuteramiadol comando nc 192.168.0.1 7777.
  -  Comprobar el estado de la conexión e identificar los parámetros (dirección IP y puerto) con el comando netstat -tn.
  - Reinicia por deecto  r el serviador en VM1 usando el comando nc -l 192.168.0.1 7777. Comprobar que no es posible la conexión desde VM1 usando como dirección destino localhost. Observar la diferencia con el comando del ejercicio anterior usando nets e cad.
    stt.t
@@ -98,8 +97,7 @@ Como se puede ver existen mas datagramas con longitud menor de 60 bytes, es más
 # Opciones y parámetros de TCP
 El comportamiento de la conexión TCP se puede controlar con varias opciones que se incluyen en la cabecera en los mensajes SYN y que son configurables en el sistema operativo por medio de parámetros del kernel.
 
-### Ejercicio 9
-Con ayuda del comando sysctl y la bibliografía recomendada, completar la siguiente tabla con parámetros que permiten modificar algunas opciones dee e sie nli ra ar ee cnresa al a de ruae  ua ru a la e  a otear la  TCP:
+Ejercicio 9Con ayuda del comando sysctl y la bibliografía recomendada, completarar la  Carametro l tabla s que permiten modificar algunas opciones dee e sie nli ra ar ee cnresa al a de ruae  ua ru a la e  a otear la  TCP:
 
 |Parametro del kernel| Proposito | Valor por defecto |
 |--|--|--|
@@ -116,20 +114,34 @@ defecto |
 | net.ipv4.tcp_keepalive_probes |  |  |
 | net.ipv4.tcp_keepalive_intvl |  |  |
 # Traducción de direcciones NAT y reenvío de puertos 
-En esta sección supondremos que la red que conecta Router (VM3) con VM4 es pública y que no puede encaminar el tráfico 192.168.0.0/24. Además, asumiremos que la IP de Router es dinámica.
-
-### Ejercicio 12
+En esta sección supondremos que la red que conecta Router (VM3) con VM4 es pública y que no puede encaminar
+# rcii  
+rir el serdo en e uero   ralar una conión es la  cin Ejercicio 192.168.0.0/24. Además, asumiremos que la IP de Router es dinámica.0 [VM1, VM2] 
+Eliminar las direcciones IP de los interfaces (ip adde. on ad de iresar 1 [Router]
 Configurar la traducción de direcciones dinámica en Router:
 
 -** (VM3 - Router)** Configurar Router para que haga SNAT (_masquerade_) sobre la interfaz eth1 usando el comando iptables.
 - ** (VM1)** Comprobar la conexión entre VM1 y VM4 con la orden ping.
-- ** (VM4 y VM1)** Usando wireshark, determinar la IP origen y destino de los ICMP de Echo request y Echo reply en ambas redes. ¿Qué parámetro se utiliza, en lugar del puerto origen, para relacionar las solicitudes con las respuestas? Comprueba la salida del comando conntrack -L o alternativamente el fichero /proc/net/nf_conntrack.
+- ** (el servidor DHCP para las dos redes:
+- Editar el fichero /etc/dhcp/dhcpd.conf y añadir dos secciones subnet para cada red que definan los rangos de direccioeuiar el valor de as ciones que se inercamn durante la oen aar aln e os parero terire e nour A elHCP (dhclient -d eth0) en la máquina virtual VM41 y VM1)** Usando wireshark, determinar la observar el proceso de configuración. Completar la siguiente tabla:
+
+|IP oOrigen y d| IP Destino de los ICMP de Echo request y Echo reply| Mensaje DHCP | Opciones DHCP
+|--|--| |  |
+|  |  |  |  |
+
+### Ejercicio 13 [VM4]
+Durante enl ambas redes. ¿Qué parámetro se utiliza, en lugar del puerto origen, para relacionar las solicitudes con las respuestas? Comprueba la salida del comando conntrack -L o alternativamente el fichero /proc/net/nf_conntrack.
 ### Ejercicio 13
 Acceso a un servidor en la red privada:
 - **(VM1)** Arrancar el servidor con nc en el puerto 7777.
-- **(VM3 - Router) Usando el comando iptables reenviar las conexiones al puerto 80 de Router al puerto 7777 de VM1.
+- **(VM3 - Router) Usando el comando iptables reenviar las conexiones al puerto 80 de Router al puerto 7777 de VM1rranque del sistema se pueectiv y observar el resulta  una nea cone
+### Ejercicio 1 
+n auda den cmando ss la ioraacenada coletar l sigiete  con aámet u rmin conuar el eoradorpco
+
+### Ejercicio 1
+Configura    renestino  e a.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUxNjUxMTE4NiwxNjYyOTQ2NTU5LDIxMj
-U2NTY1NzksNDA5MDkxNjhdfQ==
+eyJoaXN0b3J5IjpbMTQ2MTcyODkxOCwtNTE2NTExMTg2LDE2Nj
+I5NDY1NTksMjEyNTY1NjU3OSw0MDkwOTE2OF19
 -->
