@@ -84,12 +84,14 @@ Diferentes aspectos del protocolo TCP pueden aprovecharse para comprometer la se
 ### Ejercicio 7
 El ataque TCP SYN  _flood_  consiste en saturar un servidor mediante el envío masivo de mensajes SYN.
 -  **(Cliente VM2)** Para evitar que el atacante responda al mensaje SYN+ACK del servidor con un mensaje RST que liberaría los recursos, bloquear los mensajes SYN+ACK en el atacante con iptables.
-```c
-```
-### Ejercicio 8 [VM4]
-Aunque la configuración adecuada para la tabla de rutas de hosts en redes como las consideradas en esta práctica consiste en añadir una ruta por defecto, es posible incluir rutas para redes concretas. Añadir a la tabla de rutas de VM4 una ruta a la red 10.0.0.0/24 via Router.
-```c
-```
+- **(Cliente VM2)** Para enviar paquetes TCP con los datos de interés usaremos el comando hping3 (estudiar la página de manual). En este caso, enviar mensajes SYN al puerto 22 del servidor (ssh) lo más rápido posible (_flood_).
+- **(Servidor VM1)** Estudiar el comportamiento de la máquina, en términos del número de paquetes recibidos. Comprobar si es posible la conexión al servicio ssh.
+- **(Servidor VM1)** Repetir el ejercicio desactivando el mecanismo SYN  _cookies_  en el servidor con el comando sysctl (parámetro net.ipv4.tcp_syncookies).
+Como se puede ver existen mas datagramas con longitud menor de 60 bytes, es más facil realizar una ataque de este estilo en una máquina sin las cookies.
+### Ejercicio 8
+**(Técnica CONNECT)** Netcat permite explorar puertos usando la técnica CONNECT que intenta establecer una conexión a un puerto determinado. En función de la respuesta (SYN+ACK o RST), es posible determinar si hay un proceso escuchando.
+- **(Servidor VM1)** Abrir un servidor en el puerto 7777.
+- 
 ### Ejercicio 9 [VM1, VM2]
 Usar la orden ping entre las máquinas VM1 y VM4. Con ayuda de la herramienta wireshark completar la siguiente tabla para todos los paquetes intercambiados hasta la recepción de la primera respuesta Echo Reply.
 
@@ -130,5 +132,5 @@ Durante el arranque del sistema se pueden configurar automáticamente determinad
 ### Ejercicio 14 [VM4]
 Comprobar la configuración automática con las órdenes ifup e ifdown. Verificar la conectividad entre todas las máquinas de las dos redes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5ODY2NzY5NF19
+eyJoaXN0b3J5IjpbMzQ3OTc5NzU0XX0=
 -->
