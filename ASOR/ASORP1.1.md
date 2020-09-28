@@ -76,7 +76,6 @@ tat.
 
 ### Ejercicio 6
 Intentar una conexión a un puerto cerrado del servidor (ej. 7778) y, con ayuda de la herramienta wireshark, observar los mensajes TCP intercambiados, especialmente los flags TCP.
-``nc
 
 # Introducción a la seguridad en el protocolo TCP
 Diferentes aspectos del protocolo TCP pueden aprovecharse para comprometer la seguridad del sistema. En este apartado vamos a estudiar dos: ataques DoS basados en TCP SYN  _flood_  y técnicas de exploración de puertos.
@@ -92,9 +91,8 @@ Como se puede ver existen mas datagramas con longitud menor de 60 bytes, es más
 - **(Servidor VM1)** Abrir un servidor en el puerto 7777.
 - **(Cliente VM2)** Explorar de uno en uno, el rango de puertos 7775-7780 usando nc, en este caso usar las opciones de exploración (-z) y de salida detallada (-v).  **Nota:**  La versión de nc no soporta rangos de puertos. Por tanto, se debe hacer manualmente, o bien, incluir la sentencia de exploración de un puerto en un bucle para automatizar el proceso.
 - Con ayuda de wireshark observar los paquetes intercambiados.
-**Opcional:** La herramienta nmap permite realizar diferentes ti```c
-```
-# rcci  la guracin adecuda para la ala e rtas d osts en  oo  cnidera e es rcica consiste en aar un rosr dxploración de puerfectos, que emplean estrategias más eficientes. Estas estrategias (SYN  _stealth_, ACK  _stealth_, FIN-ACK  _stealth_…) son más rápidas que la anterior y se basan en el funcionamiento del protocolo TCP. Estudiar la página de manual de nmap (PORT SCANNING TECHNIQUES) y emplearlas para explorar los puertos del servidor. Comprobar con wireshark los mensajes intercambiados.
+**Opcional:** La herramienta nmap permite realizar diferentes tipos de exploración de puertos, que emplean estrategias más eficientes. Estas estrategias (SYN  _stealth_, ACK  _stealth_, FIN-ACK  _stealth_…) son más rápidas que la anterior y se basan en el funcionamiento del protocolo TCP. Estudiar la página de manual de nmap (PORT SCANNING TECHNIQUES) y emplearlas para explorar los puertos del servidor. Comprobar con wireshark los mensajes intercambiados.
+
 # Opciones y parámetros de TCP
 El comportamiento de la conexión TCP se puede controlar con varias opciones que se incluyen en la cabecera en los mensajes SYN y que son configurables en el sistema operativo por medio de parámetros del kernel.
 
@@ -127,8 +125,9 @@ Configurar la traducción de direcciones dinámica en Router:
 ### Ejercicio 13
 Acceso a un servidor en la red privada:
 - **(VM1)** Arrancar el servidor con nc en el puerto 7777.
-- (VM3 - Router) Usando el comando iptables reenviar las conexiones al puerto 80 de Router al puerto 7777 de VM1.
+- **(VM3 - Router)** Usando el comando iptables reenviar las conexiones al puerto 80 de Router al puerto 7777 de VM1.
+- **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4MDU3NjA0Nl19
+eyJoaXN0b3J5IjpbNTg5Njk3ODQ3XX0=
 -->
