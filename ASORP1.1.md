@@ -27,6 +27,11 @@ machine <nº maquina> <interfaz n> <red conexion n>
 ```c
 vtopol <pr1>.topol
 ```
+La tabla correspondiente:
+|Maquina| IP | Comentarios
+|--|--|--|
+| VM1 | 192.168.0.1/24 |Añadir router como encaminado por defecto  |
+| VM2 |  |  |
 # Configuracion estática
 
 ### Ejercicio 1 [VM1]
@@ -108,5 +113,5 @@ Durante el arranque del sistema se pueden configurar automáticamente determinad
 ### Ejercicio 14 [VM4]
 Comprobar la configuración automática con las órdenes ifup e ifdown. Verificar la conectividad entre todas las máquinas de las dos redes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDM5ODc5OTgsNDA5MDkxNjhdfQ==
+eyJoaXN0b3J5IjpbMTYyMDEyNDk5Nyw0MDkwOTE2OF19
 -->
