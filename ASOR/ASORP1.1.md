@@ -1,7 +1,7 @@
 # Practica 1.2: Conceptos Avanzados de TCP
 
 # Objetivos
-En esta práctica se presentan las herramientas que se utilizarán en la asignatura y se repasan brevemente los aspectos básicos del protocolo IPv4. Además, se analizan las características del protocolo DHCP.
+En esta práctica estudiaremos el funcionamiento del protocolo TCP. Además veremos algunos parámetros que permiten ajustar el comportamiento de las aplicaciones TCP. Finalmente se consideran algunas aplicaciones del filtrado de paquetes mediante iptables.
 
 # Preparación del entorno
 
@@ -27,6 +27,11 @@ machine <nº maquina> <interfaz n> <red conexion n>
 ```c
 vtopol <pr1>.topol
 ```
+La tabla correspondiente:
+|Maquina| IP | Comentarios
+|--|--|--|
+| VM1 | 192.168.0.1/24 |Añadir router como encaminado por defecto  |
+| VM2 |  |  |
 # Configuracion estática
 
 ### Ejercicio 1 [VM1]
@@ -108,5 +113,5 @@ Durante el arranque del sistema se pueden configurar automáticamente determinad
 ### Ejercicio 14 [VM4]
 Comprobar la configuración automática con las órdenes ifup e ifdown. Verificar la conectividad entre todas las máquinas de las dos redes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUyMzkyNjI3Nl19
+eyJoaXN0b3J5IjpbMTYyMDEyNDk5N119
 -->
