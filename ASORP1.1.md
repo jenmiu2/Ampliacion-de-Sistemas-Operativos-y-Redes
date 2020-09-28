@@ -30,8 +30,8 @@ vtopol <pr2>.topol
 La tabla correspondiente:
 |Maquina| IP | Comentarios
 |--|--|--|
-| VM1 | 192.168.0.1/24 |Añadir router como encaminado por defecto  |
-| VM2 | 192.168.0.2/24 | Añadir router como encamidor  coVM3 - Router | 192.168.0.3/24 (eth0) 172.16.0.3/24 (eth1)| Añadir forwarding de paquetes |
+| VM1 | 192.168.0.1/24 |Añadir router como encamiVM2 | 192.168.0.2/24 | Añadir router como encamidor  conado por defecto |
+| VM3 - Router | 192.168.0.3/24 (eth0) 172.16.0.3/24 (eth1)| Añadir forwarding de paquetes |
 | VM4 | 172.16.0.1/24 |Añadir router como encaminado por defecto |
 # Estados de una conexión TCP
 En esta práctica ueremosramienta Netcat, que permite leer y escribir en conexiones de red. Netcat es muy útil para investigar y depurar el comportamiento de la red en la capa de transporte, ya que permite especificar un gran número de los parámetro |  |
@@ -51,10 +51,10 @@ Consultar las páginas de manual de nc y netstat. En particular, consultar las s
 ### Ejercicio 3
 **(ESTABLISHED)** En VM2, iniciar una conexión cliente al servidor ardo eip link.
 ### Ejercicio 3
-Arrancar la herramienta wireshark y activar la captura en el interfaz de red. Comprobar la conectividad entre VM1 y VM2 con la orden ping. Observa etrico geerad, especialmente los protocolos encapsularancado en el ejercicio anterior usandos en cada datagrama y las direcciones origen y destino.
+Arrancar la herramienta wireshark y activar la captura en el interfaz de red. Comprobar la conectividad entre VM1 y VM2 con la orden ping. Observa eico geneado,especialmente los protocolos encapsularancado en el ejercicio anterior usandos en cada datagrama y las direcciones origen y destino.
 Completar la siguiente tabla para todos los mensajes intera ta corresndiente
 Maquina IP  oentarios
- VM1  .12 airuutermocamiadol comando nc 192.168.0.1 7777.
+ VM1  .12 airutermamiadol comando nc 192.168.0.1 7777.
  -  Comprobar el estado de la conexión e identificar los parámetros (dirección IP y puerto) con el comando netstat -tn.
  - Reinicia por deecto  r el serviador en VM1 usando el comando nc -l 192.168.0.1 7777. Comprobar que no es posible la conexión desde VM1 usando como dirección destino localhost. Observar la diferencia con el comando del ejercicio anterior usando nets e cad.
    stt.t
@@ -98,23 +98,20 @@ Como se puede ver existen mas datagramas con longitud menor de 60 bytes, es más
 # Opciones y parámetros de TCP
 El comportamiento de la conexión TCP se puede controlar con varias opciones que se incluyen en la cabecera en los mensajes SYN y que son configurables en el sistema operativo por medio de parámetros del kernel.
 
-**_Ejercicio 9._** Con ayuda del comando sysctl y la bibliografía recomendada, completar la siguiente tabla con parámetros que permiten modificar algunas opciones dee e sie nli ra ar ee cnresa al a de ruae  ua ru a la e  a ote.
+### Ejercicio 9Con ayuda del comando sysctl y la bibliografía recomendada, completar la siguiente tabla con parámetros que permiten modificar algunas opciones dee e sie nli ra ar ee cnresa al a de ruae  ua ru a la e  a otear la  TCP:
 
-### Ejercicio 9
-Usar la orden ping entre las máquinas VM1 y VM4. Con ayuda de la herramienta wireshark completar la siguiente tabla para todos los paquetes intercambiados hasta la recepción de la primera respuesta Echo Reply.
-
-#### Red 10.0.0.0/24 - VM1
+|Parametro del kernel| Proposito | Valor por defecto |
+|--|--|--|
+|  |  |  |
+|  |  |  |
+### Ejercicio 10 
+Abrir el seoe l# Red 192.168.0.0/24 - VM4
 |MAC Origen| MAC Destino | Protocolo | IP Origen | IP Destino | Tipo de Mensaje
 |--|--|--|--|--|--|
 |  |  |  |  |  |
 |  |  |  |  |  |
-
-#### Red 192.168.0.0/24 - VM4
-|MAC Origen| MAC Destino | Protocolo | IP Origen | IP Destino | Tipo de Mensaje
-|--|--|--|--|--|--|
-|  |  |  |  |  |
-|  |  |  |  |  |
-
+el puerto 7777 y realizar una conexión desde la VM cliente. Con ayuda de wireshark estudiar el valor de las opciones que se intercambian durante la conexión. Variar algunos de los parámetros anteriores (ej. no usar ACKs selectivos) y observar el resultado en una nueva conexión.
+### Ejercicio 11
 # Configuración dinámica de hosts
 El protocolo DHCP permite configurar dinámicamente los parámetros de red un host. En esta sección configuraremos Router como servidor DHCP para las dos redes. Aunque DHCP puede incluir muchos parámetros de configuración, en esta práctica sólo fijaremos el encaminador por defecto.
 
@@ -140,6 +137,6 @@ Durante el arranque del sistema se pueden configurar automáticamente determinad
 ### Ejercicio 14 [VM4]
 Comprobar la configuración automática con las órdenes ifup e ifdown. Verificar la conectividad entre todas las máquinas de las dos redes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2Mjk0NjU1OSwxODg0MjU1MTMzLDIxMj
+eyJoaXN0b3J5IjpbLTIyMjExMTQxMCwxNjYyOTQ2NTU5LDIxMj
 U2NTY1NzksNDA5MDkxNjhdfQ==
 -->
