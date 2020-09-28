@@ -118,17 +118,18 @@ defecto |
 # Traducción de direcciones NAT y reenvío de puertos 
 En esta sección supondremos que la red que conecta Router (VM3) con VM4 es pública y que no puede encaminar el tráfico 192.168.0.0/24. Además, asumiremos que la IP de Router es dinámica.
 
-### Ejercicio 12 [Router, VM1]
+### Ejercicio 12
 Configurar la traducción de direcciones dinámica en Router:
 
--
+-** (VM3 - Router)** Configurar Router para que haga SNAT (_masquerade_) sobre la interfaz eth1 usando el comando iptables.
+- ** (VM1)** Comprobar la conexión entre VM1 y VM4 con la orden ping.
+- ** (VM4 y VM1)** Usando wireshark, determinar la IP origen y destino de los ICMP de Echo request y Echo reply en ambas redes. ¿Qué parámetro se utiliza, en lugar del puerto origen, para relacionar las solicitudes con las respuestas? Comprueba la salida del comando conntrack -L o alternativamente el fichero /proc/net/nf_conntrack.
+### Ejercicio 13
+Acceso a un servidor en la red privada:
+- **(VM1)** Arrancar el servidor con nc en el puerto 7777.
+- **(VM3 - Router) Usando el comando iptables reenviar las conexiones al puerto 80 de Router al puerto 7777 de VM1.
 
-### Ejercicio 13 [VM4]
-Durante el arranque del sistema se pueden configurar automáticamente determinados interfaces según la información almacenada en el disco del servidor. Consultar el fichero /etc/sysconfig/network-scripts/ifcfg-eth0 de VM4, que configura automáticamente eth0 usando DHCP. Para más información, consultar el fichero /usr/share/doc/initscripts-*/sysconfig.txt.
-
-### Ejercicio 14 [VM4]
-Comprobar la configuración automática con las órdenes ifup e ifdown. Verificar la conectividad entre todas las máquinas de las dos redes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIzMTgzMjc3OSwxNjYyOTQ2NTU5LDIxMj
+eyJoaXN0b3J5IjpbLTUxNjUxMTE4NiwxNjYyOTQ2NTU5LDIxMj
 U2NTY1NzksNDA5MDkxNjhdfQ==
 -->
