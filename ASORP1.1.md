@@ -35,7 +35,13 @@ La tabla correspondiente:
 | VM3 - Router | 192.168.0.3/24 (eth0) 172.16.0.3/24 (eth1)| Añadir forwarding de paquetes |
 | VM4 | 172.16.0.1/24 |Añadir router como encaminado por defecto |
 # Estados de una conexión TCP
-En esta práctica usaremos la herramienta Netcat, que permite leer y escribir en conexiones de red. Netcat es muy útil para investigar y depurar el comportamiento de la red en la capa de transporte, ya que permite especificar un gran número de los parámetros de la conexión. Además para ver el estado de las conexiones de red usaremos la herramienta netstat (también puede usarse la herramienta ss, que es más moderna y completa).
+En esta práctica ueremosl hramienta Netcat, que permite leer y escribir en conexiones de red. Netcat es muy útil para investigar y depurar el comportamiento de la red en la capa de transporte, ya que permite especificar un gran número de los parámetro |  |
+# Configuracion estática
+
+### Ejercicio 1 [VM1]
+Determinar los interfaces de red que tiene la máquina y las direcciones IP y/o MAC que tienen asignadas. Utilizar el comando ip.
+### Ejercicio 2 [VM1, VM2, Router]
+Activar los interfaces eth0 en las máquinas VM1, VM2 y Router, y asignar una dirección IP adecuada. La configuración debe realizarse con la utilidad ip, en particular los comandos ip address de la conexión. Además para ver el estado de las conexiones de red usaremos la herramienta netstat (también puede usarse la herramienta ss, que es más moderna y completa).
 
 ### Ejercicio 1
 Consultar las páginas de manual de nc y netstat. En particular, consultar las siguientes opciones de netstat: -a, -l, -n, -t y -o. Probar algunas de las opciones para ambos programas para familiarizarse con su comportamiento.
@@ -44,9 +50,15 @@ Consultar las páginas de manual de nc y netstat. En particular, consultar las s
 (LISTEN) Abrir un servidor TCP en el puerto 7777 en VM1 usando el comando nc -l 7777. Comprobar el estado de la conexión en el servidor con el comando netstat -ltn.
 
 ### Ejercicio 3
-(ESTABLISHED) En VM2, iniciar una conexión cliente al servidor arrancado en el ejercicio anterior usando el comando nc 192.168.0.1 7777.
+(ESTABLISHED) En VM2, iniciar una conexión cliente al servidor arip link.
+### Ejercicio 3 [VM1, VM2]
+Arrancar la herramienta wireshark y activar la captura en el interfaz de red. Comprobar la conectividad entre VM1 y VM2 con la orden ping. Observar el tráfico generado, especialmente los protocolos encapsulados en cada datagrama y las direcciones origen y destino.
+Completar la siguiente tabla para todos los mensajes intera ta corresndiente
+Maquina IP  oentarios
+ VM1  .12 adir router omo encamiado
  -  Comprobar el estado de la conexión e identificar los parámetros (dirección IP y puerto) con el comando netstat -tn.
- - Reiniciar el servidor en VM1 usando el comando nc -l 192.168.0.1 7777. Comprobar que no es posible la conexión desde VM1 usando como dirección destino localhost. Observar la diferencia con el comando del ejercicio anterior usando netstat.
+ - Reinicia por deecto  r el serviador en VM1 usando el comando nc -l 192.168.0.1 7777. Comprobar que no es posible la conexión desde VM1 usando como dirección destino localhost. Observar la diferencia con el comando del ejercicio anterior usando nets e cad.
+   stt.t
 ### Ejercicio 4 [VM1, VM2]
 Ejecutar de nuevo la orden ping entre VM1 y VM2 y, a continuación, comprobar el estado de la tabla ARP en VM1 y VM2 usando el comando ip neigh. El significado del estado de cada entrada de la tabla se puede consultar en la página de manual del comando.
 
@@ -108,5 +120,6 @@ Durante el arranque del sistema se pueden configurar automáticamente determinad
 ### Ejercicio 14 [VM4]
 Comprobar la configuración automática con las órdenes ifup e ifdown. Verificar la conectividad entre todas las máquinas de las dos redes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwNzQ1MDczMSw0MDkwOTE2OF19
+eyJoaXN0b3J5IjpbMjEyNTY1NjU3OSwxMjA3NDUwNzMxLDQwOT
+A5MTY4XX0=
 -->
