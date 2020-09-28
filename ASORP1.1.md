@@ -91,8 +91,14 @@ Como se puede ver existen mas datagramas con longitud menor de 60 bytes, es más
 ### Ejercicio 8
 **(Técnica CONNECT)** Netcat permite explorar puertos usando la técnica CONNECT que intenta establecer una conexión a un puerto determinado. En función de la respuesta (SYN+ACK o RST), es posible determinar si hay un proceso escuchando.
 - **(Servidor VM1)** Abrir un servidor en el puerto 7777.
-- 
-### Ejercicio 9 [VM1, VM2]
+- **(Cliente VM2)** Explorar de uno en uno, el rango de puertos 7775-7780 usando nc, en este caso usar las opciones de exploración (-z) y de salida detallada (-v).  **Nota:**  La versión de nc no soporta rangos de puertos. Por tanto, se debe hacer manualmente, o bien, incluir la sentencia de exploración de un puerto en un bucle para automatizar el proceso.
+- Con ayuda de wireshark observar los paquetes intercambiados.
+**Opcional:** La herramienta nmap permite realizar diferentes tipos de exploración de puertos, que emplean estrategias más eficientes. Estas estrategias (SYN  _stealth_, ACK  _stealth_, FIN-ACK  _stealth_…) son más rápidas que la anterior y se basan en el funcionamiento del protocolo TCP. Estudiar la página de manual de nmap (PORT SCANNING TECHNIQUES) y emplearlas para explorar los puertos del servidor. Comprobar con wireshark los mensajes intercambiados.
+# Opciones y parámetros de TCP
+El comportamiento de la conexión TCP se puede controlar con varias opciones que se incluyen en la cabecera en los mensajes SYN y que son configurables en el sistema operativo por medio de parámetros del kernel.
+
+**_Ejercicio 9._** Con ayuda del comando sysctl y la bibliografía recomendada, completar la siguiente tabla con parámetros que permiten modificar algunas opciones de TCP:
+### Ejercicio 9
 Usar la orden ping entre las máquinas VM1 y VM4. Con ayuda de la herramienta wireshark completar la siguiente tabla para todos los paquetes intercambiados hasta la recepción de la primera respuesta Echo Reply.
 
 #### Red 10.0.0.0/24 - VM1
@@ -132,6 +138,6 @@ Durante el arranque del sistema se pueden configurar automáticamente determinad
 ### Ejercicio 14 [VM4]
 Comprobar la configuración automática con las órdenes ifup e ifdown. Verificar la conectividad entre todas las máquinas de las dos redes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ3OTc5NzU0LDIxMjU2NTY1NzksNDA5MD
-kxNjhdfQ==
+eyJoaXN0b3J5IjpbMTg4NDI1NTEzMywyMTI1NjU2NTc5LDQwOT
+A5MTY4XX0=
 -->
