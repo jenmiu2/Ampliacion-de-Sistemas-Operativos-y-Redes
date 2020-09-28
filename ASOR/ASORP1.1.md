@@ -97,22 +97,16 @@ Como se puede ver existen mas datagramas con longitud menor de 60 bytes, es más
 # Opciones y parámetros de TCP
 El comportamiento de la conexión TCP se puede controlar con varias opciones que se incluyen en la cabecera en los mensajes SYN y que son configurables en el sistema operativo por medio de parámetros del kernel.
 
-**_Ejercicio 9._** Con ayuda del comando sysctl y la bibliografía recomendada, completar la siguiente tabla con parámetros que permiten modificar algunas opciones de TCP:
 ### Ejercicio 9
-Usar la orden ping entre las máquinas VM1 y VM4. Con ayuda de la herramienta wireshark completar la siguiente tabla para todos los paquetes intercambiados hasta la recepción de la primera respuesta Echo Reply.
+Con ayuda del comando sysctl y la bibliografía recomendada, completar la siguiente tabla con parámetros que permiten modificar algunas opciones de TCP:
 
-#### Red 10.0.0.0/24 - VM1
-|MAC Origen| MAC Destino | Protocolo | IP Origen | IP Destino | Tipo de Mensaje
-|--|--|--|--|--|--|
-|  |  |  |  |  |
-|  |  |  |  |  |
-
-#### Red 192.168.0.0/24 - VM4
-|MAC Origen| MAC Destino | Protocolo | IP Origen | IP Destino | Tipo de Mensaje
-|--|--|--|--|--|--|
-|  |  |  |  |  |
-|  |  |  |  |  |
-
+|Parametro del kernel| Proposito | Valor por defecto |
+|--|--|--|
+|  |  |  |
+|  |  |  |
+### Ejercicio 10 
+Abrir el servidor en el puerto 7777 y realizar una conexión desde la VM cliente. Con ayuda de wireshark estudiar el valor de las opciones que se intercambian durante la conexión. Variar algunos de los parámetros anteriores (ej. no usar ACKs selectivos) y observar el resultado en una nueva conexión.
+### Ejercicio 11 
 # Configuración dinámica de hosts
 El protocolo DHCP permite configurar dinámicamente los parámetros de red un host. En esta sección configuraremos Router como servidor DHCP para las dos redes. Aunque DHCP puede incluir muchos parámetros de configuración, en esta práctica sólo fijaremos el encaminador por defecto.
 
@@ -138,5 +132,5 @@ Durante el arranque del sistema se pueden configurar automáticamente determinad
 ### Ejercicio 14 [VM4]
 Comprobar la configuración automática con las órdenes ifup e ifdown. Verificar la conectividad entre todas las máquinas de las dos redes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4NDI1NTEzM119
+eyJoaXN0b3J5IjpbMTQzMDEyMjg2NV19
 -->
