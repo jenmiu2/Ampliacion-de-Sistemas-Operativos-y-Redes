@@ -25,13 +25,15 @@ machine <nº maquina> <interfaz n> <red conexion n>
 ```
  - Crear la topología de red que arrancará las 4 máquinas virtuales (VM1, VM2, Router y VM4).
 ```c
-vtopol <pr1>.topol
+vtopol <pr2>.topol
 ```
 La tabla correspondiente:
 |Maquina| IP | Comentarios
 |--|--|--|
 | VM1 | 192.168.0.1/24 |Añadir router como encaminado por defecto  |
-| VM2 |  |  |
+| VM2 | 192.168.0.2/24 | Añadir router como encaminado por defecto |
+| VM3 - Router | 192.168.0.3/24 (eth0) 172.16.0.3/24 (eth1)| Añadir forwarding de paquetes |
+| VM4 | 172.16.0.1/24 |Añadir router como encaminado por defecto |
 # Configuracion estática
 
 ### Ejercicio 1 [VM1]
@@ -113,5 +115,5 @@ Durante el arranque del sistema se pueden configurar automáticamente determinad
 ### Ejercicio 14 [VM4]
 Comprobar la configuración automática con las órdenes ifup e ifdown. Verificar la conectividad entre todas las máquinas de las dos redes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyMDEyNDk5N119
+eyJoaXN0b3J5IjpbMTUwOTgxMDYzXX0=
 -->
