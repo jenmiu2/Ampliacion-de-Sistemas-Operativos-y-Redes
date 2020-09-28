@@ -110,24 +110,18 @@ Con ayuda del comando sysctl y la bibliografía recomendada, completar la siguie
 Abrir el servidor en el puerto 7777 y realizar una conexión desde la VM cliente. Con ayuda de wireshark estudiar el valor de las opciones que se intercambian durante la conexión. Variar algunos de los parámetros anteriores (ej. no usar ACKs selectivos) y observar el resultado en una nueva conexión.
 ### Ejercicio 11 
 Con ayuda del comando sysctl y la bibliografía recomendada, completar la siguiente tabla con parámetros que permiten configurar el temporizador  _keepalive_:
-# Configuración dinámica de hosts
-El protocolo DHCP permite configurar dinámicamente los parámetros de red un host. En esta sección configuraremos Router como servidor DHCP para las dos redes. Aunque DHCP puede incluir muchos parámetros de configuración, en esta práctica sólo fijaremos el encaminador por defecto.
-
-### Ejercicio 10 [VM1, VM2] 
-Eliminar las direcciones IP de los interfaces (ip addr del)
-
-### Ejercicio 11 [Router]
-Configurar el servidor DHCP para las dos redes:
-- Editar el fichero /etc/dhcp/dhcpd.conf y añadir dos secciones subnet para cada red que definan los rangos de direcciones_,_ 10.0.0.50 - 10.0.0.100 y 192.168.0.50 - 192.168.0.100, respectivamente. Además, incluir la opción routers con la IP de Router en cada red. 
-- Arrancar el servicio con el comando service dhcpd start.
+defecto |
+|--|--|--|
+| net.ipv4.tcp_keepalive_time |  |  |
+| net.ipv4.tcp_keepalive_probes |  |  |
+| net.ipv4.tcp_keepalive_intvl |  |  |
+# Traducción de direcciones NAT y reenvío de puertos 
+En esta sección supondremos que la red que conecta Router (VM3) con VM4 es pública y que no puede encaminar el tráfico 192.168.0.0/24. Además, asumiremos que la IP de Router es dinámica.
 
 ### Ejercicio 12 [Router, VM1]
-Iniciar la captura de paquetes en Router. Arrancar el cliente DHCP (dhclient -d eth0) en la máquina virtual VM1 y observar el proceso de configuración. Completar la siguiente tabla:
+Configurar la traducción de direcciones dinámica en Router:
 
-|IP Origen| IP Destino | Mensaje DHCP | Opciones DHCP
-|--|--|--|--|
-|  |  |  |  |
-|  |  |  |  |
+-
 
 ### Ejercicio 13 [VM4]
 Durante el arranque del sistema se pueden configurar automáticamente determinados interfaces según la información almacenada en el disco del servidor. Consultar el fichero /etc/sysconfig/network-scripts/ifcfg-eth0 de VM4, que configura automáticamente eth0 usando DHCP. Para más información, consultar el fichero /usr/share/doc/initscripts-*/sysconfig.txt.
@@ -135,6 +129,6 @@ Durante el arranque del sistema se pueden configurar automáticamente determinad
 ### Ejercicio 14 [VM4]
 Comprobar la configuración automática con las órdenes ifup e ifdown. Verificar la conectividad entre todas las máquinas de las dos redes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMjIwNjQ4NDIsMTY2Mjk0NjU1OSwyMT
-I1NjU2NTc5LDQwOTA5MTY4XX0=
+eyJoaXN0b3J5IjpbLTIzMTgzMjc3OSwxNjYyOTQ2NTU5LDIxMj
+U2NTY1NzksNDA5MDkxNjhdfQ==
 -->
