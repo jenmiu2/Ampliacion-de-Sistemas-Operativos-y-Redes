@@ -249,12 +249,13 @@ $sudo dhclient -d eth0
 ```
 [imagen configuracion mv1](https://drive.google.com/file/d/1GKa8o1btmyMO4WmP1_T50AnjJNz5JdEL/view?usp=sharing)
 [imagen wireshark vm1](https://drive.google.com/file/d/1diutOGk3qeZ-8VWCaWxC9Te4v_VEk2fU/view?usp=sharing)
+*insertar imagen ejercico1pr
 
 #### VM4
 ```bash
 $sudo dhclient -d eth0
 ```
-[imagen vm4 dhcp client](https://drive.google.com/file/d/1cKDlUDmyHrd5olSD1fqKy1zYTV5vlLdo/view?usp=sharing)
+imagen ericio 12-1 pr1.1*[imagen vm4 dhcp client](https://drive.google.com/file/d/1cKDlUDmyHrd5olSD1fqKy1zYTV5vlLdoGKa8o1btmyMO4WmP1_T50AnjJNz5JdEL/view?usp=sharing)
 
 #### VM1
 | IP Origen | IP Destino | Mensaje DHCP | Opciones DHCP |
@@ -299,11 +300,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzQ3OTUwOTksOTM1ODEyNzY0LDU0Mj
-gzNzk0Nyw4MjA0ODcxMzAsLTYzMDYyNzU3NywxMjU2NjA3OTQy
-LC0xNzkxMTkwMDUsMTE2NDU5NzAzMywtMjAzMzEyNjY5NSwtNT
-E0NjY2ODQ4LDc2NDYxMjY0OCwtNjgxNTc4OTY4LC0yMDE1OTQ2
-NjMyLC03MDc3NzExNDgsNzQwMDMzOTc0LDExMzg5MjM4NzgsLT
-MwMjY3MDkzOCwzMTA5MTI4MjgsMjI4NzAwNjc2LDkxMTYwNjU1
-N119
+eyJoaXN0b3J5IjpbLTE5ODA5NDM5OTcsLTE0NzQ3OTUwOTksOT
+M1ODEyNzY0LDU0MjgzNzk0Nyw4MjA0ODcxMzAsLTYzMDYyNzU3
+NywxMjU2NjA3OTQyLC0xNzkxMTkwMDUsMTE2NDU5NzAzMywtMj
+AzMzEyNjY5NSwtNTE0NjY2ODQ4LDc2NDYxMjY0OCwtNjgxNTc4
+OTY4LC0yMDE1OTQ2NjMyLC03MDc3NzExNDgsNzQwMDMzOTc0LD
+ExMzg5MjM4NzgsLTMwMjY3MDkzOCwzMTA5MTI4MjgsMjI4NzAw
+Njc2XX0=
 -->
