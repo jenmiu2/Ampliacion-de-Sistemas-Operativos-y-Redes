@@ -101,7 +101,7 @@ $ip neigh #ver dir ip con las que se ha conectado la maq
 $ip neigh flush dev eth0 # eliminar los valores de la tabla
 ```
 #### VM2
-[]()
+[imagen ejercicio 4](https://drive.google.com/file/d/1PJANBa42aT6Bo2laqgiMiI-WpmR7ZSJT/view?usp=sharing)
 | address | dev name  | vrf name | proxy | unused | nud
 |--|--|--|--|--|--|
 | 192.168.0.1| eth0 | lladdr | 08:00:27:4c:af:03 |  | STALE |
@@ -125,7 +125,7 @@ $ip link set dev eth0 up
 $ip a
 $ping 172.16.0.3
 ```
-*insertar imagen ejercicio 5 pr1.1*
+[imagen ejercicio 5](https://drive.google.com/file/d/1JUvEl9sPnMCDIf3_Pff5WB_5TzX-4gFz/view?usp=sharing)
 
 | MAC Origen| MAC Destino | Protocolo | IP Origen | IP Destino | Tipo Mensaje
 |--|--|--|--|--|--|
@@ -170,7 +170,7 @@ Abrir la herramienta Wireshark en Router e iniciar una captura en sus dos interf
 $ping 172.16.0.3
 ```
 #### Wireshark VM1
-*insertar imagen ejercicio 9-1 pr1.1*
+
 #### Red 192.168.0.0/24 - Router (eth0)
 | MAC Origen | MAC Desitno | Protocolo | IP Origen | IP Destino | Tipo Mensaje |
 |--|--|--|--|--|--|--|--|
@@ -288,11 +288,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjgyMjk1NjgsODIwNDg3MTMwLC02Mz
-A2Mjc1NzcsMTI1NjYwNzk0MiwtMTc5MTE5MDA1LDExNjQ1OTcw
-MzMsLTIwMzMxMjY2OTUsLTUxNDY2Njg0OCw3NjQ2MTI2NDgsLT
-Y4MTU3ODk2OCwtMjAxNTk0NjYzMiwtNzA3NzcxMTQ4LDc0MDAz
-Mzk3NCwxMTM4OTIzODc4LC0zMDI2NzA5MzgsMzEwOTEyODI4LD
-IyODcwMDY3Niw5MTE2MDY1NTcsLTE5MTI4Njg1NDksNDE4NDUw
-MTIwXX0=
+eyJoaXN0b3J5IjpbMTU3NzMyMjAzMyw4MjA0ODcxMzAsLTYzMD
+YyNzU3NywxMjU2NjA3OTQyLC0xNzkxMTkwMDUsMTE2NDU5NzAz
+MywtMjAzMzEyNjY5NSwtNTE0NjY2ODQ4LDc2NDYxMjY0OCwtNj
+gxNTc4OTY4LC0yMDE1OTQ2NjMyLC03MDc3NzExNDgsNzQwMDMz
+OTc0LDExMzg5MjM4NzgsLTMwMjY3MDkzOCwzMTA5MTI4MjgsMj
+I4NzAwNjc2LDkxMTYwNjU1NywtMTkxMjg2ODU0OSw0MTg0NTAx
+MjBdfQ==
 -->
