@@ -178,6 +178,7 @@ Abrir la herramienta Wireshark en Router e iniciar una captura en sus dos interf
 ```bash
 $ping 172.16.0.3
 ```
+
 #### Wireshark VM1
 [imagen ejercicio 9-1](https://drive.google.com/file/d/17vCQ-rLF1B0hWI2rh_oMSBHwEfJlNM7D/view?usp=sharing) 
 #### Red 192.168.0.0/24 - Router (eth0)
@@ -293,16 +294,16 @@ Comprobar la configuración automática con las órdenes ifup e ifdown. Verifica
 
 ```bash
 $sudo ifdown eth0
-$sudo ifp eth0
+$sudo ifup eth0
 $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQxODk4Njk1OCw5MzU4MTI3NjQsNTQyOD
-M3OTQ3LDgyMDQ4NzEzMCwtNjMwNjI3NTc3LDEyNTY2MDc5NDIs
-LTE3OTExOTAwNSwxMTY0NTk3MDMzLC0yMDMzMTI2Njk1LC01MT
-Q2NjY4NDgsNzY0NjEyNjQ4LC02ODE1Nzg5NjgsLTIwMTU5NDY2
-MzIsLTcwNzc3MTE0OCw3NDAwMzM5NzQsMTEzODkyMzg3OCwtMz
-AyNjcwOTM4LDMxMDkxMjgyOCwyMjg3MDA2NzYsOTExNjA2NTU3
-XX0=
+eyJoaXN0b3J5IjpbLTE0NzQ3OTUwOTksOTM1ODEyNzY0LDU0Mj
+gzNzk0Nyw4MjA0ODcxMzAsLTYzMDYyNzU3NywxMjU2NjA3OTQy
+LC0xNzkxMTkwMDUsMTE2NDU5NzAzMywtMjAzMzEyNjY5NSwtNT
+E0NjY2ODQ4LDc2NDYxMjY0OCwtNjgxNTc4OTY4LC0yMDE1OTQ2
+NjMyLC03MDc3NzExNDgsNzQwMDMzOTc0LDExMzg5MjM4NzgsLT
+MwMjY3MDkzOCwzMTA5MTI4MjgsMjI4NzAwNjc2LDkxMTYwNjU1
+N119
 -->
