@@ -226,15 +226,15 @@ $sudo nano /etc/dhcp/dhcpd.conf
 ```
 ```latex
 subnet 192.168.0.0 netmask 255.255.255.0 { 
-		range 1​92.168.0.50 192.168.0.100; 
-		option routers 192.168.0.3;  
-	    option broadcast-address 192.168.0.255;
+	range 1​92.168.0.50 192.168.0.100; 
+	option routers 192.168.0.3;  
+	option broadcast-address 192.168.0.255;
 }
 
 subnet 172.16.0.0 netmask 255.255.0.0 { 
-		range 172.16.0.50 172.16.0.100; 
-		option routers 172.16.0.3;  
-	    option broadcast-address 172.16.0.255;
+	range 172.16.0.50 172.16.0.100; 
+	option routers 172.16.0.3;  
+	option broadcast-address 172.16.0.255;
 }
 
 ```
@@ -280,7 +280,7 @@ Durante el arranque del sistema se pueden configurar automáticamente determinad
 ```bash
 ​$sudo nano /etc/sysconfig/network-scripts/ifcfg-eth0
 ```
-----
+
 ```latex
 TYPE=Ethernet  
 BOOTPROTO=none  
@@ -288,7 +288,6 @@ IPADDR=​172.16.0.1/16
 GATEWAY=​172.16.0.3/16
 DEVICE=eth0
 ```
-----
 
 **Nota**:​ Estas opciones se describen en detalle en ​/usr/share/doc/initscripts-*/sysconfig.txt​.
 
@@ -302,11 +301,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0ODg0ODA1OCwyMTMwODk0MzEwLC0yMD
-cxNzEyMjgyLC03MjU1MTc3NTQsLTE5ODA5NDM5OTcsLTE0NzQ3
-OTUwOTksOTM1ODEyNzY0LDU0MjgzNzk0Nyw4MjA0ODcxMzAsLT
-YzMDYyNzU3NywxMjU2NjA3OTQyLC0xNzkxMTkwMDUsMTE2NDU5
-NzAzMywtMjAzMzEyNjY5NSwtNTE0NjY2ODQ4LDc2NDYxMjY0OC
-wtNjgxNTc4OTY4LC0yMDE1OTQ2NjMyLC03MDc3NzExNDgsNzQw
-MDMzOTc0XX0=
+eyJoaXN0b3J5IjpbLTU5NTAzNDM3MiwyMDQ4ODQ4MDU4LDIxMz
+A4OTQzMTAsLTIwNzE3MTIyODIsLTcyNTUxNzc1NCwtMTk4MDk0
+Mzk5NywtMTQ3NDc5NTA5OSw5MzU4MTI3NjQsNTQyODM3OTQ3LD
+gyMDQ4NzEzMCwtNjMwNjI3NTc3LDEyNTY2MDc5NDIsLTE3OTEx
+OTAwNSwxMTY0NTk3MDMzLC0yMDMzMTI2Njk1LC01MTQ2NjY4ND
+gsNzY0NjEyNjQ4LC02ODE1Nzg5NjgsLTIwMTU5NDY2MzIsLTcw
+Nzc3MTE0OF19
 -->
