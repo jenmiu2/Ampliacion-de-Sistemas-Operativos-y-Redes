@@ -33,14 +33,14 @@ machine <nº maquina> <interfaz n> <red conexion n>
 ```bash
 $sudo vtopol pr1.topol
 ```
-3. Si la confiuración es manual:
-- red interna
-|Maquina| Red Interna 0 | Red Interna 1
+3. Si la configuración es manual, todas conectadas a la Red Interna, cada interfaz configurada como:
+
+|Maquina | Red Interna 0 | Red Interna 1 |
 |--|--|--|
-| VM1 | eth0 - intnet 0 |
-| VM2 | eth0 - intnet 0 | 
-| VM3 - Router | eth0 - intnet 0 | eth1 - intnet 1 |
-| VM4 | eth0 - intnet 1|
+| VM1 | eth0 - intnet 0 
+| VM2 | eth0 - intnet 0  
+| VM3 - Router | eth0 - intnet 0 | eth1 - intnet 1
+| VM4 | eth0 - intnet 1
 # Configuración estática
 En primer lugar, configuraremos cada segmento de red 10.0.0.0/24 y 192.168.0.0/24 de forma estática asignando a cada máquina una dirección IP adecuada.
 
@@ -78,7 +78,7 @@ Completar la siguiente tabla para todos los mensajes intercambiados hasta la rec
 - Comparar los datos observados durante la captura con el formato de los mensajes estudiados en clase.
 #### Wireshark VM2
 
-[img ejercicio 3](https://drive.google.com/file/d/1RSvC1mdMRdBZP5BczByCcV5npDLmHCpC/view?usp=sharing)*Insertar imagen Ejercicio 3 pr 1.1*
+[img ejercicio 3](https://drive.google.com/file/d/1RSvC1mdMRdBZP5BczByCcV5npDLmHCpC/view?usp=sharing)
 
 | MAC Origen| MAC Destino | Protocolo | IP Origen | IP Destino | Tipo Mensaje
 |--|--|--|--|--|--|
@@ -297,11 +297,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTczNzkyMzM4LDkzNTgxMjc2NCw1NDI4Mz
-c5NDcsODIwNDg3MTMwLC02MzA2Mjc1NzcsMTI1NjYwNzk0Miwt
-MTc5MTE5MDA1LDExNjQ1OTcwMzMsLTIwMzMxMjY2OTUsLTUxND
-Y2Njg0OCw3NjQ2MTI2NDgsLTY4MTU3ODk2OCwtMjAxNTk0NjYz
-MiwtNzA3NzcxMTQ4LDc0MDAzMzk3NCwxMTM4OTIzODc4LC0zMD
-I2NzA5MzgsMzEwOTEyODI4LDIyODcwMDY3Niw5MTE2MDY1NTdd
-fQ==
+eyJoaXN0b3J5IjpbLTQ0ODI0OTM2NCw5MzU4MTI3NjQsNTQyOD
+M3OTQ3LDgyMDQ4NzEzMCwtNjMwNjI3NTc3LDEyNTY2MDc5NDIs
+LTE3OTExOTAwNSwxMTY0NTk3MDMzLC0yMDMzMTI2Njk1LC01MT
+Q2NjY4NDgsNzY0NjEyNjQ4LC02ODE1Nzg5NjgsLTIwMTU5NDY2
+MzIsLTcwNzc3MTE0OCw3NDAwMzM5NzQsMTEzODkyMzg3OCwtMz
+AyNjcwOTM4LDMxMDkxMjgyOCwyMjg3MDA2NzYsOTExNjA2NTU3
+XX0=
 -->
