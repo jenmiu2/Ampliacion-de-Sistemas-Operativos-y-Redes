@@ -133,7 +133,7 @@ $ip link set dev eth0 up
 $ip a
 $ping 172.16.0.3
 ```
-[imagen ejercicio 5](https://drive.google.com/file/d/1JUvEl9sPnMCDIf3_Pff5WB_5TzX-4gFz/view?usp=sharing) 
+[imagen ejercicio 5](https://drive.google.com/file/d/1-DJSuuqz5VPvuVebdewE5rY6A_eE-YNh/view?usp=sharing) 
 
 | MAC Origen| MAC Destino | Protocolo | IP Origen | IP Destino | Tipo Mensaje
 |--|--|--|--|--|--|
@@ -180,7 +180,7 @@ $ping 172.16.0.3
 ```
 
 #### Wireshark VM1
-[imagen ejercicio 9-1](https://drive.google.com/file/d/17vCQ-rLF1B0hWI2rh_oMSBHwEfJlNM7D/view?usp=sharing) 
+[imagen ejercicio 9-1](https://drive.google.com/file/d/19_Px_1LqHSlhPFJF8MyeHkOs7yueStlN/view?usp=sharing) 
 #### Red 192.168.0.0/24 - Router (eth0)
 | MAC Origen | MAC Desitno | Protocolo | IP Origen | IP Destino | Tipo Mensaje |
 |--|--|--|--|--|--|--|--|
@@ -189,7 +189,7 @@ $ping 172.16.0.3
 |  |  | CMP | 192.168.0.1 | 172.16.0.1 | Echo (ping) request |
 |  |  | CMP | 192.168.0.1 | 192.168.0.1 | Echo (ping) reply |
 #### Wireshark VM4
-[imagen ejercicio 9-2](https://drive.google.com/file/d/1X2OZFaBm7_eA4Gd7d7NIJ9rDSjNTKOTO/view?usp=sharing) 
+[imagen ejercicio 9-2](https://drive.google.com/file/d/1GtlbBukYXfxluY-p1bp-5y_BIbTdlYMS/view?usp=sharing) 
 #### Red 172.16.0.0/16- Router (eth1)
 | MAC Origen | MAC Desitno | Protocolo | IP Origen | IP Destino | Tipo Mensaje |
 |--|--|--|--|--|--|--|--|
@@ -300,7 +300,7 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU5MzUyNTEwNCwtMTk4MDk0Mzk5NywtMT
+eyJoaXN0b3J5IjpbLTcyNTUxNzc1NCwtMTk4MDk0Mzk5NywtMT
 Q3NDc5NTA5OSw5MzU4MTI3NjQsNTQyODM3OTQ3LDgyMDQ4NzEz
 MCwtNjMwNjI3NTc3LDEyNTY2MDc5NDIsLTE3OTExOTAwNSwxMT
 Y0NTk3MDMzLC0yMDMzMTI2Njk1LC01MTQ2NjY4NDgsNzY0NjEy
