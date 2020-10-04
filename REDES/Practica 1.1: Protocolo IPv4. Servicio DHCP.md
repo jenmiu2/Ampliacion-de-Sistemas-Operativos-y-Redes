@@ -33,6 +33,7 @@ machine <nº maquina> <interfaz n> <red conexion n>
 ```bash
 $sudo vtopol pr1.topol
 ```
+3. Si la confiuración es manual máquina por máquina hay que asegurarse que la red conexión es la correcta, por ejemplo en la maquina virtual 4 se debe conectar a la interfaz interna eth0 e inet 
 # Configuración estática
 En primer lugar, configuraremos cada segmento de red 10.0.0.0/24 y 192.168.0.0/24 de forma estática asignando a cada máquina una dirección IP adecuada.
 
@@ -289,7 +290,7 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg4MzEwMzYwOSw5MzU4MTI3NjQsNTQyOD
+eyJoaXN0b3J5IjpbLTQyNDMzNzgwMCw5MzU4MTI3NjQsNTQyOD
 M3OTQ3LDgyMDQ4NzEzMCwtNjMwNjI3NTc3LDEyNTY2MDc5NDIs
 LTE3OTExOTAwNSwxMTY0NTk3MDMzLC0yMDMzMTI2Njk1LC01MT
 Q2NjY4NDgsNzY0NjEyNjQ4LC02ODE1Nzg5NjgsLTIwMTU5NDY2
