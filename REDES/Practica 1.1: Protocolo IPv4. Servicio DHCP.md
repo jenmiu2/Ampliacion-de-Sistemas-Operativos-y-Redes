@@ -70,7 +70,7 @@ Completar la siguiente tabla para todos los mensajes intercambiados hasta la rec
 - Comparar los datos observados durante la captura con el formato de los mensajes estudiados en clase.
 #### Wireshark VM2
 
-*Insertar imagen Ejercicio 3 pr 1.1*
+[img ejercicio 3](https://drive.google.com/file/d/1RSvC1mdMRdBZP5BczByCcV5npDLmHCpC/view?usp=sharing)
 
 | MAC Origen| MAC Destino | Protocolo | IP Origen | IP Destino | Tipo Mensaje
 |--|--|--|--|--|--|
@@ -101,7 +101,7 @@ $ip neigh #ver dir ip con las que se ha conectado la maq
 $ip neigh flush dev eth0 # eliminar los valores de la tabla
 ```
 #### VM2
-*insertar imagen ejercicio 4 pr1.1*
+[]()
 | address | dev name  | vrf name | proxy | unused | nud
 |--|--|--|--|--|--|
 | 192.168.0.1| eth0 | lladdr | 08:00:27:4c:af:03 |  | STALE |
@@ -288,11 +288,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIwNDg3MTMwLC02MzA2Mjc1NzcsMTI1Nj
-YwNzk0MiwtMTc5MTE5MDA1LDExNjQ1OTcwMzMsLTIwMzMxMjY2
-OTUsLTUxNDY2Njg0OCw3NjQ2MTI2NDgsLTY4MTU3ODk2OCwtMj
-AxNTk0NjYzMiwtNzA3NzcxMTQ4LDc0MDAzMzk3NCwxMTM4OTIz
-ODc4LC0zMDI2NzA5MzgsMzEwOTEyODI4LDIyODcwMDY3Niw5MT
-E2MDY1NTcsLTE5MTI4Njg1NDksNDE4NDUwMTIwLDY3MjEyNjUz
-NF19
+eyJoaXN0b3J5IjpbLTE1MjgyMjk1NjgsODIwNDg3MTMwLC02Mz
+A2Mjc1NzcsMTI1NjYwNzk0MiwtMTc5MTE5MDA1LDExNjQ1OTcw
+MzMsLTIwMzMxMjY2OTUsLTUxNDY2Njg0OCw3NjQ2MTI2NDgsLT
+Y4MTU3ODk2OCwtMjAxNTk0NjYzMiwtNzA3NzcxMTQ4LDc0MDAz
+Mzk3NCwxMTM4OTIzODc4LC0zMDI2NzA5MzgsMzEwOTEyODI4LD
+IyODcwMDY3Niw5MTE2MDY1NTcsLTE5MTI4Njg1NDksNDE4NDUw
+MTIwXX0=
 -->
