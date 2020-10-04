@@ -70,7 +70,7 @@ Completar la siguiente tabla para todos los mensajes intercambiados hasta la rec
 - Comparar los datos observados durante la captura con el formato de los mensajes estudiados en clase.
 #### Wireshark VM2
 
-[img ejercicio 3](https://drive.google.com/file/d/1RSvC1mdMRdBZP5BczByCcV5npDLmHCpC/view?usp=sharing)
+[img ejercicio 3](https://drive.google.com/file/d/1RSvC1mdMRdBZP5BczByCcV5npDLmHCpC/view?usp=sharing)*Insertar imagen Ejercicio 3 pr 1.1*
 
 | MAC Origen| MAC Destino | Protocolo | IP Origen | IP Destino | Tipo Mensaje
 |--|--|--|--|--|--|
@@ -101,7 +101,7 @@ $ip neigh #ver dir ip con las que se ha conectado la maq
 $ip neigh flush dev eth0 # eliminar los valores de la tabla
 ```
 #### VM2
-[imagen ejercicio 4](https://drive.google.com/file/d/1PJANBa42aT6Bo2laqgiMiI-WpmR7ZSJT/view?usp=sharing)
+[*insertar imagen ejercicio 4](https://drive.google.com/file/d/1PJANBa42aT6Bo2laqgiMiI-WpmR7ZSJT/view?usp=sharing) pr1.1*
 | address | dev name  | vrf name | proxy | unused | nud
 |--|--|--|--|--|--|
 | 192.168.0.1| eth0 | lladdr | 08:00:27:4c:af:03 |  | STALE |
@@ -125,7 +125,7 @@ $ip link set dev eth0 up
 $ip a
 $ping 172.16.0.3
 ```
-[imagen ejercicio 5](https://drive.google.com/file/d/1JUvEl9sPnMCDIf3_Pff5WB_5TzX-4gFz/view?usp=sharing)
+[*insertar imagen ejercicio 5](https://drive.google.com/file/d/1JUvEl9sPnMCDIf3_Pff5WB_5TzX-4gFz/view?usp=sharing) pr1.1*
 
 | MAC Origen| MAC Destino | Protocolo | IP Origen | IP Destino | Tipo Mensaje
 |--|--|--|--|--|--|
@@ -170,7 +170,7 @@ Abrir la herramienta Wireshark en Router e iniciar una captura en sus dos interf
 $ping 172.16.0.3
 ```
 #### Wireshark VM1
-[imagen ejercicio 9-1](https://drive.google.com/file/d/17vCQ-rLF1B0hWI2rh_oMSBHwEfJlNM7D/view?usp=sharing)
+[*insertar imagen ejercicio 9-1](https://drive.google.com/file/d/17vCQ-rLF1B0hWI2rh_oMSBHwEfJlNM7D/view?usp=sharing) pr1.1*
 #### Red 192.168.0.0/24 - Router (eth0)
 | MAC Origen | MAC Desitno | Protocolo | IP Origen | IP Destino | Tipo Mensaje |
 |--|--|--|--|--|--|--|--|
@@ -179,7 +179,7 @@ $ping 172.16.0.3
 |  |  | CMP | 192.168.0.1 | 172.16.0.1 | Echo (ping) request |
 |  |  | CMP | 192.168.0.1 | 192.168.0.1 | Echo (ping) reply |
 #### Wireshark VM4
-[imagen ejercicio 9-2](https://drive.google.com/file/d/1X2OZFaBm7_eA4Gd7d7NIJ9rDSjNTKOTO/view?usp=sharing)
+[*insertar imagen ejercicio 9-2](https://drive.google.com/file/d/1X2OZFaBm7_eA4Gd7d7NIJ9rDSjNTKOTO/view?usp=sharing) pr1.1*
 #### Red 172.16.0.0/16- Router (eth1)
 | MAC Origen | MAC Desitno | Protocolo | IP Origen | IP Destino | Tipo Mensaje |
 |--|--|--|--|--|--|--|--|
@@ -288,11 +288,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQyODM3OTQ3LDgyMDQ4NzEzMCwtNjMwNj
-I3NTc3LDEyNTY2MDc5NDIsLTE3OTExOTAwNSwxMTY0NTk3MDMz
-LC0yMDMzMTI2Njk1LC01MTQ2NjY4NDgsNzY0NjEyNjQ4LC02OD
-E1Nzg5NjgsLTIwMTU5NDY2MzIsLTcwNzc3MTE0OCw3NDAwMzM5
-NzQsMTEzODkyMzg3OCwtMzAyNjcwOTM4LDMxMDkxMjgyOCwyMj
-g3MDA2NzYsOTExNjA2NTU3LC0xOTEyODY4NTQ5LDQxODQ1MDEy
-MF19
+eyJoaXN0b3J5IjpbOTM1ODEyNzY0LDU0MjgzNzk0Nyw4MjA0OD
+cxMzAsLTYzMDYyNzU3NywxMjU2NjA3OTQyLC0xNzkxMTkwMDUs
+MTE2NDU5NzAzMywtMjAzMzEyNjY5NSwtNTE0NjY2ODQ4LDc2ND
+YxMjY0OCwtNjgxNTc4OTY4LC0yMDE1OTQ2NjMyLC03MDc3NzEx
+NDgsNzQwMDMzOTc0LDExMzg5MjM4NzgsLTMwMjY3MDkzOCwzMT
+A5MTI4MjgsMjI4NzAwNjc2LDkxMTYwNjU1NywtMTkxMjg2ODU0
+OV19
 -->
