@@ -109,7 +109,7 @@ $ip neigh #ver dir ip con las que se ha conectado la maq
 $ip neigh flush dev eth0 # eliminar los valores de la tabla
 ```
 #### VM2
-[*insertar imagen ejercicio 4](https://drive.google.com/file/d/1PJANBa42aT6Bo2laqgiMiI-WpmR7ZSJT/view?usp=sharing) pr1.1*
+[imagen ejercicio 4](https://drive.google.com/file/d/1PJANBa42aT6Bo2laqgiMiI-WpmR7ZSJT/view?usp=sharing) 
 | address | dev name  | vrf name | proxy | unused | nud
 |--|--|--|--|--|--|
 | 192.168.0.1| eth0 | lladdr | 08:00:27:4c:af:03 |  | STALE |
@@ -133,7 +133,7 @@ $ip link set dev eth0 up
 $ip a
 $ping 172.16.0.3
 ```
-[*insertar imagen ejercicio 5](https://drive.google.com/file/d/1JUvEl9sPnMCDIf3_Pff5WB_5TzX-4gFz/view?usp=sharing) pr1.1*
+[imagen ejercicio 5](https://drive.google.com/file/d/1JUvEl9sPnMCDIf3_Pff5WB_5TzX-4gFz/view?usp=sharing) 
 
 | MAC Origen| MAC Destino | Protocolo | IP Origen | IP Destino | Tipo Mensaje
 |--|--|--|--|--|--|
@@ -173,12 +173,13 @@ $sudo ip route add default via 172.16.0.3
 
 ### Ejercicio 9 [VM1, VM4]
 Abrir la herramienta Wireshark en Router e iniciar una captura en sus dos interfaces de red. Eliminar la tabla ARP en VM1 y Router. Usar la orden ​ping entre VM1 y VM4. Completar la siguiente tabla para todos los paquetes intercambiados hasta la recepción del primer Echo Reply​.
+
 #### VM1
 ```bash
 $ping 172.16.0.3
 ```
 #### Wireshark VM1
-[*insertar imagen ejercicio 9-1](https://drive.google.com/file/d/17vCQ-rLF1B0hWI2rh_oMSBHwEfJlNM7D/view?usp=sharing) pr1.1*
+[imagen ejercicio 9-1](https://drive.google.com/file/d/17vCQ-rLF1B0hWI2rh_oMSBHwEfJlNM7D/view?usp=sharing) 
 #### Red 192.168.0.0/24 - Router (eth0)
 | MAC Origen | MAC Desitno | Protocolo | IP Origen | IP Destino | Tipo Mensaje |
 |--|--|--|--|--|--|--|--|
@@ -187,7 +188,7 @@ $ping 172.16.0.3
 |  |  | CMP | 192.168.0.1 | 172.16.0.1 | Echo (ping) request |
 |  |  | CMP | 192.168.0.1 | 192.168.0.1 | Echo (ping) reply |
 #### Wireshark VM4
-[*insertar imagen ejercicio 9-2](https://drive.google.com/file/d/1X2OZFaBm7_eA4Gd7d7NIJ9rDSjNTKOTO/view?usp=sharing) pr1.1*
+[imagen ejercicio 9-2](https://drive.google.com/file/d/1X2OZFaBm7_eA4Gd7d7NIJ9rDSjNTKOTO/view?usp=sharing) 
 #### Red 172.16.0.0/16- Router (eth1)
 | MAC Origen | MAC Desitno | Protocolo | IP Origen | IP Destino | Tipo Mensaje |
 |--|--|--|--|--|--|--|--|
@@ -297,7 +298,7 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ0ODI0OTM2NCw5MzU4MTI3NjQsNTQyOD
+eyJoaXN0b3J5IjpbMTQxODk4Njk1OCw5MzU4MTI3NjQsNTQyOD
 M3OTQ3LDgyMDQ4NzEzMCwtNjMwNjI3NTc3LDEyNTY2MDc5NDIs
 LTE3OTExOTAwNSwxMTY0NTk3MDMzLC0yMDMzMTI2Njk1LC01MT
 Q2NjY4NDgsNzY0NjEyNjQ4LC02ODE1Nzg5NjgsLTIwMTU5NDY2
