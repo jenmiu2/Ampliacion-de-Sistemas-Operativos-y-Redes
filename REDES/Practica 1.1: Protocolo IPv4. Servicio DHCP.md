@@ -280,12 +280,13 @@ Durante el arranque del sistema se pueden configurar automáticamente determinad
 ​$sudo nano /etc/sysconfig/network-scripts/ifcfg-eth0
 ```
 ----
+```latex
 TYPE=Ethernet  
 BOOTPROTO=none  
 IPADDR=​172.16.0.1/16
 GATEWAY=​172.16.0.3/16
 DEVICE=eth0
-
+```
 ----
 
 **Nota**:​ Estas opciones se describen en detalle en ​/usr/share/doc/initscripts-*/sysconfig.txt​.
@@ -300,11 +301,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxNjQyNDkzNCwyMTMwODk0MzEwLC0yMD
-cxNzEyMjgyLC03MjU1MTc3NTQsLTE5ODA5NDM5OTcsLTE0NzQ3
-OTUwOTksOTM1ODEyNzY0LDU0MjgzNzk0Nyw4MjA0ODcxMzAsLT
-YzMDYyNzU3NywxMjU2NjA3OTQyLC0xNzkxMTkwMDUsMTE2NDU5
-NzAzMywtMjAzMzEyNjY5NSwtNTE0NjY2ODQ4LDc2NDYxMjY0OC
-wtNjgxNTc4OTY4LC0yMDE1OTQ2NjMyLC03MDc3NzExNDgsNzQw
-MDMzOTc0XX0=
+eyJoaXN0b3J5IjpbLTE2MjI5NjMyMDYsMjEzMDg5NDMxMCwtMj
+A3MTcxMjI4MiwtNzI1NTE3NzU0LC0xOTgwOTQzOTk3LC0xNDc0
+Nzk1MDk5LDkzNTgxMjc2NCw1NDI4Mzc5NDcsODIwNDg3MTMwLC
+02MzA2Mjc1NzcsMTI1NjYwNzk0MiwtMTc5MTE5MDA1LDExNjQ1
+OTcwMzMsLTIwMzMxMjY2OTUsLTUxNDY2Njg0OCw3NjQ2MTI2ND
+gsLTY4MTU3ODk2OCwtMjAxNTk0NjYzMiwtNzA3NzcxMTQ4LDc0
+MDAzMzk3NF19
 -->
