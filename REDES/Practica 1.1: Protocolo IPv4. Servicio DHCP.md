@@ -37,10 +37,10 @@ $sudo vtopol pr1.topol
 - red interna
 |Maquina| Red Interna 0 | Red Interna 1
 |--|--|--|
-| VM1 | eth0 |
-| VM2 | 192.168.0.2/24 (eth0)| Añadir router como encaminador por defecto|
-| VM3 - Router | 192.168.0.3/24 (eth0) 172.16.0.3/16 (eth1)| Añadir forwarding de paquetes |
-| VM4 | 172.16.0.1/16 (eth0)| Añadir router como encaminador por defecto |
+| VM1 | eth0 - intnet 0 |
+| VM2 | eth0 - intnet 0 | 
+| VM3 - Router | eth0 - intnet 0 | eth1 - intnet 1 |
+| VM4 | eth0 - intnet 1|
 # Configuración estática
 En primer lugar, configuraremos cada segmento de red 10.0.0.0/24 y 192.168.0.0/24 de forma estática asignando a cada máquina una dirección IP adecuada.
 
@@ -297,11 +297,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY1NDI4NTkwNiw5MzU4MTI3NjQsNTQyOD
-M3OTQ3LDgyMDQ4NzEzMCwtNjMwNjI3NTc3LDEyNTY2MDc5NDIs
-LTE3OTExOTAwNSwxMTY0NTk3MDMzLC0yMDMzMTI2Njk1LC01MT
-Q2NjY4NDgsNzY0NjEyNjQ4LC02ODE1Nzg5NjgsLTIwMTU5NDY2
-MzIsLTcwNzc3MTE0OCw3NDAwMzM5NzQsMTEzODkyMzg3OCwtMz
-AyNjcwOTM4LDMxMDkxMjgyOCwyMjg3MDA2NzYsOTExNjA2NTU3
-XX0=
+eyJoaXN0b3J5IjpbOTczNzkyMzM4LDkzNTgxMjc2NCw1NDI4Mz
+c5NDcsODIwNDg3MTMwLC02MzA2Mjc1NzcsMTI1NjYwNzk0Miwt
+MTc5MTE5MDA1LDExNjQ1OTcwMzMsLTIwMzMxMjY2OTUsLTUxND
+Y2Njg0OCw3NjQ2MTI2NDgsLTY4MTU3ODk2OCwtMjAxNTk0NjYz
+MiwtNzA3NzcxMTQ4LDc0MDAzMzk3NCwxMTM4OTIzODc4LC0zMD
+I2NzA5MzgsMzEwOTEyODI4LDIyODcwMDY3Niw5MTE2MDY1NTdd
+fQ==
 -->
