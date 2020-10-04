@@ -224,7 +224,7 @@ $sudo ip address del 172.16.0.1/16 dev eth0
 ```bash
 $sudo nano /etc/dhcp/dhcpd.conf
 ```
-----
+```latex
 subnet 192.168.0.0 netmask 255.255.255.0 { 
 		range 1​92.168.0.50 192.168.0.100; 
 		option routers 192.168.0.3;  
@@ -237,7 +237,8 @@ subnet 172.16.0.0 netmask 255.255.0.0 {
 	    option broadcast-address 172.16.0.255;
 }
 
-----
+```
+
 - Arrancar el servicio con el comando ``` service dhcpd start ```
 ```bash
 $sudo service dhcpd start
@@ -301,11 +302,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjI5NjMyMDYsMjEzMDg5NDMxMCwtMj
-A3MTcxMjI4MiwtNzI1NTE3NzU0LC0xOTgwOTQzOTk3LC0xNDc0
-Nzk1MDk5LDkzNTgxMjc2NCw1NDI4Mzc5NDcsODIwNDg3MTMwLC
-02MzA2Mjc1NzcsMTI1NjYwNzk0MiwtMTc5MTE5MDA1LDExNjQ1
-OTcwMzMsLTIwMzMxMjY2OTUsLTUxNDY2Njg0OCw3NjQ2MTI2ND
-gsLTY4MTU3ODk2OCwtMjAxNTk0NjYzMiwtNzA3NzcxMTQ4LDc0
-MDAzMzk3NF19
+eyJoaXN0b3J5IjpbMjA0ODg0ODA1OCwyMTMwODk0MzEwLC0yMD
+cxNzEyMjgyLC03MjU1MTc3NTQsLTE5ODA5NDM5OTcsLTE0NzQ3
+OTUwOTksOTM1ODEyNzY0LDU0MjgzNzk0Nyw4MjA0ODcxMzAsLT
+YzMDYyNzU3NywxMjU2NjA3OTQyLC0xNzkxMTkwMDUsMTE2NDU5
+NzAzMywtMjAzMzEyNjY5NSwtNTE0NjY2ODQ4LDc2NDYxMjY0OC
+wtNjgxNTc4OTY4LC0yMDE1OTQ2NjMyLC03MDc3NzExNDgsNzQw
+MDMzOTc0XX0=
 -->
