@@ -33,7 +33,7 @@ machine <nº maquina> <interfaz n> <red conexion n>
 ```bash
 $sudo vtopol pr1.topol
 ```
-3. Si la configuración es manual, todas conectadas a la Red Interna, cada interfaz configurada como:
+3. Si la configuración es manual, todas las maquinas clonadas deben ser conectadas a la Red Interna, y cada interfaz configurada como:
 
 |Maquina | Red Interna 0 | Red Interna 1 |
 |--|--|--|
@@ -42,7 +42,7 @@ $sudo vtopol pr1.topol
 | VM3 - Router | eth0 - intnet 0 | eth1 - intnet 1
 | VM4 | eth0 - intnet 1
 # Configuración estática
-En primer lugar, configuraremos cada segmento de red 10.0.0.0/24 y 192.168.0.0/24 de forma estática asignando a cada máquina una dirección IP adecuada.
+En primer lugar, configuraremos cada segmento de red 172.16.0.0/16 y 192.168.0.0/24 de forma estática asignando a cada máquina una dirección IP adecuada.
 
 ### Ejercicio 1 [VM1]
 Determinar los interfaces de red que tiene la máquina y las direcciones IP y/o MAC que tienen asignadas. Utilizar el comando ip.
@@ -254,7 +254,7 @@ $sudo dhclient -d eth0
 ```bash
 $sudo dhclient -d eth0
 ```
-[imagen vm4 dhcp client](https://drive.google.com/file/d/1cKDlUDmyHrd5olSD1fqKy1zYTV5vlLdoGKa8o1btmyMO4WmP1_T50AnjJNz5JdEL/view?usp=sharing)
+[imagen vm4 dhcp client](https://drive.google.com/file/d/1mhQcZfeew9DgSLbzPcPWk-E6Oa4MdHy8/view?usp=sharing)
 
 #### VM1
 | IP Origen | IP Destino | Mensaje DHCP | Opciones DHCP |
@@ -262,9 +262,8 @@ $sudo dhclient -d eth0
 | 0.0.0.0 | 255.255.255.255 | DHCP Request | (53) DHCP Message Type (50) Requested IP address (55) Parameter Request List (255) End |
 | 192.168.0.3 | 192.168.0.50 | DHCP ACK | (53) DHCP Message Type (54) DHCP Server Identifier (51) IP address Lease Time (1) Subnet Mask (28) Broadcast Address (3) Router (255) End|
 
-*insertar imagen ejercicio 12-4 pr1.1*
 #### VM3
-[imagen wireshark vm3](https://drive.google.com/file/d/1M1Ns57e7Pup0IGxrzJ87y5yb4bLYOWZq/view?usp=sharing)
+[imagen wireshark vm3](https://drive.google.com/file/d/1zmHyUqbRz9iLFEUCZwmMtF_SB_LB_fJI/view?usp=sharing)
 | IP Origen | IP Destino | Mensaje DHCP | Opciones DHCP |
 |--|--|--|--|
 | 0.0.0.0 | 255.255.255.255 | DHCP Discover | ---- |
@@ -299,11 +298,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg1ODk5NjQ3MiwtNzI1NTE3NzU0LC0xOT
-gwOTQzOTk3LC0xNDc0Nzk1MDk5LDkzNTgxMjc2NCw1NDI4Mzc5
-NDcsODIwNDg3MTMwLC02MzA2Mjc1NzcsMTI1NjYwNzk0MiwtMT
-c5MTE5MDA1LDExNjQ1OTcwMzMsLTIwMzMxMjY2OTUsLTUxNDY2
-Njg0OCw3NjQ2MTI2NDgsLTY4MTU3ODk2OCwtMjAxNTk0NjYzMi
-wtNzA3NzcxMTQ4LDc0MDAzMzk3NCwxMTM4OTIzODc4LC0zMDI2
-NzA5MzhdfQ==
+eyJoaXN0b3J5IjpbLTIwNzE3MTIyODIsLTcyNTUxNzc1NCwtMT
+k4MDk0Mzk5NywtMTQ3NDc5NTA5OSw5MzU4MTI3NjQsNTQyODM3
+OTQ3LDgyMDQ4NzEzMCwtNjMwNjI3NTc3LDEyNTY2MDc5NDIsLT
+E3OTExOTAwNSwxMTY0NTk3MDMzLC0yMDMzMTI2Njk1LC01MTQ2
+NjY4NDgsNzY0NjEyNjQ4LC02ODE1Nzg5NjgsLTIwMTU5NDY2Mz
+IsLTcwNzc3MTE0OCw3NDAwMzM5NzQsMTEzODkyMzg3OCwtMzAy
+NjcwOTM4XX0=
 -->
