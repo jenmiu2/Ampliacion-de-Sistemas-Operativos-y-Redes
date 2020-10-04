@@ -170,7 +170,7 @@ Abrir la herramienta Wireshark en Router e iniciar una captura en sus dos interf
 $ping 172.16.0.3
 ```
 #### Wireshark VM1
-
+[imagen ejercicio 9-1](https://drive.google.com/file/d/17vCQ-rLF1B0hWI2rh_oMSBHwEfJlNM7D/view?usp=sharing)
 #### Red 192.168.0.0/24 - Router (eth0)
 | MAC Origen | MAC Desitno | Protocolo | IP Origen | IP Destino | Tipo Mensaje |
 |--|--|--|--|--|--|--|--|
@@ -179,7 +179,7 @@ $ping 172.16.0.3
 |  |  | CMP | 192.168.0.1 | 172.16.0.1 | Echo (ping) request |
 |  |  | CMP | 192.168.0.1 | 192.168.0.1 | Echo (ping) reply |
 #### Wireshark VM4
-*insertar imagen ejercicio 9-2 pr1.1*
+[imagen ejercicio 9-2](https://drive.google.com/file/d/1X2OZFaBm7_eA4Gd7d7NIJ9rDSjNTKOTO/view?usp=sharing)
 #### Red 172.16.0.0/16- Router (eth1)
 | MAC Origen | MAC Desitno | Protocolo | IP Origen | IP Destino | Tipo Mensaje |
 |--|--|--|--|--|--|--|--|
@@ -288,11 +288,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU3NzMyMjAzMyw4MjA0ODcxMzAsLTYzMD
-YyNzU3NywxMjU2NjA3OTQyLC0xNzkxMTkwMDUsMTE2NDU5NzAz
-MywtMjAzMzEyNjY5NSwtNTE0NjY2ODQ4LDc2NDYxMjY0OCwtNj
-gxNTc4OTY4LC0yMDE1OTQ2NjMyLC03MDc3NzExNDgsNzQwMDMz
-OTc0LDExMzg5MjM4NzgsLTMwMjY3MDkzOCwzMTA5MTI4MjgsMj
-I4NzAwNjc2LDkxMTYwNjU1NywtMTkxMjg2ODU0OSw0MTg0NTAx
-MjBdfQ==
+eyJoaXN0b3J5IjpbNTQyODM3OTQ3LDgyMDQ4NzEzMCwtNjMwNj
+I3NTc3LDEyNTY2MDc5NDIsLTE3OTExOTAwNSwxMTY0NTk3MDMz
+LC0yMDMzMTI2Njk1LC01MTQ2NjY4NDgsNzY0NjEyNjQ4LC02OD
+E1Nzg5NjgsLTIwMTU5NDY2MzIsLTcwNzc3MTE0OCw3NDAwMzM5
+NzQsMTEzODkyMzg3OCwtMzAyNjcwOTM4LDMxMDkxMjgyOCwyMj
+g3MDA2NzYsOTExNjA2NTU3LC0xOTEyODY4NTQ5LDQxODQ1MDEy
+MF19
 -->
