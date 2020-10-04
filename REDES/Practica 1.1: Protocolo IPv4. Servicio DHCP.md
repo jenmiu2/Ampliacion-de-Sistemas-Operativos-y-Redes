@@ -237,7 +237,8 @@ Iniciar la captura de paquetes en Router. Arrancar el cliente DHCP ``` dhclient 
 ```bash
 $sudo dhclient -d eth0
 ```
-[imagen configuracion dhcp mv1](https://drive.google.com/file/d/1diutOGk3qeZ-8VWCaWxC9Te4v_VEk2fU/view?usp=sharing)
+[imagen configuracion mv1](https://drive.google.com/file/d/1GKa8o1btmyMO4WmP1_T50AnjJNz5JdEL/view?usp=sharing)
+[imagen wireshark vm1](https://drive.google.com/file/d/1diutOGk3qeZ-8VWCaWxC9Te4v_VEk2fU/view?usp=sharing)
 
 #### VM4
 ```bash
@@ -287,11 +288,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzNTgxNjUxNiw5MzU4MTI3NjQsNTQyOD
-M3OTQ3LDgyMDQ4NzEzMCwtNjMwNjI3NTc3LDEyNTY2MDc5NDIs
-LTE3OTExOTAwNSwxMTY0NTk3MDMzLC0yMDMzMTI2Njk1LC01MT
-Q2NjY4NDgsNzY0NjEyNjQ4LC02ODE1Nzg5NjgsLTIwMTU5NDY2
-MzIsLTcwNzc3MTE0OCw3NDAwMzM5NzQsMTEzODkyMzg3OCwtMz
-AyNjcwOTM4LDMxMDkxMjgyOCwyMjg3MDA2NzYsOTExNjA2NTU3
-XX0=
+eyJoaXN0b3J5IjpbNTE1OTQyMjQ5LDkzNTgxMjc2NCw1NDI4Mz
+c5NDcsODIwNDg3MTMwLC02MzA2Mjc1NzcsMTI1NjYwNzk0Miwt
+MTc5MTE5MDA1LDExNjQ1OTcwMzMsLTIwMzMxMjY2OTUsLTUxND
+Y2Njg0OCw3NjQ2MTI2NDgsLTY4MTU3ODk2OCwtMjAxNTk0NjYz
+MiwtNzA3NzcxMTQ4LDc0MDAzMzk3NCwxMTM4OTIzODc4LC0zMD
+I2NzA5MzgsMzEwOTEyODI4LDIyODcwMDY3Niw5MTE2MDY1NTdd
+fQ==
 -->
