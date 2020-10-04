@@ -226,13 +226,13 @@ $sudo nano /etc/dhcp/dhcpd.conf
 subnet 192.168.0.0 netmask 255.255.255.0 { 
 		range 1​92.168.0.50 192.168.0.100; 
 		option routers 192.168.0.3;  
-	option broadcast-address 192.168.0.255;
+	    option broadcast-address 192.168.0.255;
 }
 
 subnet 172.16.0.0 netmask 255.255.0.0 { 
 		range 172.16.0.50 172.16.0.100; 
 		option routers 172.16.0.3;  
-	option broadcast-address 172.16.0.255;
+	    option broadcast-address 172.16.0.255;
 }
 
 ----
@@ -298,11 +298,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzE3MTIyODIsLTcyNTUxNzc1NCwtMT
-k4MDk0Mzk5NywtMTQ3NDc5NTA5OSw5MzU4MTI3NjQsNTQyODM3
-OTQ3LDgyMDQ4NzEzMCwtNjMwNjI3NTc3LDEyNTY2MDc5NDIsLT
-E3OTExOTAwNSwxMTY0NTk3MDMzLC0yMDMzMTI2Njk1LC01MTQ2
-NjY4NDgsNzY0NjEyNjQ4LC02ODE1Nzg5NjgsLTIwMTU5NDY2Mz
-IsLTcwNzc3MTE0OCw3NDAwMzM5NzQsMTEzODkyMzg3OCwtMzAy
-NjcwOTM4XX0=
+eyJoaXN0b3J5IjpbMjEzMDg5NDMxMCwtMjA3MTcxMjI4MiwtNz
+I1NTE3NzU0LC0xOTgwOTQzOTk3LC0xNDc0Nzk1MDk5LDkzNTgx
+Mjc2NCw1NDI4Mzc5NDcsODIwNDg3MTMwLC02MzA2Mjc1NzcsMT
+I1NjYwNzk0MiwtMTc5MTE5MDA1LDExNjQ1OTcwMzMsLTIwMzMx
+MjY2OTUsLTUxNDY2Njg0OCw3NjQ2MTI2NDgsLTY4MTU3ODk2OC
+wtMjAxNTk0NjYzMiwtNzA3NzcxMTQ4LDc0MDAzMzk3NCwxMTM4
+OTIzODc4XX0=
 -->
