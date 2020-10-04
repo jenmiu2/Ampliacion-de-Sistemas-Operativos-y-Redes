@@ -192,7 +192,7 @@ $ping 172.16.0.3
 [imagen ejercicio 9-2](https://drive.google.com/file/d/1GtlbBukYXfxluY-p1bp-5y_BIbTdlYMS/view?usp=sharing) 
 #### Red 172.16.0.0/16- Router (eth1)
 | MAC Origen | MAC Desitno | Protocolo | IP Origen | IP Destino | Tipo Mensaje |
-|--|--|--|--|--|--|--|--|
+|--|--|--|--|--|--|
 | 08:00:27:92:c3:f1 | 00:00:00:00:00:00 | ARP | 172.16.0.3 | ff:ff:ff:ff:ff:ff | Who has 172.16.0.1? Tell 172.16.0.3 |
 | 08:00:27:08:62:ca | 08:00:27:92:c3:f1 | ARP | 172.16.0.1 | 172.16.0.3 | 172.16.0.1 is at ?? 08:00:27:3b:2f:15 |
 |  |  | CMP | 192.168.0.1 | 172.16.0.1 | Echo (ping) request |
@@ -298,11 +298,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzMDg5NDMxMCwtMjA3MTcxMjI4MiwtNz
-I1NTE3NzU0LC0xOTgwOTQzOTk3LC0xNDc0Nzk1MDk5LDkzNTgx
-Mjc2NCw1NDI4Mzc5NDcsODIwNDg3MTMwLC02MzA2Mjc1NzcsMT
-I1NjYwNzk0MiwtMTc5MTE5MDA1LDExNjQ1OTcwMzMsLTIwMzMx
-MjY2OTUsLTUxNDY2Njg0OCw3NjQ2MTI2NDgsLTY4MTU3ODk2OC
-wtMjAxNTk0NjYzMiwtNzA3NzcxMTQ4LDc0MDAzMzk3NCwxMTM4
-OTIzODc4XX0=
+eyJoaXN0b3J5IjpbLTI0MTY0NjY0NiwyMTMwODk0MzEwLC0yMD
+cxNzEyMjgyLC03MjU1MTc3NTQsLTE5ODA5NDM5OTcsLTE0NzQ3
+OTUwOTksOTM1ODEyNzY0LDU0MjgzNzk0Nyw4MjA0ODcxMzAsLT
+YzMDYyNzU3NywxMjU2NjA3OTQyLC0xNzkxMTkwMDUsMTE2NDU5
+NzAzMywtMjAzMzEyNjY5NSwtNTE0NjY2ODQ4LDc2NDYxMjY0OC
+wtNjgxNTc4OTY4LC0yMDE1OTQ2NjMyLC03MDc3NzExNDgsNzQw
+MDMzOTc0XX0=
 -->
