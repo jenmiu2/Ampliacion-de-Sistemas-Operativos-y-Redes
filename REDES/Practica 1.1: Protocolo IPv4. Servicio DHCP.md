@@ -143,28 +143,28 @@ $ip neigh
 | 172.16.0.3 | eth0 | lladdr | 08:00:27:92:c3:f1 |  | STALE |
 
 # Encaminamiento estático
-Según la topología de esta práctica, Router puede encaminar el tráfico entre ambas redes. En esta sección, vamos a configurar el encaminamiento estático, basado en rutas que fijaremos manualmente en todas las máquinas virtuales.
+Según la topología de esta práctica, Router puede encaminar el tráfico entre ambas redes. En esta sección, vamos a configurar el encaminamiento estático, basado en rutas que fijaremos manualmente en todas las máquinas virtuales.
 
 ### Ejercicio 6 [Router]
-Activar el reenvío de paquetes (​forwarding​) en Router para que efectivamente pueda funcionar como encaminador entre las redes. Ejecutar el siguiente comando:
+Activar el reenvío de paquetes (​forwarding​) en Router para que efectivamente pueda funcionar como encaminador entre las redes. Ejecutar el siguiente comando:
 #### VM3
 ```bash
 $sudo sysctl net.ipv4.ip_forward=1
 ```
 ### Ejercicio 7 [VM1, VM2]
-Añadir Router como encaminador por defecto para VM1 y VM2. Usar el comando​ ip route​.
+Añadir Router como encaminador por defecto para VM1 y VM2. Usar el comando​ ip route​.
 ```bash
 $sudo ip route add default via 192.168.0.3
 ```
 
 ### Ejercicio 8 [VM4]
-Aunque la configuración adecuada para la tabla de rutas en redes como las consideradas en esta práctica consiste en añadir una ruta por defecto, es posible incluir rutas para redes concretas. Añadir en VM4 una ruta a la red 192.168.0.0/24 vía Router. Usar el comando ip route​.
+Aunque la configuración adecuada para la tabla de rutas en redes como las consideradas en esta práctica consiste en añadir una ruta por defecto, es posible incluir rutas para redes concretas. Añadir en VM4 una ruta a la red 192.168.0.0/24 vía Router. Usar el comando ip route​.
 ```bash
 $sudo ip route add default via 172.16.0.3
 ```
 
 ### Ejercicio 9 [VM1, VM4]
-Abrir la herramienta Wireshark en Router e iniciar una captura en sus dos interfaces de red. Eliminar la tabla ARP en VM1 y Router. Usar la orden ​ping entre VM1 y VM4. Completar la siguiente tabla para todos los paquetes intercambiados hasta la recepción del primer Echo Reply​.
+Abrir la herramienta Wireshark en Router e iniciar una captura en sus dos interfaces de red. Eliminar la tabla ARP en VM1 y Router. Usar la orden ​ping entre VM1 y VM4. Completar la siguiente tabla para todos los paquetes intercambiados hasta la recepción del primer Echo Reply​.
 #### VM1
 ```bash
 $ping 172.16.0.3
@@ -189,10 +189,10 @@ $ping 172.16.0.3
 |  |  | CMP | 172.16.0.1 | 192.168.0.1 | Echo (ping) reply | 
 
 # Configuración dinámica de hosts
-El protocolo DHCP permite configurar dinámicamente los parámetros de red de una máquina. En esta sección configuraremos Router como servidor DHCP para las dos redes. Aunque DHCP puede incluir muchos parámetros de configuración, en esta práctica sólo fijaremos el encaminador por defecto.
+El protocolo DHCP permite configurar dinámicamente los parámetros de red de una máquina. En esta sección configuraremos Router como servidor DHCP para las dos redes. Aunque DHCP puede incluir muchos parámetros de configuración, en esta práctica sólo fijaremos el encaminador por defecto.
 
 ### Ejercicio 10 [VM1, VM2, VM4]
-Eliminar las direcciones IP de los interfaces de todas las máquinas salvo Router.
+Eliminar las direcciones IP de los interfaces de todas las máquinas salvo Router.
 #### VM1
 ```bash
 $sudo ip address del 192.168.0.1/24 dev eth0
@@ -208,7 +208,7 @@ $sudo ip address del 172.16.0.1/16 dev eth0
 
 ### Ejercicio 11 [Router]
 ​Configurar el servidor DHCP para las dos redes​:
--  Editar el fichero ​/etc/dhcp/dhcpd.conf y añadir dos secciones ​subnet​, una para cada red, que definan los rangos de direcciones​, 1​92.168.0.50-192.168.0.100 y 172.16.0.50-172.16.0.100​, respectivamente. Además, incluir la opción ​routers con la dirección IP de Router en cada red. Ejemplo:
+-  Editar el fichero ​/etc/dhcp/dhcpd.conf y añadir dos secciones ​subnet​, una para cada red, que definan los rangos de direcciones​, 1​92.168.0.50-192.168.0.100 y 172.16.0.50-172.16.0.100​, respectivamente. Además, incluir la opción ​routers con la dirección IP de Router en cada red. Ejemplo:
 ```bash
 $sudo nano /etc/dhcp/dhcpd.conf
 ```
