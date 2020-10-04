@@ -182,6 +182,7 @@ $ping 172.16.0.3
 #### Wireshark VM1
 [imagen ejercicio 9-1](https://drive.google.com/file/d/19_Px_1LqHSlhPFJF8MyeHkOs7yueStlN/view?usp=sharing) 
 #### Red 192.168.0.0/24 - Router (eth0)
+
 | MAC Origen | MAC Desitno | Protocolo | IP Origen | IP Destino | Tipo Mensaje |
 |--|--|--|--|--|--|--|--|
 | 08:00:27:3b:2f:15 | 00:00:00:00:00:00 | ARP | 192.168.0.1 | ff:ff:ff:ff:ff:ff | Who has 192.168.0.1? Tell 192.168.0.3 |
@@ -298,11 +299,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI0MTY0NjY0NiwyMTMwODk0MzEwLC0yMD
-cxNzEyMjgyLC03MjU1MTc3NTQsLTE5ODA5NDM5OTcsLTE0NzQ3
-OTUwOTksOTM1ODEyNzY0LDU0MjgzNzk0Nyw4MjA0ODcxMzAsLT
-YzMDYyNzU3NywxMjU2NjA3OTQyLC0xNzkxMTkwMDUsMTE2NDU5
-NzAzMywtMjAzMzEyNjY5NSwtNTE0NjY2ODQ4LDc2NDYxMjY0OC
-wtNjgxNTc4OTY4LC0yMDE1OTQ2NjMyLC03MDc3NzExNDgsNzQw
-MDMzOTc0XX0=
+eyJoaXN0b3J5IjpbLTE2OTc5Njg0NTYsMjEzMDg5NDMxMCwtMj
+A3MTcxMjI4MiwtNzI1NTE3NzU0LC0xOTgwOTQzOTk3LC0xNDc0
+Nzk1MDk5LDkzNTgxMjc2NCw1NDI4Mzc5NDcsODIwNDg3MTMwLC
+02MzA2Mjc1NzcsMTI1NjYwNzk0MiwtMTc5MTE5MDA1LDExNjQ1
+OTcwMzMsLTIwMzMxMjY2OTUsLTUxNDY2Njg0OCw3NjQ2MTI2ND
+gsLTY4MTU3ODk2OCwtMjAxNTk0NjYzMiwtNzA3NzcxMTQ4LDc0
+MDAzMzk3NF19
 -->
