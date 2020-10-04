@@ -110,7 +110,7 @@ $ip neigh flush dev eth0 # eliminar los valores de la tabla
 ```
 #### VM2
 [imagen ejercicio 4](https://drive.google.com/file/d/19DsHsdHZ6D_aLFCksD25oWAadrMdGVNS/view?usp=sharing) 
-| address | dev name  | vrf name | proxy | unused | nud
+| address | dev name  | vrf name | proxy | unused | nud |
 |--|--|--|--|--|--|
 | 192.168.0.1| eth0 | lladdr | 08:00:27:4c:af:03 |  | STALE |
 
