@@ -237,14 +237,13 @@ Iniciar la captura de paquetes en Router. Arrancar el cliente DHCP ``` dhclient 
 ```bash
 $sudo dhclient -d eth0
 ```
-
-*insertar imagen ejercicio 12-3 pr1.1*
+[imagen configuracion dhcp mv1](https://drive.google.com/file/d/1diutOGk3qeZ-8VWCaWxC9Te4v_VEk2fU/view?usp=sharing)
 
 #### VM4
 ```bash
 $sudo dhclient -d eth0
 ```
-*insertar imagen ejercicio 12-1 pr1.1*[imagen vm4 dhcp client](https://drive.google.com/file/d/1GKa8o1btmyMO4WmP1_T50AnjJNz5JdEL/view?usp=sharing)
+[imagen vm4 dhcp client](https://drive.google.com/file/d/1GKa8o1btmyMO4WmP1_T50AnjJNz5JdEL/view?usp=sharing)
 
 #### VM1
 | IP Origen | IP Destino | Mensaje DHCP | Opciones DHCP |
@@ -288,11 +287,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDk5MjU1MjEsOTM1ODEyNzY0LDU0Mj
-gzNzk0Nyw4MjA0ODcxMzAsLTYzMDYyNzU3NywxMjU2NjA3OTQy
-LC0xNzkxMTkwMDUsMTE2NDU5NzAzMywtMjAzMzEyNjY5NSwtNT
-E0NjY2ODQ4LDc2NDYxMjY0OCwtNjgxNTc4OTY4LC0yMDE1OTQ2
-NjMyLC03MDc3NzExNDgsNzQwMDMzOTc0LDExMzg5MjM4NzgsLT
-MwMjY3MDkzOCwzMTA5MTI4MjgsMjI4NzAwNjc2LDkxMTYwNjU1
-N119
+eyJoaXN0b3J5IjpbMjEzNTgxNjUxNiw5MzU4MTI3NjQsNTQyOD
+M3OTQ3LDgyMDQ4NzEzMCwtNjMwNjI3NTc3LDEyNTY2MDc5NDIs
+LTE3OTExOTAwNSwxMTY0NTk3MDMzLC0yMDMzMTI2Njk1LC01MT
+Q2NjY4NDgsNzY0NjEyNjQ4LC02ODE1Nzg5NjgsLTIwMTU5NDY2
+MzIsLTcwNzc3MTE0OCw3NDAwMzM5NzQsMTEzODkyMzg3OCwtMz
+AyNjcwOTM4LDMxMDkxMjgyOCwyMjg3MDA2NzYsOTExNjA2NTU3
+XX0=
 -->
