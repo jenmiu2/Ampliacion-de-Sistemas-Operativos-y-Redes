@@ -234,7 +234,7 @@ subnet 192.168.0.0 netmask 255.255.255.0 {
 subnet 172.16.0.0 netmask 255.255.0.0 { 
 	range 172.16.0.50 172.16.0.100; 
 	option routers 172.16.0.3;  
-	option broadcast-address 172.16.0.255;
+	option broadcast-address 172.16.255.255;
 }
 
 ```
