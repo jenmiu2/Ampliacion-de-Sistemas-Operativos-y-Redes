@@ -188,7 +188,7 @@ $ping 172.16.0.3
 | 08:00:27:3b:2f:15 | 00:00:00:00:00:00 | ARP | 192.168.0.1 | ff:ff:ff:ff:ff:ff | Who has 192.168.0.1? Tell 192.168.0.3 |
 | 08:00:27:3b:2f:15 | 08:00:27:4c:af:03 | ARP | 172.16.0.3 | 172.16.0.1 | 172.16.0.3 is at ?? 08:00:27:3b:2f:15 |
 |  |  | CMP | 192.168.0.1 | 172.16.0.1 | Echo (ping) request |
-|  |  | CMP | 192.168.0.1 | 192.168.0.1 | Echo (ping) reply |
+|  |  | CMP | 172.16.0.1 | 192.168.0.1 | Echo (ping) reply |
 #### Wireshark VM4
 [imagen ejercicio 9-2](https://drive.google.com/file/d/1GtlbBukYXfxluY-p1bp-5y_BIbTdlYMS/view?usp=sharing) 
 #### Red 172.16.0.0/16- Router (eth1)
