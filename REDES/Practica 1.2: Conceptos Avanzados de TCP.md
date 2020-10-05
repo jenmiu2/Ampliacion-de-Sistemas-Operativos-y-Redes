@@ -105,9 +105,9 @@ En esta sección supondremos que la red que conecta Router (VM3) con VM4 es púb
 ### Ejercicio 12
 Configurar la traducción de direcciones dinámica en Router:
 
--** (VM3 - Router)** Configurar Router para que haga SNAT (_masquerade_) sobre la interfaz eth1 usando el comando iptables.
+- ** (VM3 - Router)** Configurar Router para que haga SNAT (_masquerade_) sobre la interfaz eth1 usando el comando iptables.
 - ** (VM1)** Comprobar la conexión entre VM1 y VM4 con la orden ping.
-- ** (VM4, VM1)**Usando wireshark, determinar la IP origen y destino de los ICMP de Echo request y Echo reply en ambas redes. ¿Qué parámetro se utiliza, en lugar del puerto origen, para relacionar las solicitudes con las respuestas? Comprueba la salida del comando conntrack -L o alternativamente el fichero /proc/net/nf_conntrack.
+-  ** (VM4, VM1)** Usando wireshark, determinar la IP origen y destino de los ICMP de Echo request y Echo reply en ambas redes. ¿Qué parámetro se utiliza, en lugar del puerto origen, para relacionar las solicitudes con las respuestas? Comprueba la salida del comando conntrack -L o alternativamente el fichero /proc/net/nf_conntrack.
 
 ### Ejercicio 13
 Acceso a un servidor en la red privada:
@@ -116,5 +116,5 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4NDU4OTU5MywtMTg4MTg5NDQwNV19
+eyJoaXN0b3J5IjpbNDkyMzU3MjM3LC0xODgxODk0NDA1XX0=
 -->
