@@ -111,10 +111,10 @@ Configurar la traducción de direcciones dinámica en Router:
 
 ### Ejercicio 13
 Acceso a un servidor en la red privada:
-- **(VM1)** Arrancar el servidor con nc en el puerto 7777.
-- **(VM3 - Router)** Usando el comando iptables reenviar las conexiones al puerto 80 de Router al puerto 7777 de VM1.
-- **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
+-  **(VM1)** Arrancar el servidor con nc en el puerto 7777.
+-  **(VM3 - Router)** Usando el comando iptables reenviar las conexiones al puerto 80 de Router al puerto 7777 de VM1.
+-  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODE4OTQ0MDVdfQ==
+eyJoaXN0b3J5IjpbLTY4NDU4OTU5MywtMTg4MTg5NDQwNV19
 -->
