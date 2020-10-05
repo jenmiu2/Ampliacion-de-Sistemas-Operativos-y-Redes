@@ -8,7 +8,7 @@ En esta práctica estudiaremos el funcionamiento del protocolo TCP. Además vere
  1. Definir la máquina base de la asignatura
 
 ```bash
-asorregenarte
+$sudo asorregenarte
 ```
  2. Crear un archivo pr1.topol con la topología de la red, que consta de 4 máquinas y dos redes. El contenido del fichero debe ser:
 ```c
@@ -25,7 +25,7 @@ machine <nº maquina> <interfaz n> <red conexion n>
 ```
  - Crear la topología de red que arrancará las 4 máquinas virtuales (VM1, VM2, Router y VM4).
 ```bash
-vtopol pr2.topol
+$sudo vtopol pr2.topol
 ```
 La tabla correspondiente:
 |Maquina| IP | Comentarios
@@ -116,6 +116,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjcxNzA2MDQsLTE4ODE4OTQ0MDVdfQ
+eyJoaXN0b3J5IjpbLTE0MDI3MzE3ODgsLTE4ODE4OTQ0MDVdfQ
 ==
 -->
