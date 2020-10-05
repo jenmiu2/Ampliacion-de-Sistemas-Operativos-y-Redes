@@ -32,8 +32,8 @@ La tabla correspondiente:
 |--|--|--|
 | VM1 | 192.168.0.1/24 |Añadir router como encaminador por defecto |
 | VM2 | 192.168.0.2/24 | Añadir router como encaminador por defecto|
-| VM3 - Router | 192.168.0.3/24 (eth0) 172.16.0.3/24 (eth1)| Añadir forwarding de paquetes |
-| VM4 | 172.16.0.1/24 (eth1)| Añadir router como encaminador por defecto |
+| VM3 - Router | 192.168.0.3/24 (eth0) 172.16.0.3/16 (eth1)| Añadir forwarding de paquetes |
+| VM4 | 172.16.0.1/16 (eth1)| Añadir router como encaminador por defecto |
 
 # Estados de una conexión TCP
 En esta práctica usaremos la herramienta Netcat, que permite leer y escribir en conexiones de red. Netcat es muy útil para investigar y depurar el comportamiento de la red en la capa de transporte, ya que permite especificar un gran número de los parámetros de la conexión. Además para ver el estado de las conexiones de red usaremos la herramienta netstat (también puede usarse la herramienta ss, que es más moderna y completa).
