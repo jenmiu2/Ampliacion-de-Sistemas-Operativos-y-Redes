@@ -41,6 +41,7 @@ $sudo vtopol pr1.topol
 | VM2 | eth0 - intnet 0  
 | VM3 - Router | eth0 - intnet 0 | eth1 - intnet 1
 | VM4 | eth0 - intnet 1
+
 # Configuración estática
 En primer lugar, configuraremos cada segmento de red 172.16.0.0/16 y 192.168.0.0/24 de forma estática asignando a cada máquina una dirección IP adecuada.
 
@@ -301,11 +302,11 @@ $ip a
 ```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5NTAzNDM3MiwyMDQ4ODQ4MDU4LDIxMz
-A4OTQzMTAsLTIwNzE3MTIyODIsLTcyNTUxNzc1NCwtMTk4MDk0
-Mzk5NywtMTQ3NDc5NTA5OSw5MzU4MTI3NjQsNTQyODM3OTQ3LD
-gyMDQ4NzEzMCwtNjMwNjI3NTc3LDEyNTY2MDc5NDIsLTE3OTEx
-OTAwNSwxMTY0NTk3MDMzLC0yMDMzMTI2Njk1LC01MTQ2NjY4ND
-gsNzY0NjEyNjQ4LC02ODE1Nzg5NjgsLTIwMTU5NDY2MzIsLTcw
-Nzc3MTE0OF19
+eyJoaXN0b3J5IjpbOTg1NzczODIyLC01OTUwMzQzNzIsMjA0OD
+g0ODA1OCwyMTMwODk0MzEwLC0yMDcxNzEyMjgyLC03MjU1MTc3
+NTQsLTE5ODA5NDM5OTcsLTE0NzQ3OTUwOTksOTM1ODEyNzY0LD
+U0MjgzNzk0Nyw4MjA0ODcxMzAsLTYzMDYyNzU3NywxMjU2NjA3
+OTQyLC0xNzkxMTkwMDUsMTE2NDU5NzAzMywtMjAzMzEyNjY5NS
+wtNTE0NjY2ODQ4LDc2NDYxMjY0OCwtNjgxNTc4OTY4LC0yMDE1
+OTQ2NjMyXX0=
 -->
