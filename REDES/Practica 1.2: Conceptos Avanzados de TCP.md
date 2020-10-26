@@ -65,7 +65,7 @@ Consultar las páginas de manual de nc y netstat. En particular, consultar las s
 ```bash
 nc -l 7777
 ```
-()
+(imagen ejercicio 2 VM1)[]
 ### Ejercicio 3
 **(ESTABLISHED)** En VM2, iniciar una conexión cliente al servidor arrancado en el ejercicio anterior usando el comando nc 192.168.0.1 7777.
  -  Comprobar el estado de la conexión e identificar los parámetros (dirección IP y puerto) con el comando netstat -tn.
@@ -140,6 +140,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4MTQxMzc5NCwxNTAzMzYyMTQ5LC0xND
+eyJoaXN0b3J5IjpbLTk4MTU3NzM2MCwxNTAzMzYyMTQ5LC0xND
 AyNzMxNzg4LC0xODgxODk0NDA1XX0=
 -->
