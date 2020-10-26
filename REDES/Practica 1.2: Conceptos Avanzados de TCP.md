@@ -132,10 +132,15 @@ Diferentes aspectos del protocolo TCP pueden aprovecharse para comprometer la se
 El ataque TCP SYN  _flood_  consiste en saturar un servidor mediante el envío masivo de mensajes SYN.
 -  **(Cliente VM2)** Para evitar que el atacante responda al mensaje SYN+ACK del servidor con un mensaje RST que liberaría los recursos, bloquear los mensajes SYN+ACK en el atacante con iptables.
 ```bash 
-sudo iptables -A OUTPUT -p tcp --dport 7777 --tcp-flags ALL RST, ACK -j DROP # los paquetes que provienen del  puerte 7777 del tipo tcp con los flags 
+sudo iptables -A OUTPUT -p tcp --dport 7777 --tcp-flags ALL RST, ACK -j DROP # los paquetes que provienen del  puerte 7777 del tipo tcp con los flags/opciones RST y ACK activados van a rechazarse
 ```
+
 - **(Cliente VM2)** Para enviar paquetes TCP con los datos de interés usaremos el comando hping3 (estudiar la página de manual). En este caso, enviar mensajes SYN al puerto 22 del servidor (ssh) lo más rápido posible (_flood_).
+```bash
+sudo hping3 -p 22 -S --flood 192.168.0.1
+```
 - **(Servidor VM1)** Estudiar el comportamiento de la máquina, en términos del número de paquetes recibidos. Comprobar si es posible la conexión al servicio ssh.
+
 - **(Servidor VM1)** Repetir el ejercicio desactivando el mecanismo SYN  _cookies_  en el servidor con el comando sysctl (parámetro net.ipv4.tcp_syncookies).
 Como se puede ver existen mas datagramas con longitud menor de 60 bytes, es más facil realizar una ataque de este estilo en una máquina sin las cookies.
 ### Ejercicio 8
@@ -186,6 +191,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTM0NDc3NzcsLTE1NTg0NDQ0NjMsMT
-UwMzM2MjE0OSwtMTQwMjczMTc4OCwtMTg4MTg5NDQwNV19
+eyJoaXN0b3J5IjpbNDg4ODUwMTIwLC0xNTU4NDQ0NDYzLDE1MD
+MzNjIxNDksLTE0MDI3MzE3ODgsLTE4ODE4OTQ0MDVdfQ==
 -->
