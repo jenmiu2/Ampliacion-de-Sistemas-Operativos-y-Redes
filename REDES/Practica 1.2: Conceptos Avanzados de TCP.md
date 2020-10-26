@@ -266,9 +266,13 @@ sudo iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
 ```
 
 - **(VM1)** Comprobar la conexión entre VM1 y VM4 con la orden ping.
-
--  **(VM4, VM1)** Usando wireshark, determinar la IP origen y destino de los ICMP de Echo request y Echo reply en ambas redes. ¿Qué parámetro se utiliza, en lugar del puerto origen, para relacionar las solicitudes con las respuestas? Comprueba la salida del comando conntrack -L o alternativamente el fichero /proc/net/nf_conntrack.
-
+```bash
+ping 172.16.0.1
+```
+-  **(Router)** Analizar con Wireshark el tráfico intercambiado, especialmente los puertos y direcciones IP origen y destino en ambas redes
+**Antes de aplicar la regla**
+[ejercicio 12 ]
+**Después de aplicar la regla**
 ### Ejercicio 13
 Acceso a un servidor en la red privada:
 -  **(VM1)** Arrancar el servidor con nc en el puerto 7777.
@@ -276,6 +280,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzkzNTI4OTgxLC0xNTU4NDQ0NDYzLDE1MD
-MzNjIxNDksLTE0MDI3MzE3ODgsLTE4ODE4OTQ0MDVdfQ==
+eyJoaXN0b3J5IjpbMTgxMzI2NjQ4MywtMTU1ODQ0NDQ2MywxNT
+AzMzYyMTQ5LC0xNDAyNzMxNzg4LC0xODgxODk0NDA1XX0=
 -->
