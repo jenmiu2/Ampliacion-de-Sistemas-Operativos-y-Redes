@@ -236,12 +236,21 @@ Abrir el servidor en el puerto 7777 y realizar una conexión desde la VM cliente
 **VM2 (opposite value)**
 [Imagen ejercicio 10](https://drive.google.com/file/d/1UnwrALYwCjB-GVY0Sf4_8-kWo0IJ_RRJ/view?usp=sharing)
 
+**Análisis del resultado**
+Como se puede ver las ventanas que se estipulan son menor antes de habilitar las opciones:
+-   Window size scaling factor (habilitado) 128 (deshabilitado) -2
+-   Window size value (habilitado) 229 (deshabilitado) 29200
+-   Options (habilitado) ninguno (deshabilitado) No Operation (NOP) Timestamps
 ### Ejercicio 11 
 Con ayuda del comando sysctl y la bibliografía recomendada, completar la siguiente tabla con parámetros que permiten configurar el temporizador  _keepalive_:
+Para poder ver los valores de esos parámetros se utiliza la siguiente sentencia:
+```bash
+sudo cat /proc/sys/net/ipv4/tcp_keepalive_time
+```
 
 |Parametro del kernel| Proposito | Valor por defecto |
 |--|--|--|
-| net.ipv4.tcp_keepalive_time |  |  |
+| net.ipv4.tcp_keepalive_time | El intervalo que hay entre el último paquete ack enviado y el primer keepalive probes. | 7200 |
 | net.ipv4.tcp_keepalive_probes |  |  |
 | net.ipv4.tcp_keepalive_intvl |  |  |
 
@@ -262,6 +271,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODc2NjU5NTM2LC0xNTU4NDQ0NDYzLDE1MD
-MzNjIxNDksLTE0MDI3MzE3ODgsLTE4ODE4OTQ0MDVdfQ==
+eyJoaXN0b3J5IjpbLTExNjQ3MDc5NiwtMTU1ODQ0NDQ2MywxNT
+AzMzYyMTQ5LC0xNDAyNzMxNzg4LC0xODgxODk0NDA1XX0=
 -->
