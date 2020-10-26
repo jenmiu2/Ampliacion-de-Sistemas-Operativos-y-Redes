@@ -206,13 +206,13 @@ bash ejercicio8a.sh
 Resultados:
 **Opción -sS**
 [ejercicio 8 opcional](https://drive.google.com/file/d/1THihdD69R-2HxvbyrgQPOdAiLbiYurq0/view?usp=sharing)
-[ejercicio 8opcional-wireshark]()
+[ejercicio 8 opcional-wireshark](https://drive.google.com/file/d/1mOIw9L2WHflLOTCVHdbN4_9kWuchZPB5/view?usp=sharing)
 **Opción -sA**
-[ejercicio 8 opcional]()
-[ejercicio 8opcional-wireshark]()
+[ejercicio 8 opcional](https://drive.google.com/file/d/1dOwCzyz-bCgjusZDa5YYKfZGLboT1iPk/view?usp=sharing)
+[ejercicio 8 opcional-wireshark](https://drive.google.com/file/d/1TpbbwlWy9bW2Zbp6JvgV_IOC3uEB_YTe/view?usp=sharing)
 **Opción -sF**
-[ejercicio 8 opcional]()
-[ejercicio 8opcional-wireshark]()
+[ejercicio 8 opcional](https://drive.google.com/file/d/1gfJkB75LO22UGLzLec_DjUoc-K5jVsid/view?usp=sharing)
+[ejercicio 8opcional-wireshark](https://drive.google.com/file/d/1h7CeR6Q9BOYHwsSRfqcBrAn3PrX9y5_c/view?usp=sharing)
 
 # Opciones y parámetros de TCP
 El comportamiento de la conexión TCP se puede controlar con varias opciones que se incluyen en la cabecera en los mensajes SYN y que son configurables en el sistema operativo por medio de parámetros del kernel.
@@ -255,6 +255,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3ODk4NzQyNSwtMTU1ODQ0NDQ2MywxNT
+eyJoaXN0b3J5IjpbMTk3NjUwMTE4OSwtMTU1ODQ0NDQ2MywxNT
 AzMzYyMTQ5LC0xNDAyNzMxNzg4LC0xODgxODk0NDA1XX0=
 -->
