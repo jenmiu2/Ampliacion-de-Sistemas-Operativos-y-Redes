@@ -66,11 +66,14 @@ Consultar las páginas de manual de nc y netstat. En particular, consultar las s
 sudo nc -l 7777
 ```
 
-(imagen ejercicio 2 VM1)[https://drive.google.com/file/d/1imtR64cbn9v-R8U_0czmhZUA0HcjOY71/view?usp=sharing]
+[imagen ejercicio 2 VM1](https://drive.google.com/file/d/1imtR64cbn9v-R8U_0czmhZUA0HcjOY71/view?usp=sharing)
 
 **VM2**
 ```bash 
 sudo nc -l 192.168.0.1 7776
+```
+[imagen ejercicio 2 VM1](https://drive.google.com/file/d/1x-3HS5IkgSludkgiJoNEJuNFxeeF41K6/view?usp=sharing)
+
 ```
 ### Ejercicio 3
 **(ESTABLISHED)** En VM2, iniciar una conexión cliente al servidor arrancado en el ejercicio anterior usando el comando nc 192.168.0.1 7777.
@@ -146,6 +149,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxMTU3Nzc1NzEsMTUwMzM2MjE0OSwtMT
-QwMjczMTc4OCwtMTg4MTg5NDQwNV19
+eyJoaXN0b3J5IjpbMjA1OTk3ODUzMiwxNTAzMzYyMTQ5LC0xND
+AyNzMxNzg4LC0xODgxODk0NDA1XX0=
 -->
