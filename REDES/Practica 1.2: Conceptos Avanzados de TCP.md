@@ -278,10 +278,21 @@ ping 172.16.0.1
 ### Ejercicio 13
 ¿Qué parámetro se utiliza, en lugar del puerto origen, para relacionar las solicitudes con las respuestas? Comprueba la salida del comando conntrack -L o, alternativamente, el fichero /proc/net/nf_conntrack.
 ```bash
-sudo cat 
+sudo cat /proc/net/nf_conntrack
 ```
+[Imagen ejercicio 13](https://drive.google.com/file/d/1IRg-_34L_84-4VF5FenzUUr5w2fqRMN4/view?usp=sharing)
 
+### Ejercicio 14
+Acceso a un servidor en la red privada:
+
+-   **(Router)** Usando iptables, reenviar las conexiones (DNAT) del puerto 80 de Router al puerto 7777 de VM1. Iniciar una captura de Wireshark en los dos interfaces.
+    
+-   **(VM1)** Arrancar el servidor en el puerto 7777 con nc.
+    
+-  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1.
+    
+-  **(Router)** Analizar con Wireshark el tráfico intercambiado, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4MjY2NTc1OCwtMTU1ODQ0NDQ2MywxNT
-AzMzYyMTQ5LC0xNDAyNzMxNzg4LC0xODgxODk0NDA1XX0=
+eyJoaXN0b3J5IjpbNjA1NjI3MDg5LC0xNTU4NDQ0NDYzLDE1MD
+MzNjIxNDksLTE0MDI3MzE3ODgsLTE4ODE4OTQ0MDVdfQ==
 -->
