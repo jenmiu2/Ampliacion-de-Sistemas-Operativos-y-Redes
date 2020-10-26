@@ -131,6 +131,9 @@ Diferentes aspectos del protocolo TCP pueden aprovecharse para comprometer la se
 ### Ejercicio 7
 El ataque TCP SYN  _flood_  consiste en saturar un servidor mediante el envío masivo de mensajes SYN.
 -  **(Cliente VM2)** Para evitar que el atacante responda al mensaje SYN+ACK del servidor con un mensaje RST que liberaría los recursos, bloquear los mensajes SYN+ACK en el atacante con iptables.
+```bash 
+sudo iptables -A OUTPUT -p tcp --dport 7777 --tcp-flags ALL RST, ACK -j DROP # los paquetes que provienen del  puerte 7777 del tipo tcp con los flags 
+```
 - **(Cliente VM2)** Para enviar paquetes TCP con los datos de interés usaremos el comando hping3 (estudiar la página de manual). En este caso, enviar mensajes SYN al puerto 22 del servidor (ssh) lo más rápido posible (_flood_).
 - **(Servidor VM1)** Estudiar el comportamiento de la máquina, en términos del número de paquetes recibidos. Comprobar si es posible la conexión al servicio ssh.
 - **(Servidor VM1)** Repetir el ejercicio desactivando el mecanismo SYN  _cookies_  en el servidor con el comando sysctl (parámetro net.ipv4.tcp_syncookies).
@@ -183,6 +186,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTg0NDQ0NjMsMTUwMzM2MjE0OSwtMT
-QwMjczMTc4OCwtMTg4MTg5NDQwNV19
+eyJoaXN0b3J5IjpbLTExOTM0NDc3NzcsLTE1NTg0NDQ0NjMsMT
+UwMzM2MjE0OSwtMTQwMjczMTc4OCwtMTg4MTg5NDQwNV19
 -->
