@@ -84,18 +84,20 @@ nc localhost 7776
 ### Ejercicio 3
 **(ESTABLISHED)** En VM2, iniciar una conexión cliente al servidor arrancado en el ejercicio anterior usando el comando nc 192.168.0.1 7777.
  -  Comprobar el estado de la conexión e identificar los parámetros (dirección IP y puerto) con el comando netstat -tn.
- - Iniciar una captura con Wireshark. Intercambiar un único carácter con el cliente y observar los mensajes intercambiados (especialmente los números de secuencia, confirmación y flags TCP) y determinar cuántos bytes (y número de mensajes) han sido necesarios.
- 
  **VM2**
  ```bash
  nc 192.168.0.1 7777
  ```
- ```latex Para comprobar el estado de la conexión:```
+ - Iniciar una captura con Wireshark. Intercambiar un único carácter con el cliente y observar los mensajes intercambiados (especialmente los números de secuencia, confirmación y flags TCP) y determinar cuántos bytes (y número de mensajes) han sido necesarios.
+ 
+ 
+
+ Para comprobar el estado de la conexión
  ```bash
  ss -tn
  ```
-[imagen ejercicio 3 - estado conexión]()
-[imagen ejercicio 3 - ]()
+[imagen ejercicio 3 - estado conexión](https://drive.google.com/file/d/15TJkltwmJ6sLq28Xix7DHRGcNfApHbGh/view?usp=sharing)
+[imagen ejercicio 3 - wireshark](https://drive.google.com/file/d/15chPyTjEjkvOL9jj1wvQnVRDCK0YqDkw/view?usp=sharing)
 
 ### Ejercicio 4
 **(TIMEWAIT)** Cerrar la conexión en el cliente (con Ctrl+C) y comprobar el estado de la conexión usando netstat. Usar la opción -o de netstat para observar el valor del temporizador TIMEWAIT.
@@ -165,6 +167,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2NDg4NzQyMCwxNTAzMzYyMTQ5LC0xND
-AyNzMxNzg4LC0xODgxODk0NDA1XX0=
+eyJoaXN0b3J5IjpbLTIwNDAyMDUxOTAsMTUwMzM2MjE0OSwtMT
+QwMjczMTc4OCwtMTg4MTg5NDQwNV19
 -->
