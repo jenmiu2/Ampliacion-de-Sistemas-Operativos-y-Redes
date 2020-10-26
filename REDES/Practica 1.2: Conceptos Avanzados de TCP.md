@@ -297,14 +297,15 @@ sudo iptables -t nat -A PREROUTING -d 172.16.0.1 -p tcp --dport 80 -j DNAT --to 
  nc -l 7777
  ```
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1.
-    ```bash 
+```bash 
 nc -l 192.168.0.1 80
 ```
 -  **(Router)** Analizar con Wireshark el tráfico intercambiado, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 La máquina VM3 (puerto 80) redirige los paquetes que la máquina VM4 envía a la máquina VM1 (puerto 7777)
-[Imagen ejercicio 14 - router]()
+[Imagen ejercicio 14 - router](https://drive.google.com/file/d/1HtmR3Fb7SdwAXz94-r3z6UWVMxEb4ICy/view?usp=sharing)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MjUzODExNjEsLTE1NTg0NDQ0NjMsMT
+eyJoaXN0b3J5IjpbLTE3OTgwMDc3MTgsLTE1NTg0NDQ0NjMsMT
 UwMzM2MjE0OSwtMTQwMjczMTc4OCwtMTg4MTg5NDQwNV19
 -->
