@@ -271,15 +271,17 @@ ping 172.16.0.1
 ```
 -  **(Router)** Analizar con Wireshark el tráfico intercambiado, especialmente los puertos y direcciones IP origen y destino en ambas redes
 **Antes de aplicar la regla**
-[ejercicio 12 ]
+[ejercicio 12 (VM1 eth0-VM3 eth0 y eth1-VM4 eth0) - antes](https://drive.google.com/file/d/15v9GjWXAcMGC3dWQR2cQOaOthmkf5HT5/view?usp=sharing)
 **Después de aplicar la regla**
+[ejercicio 12 (VM1 eth0-VM3 eth0 y eth1-VM4 eth0) - después](https://drive.google.com/file/d/1ePkBZidQlSeU6ZtwxcQF1O007D4pE4MR/view?usp=sharing)
+
 ### Ejercicio 13
-Acceso a un servidor en la red privada:
--  **(VM1)** Arrancar el servidor con nc en el puerto 7777.
--  **(VM3 - Router)** Usando el comando iptables reenviar las conexiones al puerto 80 de Router al puerto 7777 de VM1.
--  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
+¿Qué parámetro se utiliza, en lugar del puerto origen, para relacionar las solicitudes con las respuestas? Comprueba la salida del comando conntrack -L o, alternativamente, el fichero /proc/net/nf_conntrack.
+```bash
+sudo cat 
+```
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxMzI2NjQ4MywtMTU1ODQ0NDQ2MywxNT
+eyJoaXN0b3J5IjpbLTY4MjY2NTc1OCwtMTU1ODQ0NDQ2MywxNT
 AzMzYyMTQ5LC0xNDAyNzMxNzg4LC0xODgxODk0NDA1XX0=
 -->
