@@ -72,9 +72,13 @@ sudo nc -l 7777
 ```bash 
 sudo nc -l 192.168.0.1 7776
 ```
-[imagen ejercicio 2 VM1](https://drive.google.com/file/d/1x-3HS5IkgSludkgiJoNEJuNFxeeF41K6/view?usp=sharing)
+[imagen ejercicio 2 VM2](https://drive.google.com/file/d/1x-3HS5IkgSludkgiJoNEJuNFxeeF41K6/view?usp=sharing)
 
-```
+```latex
+Si intentamos conectarnos al localhost nos deniega la conexión como se puede ver en la imagen.
+``
+[imagen ejercicio 2 VM2-localhost](https://drive.google.com/file/d/15Z1fI6lsdwehFHK4Q3bdBHl2PJkdSi2n/view?usp=sharing)
+
 ### Ejercicio 3
 **(ESTABLISHED)** En VM2, iniciar una conexión cliente al servidor arrancado en el ejercicio anterior usando el comando nc 192.168.0.1 7777.
  -  Comprobar el estado de la conexión e identificar los parámetros (dirección IP y puerto) con el comando netstat -tn.
@@ -149,6 +153,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1OTk3ODUzMiwxNTAzMzYyMTQ5LC0xND
+eyJoaXN0b3J5IjpbMTE1MzUyNzE1OSwxNTAzMzYyMTQ5LC0xND
 AyNzMxNzg4LC0xODgxODk0NDA1XX0=
 -->
