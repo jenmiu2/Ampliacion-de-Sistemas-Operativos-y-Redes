@@ -203,7 +203,17 @@ Ejecutar el comando:
 ```bash
 bash ejercicio8a.sh
 ```
-Re
+Resultados:
+**Opción -sS**
+[ejercicio 8 opcional](https://drive.google.com/file/d/1THihdD69R-2HxvbyrgQPOdAiLbiYurq0/view?usp=sharing)
+[ejercicio 8opcional-wireshark]()
+**Opción -sA**
+[ejercicio 8 opcional]()
+[ejercicio 8opcional-wireshark]()
+**Opción -sF**
+[ejercicio 8 opcional]()
+[ejercicio 8opcional-wireshark]()
+
 # Opciones y parámetros de TCP
 El comportamiento de la conexión TCP se puede controlar con varias opciones que se incluyen en la cabecera en los mensajes SYN y que son configurables en el sistema operativo por medio de parámetros del kernel.
 
@@ -245,6 +255,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQzMjEwMzYzLC0xNTU4NDQ0NDYzLDE1MD
-MzNjIxNDksLTE0MDI3MzE3ODgsLTE4ODE4OTQ0MDVdfQ==
+eyJoaXN0b3J5IjpbLTc3ODk4NzQyNSwtMTU1ODQ0NDQ2MywxNT
+AzMzYyMTQ5LC0xNDAyNzMxNzg4LC0xODgxODk0NDA1XX0=
 -->
