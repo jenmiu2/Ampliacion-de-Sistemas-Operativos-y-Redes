@@ -152,9 +152,18 @@ ssh localhost
 **(Técnica CONNECT)** Netcat permite explorar puertos usando la técnica CONNECT que intenta establecer una conexión a un puerto determinado. En función de la respuesta (SYN+ACK o RST), es posible determinar si hay un proceso escuchando.
 - **(Servidor VM1)** Abrir un servidor en el puerto 7777.
 ```bash
-nc 
+nc -l 7777
 ```
 - **(Cliente VM2)** Explorar de uno en uno, el rango de puertos 7775-7780 usando nc, en este caso usar las opciones de exploración (-z) y de salida detallada (-v).  **Nota:**  La versión de nc no soporta rangos de puertos. Por tanto, se debe hacer manualmente, o bien, incluir la sentencia de exploración de un puerto en un bucle para automatizar el proceso.
+Creamos un script bash para ejecutar el comando nc contra los diferentes puertos:
+```bash
+gedit ejercicio8.sh
+```
+Contenido del ejercicio8.sh:
+```bash
+#!/bin/bash
+for i in {}
+```
 - Con ayuda de wireshark observar los paquetes intercambiados.
 **Opcional:** La herramienta nmap permite realizar diferentes tipos de exploración de puertos, que emplean estrategias más eficientes. Estas estrategias (SYN  _stealth_, ACK  _stealth_, FIN-ACK  _stealth_…) son más rápidas que la anterior y se basan en el funcionamiento del protocolo TCP. Estudiar la página de manual de nmap (PORT SCANNING TECHNIQUES) y emplearlas para explorar los puertos del servidor. Comprobar con wireshark los mensajes intercambiados.
 
@@ -199,6 +208,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNzQ4NDY1NTUsLTE1NTg0NDQ0NjMsMT
-UwMzM2MjE0OSwtMTQwMjczMTc4OCwtMTg4MTg5NDQwNV19
+eyJoaXN0b3J5IjpbMTM4OTgzNTk4MywtMTU1ODQ0NDQ2MywxNT
+AzMzYyMTQ5LC0xNDAyNzMxNzg4LC0xODgxODk0NDA1XX0=
 -->
