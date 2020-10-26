@@ -284,15 +284,20 @@ sudo cat /proc/net/nf_conntrack
 
 ### Ejercicio 14
 Acceso a un servidor en la red privada:
-
+Para mostrar las reglas iptables de prerouting:
+```bash
+sudo iptables -L -n -t nat
+```
 -   **(Router)** Usando iptables, reenviar las conexiones (DNAT) del puerto 80 de Router al puerto 7777 de VM1. Iniciar una captura de Wireshark en los dos interfaces.
-    
+```bash
+sudo iptables -t nat -A PREROUTING -d 172.16.0.1 -p tcp --dport 80 -j DNAT --to 192.168.0.1:7777
+```
 -   **(VM1)** Arrancar el servidor en el puerto 7777 con nc.
     
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1.
     
 -  **(Router)** Analizar con Wireshark el tráfico intercambiado, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjA1NjI3MDg5LC0xNTU4NDQ0NDYzLDE1MD
+eyJoaXN0b3J5IjpbMzM3ODI1MjI3LC0xNTU4NDQ0NDYzLDE1MD
 MzNjIxNDksLTE0MDI3MzE3ODgsLTE4ODE4OTQ0MDVdfQ==
 -->
