@@ -177,12 +177,12 @@ bash ejercicio8.sh
 - Con ayuda de wireshark observar los paquetes intercambiados.
 **Opcional:** La herramienta nmap permite realizar diferentes tipos de exploración de puertos, que emplean estrategias más eficientes. Estas estrategias (SYN  _stealth_, ACK  _stealth_, FIN-ACK  _stealth_…) son más rápidas que la anterior y se basan en el funcionamiento del protocolo TCP. Estudiar la página de manual de nmap (PORT SCANNING TECHNIQUES) y emplearlas para explorar los puertos del servidor. Comprobar con wireshark los mensajes intercambiados.
 Tipos de escaneo:
-- TCP syn scan: -sS
-- TCP ack scan: -sA
-- TCP FIN scan: -sF
+ TCP syn scan: -sS
+ TCP ack scan: -sA
+ TCP FIN scan: -sF
 Para ver más detalles sobre el escaneo usamos las siguientes opciones:
-- -v: aumenta el nivel del mensaje detallado
-- -A: nos indica el sistema operativo y la versión
+ -v: aumenta el nivel del mensaje detallado
+ -A: nos indica el sistema operativo y la versión
 Creamos un script que permita dar permisos root y que escanee todos los puertos 7775-7778 del host 192.168.0.1 en la maquina virtual deseada **VM2**.
 
 ```bash
@@ -212,14 +212,17 @@ Resultados:
 [ejercicio 8 opcional-wireshark](https://drive.google.com/file/d/1TpbbwlWy9bW2Zbp6JvgV_IOC3uEB_YTe/view?usp=sharing)
 **Opción -sF**
 [ejercicio 8 opcional](https://drive.google.com/file/d/1gfJkB75LO22UGLzLec_DjUoc-K5jVsid/view?usp=sharing)
-[ejercicio 8opcional-wireshark](https://drive.google.com/file/d/1h7CeR6Q9BOYHwsSRfqcBrAn3PrX9y5_c/view?usp=sharing)
+[ejercicio 8 opcional-wireshark](https://drive.google.com/file/d/1h7CeR6Q9BOYHwsSRfqcBrAn3PrX9y5_c/view?usp=sharing)
 
 # Opciones y parámetros de TCP
 El comportamiento de la conexión TCP se puede controlar con varias opciones que se incluyen en la cabecera en los mensajes SYN y que son configurables en el sistema operativo por medio de parámetros del kernel.
 
 ### Ejercicio 9
 Con ayuda del comando sysctl y la bibliografía recomendada, completarar la  Carametro l tabla s que permiten modificar algunas opciones dee e sie nli ra ar ee cnresa al a de ruae  ua ru a la e  a otear la  TCP:
-
+Para poder ver los valores de esos parámetros se utiliza la siguiente sentencia:
+```bash
+sudo 
+```
 |Parametro del kernel| Proposito | Valor por defecto |
 |--|--|--|
 | net.ipv4.tcp_window_scaling |  |  |
@@ -255,6 +258,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk3NjUwMTE4OSwtMTU1ODQ0NDQ2MywxNT
-AzMzYyMTQ5LC0xNDAyNzMxNzg4LC0xODgxODk0NDA1XX0=
+eyJoaXN0b3J5IjpbLTE2ODg5NjM4ODksLTE1NTg0NDQ0NjMsMT
+UwMzM2MjE0OSwtMTQwMjczMTc4OCwtMTg4MTg5NDQwNV19
 -->
