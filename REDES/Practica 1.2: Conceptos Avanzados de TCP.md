@@ -81,27 +81,22 @@ nc localhost 7776
 ```
 [imagen ejercicio 2 VM2-localhost](https://drive.google.com/file/d/15Z1fI6lsdwehFHK4Q3bdBHl2PJkdSi2n/view?usp=sharing)
 
-### Ejercicio 3
+### Ejercicio 3 (VM2)
 **(ESTABLISHED)** En VM2, iniciar una conexión cliente al servidor arrancado en el ejercicio anterior usando el comando nc 192.168.0.1 7777.
- -  Comprobar el estado de la conexión e identificar los parámetros (dirección IP y puerto) con el comando netstat -tn.
- **VM2**
  ```bash
  nc 192.168.0.1 7777
  ```
- - Iniciar una captura con Wireshark. Intercambiar un único carácter con el cliente y observar los mensajes intercambiados (especialmente los números de secuencia, confirmación y flags TCP) y determinar cuántos bytes (y número de mensajes) han sido necesarios.
- 
- 
-
- Para comprobar el estado de la conexión
+ -  Comprobar el estado de la conexión e identificar los parámetros (dirección IP y puerto) con el comando netstat -tn.
  ```bash
  ss -tn
  ```
+ - Iniciar una captura con Wireshark. Intercambiar un único carácter con el cliente y observar los mensajes intercambiados (especialmente los números de secuencia, confirmación y flags TCP) y determinar cuántos bytes (y número de mensajes) han sido necesarios.
 [imagen ejercicio 3 - estado conexión](https://drive.google.com/file/d/15TJkltwmJ6sLq28Xix7DHRGcNfApHbGh/view?usp=sharing)
 [imagen ejercicio 3 - wireshark](https://drive.google.com/file/d/15chPyTjEjkvOL9jj1wvQnVRDCK0YqDkw/view?usp=sharing)
 
 ### Ejercicio 4
 **(TIMEWAIT)** Cerrar la conexión en el cliente (con Ctrl+C) y comprobar el estado de la conexión usando netstat. Usar la opción -o de netstat para observar el valor del temporizador TIMEWAIT.
-
+Se cier
 ### Ejercicio 5
 **(SYN-SENT y SYN-RCVD)** El comando iptables permite filtrar paquetes según los flags TCP del segmento con la opción --tcp-flags (consultar la página de manual iptables-extensions). Usando esta opción:
 - Fijar una regla en el servidor (VM1) que bloquee un mensaje del acuerdo TCP de forma que el cliente (VM2) se quede en el estado SYN-SENT. Comprobar el resultado usando netstat en el cliente.
@@ -167,6 +162,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNDAyMDUxOTAsMTUwMzM2MjE0OSwtMT
+eyJoaXN0b3J5IjpbLTE4MzA0MzU5MzksMTUwMzM2MjE0OSwtMT
 QwMjczMTc4OCwtMTg4MTg5NDQwNV19
 -->
