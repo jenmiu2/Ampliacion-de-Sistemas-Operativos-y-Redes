@@ -45,7 +45,9 @@ Consultar las páginas de manual de nc y netstat. En particular, consultar las s
  ```latex
 -a : ----
 -l : enlaza y lista conexiones entrantes
-- n: no resuelv
+-n : no resuelve nombres de hosts via DNS
+-t : contexta a conexiones Telnet
+-o : 
 ```
 
 ### Ejercicio 2
@@ -124,6 +126,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTQ3NTAyNDQsMTUwMzM2MjE0OSwtMT
+eyJoaXN0b3J5IjpbLTEyMzE1MTg4NjEsMTUwMzM2MjE0OSwtMT
 QwMjczMTc4OCwtMTg4MTg5NDQwNV19
 -->
