@@ -182,7 +182,27 @@ Tipos de escaneo:
 - TCP FIN scan: -sF
 Para ver más detalles sobre el escaneo usamos las siguientes opciones:
 - -v: aumenta el nivel del mensaje detallado
-- -A: nos indica el sistema operativo y la ver
+- -A: nos indica el sistema operativo y la versión
+Creamos un script que permita dar permisos root y que escanee todos los puertos 7775-7778 del host 192.168.0.1 en la maquina virtual deseada **VM2**.
+
+```bash
+gedit ejercicio8a.sh
+```
+Contenido del ejercicio8a.sh:
+```bash
+#!/bin/bash
+for i in {7775..7780}
+do 
+	echo -n "puerto: $i"
+	printf "\n"
+	nc -z -v 192.168.0.1 $i
+done
+	printf "\n"
+```
+Ejecutar el comando:
+```bash
+bash ejercicio8.sh
+```
 # Opciones y parámetros de TCP
 El comportamiento de la conexión TCP se puede controlar con varias opciones que se incluyen en la cabecera en los mensajes SYN y que son configurables en el sistema operativo por medio de parámetros del kernel.
 
@@ -224,6 +244,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5MjI3NjA0NiwtMTU1ODQ0NDQ2MywxNT
-AzMzYyMTQ5LC0xNDAyNzMxNzg4LC0xODgxODk0NDA1XX0=
+eyJoaXN0b3J5IjpbNDU5OTY2NzY5LC0xNTU4NDQ0NDYzLDE1MD
+MzNjIxNDksLTE0MDI3MzE3ODgsLTE4ODE4OTQ0MDVdfQ==
 -->
