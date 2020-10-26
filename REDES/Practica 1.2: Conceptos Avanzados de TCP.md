@@ -251,8 +251,8 @@ sudo cat /proc/sys/net/ipv4/tcp_keepalive_time
 |Parametro del kernel| Proposito | Valor por defecto |
 |--|--|--|
 | net.ipv4.tcp_keepalive_time | El intervalo que hay entre el último paquete ack enviado y el primer keepalive probes. | 7200 |
-| net.ipv4.tcp_keepalive_probes |  |  |
-| net.ipv4.tcp_keepalive_intvl |  |  |
+| net.ipv4.tcp_keepalive_probes | El número de paquetes no reconocidos que se envían antes de considerar una conexión por terminada | 9 |
+| net.ipv4.tcp_keepalive_intvl | El intervalo entre la secuencia de keepalive probes independientemente de si se ha intercambiado algo entre medias. | 75 |
 
 # Traducción de direcciones NAT y reenvío de puertos 
 En esta sección supondremos que la red que conecta Router (VM3) con VM4 es pública y que no puede encaminar el tráfico 192.168.0.0/24. Además, asumiremos que la IP de Router es dinámica.
@@ -261,7 +261,12 @@ En esta sección supondremos que la red que conecta Router (VM3) con VM4 es púb
 Configurar la traducción de direcciones dinámica en Router:
 
 - **(VM3, Router)** Configurar Router para que haga SNAT (_masquerade_) sobre la interfaz eth1 usando el comando iptables.
+```bash
+sudo iptables -t nat -A POSTROUTING -o eth1 -j MASQUERADE
+```
+
 - **(VM1)** Comprobar la conexión entre VM1 y VM4 con la orden ping.
+
 -  **(VM4, VM1)** Usando wireshark, determinar la IP origen y destino de los ICMP de Echo request y Echo reply en ambas redes. ¿Qué parámetro se utiliza, en lugar del puerto origen, para relacionar las solicitudes con las respuestas? Comprueba la salida del comando conntrack -L o alternativamente el fichero /proc/net/nf_conntrack.
 
 ### Ejercicio 13
@@ -271,6 +276,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNjQ3MDc5NiwtMTU1ODQ0NDQ2MywxNT
-AzMzYyMTQ5LC0xNDAyNzMxNzg4LC0xODgxODk0NDA1XX0=
+eyJoaXN0b3J5IjpbMzkzNTI4OTgxLC0xNTU4NDQ0NDYzLDE1MD
+MzNjIxNDksLTE0MDI3MzE3ODgsLTE4ODE4OTQ0MDVdfQ==
 -->
