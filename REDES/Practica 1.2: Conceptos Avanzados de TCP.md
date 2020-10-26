@@ -106,9 +106,16 @@ nc localhost 7776
 sudo iptables -F # para borrar las reglas anteriores
 sudo iptables -L # para listar las reglas
 sudo iptables -P INPUT DROP # todas los paquetes se rechazan
-sudo iptables 
+sudo iptables -A INPUT -p tcp --dport 7777 # todos los paquetes del tipo tcp del puerto 7777 se van a rechazar
 ```
+[Imagen ejercicio 5 - VM1](https://drive.google.com/file/d/1b6Ows2cTslBpfQAJAu_DPQiOXDfxEjB9/view?usp=sharing)
 - Borrar la regla anterior y fijar otra en el cliente (VM2) que bloquee un mensaje del acuerdo TCP de forma que el servidor se quede en el estado SYN-RCVD. Comprobar el resultado con ss -tan en el servidor. Además, esta regla debe dejar al servidor también en el estado LAST-ACK después de cerrar la conexión en el cliente. Usar la opción -o de ss para determinar cuántas retransmisiones se realizan y con qué frecuencia.
+```bash 
+sudo iptables -F # para borrar las reglas anteriores
+sudo iptables -L # para listar las reglas
+sudo iptables -P INPUT DROP # todas los paquetes se rechazan
+sudo iptables -A INPUT -p tcp --dport 7777 # todos los paquetes del tipo tcp del puerto 7777 se van a rechazar
+```
 ### Ejercicio 6
 Intentar una conexión a un puerto cerrado del servidor (ej. 7778) y, con ayuda de la herramienta wireshark, observar los mensajes TCP intercambiados, especialmente los flags TCP.
 
@@ -169,6 +176,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3OTMyNDU3MSwxNTAzMzYyMTQ5LC0xND
+eyJoaXN0b3J5IjpbMTgzNTIxNDg0OSwxNTAzMzYyMTQ5LC0xND
 AyNzMxNzg4LC0xODgxODk0NDA1XX0=
 -->
