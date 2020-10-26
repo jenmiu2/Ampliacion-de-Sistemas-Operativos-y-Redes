@@ -221,17 +221,17 @@ El comportamiento de la conexión TCP se puede controlar con varias opciones que
 Con ayuda del comando sysctl y la bibliografía recomendada, completarar la  Carametro l tabla s que permiten modificar algunas opciones dee e sie nli ra ar ee cnresa al a de ruae  ua ru a la e  a otear la  TCP:
 Para poder ver los valores de esos parámetros se utiliza la siguiente sentencia:
 ```bash
-sudo 
+sudo cat /proc/sys/net/ipv4/tcp_window_scaling
 ```
 |Parametro del kernel| Proposito | Valor por defecto |
 |--|--|--|
-| net.ipv4.tcp_window_scaling |  |  |
-| net.ipv4.tcp_timestamps |  |  |
-| net.ipv4.tcp_sack |  |  |
+| net.ipv4.tcp_window_scaling | Memoria reservada para enviar al buffer los paquetes TCP | 1 |
+| net.ipv4.tcp_timestamps | Es un booleano que nos indica si queremos reducir o no, el rendimiento relacionado con las marcas del tiempo | 1 |
+| net.ipv4.tcp_sack | Habilita el reconocimiento (SACKS) | 1 |
 
 ### Ejercicio 10 
 Abrir el servidor en el puerto 7777 y realizar una conexión desde la VM cliente. Con ayuda de wireshark estudiar el valor de las opciones que se intercambian durante la conexión. Variar algunos de los parámetros anteriores (ej. no usar ACKs selectivos) y observar el resultado en una nueva conexión.
-
+**VM
 ### Ejercicio 11 
 Con ayuda del comando sysctl y la bibliografía recomendada, completar la siguiente tabla con parámetros que permiten configurar el temporizador  _keepalive_:
 
@@ -258,6 +258,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2ODg5NjM4ODksLTE1NTg0NDQ0NjMsMT
-UwMzM2MjE0OSwtMTQwMjczMTc4OCwtMTg4MTg5NDQwNV19
+eyJoaXN0b3J5IjpbLTU1NDM3MzUxMCwtMTU1ODQ0NDQ2MywxNT
+AzMzYyMTQ5LC0xNDAyNzMxNzg4LC0xODgxODk0NDA1XX0=
 -->
