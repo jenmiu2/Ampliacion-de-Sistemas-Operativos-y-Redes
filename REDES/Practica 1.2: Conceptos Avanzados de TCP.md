@@ -74,9 +74,11 @@ sudo nc -l 192.168.0.1 7776
 [imagen ejercicio 2 VM1](https://drive.google.com/file/d/1x-3HS5IkgSludkgiJoNEJuNFxeeF41K6/view?usp=sharing)
 
 ```latex
-La diferencia en crear los anteriores puertos es que en el primer caso no asociamos una dirección IP al puerto y en el segundo caso
-Si intentamos conectarnos al localhost nos deniega la conexión como se puede ver en la imagen.
-``
+La diferencia en crear los anteriores puertos es que en el primer caso no asociamos una dirección IP al puerto y en el segundo caso si por lo que la dirección local de conexión puede ser cualquiera. \par En el caso de conectarse al localhost nos deniega la conexión en el caso del puerto 7776 porque se ha asociado una dir local IP.
+```
+```bash 
+sudo nc localhost 7776
+```
 [imagen ejercicio 2 VM2-localhost](https://drive.google.com/file/d/15Z1fI6lsdwehFHK4Q3bdBHl2PJkdSi2n/view?usp=sharing)
 ### Ejercicio 3
 **(ESTABLISHED)** En VM2, iniciar una conexión cliente al servidor arrancado en el ejercicio anterior usando el comando nc 192.168.0.1 7777.
@@ -152,6 +154,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDYwMzY5MDMsMTUwMzM2MjE0OSwtMT
+eyJoaXN0b3J5IjpbLTE4NDE5MDM1OTYsMTUwMzM2MjE0OSwtMT
 QwMjczMTc4OCwtMTg4MTg5NDQwNV19
 -->
