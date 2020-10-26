@@ -41,8 +41,12 @@ En esta práctica usaremos la herramienta Netcat, que permite leer y escribir en
 ### Ejercicio 1
 Consultar las páginas de manual de nc y netstat. En particular, consultar las siguientes opciones de netstat: -a, -l, -n, -t y -o. Probar algunas de las opciones para ambos programas para familiarizarse con su comportamiento.
 
-|Maquina| IP |
-|--|--|
+ **nc**
+ ```latex
+-a : ----
+-l : enlaza y lista conexiones entrantes
+- n: no resuelv
+```
 
 ### Ejercicio 2
 **(LISTEN)** Abrir un servidor TCP en el puerto 7777 en VM1 usando el comando nc -l 7777. Comprobar el estado de la conexión en el servidor con el comando netstat -ltn.
@@ -120,6 +124,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwMzM2MjE0OSwtMTQwMjczMTc4OCwtMT
-g4MTg5NDQwNV19
+eyJoaXN0b3J5IjpbLTExMTQ3NTAyNDQsMTUwMzM2MjE0OSwtMT
+QwMjczMTc4OCwtMTg4MTg5NDQwNV19
 -->
