@@ -96,12 +96,12 @@ nc localhost 7776
 
 ### Ejercicio 4
 **(TIMEWAIT)** Cerrar la conexión en el cliente (con Ctrl+C) y comprobar el estado de la conexión usando netstat. Usar la opción -o de netstat para observar el valor del temporizador TIMEWAIT.
-Se cier
+[imagen ejercicio 4](https://drive.google.com/file/d/1eCL8QPgp4bwFp5fcTSaPfdaMWjVv-xFe/view?usp=sharing)
+
 ### Ejercicio 5
 **(SYN-SENT y SYN-RCVD)** El comando iptables permite filtrar paquetes según los flags TCP del segmento con la opción --tcp-flags (consultar la página de manual iptables-extensions). Usando esta opción:
 - Fijar una regla en el servidor (VM1) que bloquee un mensaje del acuerdo TCP de forma que el cliente (VM2) se quede en el estado SYN-SENT. Comprobar el resultado usando netstat en el cliente.
-- Borrar la regla anterior y fijar otra en el cliente que bloquee un mensaje del acuerdo TCP de forma que el servidor se quede en el estado SYN-RCVD. Además, esta regla debe dejar al servidor también en el estado LAST-ACK después de cerrar la conexión (con Ctrl+C) en el cliente. Con ayuda de netstat (usando la opción -o) determinar cuántas retransmisiones se realizan y con qué frecuencia.
-
+- **Borrar la regla anterior y fijar otra en el cliente (VM2) que bloquee un mensaje del acuerdo TCP de forma que el servidor se quede en el estado SYN-RCVD. Comprobar el resultado con ss -tan en el servidor. Además, esta regla debe dejar al servidor también en el estado LAST-ACK después de cerrar la conexión en el cliente. Usar la opción -o de ss para determinar cuántas retransmisiones se realizan y con qué frecuencia.**
 ### Ejercicio 6
 Intentar una conexión a un puerto cerrado del servidor (ej. 7778) y, con ayuda de la herramienta wireshark, observar los mensajes TCP intercambiados, especialmente los flags TCP.
 
@@ -162,6 +162,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MzA0MzU5MzksMTUwMzM2MjE0OSwtMT
+eyJoaXN0b3J5IjpbLTIxMzk2NzcwMDQsMTUwMzM2MjE0OSwtMT
 QwMjczMTc4OCwtMTg4MTg5NDQwNV19
 -->
