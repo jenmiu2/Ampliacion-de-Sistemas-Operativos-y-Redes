@@ -140,9 +140,10 @@ sudo iptables -A OUTPUT -p tcp --dport 7777 --tcp-flags ALL RST, ACK -j DROP # l
 sudo hping3 -p 22 -S --flood 192.168.0.1
 ```
 - **(Servidor VM1)** Estudiar el comportamiento de la máquina, en términos del número de paquetes recibidos. Comprobar si es posible la conexión al servicio ssh.
-
-- **(Servidor VM1)** Repetir el ejercicio desactivando el mecanismo SYN  _cookies_  en el servidor con el comando sysctl (parámetro net.ipv4.tcp_syncookies).
-Como se puede ver existen mas datagramas con longitud menor de 60 bytes, es más facil realizar una ataque de este estilo en una máquina sin las cookies.
+[imagen ejercicio 7 - VM1/VM2 wireshark](https://drive.google.com/file/d/1Uuaur1x9EjQRKMtLhHZiJQbyY_EdCaAG/view?usp=sharing)
+```latex
+ssh
+```
 ### Ejercicio 8
 **(Técnica CONNECT)** Netcat permite explorar puertos usando la técnica CONNECT que intenta establecer una conexión a un puerto determinado. En función de la respuesta (SYN+ACK o RST), es posible determinar si hay un proceso escuchando.
 - **(Servidor VM1)** Abrir un servidor en el puerto 7777.
@@ -191,6 +192,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDg4ODUwMTIwLC0xNTU4NDQ0NDYzLDE1MD
-MzNjIxNDksLTE0MDI3MzE3ODgsLTE4ODE4OTQ0MDVdfQ==
+eyJoaXN0b3J5IjpbMTMwMjkxNDYyOSwtMTU1ODQ0NDQ2MywxNT
+AzMzYyMTQ5LC0xNDAyNzMxNzg4LC0xODgxODk0NDA1XX0=
 -->
