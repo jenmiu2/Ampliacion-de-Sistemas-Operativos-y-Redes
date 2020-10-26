@@ -162,7 +162,17 @@ gedit ejercicio8.sh
 Contenido del ejercicio8.sh:
 ```bash
 #!/bin/bash
-for i in {}
+for i in {7775..7780}
+do 
+	echo -n "puerto: $i"
+	printf "\n"
+	nc -z -v 192.168.0.1 $i
+done
+	printf "\n"
+```
+Ejecutar el comando:
+```bash
+bash ejercicio8.sh
 ```
 - Con ayuda de wireshark observar los paquetes intercambiados.
 **Opcional:** La herramienta nmap permite realizar diferentes tipos de exploración de puertos, que emplean estrategias más eficientes. Estas estrategias (SYN  _stealth_, ACK  _stealth_, FIN-ACK  _stealth_…) son más rápidas que la anterior y se basan en el funcionamiento del protocolo TCP. Estudiar la página de manual de nmap (PORT SCANNING TECHNIQUES) y emplearlas para explorar los puertos del servidor. Comprobar con wireshark los mensajes intercambiados.
@@ -208,6 +218,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4OTgzNTk4MywtMTU1ODQ0NDQ2MywxNT
+eyJoaXN0b3J5IjpbMTY4NDEwNTAyOSwtMTU1ODQ0NDQ2MywxNT
 AzMzYyMTQ5LC0xNDAyNzMxNzg4LC0xODgxODk0NDA1XX0=
 -->
