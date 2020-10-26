@@ -63,13 +63,13 @@ Consultar las páginas de manual de nc y netstat. En particular, consultar las s
 **(LISTEN)** Abrir un servidor TCP en el puerto 7777 en VM1 usando el comando nc -l 7777. Comprobar el estado de la conexión en el servidor con el comando ss -tln. Abrir otro servidor en el puerto 7776 en VM1 usando el comando nc -l 192.168.0.1 7776. Observar la diferencia entre ambos servidores usando ss. Comprobar que no es posible la conexión desde VM1 con localhost como dirección destino usando el comando nc localhost 7776.
 **VM1**
 ```bash
-sudo nc -l 7777
+ nc -l 7777
 ```
 
 [imagen ejercicio 2 VM1](https://drive.google.com/file/d/1imtR64cbn9v-R8U_0czmhZUA0HcjOY71/view?usp=sharing)
 
 ```bash 
-sudo nc -l 192.168.0.1 7776
+nc -l 192.168.0.1 7776
 ```
 [imagen ejercicio 2 VM1](https://drive.google.com/file/d/1x-3HS5IkgSludkgiJoNEJuNFxeeF41K6/view?usp=sharing)
 
@@ -77,7 +77,7 @@ sudo nc -l 192.168.0.1 7776
 La diferencia en crear los anteriores puertos es que en el primer caso no asociamos una dirección IP al puerto y en el segundo caso si por lo que la dirección local de conexión puede ser cualquiera. \par En el caso de conectarse al localhost nos deniega la conexión en el caso del puerto 7776 porque se ha asociado una dir local IP.
 ```
 ```bash 
-sudo nc localhost 7776
+nc localhost 7776
 ```
 [imagen ejercicio 2 VM2-localhost](https://drive.google.com/file/d/15Z1fI6lsdwehFHK4Q3bdBHl2PJkdSi2n/view?usp=sharing)
 
@@ -88,9 +88,14 @@ sudo nc localhost 7776
  
  **VM2**
  ```bash
+ nc 192.168.0.1 7777
+ ```
+ ```latex Para comprobar el estado de la conexión:```
+ ```bash
  ss -tn
  ```
- **VM2**
+[imagen ejercicio 3 - estado conexión]()
+[imagen ejercicio 3 - ]()
 
 ### Ejercicio 4
 **(TIMEWAIT)** Cerrar la conexión en el cliente (con Ctrl+C) y comprobar el estado de la conexión usando netstat. Usar la opción -o de netstat para observar el valor del temporizador TIMEWAIT.
@@ -160,6 +165,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjc1ODU3MTY3LDE1MDMzNjIxNDksLTE0MD
-I3MzE3ODgsLTE4ODE4OTQ0MDVdfQ==
+eyJoaXN0b3J5IjpbLTU2NDg4NzQyMCwxNTAzMzYyMTQ5LC0xND
+AyNzMxNzg4LC0xODgxODk0NDA1XX0=
 -->
