@@ -231,7 +231,11 @@ sudo cat /proc/sys/net/ipv4/tcp_window_scaling
 
 ### Ejercicio 10 
 Abrir el servidor en el puerto 7777 y realizar una conexión desde la VM cliente. Con ayuda de wireshark estudiar el valor de las opciones que se intercambian durante la conexión. Variar algunos de los parámetros anteriores (ej. no usar ACKs selectivos) y observar el resultado en una nueva conexión.
-**VM
+**VM2 (default value)**
+[Imagen ejercicio 10](https://drive.google.com/file/d/1SgjlAYM41LLsuR33M9_U_3xj3B6JRFpW/view?usp=sharing)
+**VM2 (opposite value)**
+[Imagen ejercicio 10](https://drive.google.com/file/d/1UnwrALYwCjB-GVY0Sf4_8-kWo0IJ_RRJ/view?usp=sharing)
+
 ### Ejercicio 11 
 Con ayuda del comando sysctl y la bibliografía recomendada, completar la siguiente tabla con parámetros que permiten configurar el temporizador  _keepalive_:
 
@@ -258,6 +262,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1NDM3MzUxMCwtMTU1ODQ0NDQ2MywxNT
-AzMzYyMTQ5LC0xNDAyNzMxNzg4LC0xODgxODk0NDA1XX0=
+eyJoaXN0b3J5IjpbODc2NjU5NTM2LC0xNTU4NDQ0NDYzLDE1MD
+MzNjIxNDksLTE0MDI3MzE3ODgsLTE4ODE4OTQ0MDVdfQ==
 -->
