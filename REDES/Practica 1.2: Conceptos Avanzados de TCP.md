@@ -112,7 +112,7 @@ sudo iptables -A INPUT -p tcp --dport 7777 # todos los paquetes del tipo tcp del
 ss -tan
 sudo iptables -F 
 ```
-[Imagen ejercicio 5 - VM1](https://drive.google.com/file/d/1b6Ows2cTslBpfQAJAu_DPQiOXDfxEjB9/view?usp=sharing)
+[imagen ejercicio 5 - VM1](https://drive.google.com/file/d/1b6Ows2cTslBpfQAJAu_DPQiOXDfxEjB9/view?usp=sharing)
 - Borrar la regla anterior y fijar otra en el cliente (VM2) que bloquee un mensaje del acuerdo TCP de forma que el servidor se quede en el estado SYN-RCVD. Comprobar el resultado con ss -tan en el servidor. Además, esta regla debe dejar al servidor también en el estado LAST-ACK después de cerrar la conexión en el cliente. Usar la opción -o de ss para determinar cuántas retransmisiones se realizan y con qué frecuencia.
 **VM2**
 ```bash 
@@ -121,9 +121,10 @@ sudo iptables -A OUTPUT -p tcp --dport 7777 --tcp-flags ALL ACK # todos los paqu
 ss -tan
 sudo iptables -F
 ```
-[Imagen ejercicio 5 - VM2](https://drive.google.com/file/d/1GRA4czs0c3QrhLHfyXQPgxg9HuB_eT96/view?usp=sharing)
+[imagen ejercicio 5 - VM2](https://drive.google.com/file/d/1GRA4czs0c3QrhLHfyXQPgxg9HuB_eT96/view?usp=sharing)
 ### Ejercicio 6
 Intentar una conexión a un puerto cerrado del servidor (ej. 7778) y, con ayuda de la herramienta wireshark, observar los mensajes TCP intercambiados, especialmente los flags TCP.
+[imagen ejercicio 6 - VM2](https://drive.google.com/file/d/14bHNLBFArZ_E41ScURXDQQ404ZmQHIBE/view?usp=sharing)
 
 # Introducción a la seguridad en el protocolo TCP
 Diferentes aspectos del protocolo TCP pueden aprovecharse para comprometer la seguridad del sistema. En este apartado vamos a estudiar dos: ataques DoS basados en TCP SYN  _flood_  y técnicas de exploración de puertos.
@@ -182,6 +183,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTEzOTQyNjcwLDE1MDMzNjIxNDksLTE0MD
-I3MzE3ODgsLTE4ODE4OTQ0MDVdfQ==
+eyJoaXN0b3J5IjpbLTE1NTg0NDQ0NjMsMTUwMzM2MjE0OSwtMT
+QwMjczMTc4OCwtMTg4MTg5NDQwNV19
 -->
