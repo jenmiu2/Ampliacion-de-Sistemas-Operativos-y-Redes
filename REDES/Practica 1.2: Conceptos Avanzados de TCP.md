@@ -80,11 +80,17 @@ La diferencia en crear los anteriores puertos es que en el primer caso no asocia
 sudo nc localhost 7776
 ```
 [imagen ejercicio 2 VM2-localhost](https://drive.google.com/file/d/15Z1fI6lsdwehFHK4Q3bdBHl2PJkdSi2n/view?usp=sharing)
+
 ### Ejercicio 3
 **(ESTABLISHED)** En VM2, iniciar una conexión cliente al servidor arrancado en el ejercicio anterior usando el comando nc 192.168.0.1 7777.
  -  Comprobar el estado de la conexión e identificar los parámetros (dirección IP y puerto) con el comando netstat -tn.
- - Reinicia por deecto  r el serviador en VM1 usando el comando nc -l 192.168.0.1 7777. Comprobar que no es posible la conexión desde VM1 usando como dirección destino localhost. Observar la diferencia con el comando del ejercicio anterior usando netstat.
- - Iniciar el servidor e intercambiar un único carácter con el cliente. Con ayuda de wireshark, observar los mensajes intercambiados (especialmente los números de secuencia, confirmación y flags TCP) y determinar cuántos bytes (y número de mensajes) han sido necesarios.
+ - Iniciar una captura con Wireshark. Intercambiar un único carácter con el cliente y observar los mensajes intercambiados (especialmente los números de secuencia, confirmación y flags TCP) y determinar cuántos bytes (y número de mensajes) han sido necesarios.
+ 
+ **VM2**
+ ```bash
+ ss -tn
+ ```
+ **VM2**
 
 ### Ejercicio 4
 **(TIMEWAIT)** Cerrar la conexión en el cliente (con Ctrl+C) y comprobar el estado de la conexión usando netstat. Usar la opción -o de netstat para observar el valor del temporizador TIMEWAIT.
@@ -154,6 +160,6 @@ Acceso a un servidor en la red privada:
 -  **(VM4)** Conectarse al puerto 80 de Router con nc y comprobar el resultado en VM1. Analizar el tráfico intercambiado con wireshark, especialmente los puertos y direcciones IP origen y destino en ambas redes.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NDE5MDM1OTYsMTUwMzM2MjE0OSwtMT
-QwMjczMTc4OCwtMTg4MTg5NDQwNV19
+eyJoaXN0b3J5IjpbMjc1ODU3MTY3LDE1MDMzNjIxNDksLTE0MD
+I3MzE3ODgsLTE4ODE4OTQ0MDVdfQ==
 -->
