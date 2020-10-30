@@ -179,7 +179,7 @@ dig labfdi.es
 Realizar más consultas y, con la ayuda de wireshark:
 
 - Comprobar el protocolo y puerto usado por el cliente y servidor DNS
-
+[ejercicio 11-wiresark formato extendido](https://drive.google.com/file/d/1M9NpIrZcjozGytPG6zXqrOjOwuR0vqsI/view?usp=sharing)
 - Estudiar el formato (campos incluidos y longitud) de los mensajes correspondientes a las preguntas y respuestas DNS.
 [ejercicio 11-wireshark](https://drive.google.com/file/d/1HFLDtaUWWzOaakQ64ZzKonjEWQEVaOGg/view?usp=sharing)
 
@@ -225,13 +225,14 @@ $TTL 2d
 250							IN PTR			mail.labfdi.es.				
 ```
 ```bash
-sudo named-checkzone 0.168.192.in-addr.arpa. /var/named/0.168.192
+sudo named-checkzone 0.168.192.in-addr.arpa. /var/named/db.0.168.192
 ```
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
-[ejercicio 14 - wiresark]()
+[ejercicio 14 - wiresark](https://drive.google.com/file/d/1LgYMWDfZ2RHzxnXhYuamtn27YiKJIwO4/view?usp=sharing)
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyNDkzMzM1MSwtNTMyNzk2MDU5LC0xMj
+eyJoaXN0b3J5IjpbLTU3NjgxODY0MywtNTMyNzk2MDU5LC0xMj
 Y5NDAzOTc3LC0xNTA1MDgzNDMsMTQ0ODIxMDU3MSwxODg1MzAy
 NzAwLC0xOTc4MTExMjIzLC0xNjM0Mzc3MzNdfQ==
 -->
