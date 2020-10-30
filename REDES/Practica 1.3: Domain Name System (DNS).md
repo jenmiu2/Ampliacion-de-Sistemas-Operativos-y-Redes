@@ -57,9 +57,9 @@ Determinar el nombre de dominio para 147.96.85.71. artiendo del servidor raíz a
 | Servidor | Nombre | TTL | Tipo | Datos | 
 |--|--|--|--|--|
 | a.root-servers.net | a-in-addr.arpa. | 172800 | NS |  |
-| a-in-addr.arpa. |  |  |  |  |
-|  |  |  |  |  |
-|  |  |  |  |  |
+| a-in-addr-servers.arpa. | r.arin.net. | 86400  | NS |  |
+| r.arin.net. | ns.ripe.net. | 172800 | NS |  |
+| ns.ripe.net. | www.fdi.ucm.es | 86400 | PTR |  |
 Lista de imagenes:
 [img ejercicio2 - 1ªbusqueda/res](https://drive.google.com/file/d/1ldFSc1OqWG5XKCRccElYfNtTlj8iXNiS/view?usp=sharing)
 [img ejercicio2 - 2ª busqueda/res](https://drive.google.com/file/d/1G6v31WVWAhsgsfZa33zztpOQFXPGyy2s/view?usp=sharing)
@@ -136,6 +136,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxNzIyNDI4MCwtMTk3ODExMTIyMywtMT
+eyJoaXN0b3J5IjpbLTE3NzE5ODEyMCwtMTk3ODExMTIyMywtMT
 YzNDM3NzMzXX0=
 -->
