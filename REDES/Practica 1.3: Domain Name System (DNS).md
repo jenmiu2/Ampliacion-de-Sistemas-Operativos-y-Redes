@@ -180,6 +180,16 @@ Realizar más consultas y, con la ayuda de wireshark:
 
 - Comprobar el protocolo y puerto usado por el cliente y servidor DNS
 
+```c
+//se añade esto al final del archivo
+zone "0.168.192.in-addr.arpa." {
+	type master;
+	file "db.0.168.192";
+};
+```
+```bash
+sudo named-checkconf #comprobamos que el fichero modificado es correcto
+```
 - Estudiar el formato (campos incluidos y longitud) de los mensajes correspondientes a las preguntas y respuestas DNS.
 
 
@@ -194,6 +204,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ0ODIxMDU3MSwxODg1MzAyNzAwLC0xOT
-c4MTExMjIzLC0xNjM0Mzc3MzNdfQ==
+eyJoaXN0b3J5IjpbNjM3NDY3MzAxLDE0NDgyMTA1NzEsMTg4NT
+MwMjcwMCwtMTk3ODExMTIyMywtMTYzNDM3NzMzXX0=
 -->
