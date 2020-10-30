@@ -35,13 +35,15 @@ Lista de imagenes:
 [img ejercicio2 - 2ª busqueda](https://drive.google.com/file/d/1d0I_3pHqSzYIsN-vIjYAL6oqaAu_5hm7/view?usp=sharing)
 [img ejercicio2 - 2ª res](https://drive.google.com/file/d/1d_k1g4sDMNTembZGiBHMlo3Z2mrKclZL/view?usp=sharing)
 [img ejercicio2 - 3ª busqueda](https://drive.google.com/file/d/1EPK1Q7ma4tTEOjsujLfzexAr9dSPRUYC/view?usp=sharing)
-[img ejercicio2 - 3ª res]()
-
+[img ejercicio2 - 3ª res](https://drive.google.com/file/d/13k3vJuLdC3T-0i3e4lR_gZiBWxpf05A8/view?usp=sharing)
 
 **NOTA:** Usar el comando dig @<servidor> <nombre> <tipo>. Más información en la página de manual de dig.
 
 ### Ejercicio 3 
 Obtener el registro SOA de ucm.es. usando un servidor autoritativo de la zona. Identificar los campos relevantes del registro.
+Lista de imágenes:
+[img ejercicio3 - res](https://drive.google.com/file/d/1NlOh0qAIFG7poZAm29nhTF75S79AAece/view?usp=sharing)
+[img ejercicio3 - busqueda](https://drive.google.com/file/d/1-1nRAZ-as9ITUGHnLexJ75y0T11qTKDe/view?usp=sharing)
 
 ### Ejercicio 4
 Determinar qué servidor debería usarse para enviar un mail a  [webmaster@fdi.ucm.es](mailto:webmaster@fdi.ucm.es),, usar un servidor autoritativo de la zona.
@@ -122,6 +124,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzEwMTI0MTc5LC0xOTc4MTExMjIzLC0xNj
+eyJoaXN0b3J5IjpbNTgwNzI4NTY0LC0xOTc4MTExMjIzLC0xNj
 M0Mzc3MzNdfQ==
 -->
