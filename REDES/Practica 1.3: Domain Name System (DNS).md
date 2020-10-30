@@ -42,14 +42,16 @@ Lista de imagenes:
 ### Ejercicio 3 
 Obtener el registro SOA de ucm.es. usando un servidor autoritativo de la zona. Identificar los campos relevantes del registro.
 Lista de imágenes:
-[img ejercicio3 - res](https://drive.google.com/file/d/1NlOh0qAIFG7poZAm29nhTF75S79AAece/view?usp=sharing)
-[img ejercicio3 - busqueda a](https://drive.google.com/file/d/1-1nRAZ-as9ITUGHnLexJ75y0T11qTKDe/view?usp=sharing)
-[img ejercicio3 - busqueda b](https://drive.google.com/file/d/17ZwPN1RSLH1nuYerm0GDJmL-p5BqU1a1/view?usp=sharing)
+[img ejercicio3 - busqueda](https://drive.google.com/file/d/1NlOh0qAIFG7poZAm29nhTF75S79AAece/view?usp=sharing)
+[img ejercicio3 - res a](https://drive.google.com/file/d/1-1nRAZ-as9ITUGHnLexJ75y0T11qTKDe/view?usp=sharing)
+[img ejercicio3 - res b](https://drive.google.com/file/d/17ZwPN1RSLH1nuYerm0GDJmL-p5BqU1a1/view?usp=sharing)
 
 ### Ejercicio 4
 Determinar qué servidor debería usarse para enviar un mail a  [webmaster@fdi.ucm.es](mailto:webmaster@fdi.ucm.es),, usar un servidor autoritativo de la zona.
-[img ejercicio4 - res](https://drive.google.com/file/d/1NlOh0qAIFG7poZAm29nhTF75S79AAece/view?usp=sharing)
-[img ejercicio4 - busqueda](https://drive.google.com/file/d/1-1nRAZ-as9ITUGHnLexJ75y0T11qTKDe/view?usp=sharing)
+Lista de imágenes:
+[img ejercicio4 - busqueda](https://drive.google.com/file/d/1ykBdvbtp4wJg80lN543LyVbh6KGY2Sc_/view?usp=sharing)
+[img ejercicio4 - res](https://drive.google.com/file/d/1eQ40vnw3TQGiXaRi01UturYoL0jLzP8i/view?usp=sharing)
+
 ### Ejercicio 5
 Determinar el nombre de dominio para 147.96.85.71. artiendo del servidor raíz a.root-servers.net y usando las respuestas obtenidas. Completar la siguiente tabla:
 | Servidor | Nombre | TTL | Tipo | Datos | 
@@ -126,6 +128,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3MTM1NjA1NCwtMTk3ODExMTIyMywtMT
-YzNDM3NzMzXX0=
+eyJoaXN0b3J5IjpbLTEyODMzNDIzNjQsLTE5NzgxMTEyMjMsLT
+E2MzQzNzczM119
 -->
