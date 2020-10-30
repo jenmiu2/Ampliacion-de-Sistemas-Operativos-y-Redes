@@ -88,8 +88,13 @@ La máquina VM1 actuará como servidor de nombres del dominio labfdi.es. La mayo
 ### Ejercicio 7
 Configurar el servidor de nombres añadiendo una entrada zone para la zona directa en el fichero /etc/named.conf. El tipo de servidor de la zona debe ser master y el archivo que define la zona, db.labfdi.es. Por ejemplo:
 ```bash
-sudo gedit /etc
+sudo gedit /etc/named.conf
+sudo cat /etc/named.conf
 ```
+Para que la configuración del fichero sea correcta se debe permitir cualquier tipo de query allow-query {any;}; y recursion no;
+Lista de imágenes:
+[img ejercicio7 -](https://drive.google.com/file/d/1_ToQF1hrsp1JPzdnWtYQj9NA7IcHs2C6/view?usp=sharing)
+
 ```c
 zone "labfdi.es." {
 	type master;
@@ -142,6 +147,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNzQyMzYzNTQsLTE5NzgxMTEyMjMsLT
-E2MzQzNzczM119
+eyJoaXN0b3J5IjpbMjczMjkxNDAsLTE5NzgxMTEyMjMsLTE2Mz
+QzNzczM119
 -->
