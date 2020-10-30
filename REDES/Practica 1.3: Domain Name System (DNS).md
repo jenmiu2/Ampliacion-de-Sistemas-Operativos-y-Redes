@@ -12,7 +12,7 @@ Para ver el fichero de configuración:
 ```bash
 sudo cat /etc/resolv.conf
 ```
-(imagen ejercicio 1 - resultado)[https://drive.google.com/file/d/1InGjKbiyxvaqyDgkJBbBq8sakG0E1Ot-/view?usp=sharing]
+[imagen ejercicio 1 - resultado](https://drive.google.com/file/d/1InGjKbiyxvaqyDgkJBbBq8sakG0E1Ot-/view?usp=sharing)
 ```bash
 man resolv.conf
 ```
@@ -30,9 +30,12 @@ Partiendo únicamente del servidor raíz a.root-servers.net y de las respuestas 
 |  | ucm.es | 86400 | A | 147.96.1.9 |
 
 Lista de imagenes:
-(img ejercicio2 - 1ª busqueda)[]
-(img ejercicio2 - 1ª busqueda)[]
-(img ejercicio2 - 1ª busqueda)[]
+[img ejercicio2 - 1ª busqueda)[https://drive.google.com/file/d/19KtE2ypzICNpme25vGLGQf0k91DKCHpg/view?usp=sharing]
+[img ejercicio2 - 1ª res]()
+[img ejercicio2 - 2ª busqueda
+[img ejercicio2 - 2ª res
+[img ejercicio2 - 3ª busqueda
+[img ejercicio2 - 3ª res
 
 
 **NOTA:** Usar el comando dig @<servidor> <nombre> <tipo>. Más información en la página de manual de dig.
@@ -119,6 +122,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzcwODU4MjUsLTE5NzgxMTEyMjMsLT
-E2MzQzNzczM119
+eyJoaXN0b3J5IjpbLTcxMjIzMzM4MCwtMTk3ODExMTIyMywtMT
+YzNDM3NzMzXX0=
 -->
