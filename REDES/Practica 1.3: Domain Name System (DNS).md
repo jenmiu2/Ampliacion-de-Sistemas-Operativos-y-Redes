@@ -94,9 +94,10 @@ sudo cat /etc/named.conf
 Para que la configuración del fichero sea correcta se debe permitir cualquier tipo de query allow-query {any;}; y recursion no;
 Lista de imágenes:
 [img ejercicio7 - named conf](https://drive.google.com/file/d/1oGd76YECAu6Zpr1nJWSmTqQhcPdmQuHL/view?usp=sharing)
-[img ejercicio7 - nueva zona](https://drive.google.com/file/d/1_ToQF1hrsp1JPzdnWtYQj9NA7IcHs2C6/view?usp=sharing)
+[img ejercicio7 - nueva zona](https://drive.google.com/file/d/1tcjLvc23mMHa2cfKeFdqzGlHpnyfZDkj/view?usp=sharing)
 
 ```c
+//se añade esto al final del archivo
 zone "labfdi.es." {
 	type master;
 	file "db.labfdi.es";
@@ -105,6 +106,11 @@ zone "labfdi.es." {
 ```bash
 sudo named-checkconf #comprobamos que el fichero modificado es correcto
 ```
+Una vez comprobado que es correcto, se debe activar el servidor:
+```bash
+
+```
+[](https://drive.google.com/file/d/1MOE634y1yewyopLNc_yFEukzLlgq-xnZ/view?usp=sharing)
 Revisar la configuración por defecto y consultar la página de manual de named.conf para ver las opciones disponibles para el servidor y las zonas. Por ejemplo, la recursión debe estar deshabilitada en servidores autoritativos y las consultas pueden estar restringidas a ciertas máquinas (directiva allow-query). Una vez creado el archivo de configuración, ejecutar el comando named-checkconf para comprobar que la sintaxis es correcta.
 
 ### Ejercicio 8
@@ -151,6 +157,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3MzkzNDAxNiwtMTk3ODExMTIyMywtMT
-YzNDM3NzMzXX0=
+eyJoaXN0b3J5IjpbNzI5NzI4NDA2LC0xOTc4MTExMjIzLC0xNj
+M0Mzc3MzNdfQ==
 -->
