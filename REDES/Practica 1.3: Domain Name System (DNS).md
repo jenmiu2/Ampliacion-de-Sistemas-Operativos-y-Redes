@@ -148,8 +148,12 @@ labfdi.es IN SOA ns.labfdi.es contact@fdi.es. (
 							IN MX			10 mail
 ns							IN A			192.168.0.1	
 wwww						IN A			192.168.0.200
-							IN AAA			192.168.0.1
-ns							IN A			192.168.0.1						
+							IN AAAA			fd00::1
+mail						IN A			192.168.0.250
+correo.labfdi.es			IN CNAME		mail.labfdi.es						
+```
+```bash
+sudo named-checkzone labfdi.es /var/named/db.labfdi.es
 ```
 
 ### Ejercicio 9
@@ -178,6 +182,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczNzk4Njc2NiwtMTk3ODExMTIyMywtMT
+eyJoaXN0b3J5IjpbLTkzNzE2ODM3MiwtMTk3ODExMTIyMywtMT
 YzNDM3NzMzXX0=
 -->
