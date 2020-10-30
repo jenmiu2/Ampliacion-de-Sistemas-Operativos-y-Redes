@@ -24,10 +24,11 @@ Las opciones:
 Partiendo únicamente del servidor raíz a.root-servers.net y de las respuestas obtenidas de cada servidor obtener la dirección IP de  [informatica.ucm.es](http://informatica.ucm.es/). Determinar el TTL de cada registro y completar la siguiente tabla:
 | Servidor | Nombre | TTL | Tipo | Datos | 
 |--|--|--|--|--|
-| a.root-servers.net |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
-|  |  |  |  |  |  |
+| a.root-servers.net | es | 172800 | NS |  |  |
+| g.nic.es. | ucm.es | 172800 | NS |  |  |
+| crispin.sim.ucm.es | informatica.ucm.es | 86400 | CNAME |  |  |
+|  |  | 86400 | CNAME |  |  |
+|  |  | 86400 | A |  |  |
 
 Lista de imagenes:
 
@@ -115,6 +116,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0OTQ2Njg3NiwtMTk3ODExMTIyMywtMT
+eyJoaXN0b3J5IjpbMjA3OTY1ODg3NSwtMTk3ODExMTIyMywtMT
 YzNDM3NzMzXX0=
 -->
