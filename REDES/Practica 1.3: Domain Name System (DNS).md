@@ -61,14 +61,17 @@ Determinar el nombre de dominio para 147.96.85.71. artiendo del servidor raíz a
 | r.arin.net. | ns.ripe.net. | 172800 | NS |  |
 | ns.ripe.net. | www.fdi.ucm.es | 86400 | PTR |  |
 Lista de imagenes:
-[img ejercicio2 - 1ªbusqueda/res](https://drive.google.com/file/d/1ldFSc1OqWG5XKCRccElYfNtTlj8iXNiS/view?usp=sharing)
-[img ejercicio2 - 2ª busqueda/res](https://drive.google.com/file/d/1G6v31WVWAhsgsfZa33zztpOQFXPGyy2s/view?usp=sharing)
-[img ejercicio2 - 3ª busqueda/res](https://drive.google.com/file/d/1fuHIxuJo0QXB_d3IXAIEim--yQCMpev5/view?usp=sharing)
-[img ejercicio2 - 4ª busqueda/res](https://drive.google.com/file/d/1EX7-MXmHwT0kRnHTstWeSpVPC5_FI9sv/view?usp=sharing)
+[img ejercicio5 - 1ªbusqueda/res](https://drive.google.com/file/d/1ldFSc1OqWG5XKCRccElYfNtTlj8iXNiS/view?usp=sharing)
+[img ejercicio5 - 2ª busqueda/res](https://drive.google.com/file/d/1G6v31WVWAhsgsfZa33zztpOQFXPGyy2s/view?usp=sharing)
+[img ejercicio5 - 3ª busqueda/res](https://drive.google.com/file/d/1fuHIxuJo0QXB_d3IXAIEim--yQCMpev5/view?usp=sharing)
+[img ejercicio5 - 4ª busqueda/res](https://drive.google.com/file/d/1EX7-MXmHwT0kRnHTstWeSpVPC5_FI9sv/view?usp=sharing)
 **NOTA:** La opción -x de dig (en el interfaz web, se activa seleccionando “Reverse” como tipo de registro) facilita la búsqueda inversa cuando detecta una dirección IP como argumento, creando el dominio de búsqueda a partir de la dirección IP (esto es, invierte el orden de los bytes y añade .in-addr.arpa.) y estableciendo el tipo de registro por defecto a PTR.
 
 ### Ejercicio 6
 Obtener la IP de [google](www.google.com) usando el servidor por defecto. Usar la opción +trace del comando dig (option “Trace” en el interfaz web) y observar las consultas realizadas.
+Lista de imagenes:
+[img ejercicio6 - 1ªbusqueda](https://drive.google.com/file/d/1ZNjwXT874K1BhtWTdwk-Ykq2MBy38vP-/view?usp=sharing)
+[img ejercicio6 - 2ª res](https://drive.google.com/file/d/1_ToQF1hrsp1JPzdnWtYQj9NA7IcHs2C6/view?usp=sharing)
 
 # Servidor DNS
 ## Preparación del entorno
@@ -84,6 +87,9 @@ La máquina VM1 actuará como servidor de nombres del dominio labfdi.es. La mayo
 
 ### Ejercicio 7
 Configurar el servidor de nombres añadiendo una entrada zone para la zona directa en el fichero /etc/named.conf. El tipo de servidor de la zona debe ser master y el archivo que define la zona, db.labfdi.es. Por ejemplo:
+```bash
+sudo gedit /etc
+```
 ```c
 zone "labfdi.es." {
 	type master;
@@ -136,6 +142,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NzE5ODEyMCwtMTk3ODExMTIyMywtMT
-YzNDM3NzMzXX0=
+eyJoaXN0b3J5IjpbLTEzNzQyMzYzNTQsLTE5NzgxMTEyMjMsLT
+E2MzQzNzczM119
 -->
