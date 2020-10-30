@@ -132,7 +132,16 @@ Finalmente, arrancar el servicio DNS con el comando service named start.
 **NOTA:** No olvidar que los nombres FQDN terminan en el dominio raíz (“.”). El nombre de la zona puede especificarse con @ en el campo nombre del registro.
 
 ```bash 
-sudo gedit 
+sudo gedit /var/named/db.labfdi.es
+```
+El fichero debe quedar así:
+```latex
+$TTL 2d
+labfdi.es IN SOA ns.labfdi.es contact@fdi.es. (
+		2003080800			; serial number
+		3h					; refresh
+		15M					; update retry
+		3W
 ```
 
 ### Ejercicio 9
@@ -161,6 +170,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODIxNzEyNTE4LC0xOTc4MTExMjIzLC0xNj
+eyJoaXN0b3J5IjpbMjgxMjM0ODc4LC0xOTc4MTExMjIzLC0xNj
 M0Mzc3MzNdfQ==
 -->
