@@ -165,7 +165,7 @@ Configurar la máquina virtual cliente para que use el nuevo servidor de nombres
 sudo edit resolve.conf
 ```
 Editar el fichero y debería quedar así:
-```latex
+```c
 search ns.labfdi.es
 nameserver 192.168.0.1
 ```
@@ -236,7 +236,7 @@ Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asoc
 [ejercicio 14 - wiresark](https://drive.google.com/file/d/1LgYMWDfZ2RHzxnXhYuamtn27YiKJIwO4/view?usp=sharing)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDgwMzYzNjkzLC01MzI3OTYwNTksLTEyNj
-k0MDM5NzcsLTE1MDUwODM0MywxNDQ4MjEwNTcxLDE4ODUzMDI3
-MDAsLTE5NzgxMTEyMjMsLTE2MzQzNzczM119
+eyJoaXN0b3J5IjpbLTM1MTQ1OTk3MiwtNTMyNzk2MDU5LC0xMj
+Y5NDAzOTc3LC0xNTA1MDgzNDMsMTQ0ODIxMDU3MSwxODg1MzAy
+NzAwLC0xOTc4MTExMjIzLC0xNjM0Mzc3MzNdfQ==
 -->
