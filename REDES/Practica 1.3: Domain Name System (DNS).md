@@ -7,7 +7,7 @@ En esta práctica, emplearemos herramientas cliente DNS para explorar la estruct
 Usaremos las herramientas clientes DNS, que serán de utilidad tanto para depurar el despliegue del servicio DNS en nuestra red local, como para estudiar la estructura de DNS en Internet. Las herramientas principales para consultar un servicio DNS son dig y host. Para esta primera parte,  **se usará la máquina física**  del puesto del laboratorio. Si las consultas DNS a determinados servidores estuvieran bloqueadas,  **se usará un interfaz web**como  [www.digwebinterface.com](http://www.digwebinterface.com/)  (activando las opciones “Stats” y “Show command”) o  [www.diggui.com](http://www.diggui.com/).
 
 ### Ejercicio 1
-El archivo de configuración del cliente DNS es /etc/resolv.conf. Consultar la página de manual de resolv.conf y estudiar el significado de las opciones nameserver y search. Ver el contenido del archivo en la máquina física del laboratorio.
+Ver el contenido del fichero de configuración del cliente DNS, /etc/resolv.conf. Consultar la página de manual de resolv.conf y buscar las opciones nameserver y search.
 
 ### Ejercicio 2 
 Partiendo únicamente del servidor raíz a.root-servers.net y de las respuestas obtenidas de cada servidor obtener la dirección IP de  [informatica.ucm.es](http://informatica.ucm.es/). Determinar el TTL de cada registro y completar la siguiente tabla:
@@ -21,10 +21,10 @@ Partiendo únicamente del servidor raíz a.root-servers.net y de las respuestas 
 Obtener el registro SOA de ucm.es. usando un servidor autoritativo de la zona. Identificar los campos relevantes del registro.
 
 ### Ejercicio 4
-Determinar qué servidor debería usarse para enviar un mail a  [webmaster@fdi.ucm.es](mailto:webmaster@fdi.ucm.es).
+Determinar qué servidor debería usarse para enviar un mail a  [webmaster@fdi.ucm.es](mailto:webmaster@fdi.ucm.es),, usar un servidor autoritativo de la zona.
 
 ### Ejercicio 5
-Determinar el nombre de dominio para 147.96.85.71. Al igual que en el ejercicio 2, usar únicamente el servidor raíz a.root-servers.net y las respuestas obtenidas a partir de éste. Completar la siguiente tabla:
+Determinar el nombre de dominio para 147.96.85.71. artiendo del servidor raíz a.root-servers.net y usando las respuestas obtenidas. Completar la siguiente tabla:
 | Servidor | Nombre | TTL | Tipo | Datos | 
 |--|--|--|--|--|
 |  |  |  |  |  |  |
@@ -32,7 +32,7 @@ Determinar el nombre de dominio para 147.96.85.71. Al igual que en el ejercicio 
 **NOTA:** La opción -x de dig (en el interfaz web, se activa seleccionando “Reverse” como tipo de registro) facilita la búsqueda inversa cuando detecta una dirección IP como argumento, creando el dominio de búsqueda a partir de la dirección IP (esto es, invierte el orden de los bytes y añade .in-addr.arpa.) y estableciendo el tipo de registro por defecto a PTR.
 
 ### Ejercicio 6
-Obtener la IP de  [www.google.com](http://www.google.com/)  usando el servidor por defecto. Usar el comando dig con la opción +trace y observar las consultas realizadas.
+**Obtener la IP de www.google.com usando el servidor por defecto. Usar la opción +trace del comando dig (option “Trace” en el interfaz web) y observar las consultas realizadas.**
 # Servidor DNS
 ## Preparación del entorno
 Para esta parte, configuraremos la topología de red que se muestra en la siguiente figura:
@@ -101,5 +101,5 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzQzNzczM119
+eyJoaXN0b3J5IjpbLTE3NDI2NDgyNjcsLTE2MzQzNzczM119
 -->
