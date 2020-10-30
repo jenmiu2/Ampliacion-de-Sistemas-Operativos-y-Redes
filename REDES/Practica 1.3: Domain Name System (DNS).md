@@ -172,7 +172,7 @@ Usar el comando dig en el cliente para obtener la información del dominio labfd
 ```bash
 dig labfdi.es
 ```
-
+[ejercicio 10-res](https://drive.google.com/file/d/1xkHq01p53zYnP7n5aRrUeuGbLh1dQ9nP/view?usp=sharing)
 
 ### Ejercicio 11
 
@@ -194,6 +194,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MDY4MTQ2NzQsMTg4NTMwMjcwMCwtMT
-k3ODExMTIyMywtMTYzNDM3NzMzXX0=
+eyJoaXN0b3J5IjpbMTQ0ODIxMDU3MSwxODg1MzAyNzAwLC0xOT
+c4MTExMjIzLC0xNjM0Mzc3MzNdfQ==
 -->
