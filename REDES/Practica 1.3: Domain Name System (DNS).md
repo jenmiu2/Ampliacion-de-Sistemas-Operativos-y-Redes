@@ -24,13 +24,16 @@ Las opciones:
 Partiendo únicamente del servidor raíz a.root-servers.net y de las respuestas obtenidas de cada servidor obtener la dirección IP de  [informatica.ucm.es](http://informatica.ucm.es/). Determinar el TTL de cada registro y completar la siguiente tabla:
 | Servidor | Nombre | TTL | Tipo | Datos | 
 |--|--|--|--|--|
-| a.root-servers.net | es | 172800 | NS |  |  |
-| g.nic.es. | ucm.es | 172800 | NS |  |  |
-| crispin.sim.ucm.es | informatica.ucm.es | 86400 | CNAME |  |  |
-|  |  | 86400 | CNAME |  |  |
-|  |  | 86400 | A |  |  |
+| a.root-servers.net | es | 172800 | NS |  |
+| g.nic.es. | ucm.es | 172800 | NS |  |
+| crispin.sim.ucm.es | informatica.ucm.es | 86400 | CNAME | ucm.es |
+|  | ucm.es | 86400 | A | 147.96.1.9 |
 
 Lista de imagenes:
+(img ejercicio2 - 1ª busqueda)[]
+(img ejercicio2 - 1ª busqueda)[]
+(img ejercicio2 - 1ª busqueda)[]
+
 
 **NOTA:** Usar el comando dig @<servidor> <nombre> <tipo>. Más información en la página de manual de dig.
 
@@ -116,6 +119,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA3OTY1ODg3NSwtMTk3ODExMTIyMywtMT
-YzNDM3NzMzXX0=
+eyJoaXN0b3J5IjpbLTEyNzcwODU4MjUsLTE5NzgxMTEyMjMsLT
+E2MzQzNzczM119
 -->
