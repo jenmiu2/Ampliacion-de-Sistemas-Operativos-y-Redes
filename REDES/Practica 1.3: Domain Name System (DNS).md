@@ -135,7 +135,7 @@ Finalmente, arrancar el servicio DNS con el comando service named start.
 sudo gedit /var/named/db.labfdi.es
 ```
 El fichero debe quedar así:
-```latex
+```c
 $TTL 2d
 labfdi.es IN SOA ns.labfdi.es contact@fdi.es. (
 		2003080800			; serial number
@@ -174,11 +174,15 @@ dig labfdi.es
 ```
 [ejercicio 10-res](https://drive.google.com/file/d/1xkHq01p53zYnP7n5aRrUeuGbLh1dQ9nP/view?usp=sharing)
 
-### Ejercicio 11
+### Ejercicio 11-VM1
 
 Realizar más consultas y, con la ayuda de wireshark:
 
 - Comprobar el protocolo y puerto usado por el cliente y servidor DNS
+```bash
+sudo gedit /etc/named.conf
+sudo cat /etc/named.conf
+```
 
 ```c
 //se añade esto al final del archivo
@@ -191,7 +195,7 @@ zone "0.168.192.in-addr.arpa." {
 sudo named-checkconf #comprobamos que el fichero modificado es correcto
 ```
 - Estudiar el formato (campos incluidos y longitud) de los mensajes correspondientes a las preguntas y respuestas DNS.
-
+[]()
 
 ## Zona inversa (reverse)
 Además, el servidor incluirá una base de datos para la búsqueda inversa. La zona inversa contiene los registros PTR correspondientes a las direcciones IP.
@@ -204,6 +208,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjM3NDY3MzAxLDE0NDgyMTA1NzEsMTg4NT
+eyJoaXN0b3J5IjpbMzE0NjI2Nzk3LDE0NDgyMTA1NzEsMTg4NT
 MwMjcwMCwtMTk3ODExMTIyMywtMTYzNDM3NzMzXX0=
 -->
