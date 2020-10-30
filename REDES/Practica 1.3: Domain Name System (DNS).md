@@ -156,11 +156,23 @@ correo.labfdi.es			IN CNAME		mail.labfdi.es
 sudo named-checkzone labfdi.es /var/named/db.labfdi.es
 ```
 
-### Ejercicio 9
+### Ejercicio 9-VM2
 Configurar la máquina virtual cliente para que use el nuevo servidor de nombres. Para ello, crear o modificar /etc/resolv.conf con los nuevos valores para nameserver y search.
+```bash
+sudo edit resolve.conf
+```
+Editar el fichero y debería quedar así:
+```latex
+search ns.labfdi.es
+nameserver 192.168.0.1
+```
 
-### Ejercicio 10
+### Ejercicio 10-VM2
 Usar el comando dig en el cliente para obtener la información del dominio labfdi.es.
+```bash
+dig labfdi.es
+```
+
 
 ### Ejercicio 11
 
@@ -182,6 +194,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4NTMwMjcwMCwtMTk3ODExMTIyMywtMT
-YzNDM3NzMzXX0=
+eyJoaXN0b3J5IjpbLTE4MDY4MTQ2NzQsMTg4NTMwMjcwMCwtMT
+k3ODExMTIyMywtMTYzNDM3NzMzXX0=
 -->
