@@ -66,6 +66,7 @@ Lista de imagenes:
 [img ejercicio5 - 2ª busqueda/res](https://drive.google.com/file/d/1G6v31WVWAhsgsfZa33zztpOQFXPGyy2s/view?usp=sharing)
 [img ejercicio5 - 3ª busqueda/res](https://drive.google.com/file/d/1fuHIxuJo0QXB_d3IXAIEim--yQCMpev5/view?usp=sharing)
 [img ejercicio5 - 4ª busqueda/res](https://drive.google.com/file/d/1EX7-MXmHwT0kRnHTstWeSpVPC5_FI9sv/view?usp=sharing)
+
 **NOTA:** La opción -x de dig (en el interfaz web, se activa seleccionando “Reverse” como tipo de registro) facilita la búsqueda inversa cuando detecta una dirección IP como argumento, creando el dominio de búsqueda a partir de la dirección IP (esto es, invierte el orden de los bytes y añade .in-addr.arpa.) y estableciendo el tipo de registro por defecto a PTR.
 
 ### Ejercicio 6
@@ -112,6 +113,7 @@ Una vez comprobado que es correcto, se debe activar el servidor:
 sudo service named start
 ```
 [ejercicio 7 - activado el servidor](https://drive.google.com/file/d/1MOE634y1yewyopLNc_yFEukzLlgq-xnZ/view?usp=sharing)
+
 Revisar la configuración por defecto y consultar la página de manual de named.conf para ver las opciones disponibles para el servidor y las zonas. Por ejemplo, la recursión debe estar deshabilitada en servidores autoritativos y las consultas pueden estar restringidas a ciertas máquinas (directiva allow-query). Una vez creado el archivo de configuración, ejecutar el comando named-checkconf para comprobar que la sintaxis es correcta.
 
 ### Ejercicio 8-VM1
@@ -234,7 +236,7 @@ Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asoc
 [ejercicio 14 - wiresark](https://drive.google.com/file/d/1LgYMWDfZ2RHzxnXhYuamtn27YiKJIwO4/view?usp=sharing)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4OTIyMjM5MSwtNTMyNzk2MDU5LC0xMj
-Y5NDAzOTc3LC0xNTA1MDgzNDMsMTQ0ODIxMDU3MSwxODg1MzAy
-NzAwLC0xOTc4MTExMjIzLC0xNjM0Mzc3MzNdfQ==
+eyJoaXN0b3J5IjpbNDgwMzYzNjkzLC01MzI3OTYwNTksLTEyNj
+k0MDM5NzcsLTE1MDUwODM0MywxNDQ4MjEwNTcxLDE4ODUzMDI3
+MDAsLTE5NzgxMTEyMjMsLTE2MzQzNzczM119
 -->
