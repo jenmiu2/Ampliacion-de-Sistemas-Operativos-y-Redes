@@ -85,7 +85,7 @@ Como en prácticas anteriores, construiremos la topología con la herramienta vt
 ## Zona directa (_forward_)
 La máquina VM1 actuará como servidor de nombres del dominio labfdi.es. La mayoría de los registros se incluyen en la zona directa.
 
-### Ejercicio 7
+### Ejercicio 7-VM1
 Configurar el servidor de nombres añadiendo una entrada zone para la zona directa en el fichero /etc/named.conf. El tipo de servidor de la zona debe ser master y el archivo que define la zona, db.labfdi.es. Por ejemplo:
 ```bash
 sudo gedit /etc/named.conf
@@ -113,7 +113,7 @@ sudo service named start
 [ejercicio 7 - activado el servidor](https://drive.google.com/file/d/1MOE634y1yewyopLNc_yFEukzLlgq-xnZ/view?usp=sharing)
 Revisar la configuración por defecto y consultar la página de manual de named.conf para ver las opciones disponibles para el servidor y las zonas. Por ejemplo, la recursión debe estar deshabilitada en servidores autoritativos y las consultas pueden estar restringidas a ciertas máquinas (directiva allow-query). Una vez creado el archivo de configuración, ejecutar el comando named-checkconf para comprobar que la sintaxis es correcta.
 
-### Ejercicio 8
+### Ejercicio 8-VM1
 Crear el archivo de la zona directa labfdi.es. en /var/named/db.labfdi.es con los registros especificados en la siguiente tabla. Especificar también la directiva $TTL.
 
 | Registro | Descripcion |
@@ -182,6 +182,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkzNzE2ODM3MiwtMTk3ODExMTIyMywtMT
+eyJoaXN0b3J5IjpbMTg4NTMwMjcwMCwtMTk3ODExMTIyMywtMT
 YzNDM3NzMzXX0=
 -->
