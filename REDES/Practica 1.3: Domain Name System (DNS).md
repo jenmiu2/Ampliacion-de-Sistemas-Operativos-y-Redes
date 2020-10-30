@@ -183,7 +183,6 @@ Realizar más consultas y, con la ayuda de wireshark:
 sudo gedit /etc/named.conf
 sudo cat /etc/named.conf
 ```
-
 ```c
 //se añade esto al final del archivo
 zone "0.168.192.in-addr.arpa." {
@@ -195,7 +194,7 @@ zone "0.168.192.in-addr.arpa." {
 sudo named-checkconf #comprobamos que el fichero modificado es correcto
 ```
 - Estudiar el formato (campos incluidos y longitud) de los mensajes correspondientes a las preguntas y respuestas DNS.
-[]()
+[ejercicio 11-wireshark](https://drive.google.com/file/d/1HFLDtaUWWzOaakQ64ZzKonjEWQEVaOGg/view?usp=sharing)
 
 ## Zona inversa (reverse)
 Además, el servidor incluirá una base de datos para la búsqueda inversa. La zona inversa contiene los registros PTR correspondientes a las direcciones IP.
@@ -208,6 +207,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzE0NjI2Nzk3LDE0NDgyMTA1NzEsMTg4NT
-MwMjcwMCwtMTk3ODExMTIyMywtMTYzNDM3NzMzXX0=
+eyJoaXN0b3J5IjpbLTE1MDUwODM0MywxNDQ4MjEwNTcxLDE4OD
+UzMDI3MDAsLTE5NzgxMTEyMjMsLTE2MzQzNzczM119
 -->
