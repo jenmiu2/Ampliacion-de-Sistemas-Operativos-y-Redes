@@ -185,6 +185,7 @@ Realizar más consultas y, con la ayuda de wireshark:
 
 ## Zona inversa (reverse)
 Además, el servidor incluirá una base de datos para la búsqueda inversa. La zona inversa contiene los registros PTR correspondientes a las direcciones IP.
+
 ### Ejercicio 12
 Añadir otra entrada zone para la zona inversa 0.168.192.in-addr.arpa.  en /etc/named.conf. El tipo de servidor de la zona debe ser master y el archivo que define la zona, db.0.168.192.
 
@@ -232,7 +233,7 @@ Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asoc
 [ejercicio 14 - wiresark](https://drive.google.com/file/d/1LgYMWDfZ2RHzxnXhYuamtn27YiKJIwO4/view?usp=sharing)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3NjgxODY0MywtNTMyNzk2MDU5LC0xMj
-Y5NDAzOTc3LC0xNTA1MDgzNDMsMTQ0ODIxMDU3MSwxODg1MzAy
-NzAwLC0xOTc4MTExMjIzLC0xNjM0Mzc3MzNdfQ==
+eyJoaXN0b3J5IjpbNDcwNjA4OTEsLTUzMjc5NjA1OSwtMTI2OT
+QwMzk3NywtMTUwNTA4MzQzLDE0NDgyMTA1NzEsMTg4NTMwMjcw
+MCwtMTk3ODExMTIyMywtMTYzNDM3NzMzXX0=
 -->
