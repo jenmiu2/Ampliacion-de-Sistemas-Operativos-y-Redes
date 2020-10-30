@@ -32,7 +32,7 @@ Determinar el nombre de dominio para 147.96.85.71. artiendo del servidor raíz a
 **NOTA:** La opción -x de dig (en el interfaz web, se activa seleccionando “Reverse” como tipo de registro) facilita la búsqueda inversa cuando detecta una dirección IP como argumento, creando el dominio de búsqueda a partir de la dirección IP (esto es, invierte el orden de los bytes y añade .in-addr.arpa.) y estableciendo el tipo de registro por defecto a PTR.
 
 ### Ejercicio 6
-**Obtener la IP de www.google.com usando el servidor por defecto. Usar la opción +trace del comando dig (option “Trace” en el interfaz web) y observar las consultas realizadas.**
+Obtener la IP de [google](www.google.com) usando el servidor por defecto. Usar la opción +trace del comando dig (option “Trace” en el interfaz web) y observar las consultas realizadas.
 # Servidor DNS
 ## Preparación del entorno
 Para esta parte, configuraremos la topología de red que se muestra en la siguiente figura:
@@ -53,9 +53,7 @@ zone "labfdi.es." {
 	file "db.labfdi.es";
 };
 ```
-Revisar la configuración por defecto y consultar la página de manual de named.conf para ver las opciones disponibles para el servidor y las zonas. Por ejemplo, la recursión debe estar deshabilitada en servidores autoritativos y las consultas pueden estar restringidas a ciertas máquinas (directiva allow-query).
-
-Una vez creado el archivo de configuración, ejecutar el comando named-checkconf para comprobar que la sintaxis es correcta.
+Revisar la configuración por defecto y consultar la página de manual de named.conf para ver las opciones disponibles para el servidor y las zonas. Por ejemplo, la recursión debe estar deshabilitada en servidores autoritativos y las consultas pueden estar restringidas a ciertas máquinas (directiva allow-query). Una vez creado el archivo de configuración, ejecutar el comando named-checkconf para comprobar que la sintaxis es correcta.
 
 ### Ejercicio 8
 Crear el archivo de la zona directa labfdi.es. en /var/named/db.labfdi.es con los registros especificados en la siguiente tabla. Especificar también la directiva $TTL.
@@ -101,5 +99,5 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDI2NDgyNjcsLTE2MzQzNzczM119
+eyJoaXN0b3J5IjpbLTIxMzM4NzU4MjMsLTE2MzQzNzczM119
 -->
