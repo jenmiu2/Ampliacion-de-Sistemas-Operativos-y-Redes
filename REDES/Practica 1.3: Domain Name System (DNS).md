@@ -200,6 +200,30 @@ sudo named-checkconf #comprobamos que el fichero modificado es correcto
 Además, el servidor incluirá una base de datos para la búsqueda inversa. La zona inversa contiene los registros PTR correspondientes a las direcciones IP.
 ### Ejercicio 12
 Añadir otra entrada zone para la zona inversa 0.168.192.in-addr.arpa.  en /etc/named.conf. El tipo de servidor de la zona debe ser master y el archivo que define la zona, db.0.168.192.
+```bash 
+sudo gedit /var/named/db.labfdi.es
+```
+El fichero debe quedar así:
+```c
+$TTL 2d
+0.168.192.in-addr.arpa. IN SOA ns.labfdi.es contact@fdi.es. (
+		2013070807			; serial number
+		3h					; refresh
+		15M					; update retry
+		3W12h				; expiry
+		2h20M				; nx ttl
+		)
+							IN NS			ns
+							IN MX			10 mail
+ns							IN A			192.168.0.1	
+wwww						IN A			192.168.0.200
+							IN AAAA			fd00::1
+mail						IN A			192.168.0.250
+correo.labfdi.es			IN CNAME		mail.labfdi.es						
+```
+```bash
+sudo named-checkzone labfdi.es /var/named/db.labfdi.es
+```
 
 ### Ejercicio 13
 Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros SOA, NS y PTR. Esta zona usará el mismo servidor de nombres y parámetros de configuración en el registro SOA. Después, reiniciar el servicio DNS con el comando service named restart (o bien, recargar la configuración con el comando service named reload).
@@ -207,6 +231,7 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDUwODM0MywxNDQ4MjEwNTcxLDE4OD
-UzMDI3MDAsLTE5NzgxMTEyMjMsLTE2MzQzNzczM119
+eyJoaXN0b3J5IjpbLTE3NzUwMjMyNTksLTE1MDUwODM0MywxND
+Q4MjEwNTcxLDE4ODUzMDI3MDAsLTE5NzgxMTEyMjMsLTE2MzQz
+NzczM119
 -->
