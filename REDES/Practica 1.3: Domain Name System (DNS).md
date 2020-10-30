@@ -60,6 +60,7 @@ Determinar el nombre de dominio para 147.96.85.71. artiendo del servidor raíz a
 | a-in-addr-servers.arpa. | r.arin.net. | 86400  | NS |  |
 | r.arin.net. | ns.ripe.net. | 172800 | NS |  |
 | ns.ripe.net. | www.fdi.ucm.es | 86400 | PTR |  |
+
 Lista de imagenes:
 [img ejercicio5 - 1ªbusqueda/res](https://drive.google.com/file/d/1ldFSc1OqWG5XKCRccElYfNtTlj8iXNiS/view?usp=sharing)
 [img ejercicio5 - 2ª busqueda/res](https://drive.google.com/file/d/1G6v31WVWAhsgsfZa33zztpOQFXPGyy2s/view?usp=sharing)
@@ -233,7 +234,7 @@ Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asoc
 [ejercicio 14 - wiresark](https://drive.google.com/file/d/1LgYMWDfZ2RHzxnXhYuamtn27YiKJIwO4/view?usp=sharing)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDcwNjA4OTEsLTUzMjc5NjA1OSwtMTI2OT
-QwMzk3NywtMTUwNTA4MzQzLDE0NDgyMTA1NzEsMTg4NTMwMjcw
-MCwtMTk3ODExMTIyMywtMTYzNDM3NzMzXX0=
+eyJoaXN0b3J5IjpbLTc4OTIyMjM5MSwtNTMyNzk2MDU5LC0xMj
+Y5NDAzOTc3LC0xNTA1MDgzNDMsMTQ0ODIxMDU3MSwxODg1MzAy
+NzAwLC0xOTc4MTExMjIzLC0xNjM0Mzc3MzNdfQ==
 -->
