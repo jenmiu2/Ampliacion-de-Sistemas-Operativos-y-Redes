@@ -12,9 +12,10 @@ Para ver el fichero de configuración:
 ```bash
 sudo cat /etc/resolv.conf
 ```
+(imagen ejercicio 1 - resultado)[https://drive.google.com/file/d/1InGjKbiyxvaqyDgkJBbBq8sakG0E1Ot-/view?usp=sharing]
 Las opciones:
 - nameserver: indica la dirección IP del servidor.
-- search: muestra la lista 
+- search: muestra la lista de nombres de host buscados
 
 ### Ejercicio 2 
 Partiendo únicamente del servidor raíz a.root-servers.net y de las respuestas obtenidas de cada servidor obtener la dirección IP de  [informatica.ucm.es](http://informatica.ucm.es/). Determinar el TTL de cada registro y completar la siguiente tabla:
@@ -106,5 +107,6 @@ Crear el archivo de la zona inversa en /var/named/db.0.168.192 con los registros
 ### Ejercicio 14
 Comprobar el funcionamiento de la resolución inversa, obteniendo el nombre asociado a la dirección 192.168.0.250.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzgxMTEyMjMsLTE2MzQzNzczM119
+eyJoaXN0b3J5IjpbNDgwMTI1ODUsLTE5NzgxMTEyMjMsLTE2Mz
+QzNzczM119
 -->
