@@ -38,7 +38,11 @@ man ping6
 
 ### Ejercicio 3[Router, VM4]
 Activar el interfaz de VM4 y los dos interfaces de Router. Comprobar la conectividad entre Router y VM1, y entre Router y VM4 usando la dirección de enlace local.
-
+```bash 
+sudo ip link set eth0 up 
+sudo ip link set eth1 up # sólo en el router(vm3)
+ip a
+```
 # Direcciones ULA
 Una dirección ULA (_Unique Local Address_) puede usarse dentro de una organización, de forma que los encaminadores internos del sitio deben encaminar los datagramas con una dirección ULA como destino. El prefijo de formato para estas direcciones es fc00::/7.
 ### Ejercicio 4[VM1, VM2]
@@ -118,5 +122,5 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5NzU3MzM1M119
+eyJoaXN0b3J5IjpbLTMzNjM4MDcyMiwtNDk3NTczMzUzXX0=
 -->
