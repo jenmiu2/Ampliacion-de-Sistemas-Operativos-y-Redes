@@ -55,6 +55,8 @@ sudo ping6 fe80::a00:27ff:fe92:c3f1 -I eth0 # vm4
 Una dirección ULA (_Unique Local Address_) puede usarse dentro de una organización, de forma que los encaminadores internos del sitio deben encaminar los datagramas con una dirección ULA como destino. El prefijo de formato para estas direcciones es fc00::/7.
 ### Ejercicio 4[VM1, VM2]
 Configurar VM1 y VM2 para que tengan una dirección ULA en la red fd00:0:0:a::/64 con el comando ip. La parte de identificador de interfaz puede elegirse libremente, siempre que no coincida para ambas máquinas.  **Nota:** Incluir la longitud del prefijo al fijar las direcciones.
+Para asignar a la maquina virtual 1:
+Para asignar a la maquina virtual 2:
 ### Ejercicio 5[VM1, VM2]
 Comprobar la conectividad entre VM1 y VM2 con la orden ping6 usando la nueva dirección. Observar los mensajes intercambiados con wireshark.
 ### Ejercicio 6[Router, VM4]
@@ -130,6 +132,6 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzI2MTcwMjc5LC0zMzYzODA3MjIsLTQ5Nz
-U3MzM1M119
+eyJoaXN0b3J5IjpbLTEzNTk5MDAwNzYsLTMzNjM4MDcyMiwtND
+k3NTczMzUzXX0=
 -->
