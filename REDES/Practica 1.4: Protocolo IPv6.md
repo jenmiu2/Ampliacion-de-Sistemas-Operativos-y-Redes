@@ -74,7 +74,21 @@ ping6 fd00:0:0:a::2 # mv1
 ```
 ### Ejercicio 6[Router, VM4]
 Configurar direcciones ULA en los dos interfaces de Router (redes fd00:0:0:a::/64 y fd00:0:0:b::/64) y en el de VM4 (red fd00:0:0:b::/64). Elegir el identificador de interfaz de forma que no coincida dentro de la misma red.
+Para asignar a la maquina virtual 3/router:
+```bash 
+sudo ip link set eth0 down
+sudo ip link set eth1 down
+sudo ip address add fd00:0:0:a::1/64 dev eth0
 
+sudo ip link set eth0 up
+sudo ip link set eth1 up
+```
+Para asignar a la maquina virtual 2:
+```bash 
+sudo ip link set eth0 down
+sudo ip address add fd00:0:0:a::2/64 dev eth0
+sudo ip link set eth0 up
+```
 ### Ejercicio 7[Router]
 Comprobar la conectividad entre Router y VM1, y entre Router y VM4 usando direcciones ULA. Comprobar además que VM1 no puede alcanzar a VM4.
 # Encaminamiento estático
@@ -146,6 +160,6 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM3MTE0MjQ5MywtMTI3NTk5MTYyNywtMT
-M1OTkwMDA3NiwtMzM2MzgwNzIyLC00OTc1NzMzNTNdfQ==
+eyJoaXN0b3J5IjpbNzk5MTM3ODI2LC0xMjc1OTkxNjI3LC0xMz
+U5OTAwMDc2LC0zMzYzODA3MjIsLTQ5NzU3MzM1M119
 -->
