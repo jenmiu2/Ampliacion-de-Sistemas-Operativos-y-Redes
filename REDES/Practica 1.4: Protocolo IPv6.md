@@ -101,7 +101,7 @@ ping6 fd00:0:0:a::2 # mv1
 ```
 Entre VM1-VM4:
 ```bash
-ping6 fd00:0:0:a::2 # mv1
+ping6 fd00:0:0:::2 # mv1
 ```
 # Encaminamiento estático
 Según la topología que hemos configurado en esta práctica, Router debe encaminar el tráfico entre las redes fd00:0:0:a::/64 y fd00:0:0:b::/64. En esta sección vamos a configurar un encaminamiento estático basado en las rutas que fijaremos manualmente en todas las máquinas.
@@ -172,6 +172,7 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTY4OTA4ODcsLTEyNzU5OTE2MjcsLT
-EzNTk5MDAwNzYsLTMzNjM4MDcyMiwtNDk3NTczMzUzXX0=
+eyJoaXN0b3J5IjpbLTE1NTY5NzIxNTYsLTIwMTY4OTA4ODcsLT
+EyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLTMzNjM4MDcyMiwtNDk3
+NTczMzUzXX0=
 -->
