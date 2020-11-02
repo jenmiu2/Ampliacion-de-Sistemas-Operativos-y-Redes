@@ -78,15 +78,15 @@ Para asignar a la maquina virtual 3/router:
 ```bash 
 sudo ip link set eth0 down
 sudo ip link set eth1 down
-sudo ip address add fd00:0:0:a::1/64 dev eth0
-
+sudo ip address add fd00:0:0:a::3/64 dev eth0
+sudo ip address add fd00:0:0:b::3/64 dev eth1
 sudo ip link set eth0 up
 sudo ip link set eth1 up
 ```
-Para asignar a la maquina virtual 2:
+Para asignar a la maquina virtual 4:
 ```bash 
 sudo ip link set eth0 down
-sudo ip address add fd00:0:0:a::2/64 dev eth0
+sudo ip address add fd00:0:0:b::1/64 dev eth1
 sudo ip link set eth0 up
 ```
 ### Ejercicio 7[Router]
@@ -160,6 +160,6 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzk5MTM3ODI2LC0xMjc1OTkxNjI3LC0xMz
-U5OTAwMDc2LC0zMzYzODA3MjIsLTQ5NzU3MzM1M119
+eyJoaXN0b3J5IjpbMTk2MzU2NDE5NSwtMTI3NTk5MTYyNywtMT
+M1OTkwMDA3NiwtMzM2MzgwNzIyLC00OTc1NzMzNTNdfQ==
 -->
