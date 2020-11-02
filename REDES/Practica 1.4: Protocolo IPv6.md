@@ -86,11 +86,23 @@ sudo ip link set eth1 up
 Para asignar a la maquina virtual 4:
 ```bash 
 sudo ip link set eth0 down
-sudo ip address add fd00:0:0:b::1/64 dev eth1
+sudo ip address add fd00:0:0:b::1/64 dev eth0
 sudo ip link set eth0 up
 ```
 ### Ejercicio 7[Router]
 Comprobar la conectividad entre Router y VM1, y entre Router y VM4 usando direcciones ULA. Comprobar además que VM1 no puede alcanzar a VM4.
+Entre VM1-Router:
+```bash
+ping6 fd00:0:0:a::2 # mv1
+```
+Entre VM4-Router:
+```bash
+ping6 fd00:0:0:a::2 # mv1
+```
+Entre VM1-VM4:
+```bash
+ping6 fd00:0:0:a::2 # mv1
+```
 # Encaminamiento estático
 Según la topología que hemos configurado en esta práctica, Router debe encaminar el tráfico entre las redes fd00:0:0:a::/64 y fd00:0:0:b::/64. En esta sección vamos a configurar un encaminamiento estático basado en las rutas que fijaremos manualmente en todas las máquinas.
 
@@ -160,6 +172,6 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk2MzU2NDE5NSwtMTI3NTk5MTYyNywtMT
-M1OTkwMDA3NiwtMzM2MzgwNzIyLC00OTc1NzMzNTNdfQ==
+eyJoaXN0b3J5IjpbLTIwMTY4OTA4ODcsLTEyNzU5OTE2MjcsLT
+EzNTk5MDAwNzYsLTMzNjM4MDcyMiwtNDk3NTczMzUzXX0=
 -->
