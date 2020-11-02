@@ -43,11 +43,12 @@ sudo ip link set eth0 up
 sudo ip link set eth1 up # sólo en el router(vm3)
 ip a
 ```
-[
+[IPv6 VM4-VM3](https://drive.google.com/file/d/1acMNcuY5TSsITx8MFfZuFvODQ96eWFln/view?usp=sharing)
 Para comprobar la conectividad VM1-Router:
 ```bash 
 sudo ping6 fe80::a00:27ff:fe3b:2f15 -I eth0 # vm1
 ```
+[ping6 VM1 to VM3](https://drive.google.com/file/d/1XQD13-c8ouHiGFIieeHaqW_YxFxJ9ULw/view?usp=sharing)
 Para comprobar la conectividad VM4-Router:
 ```bash 
 sudo ping6 fe80::a00:27ff:fe92:c3f1 -I eth0 # vm4
@@ -173,7 +174,7 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2NjQ2MjU3LDc3NjM2Mzc3NSwtMjAxNj
-g5MDg4NywtMTI3NTk5MTYyNywtMTM1OTkwMDA3NiwtMzM2Mzgw
-NzIyLC00OTc1NzMzNTNdfQ==
+eyJoaXN0b3J5IjpbMTI3NDgzOTcwOCw3NzYzNjM3NzUsLTIwMT
+Y4OTA4ODcsLTEyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLTMzNjM4
+MDcyMiwtNDk3NTczMzUzXX0=
 -->
