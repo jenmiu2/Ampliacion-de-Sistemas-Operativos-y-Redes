@@ -28,7 +28,13 @@ Comprobar la conectividad entre VM1 y VM2 con la orden ping6. Cuando se usan dir
 ```bash 
 sudo ping6 fe80::a00:27ff:fe02:e4c5 -I eth0 # vm1
 ```
-Los paquete enviados entre la máquina 1 y la máquina 2 fueron: Echo request/reply, Neighbor Soli
+Los paquete enviados entre la máquina 1 y la máquina 2 fueron: Echo request/reply y Neighbor Solicitation/Advertisiment. Las opciones de ping6 son: 
+```bash
+man ping6
+```
+ - -6: Uso IPv6
+ - -c: number of 
+
 ### Ejercicio 3[Router, VM4]
 Activar el interfaz de VM4 y los dos interfaces de Router. Comprobar la conectividad entre Router y VM1, y entre Router y VM4 usando la dirección de enlace local.
 # Direcciones ULA
@@ -110,5 +116,5 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxMjIwMzA3MV19
+eyJoaXN0b3J5IjpbNjQ2NTc3MzU3XX0=
 -->
