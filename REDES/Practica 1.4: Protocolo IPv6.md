@@ -43,6 +43,14 @@ sudo ip link set eth0 up
 sudo ip link set eth1 up # sólo en el router(vm3)
 ip a
 ```
+Para comprobar la conectividad VM1-Router:
+```bash 
+sudo ping6 fe80::a00:27ff:fe3b:2f15 -I eth0 # vm1
+```
+Para comprobar la conectividad VM4-Router:
+```bash 
+sudo ping6 fe80::a00:27ff:fe92:c3f1 -I eth0 # vm4
+```
 # Direcciones ULA
 Una dirección ULA (_Unique Local Address_) puede usarse dentro de una organización, de forma que los encaminadores internos del sitio deben encaminar los datagramas con una dirección ULA como destino. El prefijo de formato para estas direcciones es fc00::/7.
 ### Ejercicio 4[VM1, VM2]
@@ -122,5 +130,6 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzNjM4MDcyMiwtNDk3NTczMzUzXX0=
+eyJoaXN0b3J5IjpbNzI2MTcwMjc5LC0zMzYzODA3MjIsLTQ5Nz
+U3MzM1M119
 -->
