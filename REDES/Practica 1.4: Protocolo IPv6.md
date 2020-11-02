@@ -18,6 +18,10 @@ Una dirección de enlace local es únicamente válida en la subred que está def
 
 ### Ejercicio 1[VM1, VM2]
 Activar el interfaz eth0 en VM1 y VM2. Comprobar las direcciones de enlace local que tienen asignadas con el comando ip.
+```bash 
+sudo ip link set eth0 up 
+ip a
+```
 ### Ejercicio 2[VM1, VM2]
 Comprobar la conectividad entre VM1 y VM2 con la orden ping6. Cuando se usan direcciones de enlace local, y  **sólo en ese caso**, es necesario especificar el interfaz origen, añadiendo %<nombre_interfaz> a la dirección. Consultar las opciones del comando ping6 en la página de manual. Observar el tráfico generado con la herramienta wireshark, especialmente los protocolos encapsulados en cada datagrama y los parámetros del protocolo IPv6.
 ### Ejercicio 3[Router, VM4]
@@ -101,5 +105,5 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODg1NDgzMTBdfQ==
+eyJoaXN0b3J5IjpbLTEyNTk5NjA2NDBdfQ==
 -->
