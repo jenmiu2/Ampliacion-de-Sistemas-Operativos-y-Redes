@@ -69,6 +69,8 @@ sudo ip link set eth0 up
 ```
 ### Ejercicio 5[VM1, VM2]
 Comprobar la conectividad entre VM1 y VM2 con la orden ping6 usando la nueva dirección. Observar los mensajes intercambiados con wireshark.
+```bash
+
 ### Ejercicio 6[Router, VM4]
 Configurar direcciones ULA en los dos interfaces de Router (redes fd00:0:0:a::/64 y fd00:0:0:b::/64) y en el de VM4 (red fd00:0:0:b::/64). Elegir el identificador de interfaz de forma que no coincida dentro de la misma red.
 ### Ejercicio 7[Router]
@@ -142,6 +144,6 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLT
-MzNjM4MDcyMiwtNDk3NTczMzUzXX0=
+eyJoaXN0b3J5IjpbMTQxNjc2MDg1NSwtMTI3NTk5MTYyNywtMT
+M1OTkwMDA3NiwtMzM2MzgwNzIyLC00OTc1NzMzNTNdfQ==
 -->
