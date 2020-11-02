@@ -53,6 +53,7 @@ Para comprobar la conectividad VM4-Router:
 ```bash 
 sudo ping6 fe80::a00:27ff:fe92:c3f1 -I eth0 # vm4
 ```
+[ping6 VM4 to VM3](https://drive.google.com/file/d/1X0ol-nDlWvDsNXo4zwSefq8nHGnn-tPw/view?usp=sharing)
 # Direcciones ULA
 Una dirección ULA (_Unique Local Address_) puede usarse dentro de una organización, de forma que los encaminadores internos del sitio deben encaminar los datagramas con una dirección ULA como destino. El prefijo de formato para estas direcciones es fc00::/7.
 ### Ejercicio 4[VM1, VM2]
@@ -69,11 +70,13 @@ sudo ip link set eth0 down
 sudo ip address add fd00:0:0:a::2/64 dev eth0
 sudo ip link set eth0 up
 ```
+[dir IPv6 VM1](https://drive.google.com/file/d/1V8O5s95A795uUNt-6oQkBgN81he4Ohgu/view?usp=sharing)
 ### Ejercicio 5[VM1, VM2]
 Comprobar la conectividad entre VM1 y VM2 con la orden ping6 usando la nueva dirección. Observar los mensajes intercambiados con wireshark.
 ```bash
 ping6 fd00:0:0:a::2 # mv1
 ```
+[wiresark](https://drive.google.com/file/d/1DV5LR_FRebp2Egl7GnCeqxFZ4DNgAdvO/view?usp=sharing)
 ### Ejercicio 6[Router, VM4]
 Configurar direcciones ULA en los dos interfaces de Router (redes fd00:0:0:a::/64 y fd00:0:0:b::/64) y en el de VM4 (red fd00:0:0:b::/64). Elegir el identificador de interfaz de forma que no coincida dentro de la misma red.
 Para asignar a la maquina virtual 3/router:
@@ -174,7 +177,7 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3NDgzOTcwOCw3NzYzNjM3NzUsLTIwMT
-Y4OTA4ODcsLTEyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLTMzNjM4
-MDcyMiwtNDk3NTczMzUzXX0=
+eyJoaXN0b3J5IjpbLTEyODI0NjU0MjYsNzc2MzYzNzc1LC0yMD
+E2ODkwODg3LC0xMjc1OTkxNjI3LC0xMzU5OTAwMDc2LC0zMzYz
+ODA3MjIsLTQ5NzU3MzM1M119
 -->
