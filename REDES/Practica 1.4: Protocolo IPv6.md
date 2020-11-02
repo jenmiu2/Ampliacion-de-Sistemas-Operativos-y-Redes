@@ -88,12 +88,15 @@ sudo ip address add fd00:0:0:b::3/64 dev eth1
 sudo ip link set eth0 up
 sudo ip link set eth1 up
 ```
+[IPv6 VM1](https://drive.google.com/file/d/1JQ5cNIDREpRTjX8QKKetDpCuu2Xt6ij5/view?usp=sharing)
 Para asignar a la maquina virtual 4:
 ```bash 
 sudo ip link set eth0 down
 sudo ip address add fd00:0:0:b::1/64 dev eth0
 sudo ip link set eth0 up
 ```
+[IPv6 VM4](https://drive.google.com/file/d/1LDxQIf6UmtL1sU6e59LaGr5inE3sXEzg/view?usp=sharing)
+[wiresark VM1-VM4]
 ### Ejercicio 7[Router]
 Comprobar la conectividad entre Router y VM1, y entre Router y VM4 usando direcciones ULA. Comprobar además que VM1 no puede alcanzar a VM4.
 Entre VM1-Router:
@@ -177,7 +180,7 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyODI0NjU0MjYsNzc2MzYzNzc1LC0yMD
-E2ODkwODg3LC0xMjc1OTkxNjI3LC0xMzU5OTAwMDc2LC0zMzYz
-ODA3MjIsLTQ5NzU3MzM1M119
+eyJoaXN0b3J5IjpbLTMzNzU2NDkwOCw3NzYzNjM3NzUsLTIwMT
+Y4OTA4ODcsLTEyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLTMzNjM4
+MDcyMiwtNDk3NTczMzUzXX0=
 -->
