@@ -93,15 +93,15 @@ sudo ip link set eth0 up
 Comprobar la conectividad entre Router y VM1, y entre Router y VM4 usando direcciones ULA. Comprobar además que VM1 no puede alcanzar a VM4.
 Entre VM1-Router:
 ```bash
-ping6 fd00:0:0:a::2 # mv1
+ping6 fd00:0:0:a::3 # mv1
 ```
 Entre VM4-Router:
 ```bash
-ping6 fd00:0:0:a::2 # mv1
+ping6 fd00:0:0:b::3 # mv4
 ```
 Entre VM1-VM4:
 ```bash
-ping6 fd00:0:0:::2 # mv1
+ping6 fd00:0:0:b::1 # mv1
 ```
 # Encaminamiento estático
 Según la topología que hemos configurado en esta práctica, Router debe encaminar el tráfico entre las redes fd00:0:0:a::/64 y fd00:0:0:b::/64. En esta sección vamos a configurar un encaminamiento estático basado en las rutas que fijaremos manualmente en todas las máquinas.
@@ -172,7 +172,7 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTY5NzIxNTYsLTIwMTY4OTA4ODcsLT
-EyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLTMzNjM4MDcyMiwtNDk3
-NTczMzUzXX0=
+eyJoaXN0b3J5IjpbNzc2MzYzNzc1LC0yMDE2ODkwODg3LC0xMj
+c1OTkxNjI3LC0xMzU5OTAwMDc2LC0zMzYzODA3MjIsLTQ5NzU3
+MzM1M119
 -->
