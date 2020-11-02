@@ -22,7 +22,7 @@ Activar el interfaz eth0 en VM1 y VM2. Comprobar las direcciones de enlace local
 sudo ip link set eth0 up 
 ip a
 ```
-
+[dir IPv6 VM1](https://drive.google.com/file/d/1eRXcfnL40LR1SbolcfRMzShjMXU5n4jN/view?usp=sharing)
 ### Ejercicio 2[VM1, VM2]
 Comprobar la conectividad entre VM1 y VM2 con la orden ping6. Cuando se usan direcciones de enlace local, y  **sólo en ese caso**, es necesario especificar el interfaz origen, añadiendo %<nombre_interfaz> a la dirección. Consultar las opciones del comando ping6 en la página de manual. Observar el tráfico generado con la herramienta wireshark, especialmente los protocolos encapsulados en cada datagrama y los parámetros del protocolo IPv6.
 ```bash 
@@ -35,7 +35,7 @@ man ping6
  - -6: Uso IPv6
  - -c: number of echo request packets enviados
  - -I: interfaz 
-
+[ping6 vm1 to vm2](https://drive.google.com/file/d/1d3uCNSL8D88yNmS9T1Ch014DM74-LYsT/view?usp=sharing)
 ### Ejercicio 3[Router, VM4]
 Activar el interfaz de VM4 y los dos interfaces de Router. Comprobar la conectividad entre Router y VM1, y entre Router y VM4 usando la dirección de enlace local.
 ```bash 
@@ -43,6 +43,7 @@ sudo ip link set eth0 up
 sudo ip link set eth1 up # sólo en el router(vm3)
 ip a
 ```
+[
 Para comprobar la conectividad VM1-Router:
 ```bash 
 sudo ping6 fe80::a00:27ff:fe3b:2f15 -I eth0 # vm1
@@ -172,7 +173,7 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzc2MzYzNzc1LC0yMDE2ODkwODg3LC0xMj
-c1OTkxNjI3LC0xMzU5OTAwMDc2LC0zMzYzODA3MjIsLTQ5NzU3
-MzM1M119
+eyJoaXN0b3J5IjpbMjA2NjQ2MjU3LDc3NjM2Mzc3NSwtMjAxNj
+g5MDg4NywtMTI3NTk5MTYyNywtMTM1OTkwMDA3NiwtMzM2Mzgw
+NzIyLC00OTc1NzMzNTNdfQ==
 -->
