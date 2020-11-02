@@ -56,6 +56,10 @@ Una dirección ULA (_Unique Local Address_) puede usarse dentro de una organizac
 ### Ejercicio 4[VM1, VM2]
 Configurar VM1 y VM2 para que tengan una dirección ULA en la red fd00:0:0:a::/64 con el comando ip. La parte de identificador de interfaz puede elegirse libremente, siempre que no coincida para ambas máquinas.  **Nota:** Incluir la longitud del prefijo al fijar las direcciones.
 Para asignar a la maquina virtual 1:
+```bash 
+sudo ip link set eth0 down
+sudo ip address add fd00:
+```
 Para asignar a la maquina virtual 2:
 ### Ejercicio 5[VM1, VM2]
 Comprobar la conectividad entre VM1 y VM2 con la orden ping6 usando la nueva dirección. Observar los mensajes intercambiados con wireshark.
@@ -132,6 +136,6 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTk5MDAwNzYsLTMzNjM4MDcyMiwtND
-k3NTczMzUzXX0=
+eyJoaXN0b3J5IjpbMjAxNzQ4OTc2NiwtMTM1OTkwMDA3NiwtMz
+M2MzgwNzIyLC00OTc1NzMzNTNdfQ==
 -->
