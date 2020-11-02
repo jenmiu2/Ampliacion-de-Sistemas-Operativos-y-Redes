@@ -96,21 +96,24 @@ sudo ip address add fd00:0:0:b::1/64 dev eth0
 sudo ip link set eth0 up
 ```
 [IPv6 VM4](https://drive.google.com/file/d/1LDxQIf6UmtL1sU6e59LaGr5inE3sXEzg/view?usp=sharing)
-[wiresark VM1-VM4]
+[wiresark VM1-VM4](https://drive.google.com/file/d/1X88U3YPBcQDEf-k0hTnPWMJowuxpjdlT/view?usp=sharing)
 ### Ejercicio 7[Router]
 Comprobar la conectividad entre Router y VM1, y entre Router y VM4 usando direcciones ULA. Comprobar además que VM1 no puede alcanzar a VM4.
 Entre VM1-Router:
 ```bash
 ping6 fd00:0:0:a::3 # mv1
 ```
+[VM1 to VM3](https://drive.google.com/file/d/1bWUWnutD-6Vay9d4fVD7amAfr4S_5UAb/view?usp=sharing)
 Entre VM4-Router:
 ```bash
 ping6 fd00:0:0:b::3 # mv4
 ```
+[VM4 to VM3](https://drive.google.com/file/d/123aAF-b5_LTtYhf9J8Br0NzB6wnWeMKt/view?usp=sharing)
 Entre VM1-VM4:
 ```bash
 ping6 fd00:0:0:b::1 # mv1
 ```
+[VM1 to VM4](https://drive.google.com/file/d/1fwiuZZi1HPwYd2EMBfa2lhJw96bGFrQ0/view?usp=sharing)
 # Encaminamiento estático
 Según la topología que hemos configurado en esta práctica, Router debe encaminar el tráfico entre las redes fd00:0:0:a::/64 y fd00:0:0:b::/64. En esta sección vamos a configurar un encaminamiento estático basado en las rutas que fijaremos manualmente en todas las máquinas.
 
@@ -180,7 +183,7 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzNzU2NDkwOCw3NzYzNjM3NzUsLTIwMT
+eyJoaXN0b3J5IjpbLTQ1NTgwMzM5Niw3NzYzNjM3NzUsLTIwMT
 Y4OTA4ODcsLTEyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLTMzNjM4
 MDcyMiwtNDk3NTczMzUzXX0=
 -->
