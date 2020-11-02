@@ -25,8 +25,7 @@ ip a
 ### Ejercicio 2[VM1, VM2]
 Comprobar la conectividad entre VM1 y VM2 con la orden ping6. Cuando se usan direcciones de enlace local, y  **sólo en ese caso**, es necesario especificar el interfaz origen, añadiendo %<nombre_interfaz> a la dirección. Consultar las opciones del comando ping6 en la página de manual. Observar el tráfico generado con la herramienta wireshark, especialmente los protocolos encapsulados en cada datagrama y los parámetros del protocolo IPv6.
 ```bash 
-sudo ping6  
-ip a
+sudo ping6 fe80::a00:27ff:fe02:e4c5 -I eth0 #
 ```
 ### Ejercicio 3[Router, VM4]
 Activar el interfaz de VM4 y los dos interfaces de Router. Comprobar la conectividad entre Router y VM1, y entre Router y VM4 usando la dirección de enlace local.
@@ -109,5 +108,5 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI2OTYyMTEyM119
+eyJoaXN0b3J5IjpbLTE3NDg3MTIwMDRdfQ==
 -->
