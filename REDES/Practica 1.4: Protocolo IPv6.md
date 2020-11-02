@@ -58,9 +58,15 @@ Configurar VM1 y VM2 para que tengan una dirección ULA en la red fd00:0:0:a::/6
 Para asignar a la maquina virtual 1:
 ```bash 
 sudo ip link set eth0 down
-sudo ip address add fd00:
+sudo ip address add fd00:0:0:a::1/64 dev eth0
+sudo ip link set eth0 up
 ```
 Para asignar a la maquina virtual 2:
+```bash 
+sudo ip link set eth0 down
+sudo ip address add fd00:0:0:a::2/64 dev eth0
+sudo ip link set eth0 up
+```
 ### Ejercicio 5[VM1, VM2]
 Comprobar la conectividad entre VM1 y VM2 con la orden ping6 usando la nueva dirección. Observar los mensajes intercambiados con wireshark.
 ### Ejercicio 6[Router, VM4]
@@ -136,6 +142,6 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxNzQ4OTc2NiwtMTM1OTkwMDA3NiwtMz
-M2MzgwNzIyLC00OTc1NzMzNTNdfQ==
+eyJoaXN0b3J5IjpbLTEyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLT
+MzNjM4MDcyMiwtNDk3NTczMzUzXX0=
 -->
