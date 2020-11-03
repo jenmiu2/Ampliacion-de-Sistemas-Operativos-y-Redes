@@ -21,6 +21,7 @@ Activar el interfaz eth0 en VM1 y VM2. Comprobar las direcciones de enlace local
 ```bash 
 sudo ip link set eth0 up 
 ip a
+ip m
 ```
 [dir IPv6 VM1](https://drive.google.com/file/d/1eRXcfnL40LR1SbolcfRMzShjMXU5n4jN/view?usp=sharing)
 ### Ejercicio 2[VM1, VM2]
@@ -42,6 +43,7 @@ Activar el interfaz de VM4 y los dos interfaces de Router. Comprobar la conectiv
 sudo ip link set eth0 up 
 sudo ip link set eth1 up # sólo en el router(vm3)
 ip a
+ip m
 ```
 [IPv6 VM4-VM3](https://drive.google.com/file/d/1acMNcuY5TSsITx8MFfZuFvODQ96eWFln/view?usp=sharing)
 Para comprobar la conectividad VM1-Router:
@@ -183,7 +185,8 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3NDIxNzYwOCwtNDU1ODAzMzk2LDc3Nj
-M2Mzc3NSwtMjAxNjg5MDg4NywtMTI3NTk5MTYyNywtMTM1OTkw
-MDA3NiwtMzM2MzgwNzIyLC00OTc1NzMzNTNdfQ==
+eyJoaXN0b3J5IjpbMzAwMDgzNTEyLC02NzQyMTc2MDgsLTQ1NT
+gwMzM5Niw3NzYzNjM3NzUsLTIwMTY4OTA4ODcsLTEyNzU5OTE2
+MjcsLTEzNTk5MDAwNzYsLTMzNjM4MDcyMiwtNDk3NTczMzUzXX
+0=
 -->
