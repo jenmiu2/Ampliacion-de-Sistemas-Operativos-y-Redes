@@ -74,7 +74,7 @@ sudo ip link set eth0 up
 ### Ejercicio 5[VM1, VM2]
 Comprobar la conectividad entre VM1 y VM2 con la orden ping6 usando la nueva dirección. Observar los mensajes intercambiados con wireshark.
 ```bash
-ping6 fd00:0:0:a::2 # mv1
+ping6 fd00:0:0:a::2%eth0 # mv1 o -I eth0
 ```
 [wiresark](https://drive.google.com/file/d/1DV5LR_FRebp2Egl7GnCeqxFZ4DNgAdvO/view?usp=sharing)
 ### Ejercicio 6[Router, VM4]
@@ -101,17 +101,17 @@ sudo ip link set eth0 up
 Comprobar la conectividad entre Router y VM1, y entre Router y VM4 usando direcciones ULA. Comprobar además que VM1 no puede alcanzar a VM4.
 Entre VM1-Router:
 ```bash
-ping6 fd00:0:0:a::3 # mv1
+ping6 fd00:0:0:a::3%eth0 # mv1
 ```
 [VM1 to VM3](https://drive.google.com/file/d/1bWUWnutD-6Vay9d4fVD7amAfr4S_5UAb/view?usp=sharing)
 Entre VM4-Router:
 ```bash
-ping6 fd00:0:0:b::3 # mv4
+ping6 fd00:0:0:b::3%eth0 # mv4
 ```
 [VM4 to VM3](https://drive.google.com/file/d/123aAF-b5_LTtYhf9J8Br0NzB6wnWeMKt/view?usp=sharing)
 Entre VM1-VM4:
 ```bash
-ping6 fd00:0:0:b::1 # mv1
+ping6 fd00:0:0:b::1%eth0 # mv1
 ```
 [VM1 to VM4](https://drive.google.com/file/d/1fwiuZZi1HPwYd2EMBfa2lhJw96bGFrQ0/view?usp=sharing)
 # Encaminamiento estático
@@ -183,7 +183,7 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1NTgwMzM5Niw3NzYzNjM3NzUsLTIwMT
-Y4OTA4ODcsLTEyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLTMzNjM4
-MDcyMiwtNDk3NTczMzUzXX0=
+eyJoaXN0b3J5IjpbLTY3NDIxNzYwOCwtNDU1ODAzMzk2LDc3Nj
+M2Mzc3NSwtMjAxNjg5MDg4NywtMTI3NTk5MTYyNywtMTM1OTkw
+MDA3NiwtMzM2MzgwNzIyLC00OTc1NzMzNTNdfQ==
 -->
