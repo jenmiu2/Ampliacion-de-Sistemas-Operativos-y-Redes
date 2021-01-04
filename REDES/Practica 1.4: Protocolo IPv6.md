@@ -159,6 +159,7 @@ Borrar la  _cache_  de vecinos en VM1 con ip neigh flush dev eth0 y en Router co
 | MAC<sub>VM3:eth1</sub> | MAC<sub>VM4</sub> | fd00:0:0:a::3 | fd00:0:0:a::1 | Neihbor Advertisement |
 | MAC<sub>VM4</sub> | MAC<sub>VM3:eth1</sub>  | fd00:0:0:a::1| fd00:0:0:a::1 | Reply |
 | MAC<sub>VM3:eth1</sub> | MAC<sub>VM1</sub> | fd00:0:0:a::3 | fd00:0:0:a::1 | Request |
+
 [wiresahark VM4](https://drive.google.com/file/d/1fVxhUGJqU-HZtgAYZU8PG-qCYemMwrzL/view?usp=sharing)
 
 # Configuración persistente
@@ -179,6 +180,8 @@ Comprobar la configuración automática con las órdenes ifup e ifdown.
 ```bash
 sudo ifdown
 ```
+
+
 [resultado del ping](https://drive.google.com/file/d/1C3cBo6C9FlKs7ZTDSSsHFSiRkdTW0LYv/view?usp=sharing)
 ```bash
 sudo ifup
@@ -200,6 +203,10 @@ sudo link set dev eth1 down
 [resultado ejecución VM1](https://drive.google.com/file/d/1Bo46e9d0tkNsxWOKe4xYrd93D5PlskXB/view?usp=sharing)
 ### Ejercicio 15[Router]
 Configurar el servicio zebra para que el encaminador anuncie prefijos. Para ello, crear el archivo /etc/quagga/zebra.conf e incluir la información de los prefijos para las dos redes. Cada entrada será de la forma:
+```bash
+sudo nano /etc/quagga/zebra.conf 
+```
+Insertar el siguiente código en c.
 ```c
 interface eth0
 	no ipv6 nd suppress-ra
@@ -229,8 +236,8 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2MDEzNDE0MCwtNjI4NjMzODcwLDMwMD
-A4MzUxMiwtNjc0MjE3NjA4LC00NTU4MDMzOTYsNzc2MzYzNzc1
-LC0yMDE2ODkwODg3LC0xMjc1OTkxNjI3LC0xMzU5OTAwMDc2LC
-0zMzYzODA3MjIsLTQ5NzU3MzM1M119
+eyJoaXN0b3J5IjpbLTEzMjk4MzQ5NjcsLTYyODYzMzg3MCwzMD
+AwODM1MTIsLTY3NDIxNzYwOCwtNDU1ODAzMzk2LDc3NjM2Mzc3
+NSwtMjAxNjg5MDg4NywtMTI3NTk5MTYyNywtMTM1OTkwMDA3Ni
+wtMzM2MzgwNzIyLC00OTc1NzMzNTNdfQ==
 -->
