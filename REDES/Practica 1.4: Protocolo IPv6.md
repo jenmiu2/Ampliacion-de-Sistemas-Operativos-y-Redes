@@ -168,16 +168,19 @@ Crear los ficheros ifcfg-eth0 e ifcfg-eth1 en el directorio /etc/sysconfig/netwo
 |  IPv6 | IPv4 |
 |--|--|
 | Type=Ethernet BOOTPROTO=static IPV6ADDR=_<dirección IP en formato CIDR>_  IPV6_DEFAULTGW=_<dirección IP del encaminador por defecto (si existe)>_  DEVICE=_<nombre del interfaz (eth0...)> | Type=Ethernet BOOTPROTO=static IPADDR=_<dirección IP en formato CIDR>_ GATEWAY=_<dirección IP del encaminador por defecto (si existe)>_ DEVICE=_<nombre del interfaz (eth0...)> |
-[fichero ifcfg eth0]()
-[fichero ifcfg eth1]()
+[fichero ifcfg eth0](https://drive.google.com/file/d/1PRWjM8pX4o4spXI-4qGpqyDxGfhPhIcF/view?usp=sharing)
+[fichero ifcfg eth1](https://drive.google.com/file/d/1rOYTw2kMg4xF3qmAend6BuQE9IKnddZg/view?usp=sharing)
 
 ### Ejercicio 13[Router]
 Comprobar la configuración automática con las órdenes ifup e ifdown.
+```bash
+
 # Autoconfiguración. Anuncio de prefijos
 El protocolo de descubrimiento de vecinos se usa también para la autoconfiguración de los interfaces de red. Cuando se activa un interfaz, se envía un mensaje de descubrimiento de encaminadores. Los encaminadores presentes responden con un anuncio que contiene, entre otros, el prefijo de la red.
 
 ### Ejercicio 14[VM1, VM2, VM4]
-Eliminar las direcciones ULA de los interfaces desactivándolos con ip
+Eliminar las direcciones ULA de los interfaces desactivándolos con ip.
+
 ### Ejercicio 15[Router]
 Configurar el servicio zebra para que el encaminador anuncie prefijos. Para ello, crear el archivo /etc/quagga/zebra.conf e incluir la información de los prefijos para las dos redes. Cada entrada será de la forma:
 ```c
@@ -209,7 +212,7 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwMDUzNjE5NiwtNjI4NjMzODcwLDMwMD
+eyJoaXN0b3J5IjpbLTczMDAxNjM3MSwtNjI4NjMzODcwLDMwMD
 A4MzUxMiwtNjc0MjE3NjA4LC00NTU4MDMzOTYsNzc2MzYzNzc1
 LC0yMDE2ODkwODg3LC0xMjc1OTkxNjI3LC0xMzU5OTAwMDc2LC
 0zMzYzODA3MjIsLTQ5NzU3MzM1M119
