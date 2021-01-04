@@ -239,9 +239,13 @@ ip a
 ```bash
 ip link set eth1 up
 ip a
+ip m
 ```
+[wireshark VM2](https://drive.google.com/file/d/1tAonqUteU-H6AUaChkoRKjgQcJvxegjm/view?usp=sharing)
+
 ### Ejercicio 18[VM1]
 La generación del identificador de interfaz mediante EUI-64 supone un problema de privacidad para las máquinas clientes, que pueden ser rastreadas por su dirección MAC. En estos casos, es conveniente activar las extensiones de privacidad para generar un identificador de interfaz pseudoaleatorio temporal para las direcciones globales. Activar las extensiones de privacidad en VM1 con sysctl -w net.ipv6.conf.eth0.use_tempaddr=2.
+
 # ICMPv6
 El protocolo ICMPv6 permite el intercambio de mensajes para el control de la red, tanto para la detección de errores como para la consulta de la configuración de ésta. Durante el desarrollo de la práctica hemos visto los más importantes.
 ### Ejercicio 19
@@ -254,8 +258,8 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzMzQyNDI5NiwtNjI4NjMzODcwLDMwMD
-A4MzUxMiwtNjc0MjE3NjA4LC00NTU4MDMzOTYsNzc2MzYzNzc1
-LC0yMDE2ODkwODg3LC0xMjc1OTkxNjI3LC0xMzU5OTAwMDc2LC
-0zMzYzODA3MjIsLTQ5NzU3MzM1M119
+eyJoaXN0b3J5IjpbLTEyMjIwNjEyMzcsLTYyODYzMzg3MCwzMD
+AwODM1MTIsLTY3NDIxNzYwOCwtNDU1ODAzMzk2LDc3NjM2Mzc3
+NSwtMjAxNjg5MDg4NywtMTI3NTk5MTYyNywtMTM1OTkwMDA3Ni
+wtMzM2MzgwNzIyLC00OTc1NzMzNTNdfQ==
 -->
