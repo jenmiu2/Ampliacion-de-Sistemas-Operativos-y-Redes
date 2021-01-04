@@ -146,16 +146,19 @@ Borrar la  _cache_  de vecinos en VM1 con ip neigh flush dev eth0 y en Router co
 #### Red fd00:0:0:a::/64 - VM1
 |  MAC Origen| MAC Destino | IPv6 Origen | IPv6 Destino | ICMPv6 Tipo
 |--|--|--|--|--|
-| MAC<sub>VM1</sub> | Broadcast  | fd00:0:0:a::1|  | Neighbor Solicitation |
-| MAC<sub>VM3:eth0</sub> | MAC<sub>VM1</sub> | fd00:0:0:a::3 |  |  |
-| MAC<sub>VM1</sub> | MAC<sub>VM3:eth0</sub>  | fd00:0:0:a::1|  | Neighbor Solicitation |
-| MAC<sub>VM3:eth0</sub> | MAC<sub>VM1</sub> |  |  |  |
+| MAC<sub>VM1</sub> | Broadcast  | fd00:0:0:a::1| fd02:1:ff00:3 | Neighbor Solicitation |
+| MAC<sub>VM3:eth0</sub> | MAC<sub>VM1</sub> | fd00:0:0:a::3 | fd00:0:0:a::1 | Neihbor Advertisement |
+| MAC<sub>VM1</sub> | MAC<sub>VM3:eth0</sub>  | fd00:0:0:a::1| fd00:0:0:a::1 | Reply |
+| MAC<sub>VM3:eth0</sub> | MAC<sub>VM1</sub> | fd00:0:0:a::3 | fd00:0:0:a::1 | Request |
 
 #### Red fd00:0:0:b::/64 - VM4
 |  MAC Origen| MAC Destino | IPv6 Origen | IPv6 Destino | ICMPv6 Tipo |
 |--|--|--|--|--|
-|  |  |  |  |  |
-|  |  |  |  |  |
+| MAC<sub>VM1</sub> | Broadcast  | fd00:0:0:a::1| fd02:1:ff00:3 | Neighbor Solicitation |
+| MAC<sub>VM3:eth0</sub> | MAC<sub>VM1</sub> | fd00:0:0:a::3 | fd00:0:0:a::1 | Neihbor Advertisement |
+| MAC<sub>VM1</sub> | MAC<sub>VM3:eth0</sub>  | fd00:0:0:a::1| fd00:0:0:a::1 | Reply |
+| MAC<sub>VM3:eth0</sub> | MAC<sub>VM1</sub> | fd00:0:0:a::3 | fd00:0:0:a::1 | Request |
+
 # Configuración persistente
 Las configuraciones realizadas en los apartados anteriores son volátiles y desaparecen cuando se reinician las máquinas. Durante el arranque del sistema se pueden configurar automáticamente determinados interfaces según la información almacenada en el disco.
 
@@ -202,7 +205,7 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1NDIxMDA4NCwtNjI4NjMzODcwLDMwMD
+eyJoaXN0b3J5IjpbMjEwMzU3NDkzMiwtNjI4NjMzODcwLDMwMD
 A4MzUxMiwtNjc0MjE3NjA4LC00NTU4MDMzOTYsNzc2MzYzNzc1
 LC0yMDE2ODkwODg3LC0xMjc1OTkxNjI3LC0xMzU5OTAwMDc2LC
 0zMzYzODA3MjIsLTQ5NzU3MzM1M119
