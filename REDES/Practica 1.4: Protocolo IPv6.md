@@ -120,7 +120,7 @@ ping6 fd00:0:0:b::1%eth0 # mv1
 Según la topología que hemos configurado en esta práctica, Router debe encaminar el tráfico entre las redes fd00:0:0:a::/64 y fd00:0:0:b::/64. En esta sección vamos a configurar un encaminamiento estático basado en las rutas que fijaremos manualmente en todas las máquinas.
 
 ### Ejercicio 8[Router, VM1]
-Consultar las tablas de rutas en VM1 y Router con el comando ip route. Consultar la página de manual del comando para seleccionar las rutas IPv6
+Consultar las tablas de rutas en VM1 y Router con el comando ip route. Consultar la página de manual del comando para seleccionar las rutas IPv6.
 ### Ejercicio 9[Router]
 Para que Router actúe efectivamente como encaminador, hay que activar el reenvío de paquetes (_packet forwarding_). De forma temporal, se puede activar con el comando ```sysctl -w net.ipv6.conf.all.forwarding=1```.
 ### Ejercicio 10[Router, VM4, VM1, VM2]
@@ -185,8 +185,8 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzAwMDgzNTEyLC02NzQyMTc2MDgsLTQ1NT
-gwMzM5Niw3NzYzNjM3NzUsLTIwMTY4OTA4ODcsLTEyNzU5OTE2
-MjcsLTEzNTk5MDAwNzYsLTMzNjM4MDcyMiwtNDk3NTczMzUzXX
-0=
+eyJoaXN0b3J5IjpbLTYyODYzMzg3MCwzMDAwODM1MTIsLTY3ND
+IxNzYwOCwtNDU1ODAzMzk2LDc3NjM2Mzc3NSwtMjAxNjg5MDg4
+NywtMTI3NTk5MTYyNywtMTM1OTkwMDA3NiwtMzM2MzgwNzIyLC
+00OTc1NzMzNTNdfQ==
 -->
