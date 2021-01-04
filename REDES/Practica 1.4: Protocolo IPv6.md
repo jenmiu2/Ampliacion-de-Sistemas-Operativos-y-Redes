@@ -150,6 +150,7 @@ Borrar la  _cache_  de vecinos en VM1 con ip neigh flush dev eth0 y en Router co
 | MAC<sub>VM3:eth0</sub> | MAC<sub>VM1</sub> | fd00:0:0:a::3 | fd00:0:0:a::1 | Neihbor Advertisement |
 | MAC<sub>VM1</sub> | MAC<sub>VM3:eth0</sub>  | fd00:0:0:a::1| fd00:0:0:a::1 | Reply |
 | MAC<sub>VM3:eth0</sub> | MAC<sub>VM1</sub> | fd00:0:0:a::3 | fd00:0:0:a::1 | Request |
+
 [wiresahark VM1](https://drive.google.com/file/d/19RArwth1JMJ-IyJu_wcS-u7cDYwiungt/view?usp=sharing)
 #### Red fd00:0:0:b::/64 - VM4
 |  MAC Origen| MAC Destino | IPv6 Origen | IPv6 Destino | ICMPv6 Tipo |
@@ -168,6 +169,8 @@ Crear los ficheros ifcfg-eth0 e ifcfg-eth1 en el directorio /etc/sysconfig/netwo
 |  IPv6 | IPv4 |
 |--|--|
 | Type=Ethernet BOOTPROTO=static IPV6ADDR=_<dirección IP en formato CIDR>_  IPV6_DEFAULTGW=_<dirección IP del encaminador por defecto (si existe)>_  DEVICE=_<nombre del interfaz (eth0...)> | Type=Ethernet BOOTPROTO=static IPADDR=_<dirección IP en formato CIDR>_ GATEWAY=_<dirección IP del encaminador por defecto (si existe)>_ DEVICE=_<nombre del interfaz (eth0...)> |
+
+
 [fichero ifcfg eth0](https://drive.google.com/file/d/1PRWjM8pX4o4spXI-4qGpqyDxGfhPhIcF/view?usp=sharing)
 [fichero ifcfg eth1](https://drive.google.com/file/d/1rOYTw2kMg4xF3qmAend6BuQE9IKnddZg/view?usp=sharing)
 
@@ -187,9 +190,12 @@ El protocolo de descubrimiento de vecinos se usa también para la autoconfigurac
 Eliminar las direcciones ULA de los interfaces desactivándolos con ip.
 #### VM1-VM4
 ```bash
-sudo link 
+sudo link set dev eth0 down
 ```
 #### VM2
+```bash
+sudo link set dev eth1 down
+```
 
 [resultado ejecución VM1](https://drive.google.com/file/d/1Bo46e9d0tkNsxWOKe4xYrd93D5PlskXB/view?usp=sharing)
 ### Ejercicio 15[Router]
@@ -223,8 +229,8 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDE0MDk4ODIsLTYyODYzMzg3MCwzMD
-AwODM1MTIsLTY3NDIxNzYwOCwtNDU1ODAzMzk2LDc3NjM2Mzc3
-NSwtMjAxNjg5MDg4NywtMTI3NTk5MTYyNywtMTM1OTkwMDA3Ni
-wtMzM2MzgwNzIyLC00OTc1NzMzNTNdfQ==
+eyJoaXN0b3J5IjpbMTU2MDEzNDE0MCwtNjI4NjMzODcwLDMwMD
+A4MzUxMiwtNjc0MjE3NjA4LC00NTU4MDMzOTYsNzc2MzYzNzc1
+LC0yMDE2ODkwODg3LC0xMjc1OTkxNjI3LC0xMzU5OTAwMDc2LC
+0zMzYzODA3MjIsLTQ5NzU3MzM1M119
 -->
