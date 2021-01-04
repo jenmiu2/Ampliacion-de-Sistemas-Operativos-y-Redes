@@ -255,14 +255,14 @@ El protocolo ICMPv6 permite el intercambio de mensajes para el control de la red
 Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la herramienta wireshark:
 - [Solicitud y respuesta de eco](https://drive.google.com/file/d/1NjmWExbSz-L2k_kqQx3PvIP6lWEviXu3/view?usp=sharing)
 
--[Solicitud y anuncio de encaminador](https://drive.google.com/file/d/1NLbvYGjEiCVdv-LemkXU3XlJUYpwqfIn/view?usp=sharing)
+- [Solicitud y anuncio de encaminador](https://drive.google.com/file/d/1NLbvYGjEiCVdv-LemkXU3XlJUYpwqfIn/view?usp=sharing)
 
 - [Solicitud y anuncio de vecino](https://drive.google.com/file/d/1Zc8fLj2FmyEBTHx9RIYEvRolWZIw1sCX/view?usp=sharing)
 
-- [Destino inalcanzable - Sin ruta al destino (Code: 0)]
+- [Destino inalcanzable - Sin ruta al destino (Code: 0)](https://drive.google.com/file/d/1AbG3X4Ggn8Hi-ZpGisahy-iZtW9RNsmi/view?usp=sharing)
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzA1MjIwNDkwLC02Mjg2MzM4NzAsMzAwMD
-gzNTEyLC02NzQyMTc2MDgsLTQ1NTgwMzM5Niw3NzYzNjM3NzUs
-LTIwMTY4OTA4ODcsLTEyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLT
-MzNjM4MDcyMiwtNDk3NTczMzUzXX0=
+eyJoaXN0b3J5IjpbLTIwODQ5MzE3NzksLTYyODYzMzg3MCwzMD
+AwODM1MTIsLTY3NDIxNzYwOCwtNDU1ODAzMzk2LDc3NjM2Mzc3
+NSwtMjAxNjg5MDg4NywtMTI3NTk5MTYyNywtMTM1OTkwMDA3Ni
+wtMzM2MzgwNzIyLC00OTc1NzMzNTNdfQ==
 -->
