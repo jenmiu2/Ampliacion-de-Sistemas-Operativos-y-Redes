@@ -219,16 +219,21 @@ sudo service zebra start
 ```
 ### Ejercicio 16[VM4]
 Comprobar la autoconfiguración del interfaz de red en VM4, volviendo a activar el interfaz y consultando la dirección asignada.
+#### VM1-VM4
 ```bash
+ip link set eth0 up
 ip a
 ```
-
+#### VM2
+```bash
+ip link set eth1 up
+ip a
+```
 ### Ejercicio 17[VM1, VM2]
 Estudiar los mensajes del protocolo de descubrimiento de vecinos:
 - Activar el interfaz en VM2, comprobar que está configurado correctamente e iniciar una captura de tráfico con wireshark.
 - Activar el interfaz en VM1 y estudiar los mensajes ICMP de tipo Router Solicitation y Router Advertisement.
 - Comprobar las direcciones destino y origen de los datagramas, así como las direcciones destino y origen de la trama Ethernet. Especialmente la relación entre las direcciones IP y MAC. Estudiar la salida del comando ip maddr.
-- 
 
 ### Ejercicio 18[VM1]
 La generación del identificador de interfaz mediante EUI-64 supone un problema de privacidad para las máquinas clientes, que pueden ser rastreadas por su dirección MAC. En estos casos, es conveniente activar las extensiones de privacidad para generar un identificador de interfaz pseudoaleatorio temporal para las direcciones globales. Activar las extensiones de privacidad en VM1 con sysctl -w net.ipv6.conf.eth0.use_tempaddr=2.
@@ -244,8 +249,8 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTEwMzE4NzAsLTYyODYzMzg3MCwzMD
-AwODM1MTIsLTY3NDIxNzYwOCwtNDU1ODAzMzk2LDc3NjM2Mzc3
-NSwtMjAxNjg5MDg4NywtMTI3NTk5MTYyNywtMTM1OTkwMDA3Ni
-wtMzM2MzgwNzIyLC00OTc1NzMzNTNdfQ==
+eyJoaXN0b3J5IjpbMjY2MzE4MDU3LC02Mjg2MzM4NzAsMzAwMD
+gzNTEyLC02NzQyMTc2MDgsLTQ1NTgwMzM5Niw3NzYzNjM3NzUs
+LTIwMTY4OTA4ODcsLTEyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLT
+MzNjM4MDcyMiwtNDk3NTczMzUzXX0=
 -->
