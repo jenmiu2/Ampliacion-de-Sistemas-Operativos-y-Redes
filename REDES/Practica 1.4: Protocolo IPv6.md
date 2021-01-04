@@ -248,20 +248,20 @@ La generación del identificador de interfaz mediante EUI-64 supone un problema 
 ```bash
 sudo sysctl -w net.ipv6.conf.eth0.use_tempaddr=2
 ```
-[](https://drive.google.com/file/d/1orupPgcHWIJN5XuNDhVnXjXcHlVhz3eK/view?usp=sharing)
+[wireshark VM2](https://drive.google.com/file/d/1orupPgcHWIJN5XuNDhVnXjXcHlVhz3eK/view?usp=sharing)
 # ICMPv6
 El protocolo ICMPv6 permite el intercambio de mensajes para el control de la red, tanto para la detección de errores como para la consulta de la configuración de ésta. Durante el desarrollo de la práctica hemos visto los más importantes.
 ### Ejercicio 19
 Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la herramienta wireshark:
-- Solicitud y respuesta de eco.
+- [Solicitud y respuesta de eco](https://drive.google.com/file/d/1NjmWExbSz-L2k_kqQx3PvIP6lWEviXu3/view?usp=sharing)
 
-- Solicitud y anuncio de encaminador.
+-[Solicitud y anuncio de encaminador](https://drive.google.com/file/d/1NLbvYGjEiCVdv-LemkXU3XlJUYpwqfIn/view?usp=sharing)
 
-- Solicitud y anuncio de vecino.
+- [Solicitud y anuncio de vecino](https://drive.google.com/file/d/1Zc8fLj2FmyEBTHx9RIYEvRolWZIw1sCX/view?usp=sharing)
 
-- Destino inalcanzable - Sin ruta al destino (Code: 0).
+- [Destino inalcanzable - Sin ruta al destino (Code: 0)]
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI0MTA4MjI1LC02Mjg2MzM4NzAsMzAwMD
+eyJoaXN0b3J5IjpbNzA1MjIwNDkwLC02Mjg2MzM4NzAsMzAwMD
 gzNTEyLC02NzQyMTc2MDgsLTQ1NTgwMzM5Niw3NzYzNjM3NzUs
 LTIwMTY4OTA4ODcsLTEyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLT
 MzNjM4MDcyMiwtNDk3NTczMzUzXX0=
