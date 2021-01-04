@@ -124,7 +124,8 @@ Consultar las tablas de rutas en VM1 y Router con el comando ip route. Consultar
 ```bash
 sudo ip -6 route
 ```
-Leyendo el manual la opción -6 indica que queremos ver
+Leyendo el manual la opción -6 indica que queremos ver direcciones IP versión 6.
+[]
 ### Ejercicio 9[Router]
 Para que Router actúe efectivamente como encaminador, hay que activar el reenvío de paquetes (_packet forwarding_). De forma temporal, se puede activar con el comando ```sysctl -w net.ipv6.conf.all.forwarding=1```.
 ### Ejercicio 10[Router, VM4, VM1, VM2]
@@ -189,7 +190,7 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2MjQ1NzAyLC02Mjg2MzM4NzAsMzAwMD
+eyJoaXN0b3J5IjpbMTM5NDc4NjQ1LC02Mjg2MzM4NzAsMzAwMD
 gzNTEyLC02NzQyMTc2MDgsLTQ1NTgwMzM5Niw3NzYzNjM3NzUs
 LTIwMTY4OTA4ODcsLTEyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLT
 MzNjM4MDcyMiwtNDk3NTczMzUzXX0=
