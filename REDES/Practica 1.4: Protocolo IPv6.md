@@ -150,7 +150,7 @@ Borrar la  _cache_  de vecinos en VM1 con ip neigh flush dev eth0 y en Router co
 | MAC<sub>VM3:eth0</sub> | MAC<sub>VM1</sub> | fd00:0:0:a::3 | fd00:0:0:a::1 | Neihbor Advertisement |
 | MAC<sub>VM1</sub> | MAC<sub>VM3:eth0</sub>  | fd00:0:0:a::1| fd00:0:0:a::1 | Reply |
 | MAC<sub>VM3:eth0</sub> | MAC<sub>VM1</sub> | fd00:0:0:a::3 | fd00:0:0:a::1 | Request |
-[wiresahark VM1]()
+[wiresahark VM1](https://drive.google.com/file/d/19RArwth1JMJ-IyJu_wcS-u7cDYwiungt/view?usp=sharing)
 #### Red fd00:0:0:b::/64 - VM4
 |  MAC Origen| MAC Destino | IPv6 Origen | IPv6 Destino | ICMPv6 Tipo |
 |--|--|--|--|--|
@@ -158,7 +158,7 @@ Borrar la  _cache_  de vecinos en VM1 con ip neigh flush dev eth0 y en Router co
 | MAC<sub>VM3:eth1</sub> | MAC<sub>VM4</sub> | fd00:0:0:a::3 | fd00:0:0:a::1 | Neihbor Advertisement |
 | MAC<sub>VM4</sub> | MAC<sub>VM3:eth1</sub>  | fd00:0:0:a::1| fd00:0:0:a::1 | Reply |
 | MAC<sub>VM3:eth1</sub> | MAC<sub>VM1</sub> | fd00:0:0:a::3 | fd00:0:0:a::1 | Request |
-[wiresahark VM1]()
+[wiresahark VM4](https://drive.google.com/file/d/1fVxhUGJqU-HZtgAYZU8PG-qCYemMwrzL/view?usp=sharing)
 
 # Configuración persistente
 Las configuraciones realizadas en los apartados anteriores son volátiles y desaparecen cuando se reinician las máquinas. Durante el arranque del sistema se pueden configurar automáticamente determinados interfaces según la información almacenada en el disco.
@@ -168,6 +168,9 @@ Crear los ficheros ifcfg-eth0 e ifcfg-eth1 en el directorio /etc/sysconfig/netwo
 |  IPv6 | IPv4 |
 |--|--|
 | Type=Ethernet BOOTPROTO=static IPV6ADDR=_<dirección IP en formato CIDR>_  IPV6_DEFAULTGW=_<dirección IP del encaminador por defecto (si existe)>_  DEVICE=_<nombre del interfaz (eth0...)> | Type=Ethernet BOOTPROTO=static IPADDR=_<dirección IP en formato CIDR>_ GATEWAY=_<dirección IP del encaminador por defecto (si existe)>_ DEVICE=_<nombre del interfaz (eth0...)> |
+[fichero ifcfg eth0]()
+[fichero ifcfg eth1]()
+
 ### Ejercicio 13[Router]
 Comprobar la configuración automática con las órdenes ifup e ifdown.
 # Autoconfiguración. Anuncio de prefijos
@@ -206,7 +209,7 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY4NTA0Mjg5OCwtNjI4NjMzODcwLDMwMD
+eyJoaXN0b3J5IjpbMTAwMDUzNjE5NiwtNjI4NjMzODcwLDMwMD
 A4MzUxMiwtNjc0MjE3NjA4LC00NTU4MDMzOTYsNzc2MzYzNzc1
 LC0yMDE2ODkwODg3LC0xMjc1OTkxNjI3LC0xMzU5OTAwMDc2LC
 0zMzYzODA3MjIsLTQ5NzU3MzM1M119
