@@ -146,8 +146,8 @@ Borrar la  _cache_  de vecinos en VM1 con ip neigh flush dev eth0 y en Router co
 #### Red fd00:0:0:a::/64 - VM1
 |  MAC Origen| MAC Destino | IPv6 Origen | IPv6 Destino | ICMPv6 Tipo
 |--|--|--|--|--|
-| MAC(V |  |  |  |  |
-|  |  |  |  |  |
+| MAC<sub>VM1</sub> | Broadcast  | fd00:0::a::1|  |  |
+| MAC<sub>VM1</sub> |  |  |  |  |
 
 #### Red fd00:0:0:b::/64 - VM4
 |  MAC Origen| MAC Destino | IPv6 Origen | IPv6 Destino | ICMPv6 Tipo |
@@ -200,8 +200,8 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjAyNjk2ODMzLC02Mjg2MzM4NzAsMzAwMD
-gzNTEyLC02NzQyMTc2MDgsLTQ1NTgwMzM5Niw3NzYzNjM3NzUs
-LTIwMTY4OTA4ODcsLTEyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLT
-MzNjM4MDcyMiwtNDk3NTczMzUzXX0=
+eyJoaXN0b3J5IjpbLTc5OTk0Nzg0MywtNjI4NjMzODcwLDMwMD
+A4MzUxMiwtNjc0MjE3NjA4LC00NTU4MDMzOTYsNzc2MzYzNzc1
+LC0yMDE2ODkwODg3LC0xMjc1OTkxNjI3LC0xMzU5OTAwMDc2LC
+0zMzYzODA3MjIsLTQ5NzU3MzM1M119
 -->
