@@ -214,8 +214,15 @@ interface eth0
 ```
 
 Finalmente, arrancar el servicio con el comando service zebra start.
+```bash
+sudo service zebra start
+```
 ### Ejercicio 16[VM4]
 Comprobar la autoconfiguración del interfaz de red en VM4, volviendo a activar el interfaz y consultando la dirección asignada.
+```bash
+ip a
+```
+
 ### Ejercicio 17[VM1, VM2]
 Estudiar los mensajes del protocolo de descubrimiento de vecinos:
 - Activar el interfaz en VM2, comprobar que está configurado correctamente e iniciar una captura de tráfico con wireshark.
@@ -236,8 +243,8 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjk4MzQ5NjcsLTYyODYzMzg3MCwzMD
-AwODM1MTIsLTY3NDIxNzYwOCwtNDU1ODAzMzk2LDc3NjM2Mzc3
-NSwtMjAxNjg5MDg4NywtMTI3NTk5MTYyNywtMTM1OTkwMDA3Ni
-wtMzM2MzgwNzIyLC00OTc1NzMzNTNdfQ==
+eyJoaXN0b3J5IjpbMTY5Mzk0MTU5NywtNjI4NjMzODcwLDMwMD
+A4MzUxMiwtNjc0MjE3NjA4LC00NTU4MDMzOTYsNzc2MzYzNzc1
+LC0yMDE2ODkwODg3LC0xMjc1OTkxNjI3LC0xMzU5OTAwMDc2LC
+0zMzYzODA3MjIsLTQ5NzU3MzM1M119
 -->
