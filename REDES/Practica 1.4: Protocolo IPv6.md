@@ -185,8 +185,13 @@ El protocolo de descubrimiento de vecinos se usa también para la autoconfigurac
 
 ### Ejercicio 14[VM1, VM2, VM4]
 Eliminar las direcciones ULA de los interfaces desactivándolos con ip.
-Para eliminar las interfaces sólo basta con utilizar la siguiente linea de comando en los diferentes terminales 
+#### VM1-VM4
+```bash
+sudo link 
+```
+#### VM2
 
+[resultado ejecución VM1](https://drive.google.com/file/d/1Bo46e9d0tkNsxWOKe4xYrd93D5PlskXB/view?usp=sharing)
 ### Ejercicio 15[Router]
 Configurar el servicio zebra para que el encaminador anuncie prefijos. Para ello, crear el archivo /etc/quagga/zebra.conf e incluir la información de los prefijos para las dos redes. Cada entrada será de la forma:
 ```c
@@ -218,8 +223,8 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDM3MzY0MzU5LC02Mjg2MzM4NzAsMzAwMD
-gzNTEyLC02NzQyMTc2MDgsLTQ1NTgwMzM5Niw3NzYzNjM3NzUs
-LTIwMTY4OTA4ODcsLTEyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLT
-MzNjM4MDcyMiwtNDk3NTczMzUzXX0=
+eyJoaXN0b3J5IjpbLTEyMDE0MDk4ODIsLTYyODYzMzg3MCwzMD
+AwODM1MTIsLTY3NDIxNzYwOCwtNDU1ODAzMzk2LDc3NjM2Mzc3
+NSwtMjAxNjg5MDg4NywtMTI3NTk5MTYyNywtMTM1OTkwMDA3Ni
+wtMzM2MzgwNzIyLC00OTc1NzMzNTNdfQ==
 -->
