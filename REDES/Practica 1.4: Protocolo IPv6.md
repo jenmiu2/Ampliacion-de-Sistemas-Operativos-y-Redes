@@ -135,13 +135,18 @@ sudo sysctl -w net.ipv6.conf.all.forwarding=1
 
 ### Ejercicio 10[Router, VM4, VM1, VM2]
 Finalmente, hay que configurar la tabla de rutas en las máquinas virtuales. Añadir la dirección correspondiente de Router como ruta por defecto con el comando ip route. Comprobar la conectividad entre VM1 y VM4 usando el comando ping6.
+En las máquinas virtuales VM1 y VM4.
+```bash
+sudo ip r add default via fd00:0:0:b::3
+```
+
 ### Ejercicio 11[Router, VM4, VM1]
 Borrar la  _cache_  de vecinos en VM1 con ip neigh flush dev eth0 y en Router con ip neigh flush dev eth1. Con ayuda de la herramienta wireshark, completar la siguiente tabla al usar la orden ping6 entre VM1 y VM4 con todos los mensajes hasta el primer ICMP Echo Reply:
 
 #### Red fd00:0:0:a::/64 - VM1
 |  MAC Origen| MAC Destino | IPv6 Origen | IPv6 Destino | ICMPv6 Tipo
 |--|--|--|--|--|
-|  |  |  |  |  |
+| MAC(V |  |  |  |  |
 |  |  |  |  |  |
 
 #### Red fd00:0:0:b::/64 - VM4
@@ -195,8 +200,8 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2MDcyNTM3NiwtNjI4NjMzODcwLDMwMD
-A4MzUxMiwtNjc0MjE3NjA4LC00NTU4MDMzOTYsNzc2MzYzNzc1
-LC0yMDE2ODkwODg3LC0xMjc1OTkxNjI3LC0xMzU5OTAwMDc2LC
-0zMzYzODA3MjIsLTQ5NzU3MzM1M119
+eyJoaXN0b3J5IjpbNjAyNjk2ODMzLC02Mjg2MzM4NzAsMzAwMD
+gzNTEyLC02NzQyMTc2MDgsLTQ1NTgwMzM5Niw3NzYzNjM3NzUs
+LTIwMTY4OTA4ODcsLTEyNzU5OTE2MjcsLTEzNTk5MDAwNzYsLT
+MzNjM4MDcyMiwtNDk3NTczMzUzXX0=
 -->
