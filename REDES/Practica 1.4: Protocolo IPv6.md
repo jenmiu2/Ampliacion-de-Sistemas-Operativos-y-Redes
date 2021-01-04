@@ -228,6 +228,7 @@ Estudiar los mensajes del protocolo de descubrimiento de vecinos:
 - Activar el interfaz en VM2, comprobar que está configurado correctamente e iniciar una captura de tráfico con wireshark.
 - Activar el interfaz en VM1 y estudiar los mensajes ICMP de tipo Router Solicitation y Router Advertisement.
 - Comprobar las direcciones destino y origen de los datagramas, así como las direcciones destino y origen de la trama Ethernet. Especialmente la relación entre las direcciones IP y MAC. Estudiar la salida del comando ip maddr.
+- 
 
 ### Ejercicio 18[VM1]
 La generación del identificador de interfaz mediante EUI-64 supone un problema de privacidad para las máquinas clientes, que pueden ser rastreadas por su dirección MAC. En estos casos, es conveniente activar las extensiones de privacidad para generar un identificador de interfaz pseudoaleatorio temporal para las direcciones globales. Activar las extensiones de privacidad en VM1 con sysctl -w net.ipv6.conf.eth0.use_tempaddr=2.
@@ -243,8 +244,8 @@ Generar mensajes de los siguientes tipos en la red y estudiarlos con ayuda de la
 
 - Destino inalcanzable - Sin ruta al destino (Code: 0).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5Mzk0MTU5NywtNjI4NjMzODcwLDMwMD
-A4MzUxMiwtNjc0MjE3NjA4LC00NTU4MDMzOTYsNzc2MzYzNzc1
-LC0yMDE2ODkwODg3LC0xMjc1OTkxNjI3LC0xMzU5OTAwMDc2LC
-0zMzYzODA3MjIsLTQ5NzU3MzM1M119
+eyJoaXN0b3J5IjpbLTEzNTEwMzE4NzAsLTYyODYzMzg3MCwzMD
+AwODM1MTIsLTY3NDIxNzYwOCwtNDU1ODAzMzk2LDc3NjM2Mzc3
+NSwtMjAxNjg5MDg4NywtMTI3NTk5MTYyNywtMTM1OTkwMDA3Ni
+wtMzM2MzgwNzIyLC00OTc1NzMzNTNdfQ==
 -->
