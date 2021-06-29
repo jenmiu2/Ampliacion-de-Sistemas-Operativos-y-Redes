@@ -182,15 +182,19 @@ int main(int argc, char * argv[]) {
         pid_t pid;
         pid = fork();
 	
-	 if
+	 if (pid == KO_FORK) {
+
+	 }
+	 else if (pid == OK_FORK) {
 
 
-
-
-
+	}
+	else {
+	/*JH*/
+	}
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwNzU0MTU1LC02ODM5MDkxOTYsMjg1Nj
-Y5NjEyXX0=
+eyJoaXN0b3J5IjpbLTE0MDAzNDU4MjQsLTY4MzkwOTE5NiwyOD
+U2Njk2MTJdfQ==
 -->
