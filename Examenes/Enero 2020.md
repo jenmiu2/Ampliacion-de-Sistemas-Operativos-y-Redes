@@ -187,17 +187,16 @@ int main(int argc, char * argv[]) {
 	 }
 	 else if (pid == OK_FORK) {
 	 /*HIJO*/
-		
+		dup2(,);
 	}
 	else {
 	/*PADRE*/
 		exec(argv[1], argv + 1);
 		sleep(30000);
-		dup2(2, fd); //salida estandar 
 	}
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3ODE1NDU4OTYsLTIwOTc5NDIyMzYsLT
-Y4MzkwOTE5NiwyODU2Njk2MTJdfQ==
+eyJoaXN0b3J5IjpbMTA4Mzg0MzA4NiwtMjA5Nzk0MjIzNiwtNj
+gzOTA5MTk2LDI4NTY2OTYxMl19
 -->
