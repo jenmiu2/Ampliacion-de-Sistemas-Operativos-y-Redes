@@ -5,8 +5,14 @@ Despliegue la topología de red que se muestra en la figura usando vtopol u la c
 - Configura el encaminado router para que anuncie prefijos en ambas redes
 - Comprueba que todas las maquinas son alcanzables entre si
 
+### Preparación del entorno
 
-
+```bash
+netprefix inet
+machine 1 0 0
+machine 2 0 1
+machine 
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTU3NTg3NzJdfQ==
+eyJoaXN0b3J5IjpbLTU1NDUxMjE5N119
 -->
