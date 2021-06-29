@@ -92,7 +92,7 @@ sudo gedit servidor_udp.c
            hints.ai_addr = NULL;
            hints.ai_next = NULL;
 
-           s = getaddrinfo(NULL, argv[1], argv[2], &result);
+           s = getaddrinfo(argv[1], argv[2], &hints, &result);
            if (s != 0) {
                fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(s));
                exit(EXIT_FAILURE);
@@ -152,5 +152,5 @@ gcc -o servidor_udp servidor_udp.c
 **Cliente**:
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzY1NjkyMzgsMjg1NjY5NjEyXX0=
+eyJoaXN0b3J5IjpbMjM4MzAxNjExLDI4NTY2OTYxMl19
 -->
