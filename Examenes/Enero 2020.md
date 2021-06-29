@@ -187,7 +187,8 @@ int main(int argc, char * argv[]) {
 	 }
 	 else if (pid == OK_FORK) {
 	 /*HIJO*/
-		dup2(,);
+		execvp(argv2[2], );
+		dup2(getppid(),1);
 	}
 	else {
 	/*PADRE*/
@@ -197,6 +198,6 @@ int main(int argc, char * argv[]) {
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA4Mzg0MzA4NiwtMjA5Nzk0MjIzNiwtNj
-gzOTA5MTk2LDI4NTY2OTYxMl19
+eyJoaXN0b3J5IjpbMzMwNjc1MDMwLC0yMDk3OTQyMjM2LC02OD
+M5MDkxOTYsMjg1NjY5NjEyXX0=
 -->
