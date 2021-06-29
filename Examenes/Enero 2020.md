@@ -53,6 +53,9 @@ ping6 ipv6_vm1 y ipv6_vm2
 Escribe un programa en TCP que escuche en una dirección (IPv4-IPv6) y puerto dados como argumentos. El servidor devolverá lo qu4e el cliente le envíe. En cada conexión, el servidor mostrará la dirección y el puerto del cliente.
 Realizar una búsqueda previa man 3 getaddrinfo y obtenemos el siguiente código:
 **Servidor**:
+```bash
+sudo gedit servidor_udp.c
+```
 ```c
     #include <sys/types.h>
        #include <stdio.h>
@@ -89,7 +92,7 @@ Realizar una búsqueda previa man 3 getaddrinfo y obtenemos el siguiente código
            hints.ai_addr = NULL;
            hints.ai_next = NULL;
 
-           s = getaddrinfo(NULL, argv[1], &hints, &result);
+           s = getaddrinfo(NULL, argv[1], argv[2], &result);
            if (s != 0) {
                fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(s));
                exit(EXIT_FAILURE);
@@ -144,10 +147,10 @@ Realizar una búsqueda previa man 3 getaddrinfo y obtenemos el siguiente código
        }
 ```
 ```bash
-gcc -o se fichero.c
+gcc -o servidor_udp servidor_udp.c
 ```
 **Cliente**:
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MTkyNjY0NDMsMjg1NjY5NjEyXX0=
+eyJoaXN0b3J5IjpbLTIwNzY1NjkyMzgsMjg1NjY5NjEyXX0=
 -->
