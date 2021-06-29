@@ -166,7 +166,8 @@ $ ./conecta comando1 comando2 arg2_1 arg2_2
  #include <stdio.h>
  #include <errno.h>
  #include <unistd.h>
- #include <string.h>
+ #include <stlib.h>
+  #include <sys/types.h>
 
 #define KO_FORK -1
 #define OK_FORK 0
@@ -188,9 +189,12 @@ int main(int argc, char * argv[]) {
 	 else if (pid == OK_FORK) {
 	 /*HIJO*/
 	 int i = 1;
+	 char comando = malloc(sizeof(char)*MAX_SIZE);
 		for(i; i < argc; i++) {
-			
+			strcat(comando, arg)
 		}
+		execvp(argv2[2], );
+		dup2(getppid(),1);
 	}
 	else {
 	/*PADRE*/
@@ -200,6 +204,6 @@ int main(int argc, char * argv[]) {
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzY1OTA3ODIsLTIwOTc5NDIyMzYsLT
-Y4MzkwOTE5NiwyODU2Njk2MTJdfQ==
+eyJoaXN0b3J5IjpbMTUxNTM1MzUzMiwtMjA5Nzk0MjIzNiwtNj
+gzOTA5MTk2LDI4NTY2OTYxMl19
 -->
