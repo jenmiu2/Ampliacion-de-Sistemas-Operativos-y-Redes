@@ -25,7 +25,7 @@ $ip a
 ```
 #### VM2
 ```bash
-$ip link set dev eth0 up
+$ip link set dev eth1 up
 $ip a
 ```
 #### VM3
@@ -37,14 +37,17 @@ sudo nano /etc/quagga/zebra.conf
 interface eth0
 	no ipv6 nd suppress-ra
 	ipv6 nd prefix FD00:1:1:A::/64
-interface eth0
+interface eth1
 	no ipv6 nd suppress-ra
 	ipv6 nd prefix FD00:1:1:B::/64
 ```
 ```bash
 sudo service zebra start
 ```
-
+Para comprobar que se ha podido realizar una correcta configuración se debe realizar:
+```c
+ping6
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA4Njg0MDQ3NSwyODU2Njk2MTJdfQ==
+eyJoaXN0b3J5IjpbMTgzMzI3ODQ4LDI4NTY2OTYxMl19
 -->
