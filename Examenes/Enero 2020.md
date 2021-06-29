@@ -38,6 +38,16 @@ $ip link set dev eth0 up
 $ip link set dev eth1 up
 $sudo sysctl -w net.ipv6.conf.all.forwarding = 1
 ```
+```bash
+sudo nano /etc/quagga/zebra.conf 
+```
+Insertar el siguiente código en c.
+```c
+interface eth0
+	no ipv6 nd suppress-ra
+	ipv6 nd prefix fd00:0:0:A::/64
+	
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQzOTE2MDcxNCwyODU2Njk2MTJdfQ==
+eyJoaXN0b3J5IjpbMTc4MTUwMDk1OCwyODU2Njk2MTJdfQ==
 -->
