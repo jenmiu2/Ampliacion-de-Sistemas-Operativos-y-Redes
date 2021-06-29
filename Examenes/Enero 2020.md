@@ -191,11 +191,11 @@ int main(int argc, char * argv[]) {
 	}
 	else {
 	/*PADRE*/
-		
+		int fd = execvp(argv[1], )
 	}
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODMyMTY3NzA3LC02ODM5MDkxOTYsMjg1Nj
-Y5NjEyXX0=
+eyJoaXN0b3J5IjpbLTIwOTc5NDIyMzYsLTY4MzkwOTE5NiwyOD
+U2Njk2MTJdfQ==
 -->
