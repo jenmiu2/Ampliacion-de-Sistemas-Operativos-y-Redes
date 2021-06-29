@@ -49,7 +49,10 @@ Para comprobar que se ha podido realizar una correcta configuración se debe rea
 ```c
 ping6 ipv6_vm1 y ipv6_vm2
 ```
+## Ejercicio 2 (1 punto)
+Escribe un programa en TCP que escuche en una dirección (IPv4-IPv6) y puerto dados como argumentos. El servidor devolverá lo qu4e el cliente le envíe. En cada conexión, el servidor mostrará la dirección y el puerto del cliente.
+```c
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMwMTkxNDcyLDI4NTY2OTYxMl19
+eyJoaXN0b3J5IjpbMTk1NTYxOTY0NywyODU2Njk2MTJdfQ==
 -->
