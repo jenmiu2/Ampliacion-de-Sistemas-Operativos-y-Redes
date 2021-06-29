@@ -81,7 +81,7 @@ Realizar una búsqueda previa man 3 getaddrinfo y obtenemos el siguiente código
 
            memset(&hints, 0, sizeof(hints));
            hints.ai_family = AF_UNSPEC;    /* Allow IPv4 or IPv6 */
-           hints.ai_socktype = SOCK_DGRAM; /* Datagram socket: ID */
+           hints.ai_socktype = SOCK_DGRAM; /* Datagram socket: UDP */
            hints.ai_flags = AI_PASSIVE;    /* For wildcard IP address */
            hints.ai_protocol = 0;          /* Any protocol */
            hints.ai_canonname = NULL;
@@ -129,17 +129,19 @@ Realizar una búsqueda previa man 3 getaddrinfo y obtenemos el siguiente código
                char host[NI_MAXHOST], service[NI_MAXSERV];
 
                s = getnameinfo((struct sockaddr *) &peer_addr,peer_addr_len, host, NI_MAXHOST,service,NI_MAXSERV, NI_NUMERICSERV);
-               if (s == 0)
-                   printf("Received %zd bytes from %s:%s\n",
-                           nread, host, service);
-               else
+               if (s == 0) {
+               /
+				printf("Received %zd bytes from %s:%s\n",nread, host, service);
+				}
+               else {
                    fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
-
-               if (sendto(sfd, buf, nread, 0,(struct sockaddr *) &peer_addr,peer_addr_len) != nread)
+				}
+               if (sendto(sfd, buf, nread, 0,(struct sockaddr *) &peer_addr,peer_addr_len) != nread) {
                    fprintf(stderr, "Error sending response\n");
+               }
            }
        }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUxMDA3NDA0NiwyODU2Njk2MTJdfQ==
+eyJoaXN0b3J5IjpbLTU2NTE4NTc0NywyODU2Njk2MTJdfQ==
 -->
