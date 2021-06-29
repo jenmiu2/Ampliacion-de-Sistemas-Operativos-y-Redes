@@ -183,10 +183,7 @@ int main(int argc, char * argv[]) {
      pid_t pid;
      pid = fork();
      int fd[2];
-     
-int fd[2];
-
-pipe(fd);
+     pipe(fd);
 
 	 if (pid == KO_FORK) {
 		exit(EXIT_FAILURE);
@@ -199,8 +196,8 @@ pipe(fd);
 			strcat(comando, argv[i]);
 			strcat(comando, " ");
 		}
+
 		execvp(argv2[2], comando);
-		dup2(getppid(),1);
 	}
 	else {
 	/*PADRE*/
@@ -211,6 +208,6 @@ pipe(fd);
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzMjg1NjA3MywtOTgyMzA0NTcxLC0yMD
-k3OTQyMjM2LC02ODM5MDkxOTYsMjg1NjY5NjEyXX0=
+eyJoaXN0b3J5IjpbLTE5NTk5NDEzNzcsLTk4MjMwNDU3MSwtMj
+A5Nzk0MjIzNiwtNjgzOTA5MTk2LDI4NTY2OTYxMl19
 -->
