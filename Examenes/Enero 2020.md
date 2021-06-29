@@ -18,16 +18,6 @@ machine 1 0 0
 machine 2 0 1
 machine 3 0 0 1 1
 ```
-#### VM1
-```bash
-$ip link set dev eth0 up
-$ip a
-```
-#### VM2
-```bash
-$ip link set dev eth1 up
-$ip a
-```
 #### VM3
 Insertar el siguiente código en c.
 ```bash
@@ -44,10 +34,22 @@ interface eth1
 ```bash
 sudo service zebra start
 ```
+
+#### VM1
+```bash
+$ip link set dev eth0 up
+$ip a
+```
+#### VM2
+```bash
+$ip link set dev eth1 up
+$ip a
+```
 Para comprobar que se ha podido realizar una correcta configuración se debe realizar:
 ```c
-ping6
+ping6 ipv6_vm1 y ipv6_vm2
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzMzI3ODQ4LDI4NTY2OTYxMl19
+eyJoaXN0b3J5IjpbMTMwMTkxNDcyLDI4NTY2OTYxMl19
 -->
