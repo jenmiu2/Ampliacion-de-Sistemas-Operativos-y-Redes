@@ -152,6 +152,10 @@ gcc -o servidor_udp servidor_udp.c
 ```bash
 nc -u 192.168.0.1 80
 ```
+## Ejercicio 3 (1,5 puntos)
+Escribe un programa que ejecute dos comandos de la siguiente forma:
+- Los comandos serán el primer y segundo argumento del programa. El resto de argumentos del programa se considerarán argumentos del segundo comando:
+- cada comando se ejecutará en un proceso distinto, que impre
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcxNjczNDg1OSwyODU2Njk2MTJdfQ==
+eyJoaXN0b3J5IjpbMTM0NTAxNzU1OSwyODU2Njk2MTJdfQ==
 -->
