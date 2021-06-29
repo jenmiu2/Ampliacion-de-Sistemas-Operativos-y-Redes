@@ -156,7 +156,7 @@ nc -u 192.168.0.1 80
 Escribe un programa que ejecute dos comandos de la siguiente forma:
 - Los comandos serán el primer y segundo argumento del programa. El resto de argumentos del programa se considerarán argumentos del segundo comando:
 - Cada comando se ejecutará en un proceso distinto, que imprimirá su PID por terminal.
-- El programa conectará la salida estándar del primer proceso con l entrada estándar del segundo, y esperará la finalización de ambos para terminar su ejecución.
+- El programa conectará la salida estándar del primer proceso con la entrada estándar del segundo, y esperará la finalización de ambos para terminar su ejecución.
 
 Ejemplificación:
 ```bash
@@ -190,5 +190,5 @@ int main(int argc, char * argv[]) {
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM5MzgwNjg1LDI4NTY2OTYxMl19
+eyJoaXN0b3J5IjpbLTY4MzkwOTE5NiwyODU2Njk2MTJdfQ==
 -->
