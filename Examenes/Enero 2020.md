@@ -175,13 +175,14 @@ $ ./conecta comando1 comando2 arg2_1 arg2_2
 
 int main(int argc, char * argv[]) {
 
-		if (argc != 2) {
-               fprintf(stderr, "Usage: $ ./conecta comando1 comando2 arg2_1 arg2_2 \n");
-               exit(EXIT_FAILURE);
-         }
-         pid_t pid;
-         
-
+	if (argc != 2) {
+              fprintf(stderr, "Usage: $ ./conecta comando1 comando2 arg2_1 arg2_2 \n");
+              exit(EXIT_FAILURE);
+        }
+        pid_t pid;
+        pid = fork();
+	
+	 if
 
 
 
@@ -190,5 +191,6 @@ int main(int argc, char * argv[]) {
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY4MzkwOTE5NiwyODU2Njk2MTJdfQ==
+eyJoaXN0b3J5IjpbMTYwNzU0MTU1LC02ODM5MDkxOTYsMjg1Nj
+Y5NjEyXX0=
 -->
