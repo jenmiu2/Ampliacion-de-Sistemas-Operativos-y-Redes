@@ -180,9 +180,14 @@ int main(int argc, char * argv[]) {
               fprintf(stderr, "Usage: $ ./conecta comando1 comando2 arg2_1 arg2_2 \n");
               exit(EXIT_FAILURE);
         }
-        pid_t pid;
-        pid = fork();
-	
+     pid_t pid;
+     pid = fork();
+     int fd[2];
+     
+int fd[2];
+
+pipe(fd);
+
 	 if (pid == KO_FORK) {
 		exit(EXIT_FAILURE);
 	 }
@@ -206,6 +211,6 @@ int main(int argc, char * argv[]) {
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4MjMwNDU3MSwtMjA5Nzk0MjIzNiwtNj
-gzOTA5MTk2LDI4NTY2OTYxMl19
+eyJoaXN0b3J5IjpbMTkzMjg1NjA3MywtOTgyMzA0NTcxLC0yMD
+k3OTQyMjM2LC02ODM5MDkxOTYsMjg1NjY5NjEyXX0=
 -->
