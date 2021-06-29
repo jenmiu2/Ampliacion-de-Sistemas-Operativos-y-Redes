@@ -21,6 +21,9 @@ machine 3 0 0 1 1
 #### VM3
 Insertar el siguiente código en c.
 ```bash
+$ip a add FD00:1:1:A::2/64 dev eth0
+$ip a add FD00:1:1:B::2/64 dev eth1
+sysctl -w net.ipv6.conf.all.forwarding = 1
 sudo nano /etc/quagga/zebra.conf 
 ```
 ```c
@@ -35,13 +38,18 @@ interface eth1
 sudo service zebra start
 ```
 
+
 #### VM1
 ```bash
+$ip a add FD00:1:1:A::1/64 dev eth0
+$ip -6 add default via FD00:1:1:A::2/64
 $ip link set dev eth0 up
 $ip a
 ```
 #### VM2
 ```bash
+$ip a add FD00:1:1:B::1/64 dev eth0
+$ip -6 add default via FD00:1:1:B::2/64
 $ip link set dev eth1 up
 $ip a
 ```
@@ -212,7 +220,7 @@ int main(int argc, char * argv[]) {
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTA3MzU4MTU5LC0xOTU5OTQxMzc3LC05OD
-IzMDQ1NzEsLTIwOTc5NDIyMzYsLTY4MzkwOTE5NiwyODU2Njk2
-MTJdfQ==
+eyJoaXN0b3J5IjpbLTE1MDgyNTIyODcsNTA3MzU4MTU5LC0xOT
+U5OTQxMzc3LC05ODIzMDQ1NzEsLTIwOTc5NDIyMzYsLTY4Mzkw
+OTE5NiwyODU2Njk2MTJdfQ==
 -->
