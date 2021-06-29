@@ -179,7 +179,8 @@ int main(int argc, char * argv[]) {
                fprintf(stderr, "Usage: $ ./conecta comando1 comando2 arg2_1 arg2_2 \n");
                exit(EXIT_FAILURE);
          }
-         pid_
+         pid_t pid;
+         
 
 
 
@@ -189,5 +190,5 @@ int main(int argc, char * argv[]) {
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc0OTIwNzQwNywyODU2Njk2MTJdfQ==
+eyJoaXN0b3J5IjpbLTM5MzgwNjg1LDI4NTY2OTYxMl19
 -->
