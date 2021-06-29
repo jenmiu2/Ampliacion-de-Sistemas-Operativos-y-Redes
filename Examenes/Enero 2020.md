@@ -13,6 +13,16 @@ machine 2 0 1
 machine 3 0 0 1 1
 ```
 
+#### VM1
+```c
+sudo ipconfig
+```
+#### VM2
+```c
+```
+#### VM3
+```c
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIxNDY1MDkzMzBdfQ==
+eyJoaXN0b3J5IjpbMTEzODY5MDE4Nl19
 -->
