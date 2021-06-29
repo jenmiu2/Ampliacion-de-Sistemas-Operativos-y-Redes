@@ -6,13 +6,13 @@ Despliegue la topología de red que se muestra en la figura usando vtopol u la c
 - Comprueba que todas las maquinas son alcanzables entre si
 
 ### Preparación del entorno
-
 ```bash
 netprefix inet
 machine 1 0 0
 machine 2 0 1
-machine 
+machine 3 0 0 1 1
 ```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1NDUxMjE5N119
+eyJoaXN0b3J5IjpbLTIxNDY1MDkzMzBdfQ==
 -->
