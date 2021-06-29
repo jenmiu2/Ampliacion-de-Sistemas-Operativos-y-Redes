@@ -183,18 +183,19 @@ int main(int argc, char * argv[]) {
         pid = fork();
 	
 	 if (pid == KO_FORK) {
-
+		exit(EXIT_FAILURE);
 	 }
 	 else if (pid == OK_FORK) {
-
-
+	 /*HIJO*/
+		
 	}
 	else {
-	/*JH*/
+	/*PADRE*/
+		
 	}
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDAzNDU4MjQsLTY4MzkwOTE5NiwyOD
-U2Njk2MTJdfQ==
+eyJoaXN0b3J5IjpbODMyMTY3NzA3LC02ODM5MDkxOTYsMjg1Nj
+Y5NjEyXX0=
 -->
