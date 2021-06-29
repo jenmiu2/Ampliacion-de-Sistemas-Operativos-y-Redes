@@ -163,8 +163,8 @@ Ejemplificación:
 $ ./conecta comando1 comando2 arg2_1 arg2_2 
 ```
  ```c
- 
+ #include <>
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNTY4NDAxOTMsMjg1NjY5NjEyXX0=
+eyJoaXN0b3J5IjpbMTc2MTA0MzQwLDI4NTY2OTYxMl19
 -->
