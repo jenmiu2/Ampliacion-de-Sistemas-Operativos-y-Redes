@@ -140,15 +140,18 @@ sudo gedit servidor_udp.c
                else {
                    fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
 				}
-				printf("HOST %s, PORT%s\n")
+				printf("HOST %s, PORT %s\n", host, service);
            }
        }
 ```
 ```bash
 gcc -o servidor_udp servidor_udp.c
+./servidor_udp 192.168.0.3 80
 ```
 **Cliente**:
-
+```bash
+nc -u 192.168.0.1 80
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc1MTU1MjkxMywyODU2Njk2MTJdfQ==
+eyJoaXN0b3J5IjpbLTcxNjczNDg1OSwyODU2Njk2MTJdfQ==
 -->
