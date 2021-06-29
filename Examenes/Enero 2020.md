@@ -78,7 +78,7 @@ sudo gedit servidor_udp.c
            ssize_t nread;
            char buf[BUF_SIZE];
 
-           if (argc != 2) {
+           if (argc != 3) {
                fprintf(stderr, "Usage: %s port\n", argv[0]);
                exit(EXIT_FAILURE);
            }
@@ -175,6 +175,11 @@ $ ./conecta comando1 comando2 arg2_1 arg2_2
 
 int main(int argc, char * argv[]) {
 
+		if (argc != 2) {
+               fprintf(stderr, "Usage: $ ./conecta comando1 comando2 arg2_1 arg2_2 \n");
+               exit(EXIT_FAILURE);
+         }
+         pid_
 
 
 
@@ -184,5 +189,5 @@ int main(int argc, char * argv[]) {
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTg0MjA2ODgsMjg1NjY5NjEyXX0=
+eyJoaXN0b3J5IjpbLTc0OTIwNzQwNywyODU2Njk2MTJdfQ==
 -->
