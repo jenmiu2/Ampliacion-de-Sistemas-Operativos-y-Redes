@@ -6,16 +6,21 @@ Despliegue la topología de red que se muestra en la figura usando vtopol u la c
 - Comprueba que todas las maquinas son alcanzables entre si
 
 ### Preparación del entorno
+|Maquina| IP | Comentarios
+|--|--|--|
+| VM1 | FD00:1:1:A::/64 (eth0)|Añadir router como encaminador por defecto |
+| VM2 | FD00:1:1:B::/64 (eth0)| Añadir router como encaminador por defecto|
+| VM3 - Router |  | Añadir forwarding de paquetes |
+
 ```bash
 netprefix inet
 machine 1 0 0
 machine 2 0 1
 machine 3 0 0 1 1
 ```
-
 #### VM1
 ```c
-sudo ipconfig
+sudo ipconfig 
 ```
 #### VM2
 ```c
@@ -24,5 +29,5 @@ sudo ipconfig
 ```c
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEzODY5MDE4Nl19
+eyJoaXN0b3J5IjpbMTkxMDEyMzQ4NV19
 -->
