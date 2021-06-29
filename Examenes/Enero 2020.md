@@ -20,34 +20,31 @@ machine 3 0 0 1 1
 ```
 #### VM1
 ```bash
-$sudo ip address add FD00:1:1:A::1/64 dev eth0
 $ip link set dev eth0 up
 $ip a
 ```
 #### VM2
 ```bash
-$sudo ip address add FD00:1:1:B::0/64 dev eth0
 $ip link set dev eth0 up
 $ip a
 ```
 #### VM3
-```bash
-$sudo ip address add FD00:1:1:A::3/64 dev eth0
-$sudo ip address add FD00:1:1:B::3/64 dev eth1
-$ip link set dev eth0 up
-$ip link set dev eth1 up
-$sudo sysctl -w net.ipv6.conf.all.forwarding = 1
-```
+Insertar el siguiente código en c.
 ```bash
 sudo nano /etc/quagga/zebra.conf 
 ```
-Insertar el siguiente código en c.
 ```c
 interface eth0
 	no ipv6 nd suppress-ra
-	ipv6 nd prefix fd00:0:0:A::/64
-	
+	ipv6 nd prefix FD00:1:1:A::/64
+interface eth0
+	no ipv6 nd suppress-ra
+	ipv6 nd prefix FD00:1:1:B::/64
 ```
+```bash
+sudo service zebra start
+```
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4MTUwMDk1OCwyODU2Njk2MTJdfQ==
+eyJoaXN0b3J5IjpbMjA4Njg0MDQ3NSwyODU2Njk2MTJdfQ==
 -->
