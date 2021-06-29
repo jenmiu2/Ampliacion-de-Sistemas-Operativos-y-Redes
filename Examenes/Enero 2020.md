@@ -191,19 +191,21 @@ int main(int argc, char * argv[]) {
 	 int i = 1;
 	 char comando = malloc(sizeof(char)*MAX_SIZE);
 		for(i; i < argc; i++) {
-			strcat(comando, arg)
+			strcat(comando, argv[i]);
+			strcat(comando, " ");
 		}
-		execvp(argv2[2], );
+		execvp(argv2[2], comando);
 		dup2(getppid(),1);
 	}
 	else {
 	/*PADRE*/
 		exec(argv[1], argv + 1);
+		printf("HELLO, WORLD!!")
 		sleep(30000);
 	}
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUxNTM1MzUzMiwtMjA5Nzk0MjIzNiwtNj
+eyJoaXN0b3J5IjpbLTk4MjMwNDU3MSwtMjA5Nzk0MjIzNiwtNj
 gzOTA5MTk2LDI4NTY2OTYxMl19
 -->
