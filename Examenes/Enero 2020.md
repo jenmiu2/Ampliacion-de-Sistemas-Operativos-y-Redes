@@ -216,8 +216,7 @@ Realizar una búsqueda previa man 3 getaddrinfo y obtenemos el siguiente código
                        /* +1 for terminating null byte */
 
                if (len > BUF_SIZE) {
-                   fprintf(stderr,
-                           "Ignoring long message in argument %d\n", j);
+                   fprintf(stderr,"Ignoring long message in argument %d\n", j);
                    continue;
                }
 
@@ -237,7 +236,7 @@ Realizar una búsqueda previa man 3 getaddrinfo y obtenemos el siguiente código
 
            exit(EXIT_SUCCESS);
        }
-       ```
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY3MTkwNDkyMCwyODU2Njk2MTJdfQ==
+eyJoaXN0b3J5IjpbLTEzNjY4OTMwNCwyODU2Njk2MTJdfQ==
 -->
