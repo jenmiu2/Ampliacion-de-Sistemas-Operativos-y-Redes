@@ -140,9 +140,7 @@ sudo gedit servidor_udp.c
                else {
                    fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
 				}
-               if (sendto(sfd, buf, nread, 0,(struct sockaddr *) &peer_addr,peer_addr_len) != nread) {
-                   fprintf(stderr, "Error sending response\n");
-               }
+				printf("HOST %s, PORT%s\n")
            }
        }
 ```
@@ -152,5 +150,5 @@ gcc -o servidor_udp servidor_udp.c
 **Cliente**:
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjM4MzAxNjExLDI4NTY2OTYxMl19
+eyJoaXN0b3J5IjpbLTc1MTU1MjkxMywyODU2Njk2MTJdfQ==
 -->
