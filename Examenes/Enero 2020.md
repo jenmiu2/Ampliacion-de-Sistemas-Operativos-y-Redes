@@ -19,15 +19,23 @@ machine 2 0 1
 machine 3 0 0 1 1
 ```
 #### VM1
-```c
-sudo ipconfig 
+```bash
+$sudo ip address add 192.168.0.1/24 dev eth0
+$ip link set dev eth0 up
+$ip a
 ```
 #### VM2
-```c
+```bash
+$sudo ip address add 192.168.0.1/24 dev eth0
+$ip link set dev eth0 up
+$ip a
 ```
 #### VM3
-```c
+```bash
+$sudo ip address add 192.168.0.1/24 dev eth0
+$ip link set dev eth0 up
+$ip a
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkxMDEyMzQ4NV19
+eyJoaXN0b3J5IjpbMjg1NjY5NjEyXX0=
 -->
