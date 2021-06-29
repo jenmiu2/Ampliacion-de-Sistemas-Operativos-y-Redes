@@ -155,7 +155,12 @@ nc -u 192.168.0.1 80
 ## Ejercicio 3 (1,5 puntos)
 Escribe un programa que ejecute dos comandos de la siguiente forma:
 - Los comandos serán el primer y segundo argumento del programa. El resto de argumentos del programa se considerarán argumentos del segundo comando:
-- cada comando se ejecutará en un proceso distinto, que impre
+- Cada comando se ejecutará en un proceso distinto, que imprimirá su PID por terminal.
+- El programa conectará la salida estándar del primer proceso con l entrada estándar del segundo, y esperará la finalización de ambos para terminar su ejecución.
+
+Ejemplificación:
+```bash
+$ ./conecta comando1 comando2 arg 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0NTAxNzU1OSwyODU2Njk2MTJdfQ==
+eyJoaXN0b3J5IjpbLTI3ODg4NDExNSwyODU2Njk2MTJdfQ==
 -->
