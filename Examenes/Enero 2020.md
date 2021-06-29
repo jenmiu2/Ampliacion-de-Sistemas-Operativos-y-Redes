@@ -163,8 +163,26 @@ Ejemplificación:
 $ ./conecta comando1 comando2 arg2_1 arg2_2 
 ```
  ```c
- #include <>
+ #include <stdio.h>
+ #include <errno.h>
+ #include <unistd.h>
+ #include <string.h>
+
+#define KO_FORK -1
+#define OK_FORK 0
+#define MAX_SIZE 100
+
+
+int main(int argc, char * argv[]) {
+
+
+
+
+
+
+
+}
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc2MTA0MzQwLDI4NTY2OTYxMl19
+eyJoaXN0b3J5IjpbLTE4NTg0MjA2ODgsMjg1NjY5NjEyXX0=
 -->
