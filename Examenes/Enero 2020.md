@@ -38,7 +38,6 @@ sudo service zebra start
 #### VM1
 ```bash
 $ip link set dev eth0 up
-$ip -6 route add default via 
 $ip a
 ```
 #### VM2
@@ -213,7 +212,7 @@ int main(int argc, char * argv[]) {
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjg0NzIxOTgyLC0xOTU5OTQxMzc3LC05OD
+eyJoaXN0b3J5IjpbNTA3MzU4MTU5LC0xOTU5OTQxMzc3LC05OD
 IzMDQ1NzEsLTIwOTc5NDIyMzYsLTY4MzkwOTE5NiwyODU2Njk2
 MTJdfQ==
 -->
