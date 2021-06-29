@@ -160,7 +160,7 @@ Realizar una búsqueda previa man 3 getaddrinfo y obtenemos el siguiente código
        {
            struct addrinfo hints;
            struct addrinfo *result, *rp;
-           int sfd, s;
+           int sfd, s;//sfd: file descriptor
            size_t len;
            ssize_t nread;
            char buf[BUF_SIZE];
@@ -238,5 +238,5 @@ Realizar una búsqueda previa man 3 getaddrinfo y obtenemos el siguiente código
        }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNjY4OTMwNCwyODU2Njk2MTJdfQ==
+eyJoaXN0b3J5IjpbMTczMTI1NDA1MiwyODU2Njk2MTJdfQ==
 -->
