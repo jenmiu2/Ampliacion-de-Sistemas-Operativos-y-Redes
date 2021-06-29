@@ -195,12 +195,16 @@ int main(int argc, char * argv[]) {
 			strcat(comando, argv[i]);
 			strcat(comando, " ");
 		}
-		dup2(fd[2], 0);//salida estandar
+		dup2(fd[0], 1);//
+		close(fd[0]);
+		close(fd[1]);
 		execvp(argv2[2], comando);
 	}
 	else {
 	/*PADRE*/
 		dup2(fd[1], 0);//salida estandar -> extremo tuberia para que el proceso 2 lo lea
+		close(fd[0]);
+		close(fd[1]);
 		exec(argv[1], argv + 1);
 		printf("HELLO, WORLD!!")
 		sleep(30000);
@@ -208,7 +212,7 @@ int main(int argc, char * argv[]) {
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDI1MTE0MDksLTE5NTk5NDEzNzcsLT
-k4MjMwNDU3MSwtMjA5Nzk0MjIzNiwtNjgzOTA5MTk2LDI4NTY2
-OTYxMl19
+eyJoaXN0b3J5IjpbMTIyNTI5MzczNiwtMTk1OTk0MTM3NywtOT
+gyMzA0NTcxLC0yMDk3OTQyMjM2LC02ODM5MDkxOTYsMjg1NjY5
+NjEyXX0=
 -->
