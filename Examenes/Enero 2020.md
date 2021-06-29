@@ -200,6 +200,7 @@ int main(int argc, char * argv[]) {
 	}
 	else {
 	/*PADRE*/
+		dup2(fd[1], 0);//salida estandar -> extremo tuberia para que el proceso 2 lo lea
 		exec(argv[1], argv + 1);
 		printf("HELLO, WORLD!!")
 		sleep(30000);
@@ -207,7 +208,7 @@ int main(int argc, char * argv[]) {
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1Njg1NDYxNTgsLTE5NTk5NDEzNzcsLT
+eyJoaXN0b3J5IjpbLTE2MDI1MTE0MDksLTE5NTk5NDEzNzcsLT
 k4MjMwNDU3MSwtMjA5Nzk0MjIzNiwtNjgzOTA5MTk2LDI4NTY2
 OTYxMl19
 -->
