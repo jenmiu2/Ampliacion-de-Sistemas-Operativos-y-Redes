@@ -195,7 +195,7 @@ int main(int argc, char * argv[]) {
 			strcat(comando, argv[i]);
 			strcat(comando, " ");
 		}
-		dup2(fd[0], 1);//
+		dup2(fd[0], 1);
 		close(fd[0]);
 		close(fd[1]);
 		execvp(argv2[2], comando);
@@ -206,13 +206,13 @@ int main(int argc, char * argv[]) {
 		close(fd[0]);
 		close(fd[1]);
 		exec(argv[1], argv + 1);
-		printf("HELLO, WORLD!!")
+		printf("HELLO, WORLD!!");
 		sleep(30000);
 	}
 }
  ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIyNTI5MzczNiwtMTk1OTk0MTM3NywtOT
-gyMzA0NTcxLC0yMDk3OTQyMjM2LC02ODM5MDkxOTYsMjg1NjY5
-NjEyXX0=
+eyJoaXN0b3J5IjpbNTA3MzU4MTU5LC0xOTU5OTQxMzc3LC05OD
+IzMDQ1NzEsLTIwOTc5NDIyMzYsLTY4MzkwOTE5NiwyODU2Njk2
+MTJdfQ==
 -->
