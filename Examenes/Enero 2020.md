@@ -160,7 +160,11 @@ Escribe un programa que ejecute dos comandos de la siguiente forma:
 
 Ejemplificación:
 ```bash
-$ ./conecta comando1 comando2 arg 
+$ ./conecta comando1 comando2 arg2_1 arg2_2 
+```
+ ```c
+ 
+ ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3ODg4NDExNSwyODU2Njk2MTJdfQ==
+eyJoaXN0b3J5IjpbLTEwNTY4NDAxOTMsMjg1NjY5NjEyXX0=
 -->
