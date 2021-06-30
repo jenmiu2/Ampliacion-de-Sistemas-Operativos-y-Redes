@@ -144,11 +144,43 @@ Escribir un programa que instale un manejador sencillo para las señales SIGINT 
 
 ### Ejercicio 13 
 Escribir un programa que realice el borrado programado del propio ejecutable. El programa tendrá como argumento el número de segundos que esperará antes de borrar el fichero. El borrado del fichero se podrá detener si se recibe la señal SIGUSR1.
+```c
+#include <errno.h>
+#include <stdio.h>
+#include <stlib.h>
+#include <sys/types.h>
+#include <signal.h>
 
+#define errexit do{ printf("ERROR(%d):%s\n", errno, strerror(errno)); exit(EXIT_FAILURE)}; while(0)
+
+int main(int argc, int argv*[]) {
+	sigset_t blk, pending_blk;
+	
+	sigemptyset(&blk);
+	sigaddset(&blk, SIGINT);
+	sigaddset(&blk, SIGTSTP);
+
+	sigprocmask(SIG_BLOCK, &blk, NULL);
+	
+	char *sleep_sec_chr = getenv(argv[1]);
+	int sleep_sec = atoi(sleep_sec_chr);
+	
+	sleep(sleep_sec);
+	
+	sigpending(&pending_blk);
+	if(sigismember(&pending_blk, SIGINT) == 1 || sigismember(&pending_blk, SIGTSTP) == 1) {
+		printf("Se ha recibido la señal SIGINT o SIGTSTP");
+	}
+	else {
+		printf("No se ha recibido la señal SIGINT o SIGTSTP");
+	}
+	sigprocmask(SIG_UNBLOCK, &set, NULL);
+}
+```
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MDQzMzA4NjgsLTE2NjgzODM4OTEsLT
+eyJoaXN0b3J5IjpbLTEwMjM0OTkwNTgsLTE2NjgzODM4OTEsLT
 MwMjE3NTIwMSwtMTExNjc4OTYxMiwtNzcxMjgyMTkwLC0xMjUw
 MjA5NzJdfQ==
 -->
