@@ -138,16 +138,15 @@ Escribir un programa que abra la tubería con el nombre anterior en modo sólo e
 
 int main(int argc, int argv*[]) {
 	char pathname = "tub_name.txt"
-	int fd, readbytes;
+	int fd, writebytes;
 	if(mkfifo(pathname, 0777) < NO_ERROR) {
 		errnoexit();
 	}
 	if((fd = open(pathname,O_WRONLY)) < NO_ERROR) {
 		errnoexit();
 	}
-	while((readbytes = write(fd, argv[1], 1)) > 0 {
-
-	}
+	writebytes = write(fd, argv[1], sizeof(argv[1]);
+	if(writebytes)
 }
 ```
 # Multiplexación síncrona de entrada/salida
@@ -167,7 +166,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQ2NjU4NTcwLC0xMTkzMzA1OTU3LC01Mj
-Q2MjA1NDcsLTM4NDY1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4
-OV19
+eyJoaXN0b3J5IjpbMTAzNDA5MTkyMywtMTE5MzMwNTk1NywtNT
+I0NjIwNTQ3LC0zODQ2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0
+ODldfQ==
 -->
