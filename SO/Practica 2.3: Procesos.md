@@ -164,7 +164,7 @@ int main(int argc, int argv*[]) {
 	sigaddset(&blk, SIGUSR1);
 	
 	sigemptyset(&sigact);
-	sigact = (sigaction) {.sa_flags = 0, sa_handler = handler};
+	sigact = (sigaction) {.sa_flags = S, sa_handler = handler};
 	
 	if(sigaction(SIGUSR1, &sigact, NULL) != 0) {
 		
@@ -177,8 +177,8 @@ int main(int argc, int argv*[]) {
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDE5MTc3MDEzLC0xNjg5ODk5MTA1LC0xNj
-Q4ODk2NzY4LC05NTQyODA5NjAsLTEwNjk0NDc5MzAsLTE2Njgz
-ODM4OTEsLTMwMjE3NTIwMSwtMTExNjc4OTYxMiwtNzcxMjgyMT
-kwLC0xMjUwMjA5NzJdfQ==
+eyJoaXN0b3J5IjpbLTEwMTQ1NDg2ODYsLTE2ODk4OTkxMDUsLT
+E2NDg4OTY3NjgsLTk1NDI4MDk2MCwtMTA2OTQ0NzkzMCwtMTY2
+ODM4Mzg5MSwtMzAyMTc1MjAxLC0xMTE2Nzg5NjEyLC03NzEyOD
+IxOTAsLTEyNTAyMDk3Ml19
 -->
