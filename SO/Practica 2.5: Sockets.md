@@ -612,6 +612,11 @@ Añadir la lógica necesaria en el servidor para que no quede ningún proceso en
  #define BUF_SIZE 500
  #define NO_ERROR 0
  #define ERROR -1
+ void handler() {
+	pid_t pid = wait(NULL);	
+	print()
+ }
+ 
  int main(int argc, char *argv[]) {
  struct addrinfo hints;
     struct addrinfo *result, *rp;
@@ -621,10 +626,6 @@ Añadir la lógica necesaria en el servidor para que no quede ningún proceso en
     ssize_t nread;
     char buf[BUF_SIZE];
     pid_t pid;
-	sigset_t blk, pending_blk;
-	
-	sigemptyset(&blk);
-	sigaddset(&blk, SIGCHLD);
 	
     if (argc != 2) {
         fprintf(stderr, "Usage: port %s\n", argv[0]);
@@ -683,7 +684,7 @@ Añadir la lógica necesaria en el servidor para que no quede ningún proceso en
 		 continue;
 		}
 		else {
-		
+			signal(SIGCHLD,handler);
 		}
 		close(ac);
      }
@@ -691,7 +692,7 @@ Añadir la lógica necesaria en el servidor para que no quede ningún proceso en
  }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwNzY5Nzc3NSwxNTAwMTgxMDc0LC0xMz
-AzOTgyNDI5LDE1MjQ2NjY3MDYsMTEwOTQxMjQ3OCwyMzI1ODY5
-NTQsLTExNTU4NzkxNTZdfQ==
+eyJoaXN0b3J5IjpbLTkxOTgxNDc5MSwtOTA3Njk3Nzc1LDE1MD
+AxODEwNzQsLTEzMDM5ODI0MjksMTUyNDY2NjcwNiwxMTA5NDEy
+NDc4LDIzMjU4Njk1NCwtMTE1NTg3OTE1Nl19
 -->
