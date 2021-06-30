@@ -100,7 +100,7 @@ Ejemplo:
  #include <string.h>
  #include <sys/socket.h>
  #include <netdb.h>
-
+ #include <time.h>
  #define exitaddr() do{ printf("ERROR(%d): %d\n", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0)
  #define BUF_SIZE 500
 
@@ -173,9 +173,13 @@ Ejemplo:
                          peer_addr_len, host, NI_MAXHOST,
                          service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
 
-		if()
-		
-         
+			if(buf == 't') {
+				
+			}
+			if(buf == 'd') {
+			}
+	        if(buf == 'q') {
+			}
          }
          else {
              fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
@@ -231,5 +235,5 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU2OTg3MzY4OCwtMTE1NTg3OTE1Nl19
+eyJoaXN0b3J5IjpbMjMyNTg2OTU0LC0xMTU1ODc5MTU2XX0=
 -->
