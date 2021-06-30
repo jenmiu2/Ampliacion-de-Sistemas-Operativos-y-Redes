@@ -44,7 +44,7 @@ Un demonio es un proceso que se ejecuta en segundo plano para proporcionar un se
 #define KO_FORK -1
 
 void printattr(pid_t pid) {
-	print();
+	print("pid(), parent pid(), group p");
 }
 
 int main(int argc, int argv*[]) {
@@ -104,5 +104,5 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjkxMTYyMTQ0LC0xMjUwMjA5NzJdfQ==
+eyJoaXN0b3J5IjpbMTM0Mjc5OTk4NSwtMTI1MDIwOTcyXX0=
 -->
