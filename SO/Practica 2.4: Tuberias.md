@@ -137,7 +137,7 @@ Escribir un programa que abra la tubería con el nombre anterior en modo sólo e
 #define NO_ERROR 0
 
 int main(int argc, int argv*[]) {
-	char pathname = "pìpe.txt"
+	char pathname = "pìpe.txt";
 	int fd, writebytes;
 	if(mkfifo(pathname, 0777) < NO_ERROR) {
 		errnoexit();
@@ -178,9 +178,10 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 #define errnoexit() do{printf("ERROR(%d): %s", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0) 
 #define NO_ERROR 0
 #define SIZE 256
+
 int main(int argc, int argv*[]) {
-	char pathname1 = "pìpe1.txt"
-	char pathname2 = "pìpe2.txt"
+	char pathname1 = "pìpe1.txt";
+	char pathname2 = "pìpe2.txt";
 	int fd, writebytes;
 	
 	if(mkfifo(pathname1, 0777) < NO_ERROR) {
@@ -192,7 +193,7 @@ int main(int argc, int argv*[]) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMwMzYxNTc3MiwxNjY2NzI4MDg1LC0xMT
+eyJoaXN0b3J5IjpbMTkzMTUxNDM0MywxNjY2NzI4MDg1LC0xMT
 kzMzA1OTU3LC01MjQ2MjA1NDcsLTM4NDY1ODgxMCwtMzA1MjQz
 NDEwLDQxMjYyMzQ4OV19
 -->
