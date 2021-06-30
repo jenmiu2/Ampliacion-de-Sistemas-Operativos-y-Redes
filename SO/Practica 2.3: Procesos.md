@@ -48,7 +48,8 @@ void printattr(pid_t pid) {
 }
 
 int main(int argc, int argv*[]) {
-	pid_t pid = fork();
+	pid_t pid, sid;
+	pid = fork();
 
 	if(pid < KO_FORK) {
 		printf("ERROR(%d): %s", errno, strerror);
@@ -56,6 +57,10 @@ int main(int argc, int argv*[]) {
 	}
 	if(pid > OK_FORK) { 	
 		umask(0);
+		sid = setsid();
+		if(chdir("/tmp")) < 0) {
+		
+		}
 	}
 }
 ```
@@ -102,5 +107,6 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc3MTI4MjE5MCwtMTI1MDIwOTcyXX0=
+eyJoaXN0b3J5IjpbMjA2NjU0NTgxNywtNzcxMjgyMTkwLC0xMj
+UwMjA5NzJdfQ==
 -->
