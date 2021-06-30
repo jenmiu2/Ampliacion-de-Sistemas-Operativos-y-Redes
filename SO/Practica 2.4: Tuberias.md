@@ -182,7 +182,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 int main(int argc, int argv*[]) {
 	char pathname1 = "pìpe1.txt";
 	char pathname2 = "pìpe2.txt";
-	int fd, writebytes;
+	int fd1, fd2, writebytes;
 	
 	if(mkfifo(pathname1, 0777) < NO_ERROR) {
 		errnoexit();
@@ -190,10 +190,16 @@ int main(int argc, int argv*[]) {
 	if(mkfifo(pathname2, 0777) < NO_ERROR) {
 		errnoexit();
 	}
+	if(fd1 = open(pathname1, O_RDONLY | O_NONBLOCK)) < NO_ERROR {
+
+	}
+	iffd2 = open(pathname2, O_RDONLY | O_NONBLOCK);
+
+	select();
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzMTUxNDM0MywxNjY2NzI4MDg1LC0xMT
-kzMzA1OTU3LC01MjQ2MjA1NDcsLTM4NDY1ODgxMCwtMzA1MjQz
-NDEwLDQxMjYyMzQ4OV19
+eyJoaXN0b3J5IjpbLTgwOTg3NTQ0OCwxOTMxNTE0MzQzLDE2Nj
+Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
+ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
