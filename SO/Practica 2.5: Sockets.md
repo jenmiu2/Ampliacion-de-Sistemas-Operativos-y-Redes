@@ -113,8 +113,8 @@ Ejemplo:
      ssize_t nread;
      char buf[BUF_SIZE];
 
-     if (argc != 2) {
-         fprintf(stderr, "Usage: %s port\n", argv[0]);
+     if (argc != 3) {
+         fprintf(stderr, "Usage: ip port %s\n", argv[0]);
          exit(EXIT_FAILURE);
      }
 
@@ -127,7 +127,7 @@ Ejemplo:
      hints.ai_addr = NULL;
      hints.ai_next = NULL;
 
-     s = getaddrinfo(NULL, argv[1], &hints, &result);
+     s = getaddrinfo(argv[1], argv[2], &hints, &result);
      if (s != 0) {
          fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(s));
          exit(EXIT_FAILURE);
@@ -173,7 +173,7 @@ Ejemplo:
                          peer_addr_len, host, NI_MAXHOST,
                          service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
 
-
+		if()
 		
          
          }
@@ -231,5 +231,5 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODYwMTEwOTM3LC0xMTU1ODc5MTU2XX0=
+eyJoaXN0b3J5IjpbMTU2OTg3MzY4OCwtMTE1NTg3OTE1Nl19
 -->
