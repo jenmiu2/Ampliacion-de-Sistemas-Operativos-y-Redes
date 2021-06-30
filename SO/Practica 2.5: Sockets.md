@@ -426,6 +426,92 @@ Ejemplo:
 |```./echo_server :: 2222 ```| Conexión desde fd00::a:0:0:0:1 53445 Conexión terminada  |
 | **Cliente** |
 |```./echo_client fd00::a:0:0:0:1 222``` | Hola **Hola** Q |
+```c
+ #include <sys/types.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <string.h>
+ #include <sys/socket.h>
+ #include <netdb.h>
+ #include <time.h>
+ 
+ #define errorexit() do{ printf("ERROR(%d): %d\n", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0)
+ #define BUF_SIZE 500
+ #define NO_ERROR 0
+ #define ERROR -1
+ int main(int argc, char *argv[]) {
+	struct addrinfo hints;
+    struct addrinfo *result, *rp;
+    int sfd, s;
+    struct sockaddr_storage peer_addr;
+    socklen_t peer_addr_len;
+    ssize_t nread;
+    char buf[BUF_SIZE];
+	
+    if (argc != 2) {
+        fprintf(stderr, "Usage: port %s\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
+
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_family = AF_UNSPEC;    /* Allow IPv4 or IPv6 */
+    hints.ai_socktype = SOCK_STREAM; /* Datagram socket */
+    hints.ai_flags = AI_PASSIVE;    /* For wildcard IP address */
+    hints.ai_protocol = 0;          /* Any protocol */
+    hints.ai_canonname = NULL;
+    hints.ai_addr = NULL;
+    hints.ai_next = NULL;
+
+    s = getaddrinfo(NULL, argv[2], &hints, &result);
+    if (s != 0) {
+        fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(s));
+        exit(EXIT_FAILURE);
+    }
+
+    /* getaddrinfo() returns a list of address structures.
+       Try each address until we successfully bind(2).
+       If socket(2) (or bind(2)) fails, we (close the socket
+       and) try the next address. */
+
+    for (rp = result; rp != NULL; rp = rp->ai_next) {
+        sfd = socket(rp->ai_family, rp->ai_socktype,
+                rp->ai_protocol);
+        if (sfd == -1)
+            continue;
+
+        if (bind(sfd, rp->ai_addr, rp->ai_addrlen) == 0)
+            break;                  /* Success */
+
+        close(sfd);
+    }
+
+    freeaddrinfo(result);           /* No longer needed */
+
+    if (rp == NULL) {               /* No address succeeded */
+        fprintf(stderr, "Could not bind\n");
+        exit(EXIT_FAILURE);
+    }
+    listen(sc, 10); //MAX ESCUCHA
+	for (;;) {
+      int ac = accept(sc, (struct sockaddr *) &peer_addr, &peer_addr_len);
+
+         for (;;) {
+	         if ((s = getnameinfo((struct sockaddr *) &peer_addr,
+	                         peer_addr_len, host, NI_MAXHOST,
+	                         service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
+	              nread = recv(sc, buf, sizeof(buf), 0);
+	              buf[nread] = '\0';
+	              send(peer_addr, buf, nread, 0);
+	         }
+	         else {
+	             fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
+			}
+		}
+     }
+
+ }
+```
 
 ### Ejercicio 8
 
@@ -434,7 +520,7 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTExMTUzMDA4LC0xMzAzOTgyNDI5LDE1Mj
+eyJoaXN0b3J5IjpbNTI0MzI0ODU3LC0xMzAzOTgyNDI5LDE1Mj
 Q2NjY3MDYsMTEwOTQxMjQ3OCwyMzI1ODY5NTQsLTExNTU4Nzkx
 NTZdfQ==
 -->
