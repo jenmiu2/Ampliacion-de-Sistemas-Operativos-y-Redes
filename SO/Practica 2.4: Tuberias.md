@@ -237,12 +237,15 @@ int main(int argc, int argv*[]) {
 				printf("pipe: %s\n", select.pathname);
 			}
 		}
-		
+		close(select.fd);
+		if(open(pathname2, O_RDONLY | O_NONBLOCK)) < NO_ERROR) {
+			errnoexit();
+		}
 	}while(retval != ERROR);
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzIyMzU1NDAsMTkzMTUxNDM0MywxNj
-Y2NzI4MDg1LC0xMTkzMzA1OTU3LC01MjQ2MjA1NDcsLTM4NDY1
-ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4OV19
+eyJoaXN0b3J5IjpbLTEwODM0MzYwMiwxOTMxNTE0MzQzLDE2Nj
+Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
+ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
