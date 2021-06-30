@@ -194,14 +194,14 @@ int max(int fd1, int fd2) {
 }
 
 int fd_available(fd_set rfds) {
-	int select;
-	if (IF_ISSET(fd1, &rfds)) {
-		select = 0;
+	return (IF_ISSET(pipesdetails[0].fd, &rfds) ? 0 : 1;
+}
+
+void initpipe() {
+if(mkfifo(pathname2, 0777) < NO_ERROR) {
+		errnoexit();
 	}
-	else {
-		select = 1;
-	}
-	return select;
+
 }
 
 int main(int argc, int argv*[]) {
@@ -213,9 +213,7 @@ int main(int argc, int argv*[]) {
 	if(mkfifo(pathname1, 0777) < NO_ERROR) {
 		errnoexit();
 	}
-	if(mkfifo(pathname2, 0777) < NO_ERROR) {
-		errnoexit();
-	}
+	
 	if(fd1 = open(pathname1, O_RDONLY | O_NONBLOCK)) < NO_ERROR {
 		errnoexit();
 	}
@@ -253,8 +251,7 @@ int main(int argc, int argv*[]) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTczNTE1MzM3NCwxMzI0NzE3NjA1LDE5Mz
-E1MTQzNDMsMTY2NjcyODA4NSwtMTE5MzMwNTk1NywtNTI0NjIw
-NTQ3LC0zODQ2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0ODldfQ
-==
+eyJoaXN0b3J5IjpbMjQ5NTM0OTI3LDEzMjQ3MTc2MDUsMTkzMT
+UxNDM0MywxNjY2NzI4MDg1LC0xMTkzMzA1OTU3LC01MjQ2MjA1
+NDcsLTM4NDY1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
