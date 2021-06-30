@@ -88,8 +88,8 @@ int main(int argc, int argv*[]) {
 		errorexit();
 	}
 	else if(pid == OK_FORK) {
-		close(p_h[1]);
-		close(h_p[0]);
+		close(p_h[0]);
+		close(h_p[1]);
 		while((readbytes = read(p_h[0], &chr, 1)) > 0) {
 			printf("%s", chr);
 		}
@@ -146,7 +146,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4ODIwODg0NSwtMTE5MzMwNTk1NywtNT
-I0NjIwNTQ3LC0zODQ2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0
-ODldfQ==
+eyJoaXN0b3J5IjpbMTcwMDQ1NjE5LC0xMTkzMzA1OTU3LC01Mj
+Q2MjA1NDcsLTM4NDY1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4
+OV19
 -->
