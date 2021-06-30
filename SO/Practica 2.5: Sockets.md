@@ -112,7 +112,7 @@ Ejemplo:
      socklen_t peer_addr_len;
      ssize_t nread;
      char buf[BUF_SIZE];
-
+	 time_t t;
      if (argc != 3) {
          fprintf(stderr, "Usage: ip port %s\n", argv[0]);
          exit(EXIT_FAILURE);
@@ -172,7 +172,7 @@ Ejemplo:
          if ((s = getnameinfo((struct sockaddr *) &peer_addr,
                          peer_addr_len, host, NI_MAXHOST,
                          service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
-
+			time(&t);
 			if(buf == 't') {
 				
 			}
@@ -235,5 +235,6 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjMyNTg2OTU0LC0xMTU1ODc5MTU2XX0=
+eyJoaXN0b3J5IjpbLTI5MzQ3NTYxOCwyMzI1ODY5NTQsLTExNT
+U4NzkxNTZdfQ==
 -->
