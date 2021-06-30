@@ -134,7 +134,7 @@ Usar la orden mkfifo para crear una tubería con nombre. Usar las herramientas d
 int main(int argc, int argv*[]) {
 	char pathname = "tub_name.txt"
 	
-	if(mkfifo(pathname, ) < NO_ERROR) {
+	if(mkfifo(pathname, 0777) < NO_ERROR) {
 		errnoexit();
 	}
 }
@@ -161,7 +161,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEzOTUzOTA2NCwtMTE5MzMwNTk1NywtNT
-I0NjIwNTQ3LC0zODQ2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0
-ODldfQ==
+eyJoaXN0b3J5IjpbLTE5NDMwMDI0NjUsLTExOTMzMDU5NTcsLT
+UyNDYyMDU0NywtMzg0NjU4ODEwLC0zMDUyNDM0MTAsNDEyNjIz
+NDg5XX0=
 -->
