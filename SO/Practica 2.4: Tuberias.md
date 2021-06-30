@@ -186,6 +186,7 @@ struct pipedetail {
 	int fd;
 	char pathname;
 }; 
+
 struct pipedetail pipesdetails[2];
 
 int max(int fd1, int fd2) {
@@ -195,10 +196,10 @@ int max(int fd1, int fd2) {
 struct pipedetail fd_available(int fd1, int fd2, fd_set rfds) {
 	struct pipedetail select;
 	if (IF_ISSET(fd1, &rfds)) {
-		select = (selectpipe) {.fd = fd1, .pathname = pathname1};
+		select = (pipedetail) {.fd = fd1, .pathname = pathname1};
 	}
 	else {
-		select = (selectpipe) {.fd = fd2, .pathname = pathname2};
+		select = (pipedetail) {.fd = fd2, .pathname = pathname2};
 	}
 	return select;
 }
@@ -208,10 +209,12 @@ int main(int argc, int argv*[]) {
 	int fd1, fd2, retval, fd, readbytes;
 	fd_set rfds;
 	struct timeval tv;
-	
-	if(mkfifo(pathname1, 0777) < NO_ERROR) {
+	while(2) {
+		if(mkfifo(pathname1, 0777) < NO_ERROR) {
 		errnoexit();
 	}
+	}
+	
 	if(mkfifo(pathname2, 0777) < NO_ERROR) {
 		errnoexit();
 	}
@@ -249,7 +252,7 @@ int main(int argc, int argv*[]) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2MTUwMjMyMSwxOTMxNTE0MzQzLDE2Nj
-Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
-ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
+eyJoaXN0b3J5IjpbNzYyMzcyMzUsMTkzMTUxNDM0MywxNjY2Nz
+I4MDg1LC0xMTkzMzA1OTU3LC01MjQ2MjA1NDcsLTM4NDY1ODgx
+MCwtMzA1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
