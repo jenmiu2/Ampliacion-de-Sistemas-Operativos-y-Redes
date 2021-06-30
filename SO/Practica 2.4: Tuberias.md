@@ -193,13 +193,13 @@ int max(int fd1, int fd2) {
 	return (fd1 >= fd2 ? fd1 : fd2);
 }
 
-struct pipedetail fd_available(int fd1, int fd2, fd_set rfds) {
+int fd_available(int fd1, int fd2, fd_set rfds) {
 	struct pipedetail select;
 	if (IF_ISSET(fd1, &rfds)) {
-		select = (pipedetail) {.fd = fd1, .pathname = pathname1};
+		select = 0;
 	}
 	else {
-		select = (pipedetail) {.fd = fd2, .pathname = pathname2};
+		select = 1;
 	}
 	return select;
 }
@@ -237,23 +237,22 @@ int main(int argc, int argv*[]) {
 		}
 		
 		if(retval == NO_ERROR) {
-		struct selectpipe select;
 		select = fd_available(fd1, fd2, &rfds); 
 		
-		while((readbytes = read(select.fd, buff, SIZE) > 0) {
+		while((readbytes = read(pipesdetails[select].fd, buff, SIZE) > 0) {
 				buff[readbytes] = '\0';
 				printf("pipe: %s\n", select.pathname);
 			}
 		}
-		close(select.fd);
-		if(open(select.pathname, O_RDONLY | O_NONBLOCK)) < NO_ERROR) {
+		close(pipesdetails[select].fd);
+		if((pipesdetails[select].fd = open(pipesdetails[select].pathname, O_RDONLY | O_NONBLOCK)) < NO_ERROR) {
 			errnoexit();
 		}
 	}while(retval != ERROR);
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDcwNzI1NzUsMTkzMTUxNDM0MywxNj
-Y2NzI4MDg1LC0xMTkzMzA1OTU3LC01MjQ2MjA1NDcsLTM4NDY1
-ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4OV19
+eyJoaXN0b3J5IjpbMTM0MTMwNDQyMiwxOTMxNTE0MzQzLDE2Nj
+Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
+ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
