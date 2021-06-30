@@ -156,6 +156,7 @@ void handler(int signum) {
 		print("recivido SIGUSR1\n");
 	}
 }
+
 int main(int argc, int argv*[]) {
 	sigset_t blk;
 	struct sigaction sigact;
@@ -176,7 +177,7 @@ int main(int argc, int argv*[]) {
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzU0MzcyOTYzLC0xNjg5ODk5MTA1LC0xNj
+eyJoaXN0b3J5IjpbNDE5MTc3MDEzLC0xNjg5ODk5MTA1LC0xNj
 Q4ODk2NzY4LC05NTQyODA5NjAsLTEwNjk0NDc5MzAsLTE2Njgz
 ODM4OTEsLTMwMjE3NTIwMSwtMTExNjc4OTYxMiwtNzcxMjgyMT
 kwLC0xMjUwMjA5NzJdfQ==
