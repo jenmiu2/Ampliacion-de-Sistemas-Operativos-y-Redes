@@ -24,7 +24,7 @@ Probar el funcionamiento con una sentencia similar a: ./ejercicio1 echo 12345 wc
 
 #define OK_FORK 0
 #define KO_FORK -1
-#define errorexit() do{ printf("ERROR(%d): %s\n", errno, sterror(errno));}; while(0)
+#define errorexit() do{ printf("ERROR(%d): %s\n", errno, sterror(errno));EXIT(EXIT_FAILURE);}; while(0)
 #define MAX_SIZE 100
 
 int main(int argc, int argv* []) {
@@ -32,16 +32,17 @@ int main(int argc, int argv* []) {
 	pid = fork();
 	int fd[2]; //tuberia: lectura[0], escritura[1]
 	if(argc != 5) {
-		printf("us")
+		printf("Usage: comando1 argumento1 | comando2 argumento2\n");
+		EXIT(EXIT_FAILURE);
 	}
 	if(pid == OK_FORK) {
-		printf();
+		/*hijo*/
 	}
 	else if(pid == KO_FORK) {
 		errorexit();
 	}
 	else {
-
+		/*padre*/
 	}
 }
 ```
@@ -136,6 +137,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk2NDg0Njk4MiwtNTI0NjIwNTQ3LC0zOD
-Q2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0ODldfQ==
+eyJoaXN0b3J5IjpbMzQwNDIzMTIxLC01MjQ2MjA1NDcsLTM4ND
+Y1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
