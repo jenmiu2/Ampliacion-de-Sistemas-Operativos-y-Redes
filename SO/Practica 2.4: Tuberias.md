@@ -182,17 +182,17 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 #define pathname1 = "pìpe1.txt";
 #define pathname2 = "pìpe2.txt";
 
-struct selectpipe {
+struct pipedetail {
 	int fd;
 	char pathname;
 }; 
-
+struct pipedetail pipesdetails[2]
 int max(int fd1, int fd2) {
 	return (fd1 >= fd2 ? fd1 : fd2);
 }
 
-struct selectpipe fd_available(int fd1, int fd2, fd_set rfds) {
-	struct selectpipe select;
+struct pipedetail fd_available(int fd1, int fd2, fd_set rfds) {
+	struct pipedetail select;
 	if (IF_ISSET(fd1, &rfds)) {
 		select = (selectpipe) {.fd = fd1, .pathname = pathname1};
 	}
@@ -248,7 +248,7 @@ int main(int argc, int argv*[]) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxODgzNTc3NiwxOTMxNTE0MzQzLDE2Nj
+eyJoaXN0b3J5IjpbLTk4NTc0ODIyNCwxOTMxNTE0MzQzLDE2Nj
 Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
 ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
