@@ -16,7 +16,9 @@ Escribir un programa que emule el comportamiento de la shell en la ejecución de
 - El proceso hijo redireccionará la entrada estándar al extremo de lectura de la tubería y ejecutará comando2 argumento2.
 
 Probar el funcionamiento con una sentencia similar a: ./ejercicio1 echo 12345 wc -c
+```c
 
+```
 **Nota:** Antes de ejecutar el comando correspondiente, deben cerrarse todos los descriptores no necesarios.
 
 ### Ejercicio 2 
@@ -73,13 +75,11 @@ int main(int argc, int argv*[]) {
 		write(p_h[1], chr, sizeof(chr));
 		close(h_p[0]);
 		/*bloq confirmacion hijo*/
-		while((readbytes = read(p_h[0], &chr, 1)) > 0) {
+		while((readbytes = read(h_p[1], &chr, 1)) > 0) {
 			printf("%s", chr);
 		}
 		
 	}
-	
-
 
 }
 ```
@@ -110,6 +110,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1NDQ1ODY3MywtNTI0NjIwNTQ3LC0zOD
-Q2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0ODldfQ==
+eyJoaXN0b3J5IjpbNTQyNzg2NzEsLTUyNDYyMDU0NywtMzg0Nj
+U4ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
