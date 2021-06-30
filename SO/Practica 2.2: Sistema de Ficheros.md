@@ -106,7 +106,8 @@ int main(int argc, int argv*[]) {
 		exit(EXIT_FAILURE);
 	}
 	
-	int fd = open(argv[1], O_CREAT | O_);
+	int fd = open(argv[1], O_CREAT | O_WRONLY, 0777);
+	if () {}
 	if (fcntl() < 0) {}
 	
 	
@@ -132,5 +133,5 @@ Escribir un programa que cumpla las siguientes especificaciones:
 
 - Al final de la lista el programa escribirá el tamaño total que ocupan los ficheros (no directorios) en kilobytes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDQ1NzA0MDAsMTc4NTc0NTA2MV19
+eyJoaXN0b3J5IjpbMjU4OTEwODM4LDE3ODU3NDUwNjFdfQ==
 -->
