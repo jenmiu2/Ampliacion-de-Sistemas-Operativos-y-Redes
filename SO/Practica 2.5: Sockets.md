@@ -491,6 +491,9 @@ Ejemplo:
     }
     for (;;) {
 	      nread = read(0, buf, BUF_SIZE);
+	      if(buf == 'Q') {
+				EXIT(EXIT_SUCCESS);
+		  }
 	      send(peer_addr, buf, nread, 0);
 	      if (nread > BUF_SIZE) {
 	          fprintf(stderr,
@@ -498,11 +501,8 @@ Ejemplo:
 	          continue;
 	      }     
 	      nread = recv(sfd, buf, BUF_SIZE, 0);
-	      b
-		  if(buf == 'Q') {
-				EXIT(EXIT_SUCCESS);
-		  }
-		  
+	      buf[nread] = '\n';
+	      printf("%s", buf);
      }
  }
 ```
@@ -514,7 +514,7 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQwMTE3MzM4MSwxNTAwMTgxMDc0LC0xMz
-AzOTgyNDI5LDE1MjQ2NjY3MDYsMTEwOTQxMjQ3OCwyMzI1ODY5
-NTQsLTExNTU4NzkxNTZdfQ==
+eyJoaXN0b3J5IjpbLTExMTk1MzQzMzgsMTUwMDE4MTA3NCwtMT
+MwMzk4MjQyOSwxNTI0NjY2NzA2LDExMDk0MTI0NzgsMjMyNTg2
+OTU0LC0xMTU1ODc5MTU2XX0=
 -->
