@@ -37,7 +37,22 @@ Un demonio es un proceso que se ejecuta en segundo plano para proporcionar un se
 ¿Qué sucede si el proceso padre termina antes que el hijo (observar el PPID del proceso hijo)? ¿Y si el proceso que termina antes es el hijo (observar el estado del proceso hijo con ps)?
 
 ```c
+#include <unistd.h>
 
+
+
+int main(int argc, int argv*[]) {
+	pid_t pid = fork();
+
+	if(pid < 0) {
+
+	} 	
+	int setpgid();
+
+
+
+
+}
 ```
 
 **Nota:** Usar sleep(3) o pause(3) para forzar el orden de finalización deseado.
@@ -82,5 +97,5 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEwMDUzMjU1OSwtMTI1MDIwOTcyXX0=
+eyJoaXN0b3J5IjpbMzAwMzE0NjQ3LC0xMjUwMjA5NzJdfQ==
 -->
