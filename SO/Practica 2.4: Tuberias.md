@@ -200,12 +200,16 @@ int main(int argc, int argv*[]) {
 	}
 
 	do {
-		FD_ZERO()
+		FD_ZERO(&rfds);
+		FD_SET(0,&rfds);
+		tv = (timeval) {.tv_sec = 5, tv_usec = 0};
+		
+		retval = select(1, &rfds, NULL, NULL, &tv);
 	}while(retval != NO_ERROR);
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM5ODE2NDQ3MiwxOTMxNTE0MzQzLDE2Nj
+eyJoaXN0b3J5IjpbMTI1NjcwMTY5NiwxOTMxNTE0MzQzLDE2Nj
 Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
 ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
