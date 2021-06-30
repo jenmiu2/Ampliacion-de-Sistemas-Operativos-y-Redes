@@ -344,7 +344,57 @@ Crear un servidor TCP de eco que escuche por conexiones entrantes en una direcci
  #define NO_ERROR 0
  #define ERROR -1
  int main(int argc, char *argv[]) {
+ struct addrinfo hints;
+    struct addrinfo *result, *rp;
+    int sfd, s;
+    struct sockaddr_storage peer_addr;
+    socklen_t peer_addr_len;
+    ssize_t nread;
+    char buf[BUF_SIZE];
+	
+    if (argc != 2) {
+        fprintf(stderr, "Usage: port %s\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
 
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_family = AF_UNSPEC;    /* Allow IPv4 or IPv6 */
+    hints.ai_socktype = SOCK_STREAM; /* Datagram socket */
+    hints.ai_flags = AI_PASSIVE;    /* For wildcard IP address */
+    hints.ai_protocol = 0;          /* Any protocol */
+    hints.ai_canonname = NULL;
+    hints.ai_addr = NULL;
+    hints.ai_next = NULL;
+
+    s = getaddrinfo(NULL, argv[2], &hints, &result);
+    if (s != 0) {
+        fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(s));
+        exit(EXIT_FAILURE);
+    }
+
+    /* getaddrinfo() returns a list of address structures.
+       Try each address until we successfully bind(2).
+       If socket(2) (or bind(2)) fails, we (close the socket
+       and) try the next address. */
+
+    for (rp = result; rp != NULL; rp = rp->ai_next) {
+        sfd = socket(rp->ai_family, rp->ai_socktype,
+                rp->ai_protocol);
+        if (sfd == -1)
+            continue;
+
+        if (bind(sfd, rp->ai_addr, rp->ai_addrlen) == 0)
+            break;                  /* Success */
+
+        close(sfd);
+    }
+
+    freeaddrinfo(result);           /* No longer needed */
+
+    if (rp == NULL) {               /* No address succeeded */
+        fprintf(stderr, "Could not bind\n");
+        exit(EXIT_FAILURE);
+    }
 
 
  }
@@ -368,6 +418,6 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NjIzMDM5NDEsMTUyNDY2NjcwNiwxMT
-A5NDEyNDc4LDIzMjU4Njk1NCwtMTE1NTg3OTE1Nl19
+eyJoaXN0b3J5IjpbMTE3MDI1MTgxNywxNTI0NjY2NzA2LDExMD
+k0MTI0NzgsMjMyNTg2OTU0LC0xMTU1ODc5MTU2XX0=
 -->
