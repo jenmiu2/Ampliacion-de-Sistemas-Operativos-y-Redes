@@ -489,23 +489,27 @@ Ejemplo:
         fprintf(stderr, "Could not bind\n");
         exit(EXIT_FAILURE);
     }
-   
-	for (;;) {
-      int ac = accept(sc, (struct sockaddr *) &peer_addr, &peer_addr_len);
+    for (;;) {
+     nread = read(0,)
+          if (len > BUF_SIZE) {
+              fprintf(stderr,
+                      "Ignoring long message in argument %d\n", j);
+              continue;
+          }
 
-         for (;;) {
-	         if ((s = getnameinfo((struct sockaddr *) &peer_addr,
-	                         peer_addr_len, host, NI_MAXHOST,
-	                         service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
-	              nread = recv(sc, buf, sizeof(buf), 0);
-	              buf[nread] = '\0';
-	              send(peer_addr, buf, nread, 0);
-	         }
-	         else {
-	             fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
-			}
-		}
-     }
+          if (write(sfd, argv[j], len) != len) {
+              fprintf(stderr, "partial/failed write\n");
+              exit(EXIT_FAILURE);
+          }
+
+          nread = read(sfd, buf, BUF_SIZE);
+          if (nread == -1) {
+              perror("read");
+              exit(EXIT_FAILURE);
+          }
+
+          printf("Received %zd bytes: %s\n", nread, buf);
+      }
 
  }
 ```
@@ -517,7 +521,7 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg5MDc0MzQ0NSwtMTMwMzk4MjQyOSwxNT
-I0NjY2NzA2LDExMDk0MTI0NzgsMjMyNTg2OTU0LC0xMTU1ODc5
-MTU2XX0=
+eyJoaXN0b3J5IjpbLTExOTY4MDUwMzcsLTEzMDM5ODI0MjksMT
+UyNDY2NjcwNiwxMTA5NDEyNDc4LDIzMjU4Njk1NCwtMTE1NTg3
+OTE1Nl19
 -->
