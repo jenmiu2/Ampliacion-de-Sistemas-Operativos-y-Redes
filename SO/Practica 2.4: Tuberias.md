@@ -28,6 +28,18 @@ Para la comunicación bi-direccional, es necesario crear dos tuberías, una para
 - El hijo leerá de la tubería p_h, escribirá el mensaje por la salida estándar y esperará 1 segundo. Entonces, enviará el carácter ‘l’ al proceso padre, escribiéndolo en la tubería h_p, para indicar que está listo. Después de 10 mensajes enviará el carácter ‘q’ para indicar al padre que finalice.
 
 ```c
+#include <errno.h>
+#include <stdio.h>
+#include <stlib.h>
+#include <sys/types.h>
+
+int main(int argc, int argv*[]) {
+	int tuberia[2];
+
+
+
+
+}
 ```
 # Tuberias con nombre
 Las tuberías con nombre son un mecanismo de comunicación unidireccional, con acceso de tipo FIFO, útil para procesos sin relación de parentesco. La gestión de las tuberías con nombre es igual a la de un archivo ordinario (open, write, read…). Revisar la información en fifo(7).
@@ -56,5 +68,5 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNjkzNzMwMDIsNDEyNjIzNDg5XX0=
+eyJoaXN0b3J5IjpbLTMwNTI0MzQxMCw0MTI2MjM0ODldfQ==
 -->
