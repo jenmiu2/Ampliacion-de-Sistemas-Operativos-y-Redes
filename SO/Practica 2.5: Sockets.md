@@ -404,7 +404,8 @@ Crear un servidor TCP de eco que escuche por conexiones entrantes en una direcci
 	                         peer_addr_len, host, NI_MAXHOST,
 	                         service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
 	              nread = recv(sc, buf, sizeof(buf), 0);
-	              send(peer_addr, buf, nread , 0);
+	              buf[nread] = '\0';
+	              send(peer_addr, buf, nread, 0);
 	         }
 	         else {
 	             fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
@@ -433,7 +434,7 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjczMDA1MDQ3LC0xMzAzOTgyNDI5LDE1Mj
+eyJoaXN0b3J5IjpbNTExMTUzMDA4LC0xMzAzOTgyNDI5LDE1Mj
 Q2NjY3MDYsMTEwOTQxMjQ3OCwyMzI1ODY5NTQsLTExNTU4Nzkx
 NTZdfQ==
 -->
