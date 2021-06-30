@@ -49,6 +49,9 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 - Normalmente, la apertura de la tubería para lectura se bloqueará hasta que se abra para escritura (ej. con echo 1 > tuberia). Para evitarlo, usar la opción O_NONBLOCK en open(2).
 
 - Cuando el escritor termina y cierra la tubería, read(2) devolverá 0, indicando el fin de fichero, por lo que hay que cerrar la tubería y volver a abrirla. Si no, select(2) considerará el descriptor siempre listo para lectura y no se bloqueará.
+```c
+
+```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDEyNjIzNDg5XX0=
+eyJoaXN0b3J5IjpbLTE5ODczNDY5OTYsNDEyNjIzNDg5XX0=
 -->
