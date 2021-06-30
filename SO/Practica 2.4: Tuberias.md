@@ -209,12 +209,11 @@ int main(int argc, int argv*[]) {
 	int fd1, fd2, retval, fd, readbytes;
 	fd_set rfds;
 	struct timeval tv;
-	while(2) {
-		if(mkfifo(pathname1, 0777) < NO_ERROR) {
+	pipesdetails[1].pathname = pathname1;
+	
+	if(mkfifo(pathname1, 0777) < NO_ERROR) {
 		errnoexit();
 	}
-	}
-	
 	if(mkfifo(pathname2, 0777) < NO_ERROR) {
 		errnoexit();
 	}
@@ -243,7 +242,6 @@ int main(int argc, int argv*[]) {
 				printf("pipe: %s\n", select.pathname);
 			}
 		}
-		
 		close(select.fd);
 		if(open(select.pathname, O_RDONLY | O_NONBLOCK)) < NO_ERROR) {
 			errnoexit();
@@ -252,7 +250,7 @@ int main(int argc, int argv*[]) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzYyMzcyMzUsMTkzMTUxNDM0MywxNjY2Nz
-I4MDg1LC0xMTkzMzA1OTU3LC01MjQ2MjA1NDcsLTM4NDY1ODgx
-MCwtMzA1MjQzNDEwLDQxMjYyMzQ4OV19
+eyJoaXN0b3J5IjpbMTIwOTY5ODM2MiwxOTMxNTE0MzQzLDE2Nj
+Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
+ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
