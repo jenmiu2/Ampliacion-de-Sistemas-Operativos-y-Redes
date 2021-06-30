@@ -145,7 +145,6 @@ int main(int argc, int argv*[]) {
 	if((fd = open(pathname,O_WRONLY)) < NO_ERROR) {
 		errnoexit();
 	}
-	
 	if((writebytes = write(fd, argv[1], strlen(argv[1])) < NO_ERROR) {
 		errnoexit();
 	}
@@ -173,7 +172,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk1NDM4MjcxLC0xMTkzMzA1OTU3LC01Mj
-Q2MjA1NDcsLTM4NDY1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4
-OV19
+eyJoaXN0b3J5IjpbMTY2NjcyODA4NSwtMTE5MzMwNTk1NywtNT
+I0NjIwNTQ3LC0zODQ2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0
+ODldfQ==
 -->
