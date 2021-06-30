@@ -112,12 +112,14 @@ int main(int argc, int argv*[]) {
 		printf("ERROR(%d): %s\n", errno, strerror(errno));
 		exit(EXIT_FAILURE);
 	}
-	if (fcntl() < 0) {
+	if (fcntl(fd, F_GETLK, &flk) < 0) {
 		printf("ERROR(%d): %s\n", errno, strerror(errno));
 		exit(EXIT_FAILURE);
 	}
 	
-	
+	if(flk.l_type == F_RDLK) {}
+	if() {}
+	if() {}
 }
 ```
 ### Ejercicio 17
@@ -140,5 +142,6 @@ Escribir un programa que cumpla las siguientes especificaciones:
 
 - Al final de la lista el programa escribirá el tamaño total que ocupan los ficheros (no directorios) en kilobytes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwMjQ5OTU0MiwxNzg1NzQ1MDYxXX0=
+eyJoaXN0b3J5IjpbLTE0NDIzMDcwNzcsMTkwMjQ5OTU0MiwxNz
+g1NzQ1MDYxXX0=
 -->
