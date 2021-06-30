@@ -306,8 +306,6 @@ int main(int argc, char *argv[]) {
 		
 		if(retval == NO_ERROR) {
 			if(IF_ISSET(sfd, &rfds)) {
-		
-
 				peer_addr_len = sizeof(peer_addr);
 		        nread = recvfrom(sfd, buf, BUF_SIZE, 0,
 		                (struct sockaddr *) &peer_addr, &peer_addr_len);
@@ -316,7 +314,6 @@ int main(int argc, char *argv[]) {
 
 		        char host[NI_MAXHOST], service[NI_MAXSERV];
 
-		        
 		        if ((s = getnameinfo((struct sockaddr *) &peer_addr,
 		                        peer_addr_len, host, NI_MAXHOST,
 		                        service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
@@ -363,6 +360,6 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1OTQ2NTMyLDExMDk0MTI0NzgsMjMyNT
+eyJoaXN0b3J5IjpbMTAzNjg2MDg2LDExMDk0MTI0NzgsMjMyNT
 g2OTU0LC0xMTU1ODc5MTU2XX0=
 -->
