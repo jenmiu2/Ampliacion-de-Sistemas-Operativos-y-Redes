@@ -36,12 +36,12 @@ Para la comunicación bi-direccional, es necesario crear dos tuberías, una para
 #define OK_FORK 0
 #define KO_FORK -1
 #define errorexit() do{ printf("ERROR(%d): %s\n", errno, sterror(errno));}; while(0)
-
+#define MAX_SIZE 100
 int main(int argc, int argv*[]) {
 	int p_h[2]; //lectura padre: 0, escritura hijo: 1
 	int h_p[2]; //escritura padre: 0, lectura hijo: 1
 	pid_t pid;
-	char chr;
+	char chr[MAX_SIZE];
 	
 	pid = fork();
 	if(pid == KO_FORK) {
@@ -57,7 +57,7 @@ int main(int argc, int argv*[]) {
 		/*lee terminal a tuberia p_h*/
 		close(p_h[0]);
 		scanf("%c", &chr);
-		write(h_p[0], cj);
+		write(h_p[0], chr, sizeof(chr));
 		/*bloq confirmacion hijo*/
 		
 		
@@ -94,6 +94,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTIwMDE3MjA1LC0zODQ2NTg4MTAsLTMwNT
-I0MzQxMCw0MTI2MjM0ODldfQ==
+eyJoaXN0b3J5IjpbLTExNDU2NTc4MDgsLTM4NDY1ODgxMCwtMz
+A1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
