@@ -103,14 +103,19 @@ int main(int argc, int argv*[]) {
 	struct flock flk;
 	
 	if (argc < 1) {
+		printf("Usage: path_file  ");
 		exit(EXIT_FAILURE);
 	}
 	
 	int fd = open(argv[1], O_CREAT | O_RDWR, 0777);
 	if (fd < 0) {
-		printf("ERROR(%d): %s\n");
+		printf("ERROR(%d): %s\n", errno, strerror(errno));
+		exit(EXIT_FAILURE);
 	}
-	if (fcntl() < 0) {}
+	if (fcntl() < 0) {
+		printf("ERROR(%d): %s\n", errno, strerror(errno));
+		exit(EXIT_FAILURE);
+	}
 	
 	
 }
@@ -135,5 +140,5 @@ Escribir un programa que cumpla las siguientes especificaciones:
 
 - Al final de la lista el programa escribirá el tamaño total que ocupan los ficheros (no directorios) en kilobytes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIyNjc5NzY3OSwxNzg1NzQ1MDYxXX0=
+eyJoaXN0b3J5IjpbMTkwMjQ5OTU0MiwxNzg1NzQ1MDYxXX0=
 -->
