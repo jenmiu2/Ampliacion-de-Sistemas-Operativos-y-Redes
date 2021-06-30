@@ -230,10 +230,11 @@ int main(int argc, int argv*[]) {
 		}
 		
 		if(retval == NO_ERROR) {
-		fd = fd_available(fd1, fd2, &rfds); 
-			while((readbytes = read(fd, buff, SIZE) > 0) {
+		struct selectpipe select;
+		select = fd_available(fd1, fd2, &rfds); 
+			while((readbytes = read(select.fd, buff, SIZE) > 0) {
 				buff[readbytes] = '\0';
-				printf();
+				printf("pipe: %s\n", select.pathname);
 			}
 		}
 		
@@ -241,7 +242,7 @@ int main(int argc, int argv*[]) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1NjUwMjk2NCwxOTMxNTE0MzQzLDE2Nj
-Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
-ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
+eyJoaXN0b3J5IjpbLTE0NzIyMzU1NDAsMTkzMTUxNDM0MywxNj
+Y2NzI4MDg1LC0xMTkzMzA1OTU3LC01MjQ2MjA1NDcsLTM4NDY1
+ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
