@@ -100,6 +100,7 @@ int main(int argc, int argv*[]) {
 			count_msg = count_msg + 1;
 		}
 		write(h_p[1], "q", sizeof(char));
+		EXIT(EXIT_SUCCESS);
 	}
 	else {
 		close(h_p[0]);//el hijo no va a escribir
@@ -109,13 +110,13 @@ int main(int argc, int argv*[]) {
 		/*bloq confirmacion hijo*/
 		while((readbytes = read(h_p[1], &chr, 1)) > 0) {
 			if(chr == 'l') {
-				print("I am waiting");
+				
 			}
 			else if(chr == 'q') {
 				EXIT(EXIT_SUCCESS);
 			} 
 		}
-		
+		waitpid(pid, NULL, 0);
 	}
 
 }
@@ -147,7 +148,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU5NzkzMzExNywtMTE5MzMwNTk1NywtNT
-I0NjIwNTQ3LC0zODQ2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0
-ODldfQ==
+eyJoaXN0b3J5IjpbLTE2Mzc5ODA2NzgsLTExOTMzMDU5NTcsLT
+UyNDYyMDU0NywtMzg0NjU4ODEwLC0zMDUyNDM0MTAsNDEyNjIz
+NDg5XX0=
 -->
