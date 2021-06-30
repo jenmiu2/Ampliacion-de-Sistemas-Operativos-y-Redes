@@ -621,7 +621,10 @@ Añadir la lógica necesaria en el servidor para que no quede ningún proceso en
     ssize_t nread;
     char buf[BUF_SIZE];
     pid_t pid;
-	struct sigaction sigact;
+	sigset_t blk, pending_blk;
+	
+	sigemptyset(&blk);
+	sigaddset(&blk, SIGCHLD);
 	
     if (argc != 2) {
         fprintf(stderr, "Usage: port %s\n", argv[0]);
@@ -689,7 +692,7 @@ Añadir la lógica necesaria en el servidor para que no quede ningún proceso en
  }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NjA0NzM2LDE1MDAxODEwNzQsLTEzMD
+eyJoaXN0b3J5IjpbNTAyOTAxMzg5LDE1MDAxODEwNzQsLTEzMD
 M5ODI0MjksMTUyNDY2NjcwNiwxMTA5NDEyNDc4LDIzMjU4Njk1
 NCwtMTE1NTg3OTE1Nl19
 -->
