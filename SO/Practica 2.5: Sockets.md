@@ -168,14 +168,18 @@ Ejemplo:
 
          char host[NI_MAXHOST], service[NI_MAXSERV];
 
-         s = getnameinfo((struct sockaddr *) &peer_addr,
+         
+         if ((s = getnameinfo((struct sockaddr *) &peer_addr,
                          peer_addr_len, host, NI_MAXHOST,
-                         service, NI_MAXSERV, NI_NUMERICSERV);
-         if (s == 0) {
-            
+                         service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
+
+
+		
+         
+         }
          else {
              fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
-
+		 }
          if (sendto(sfd, buf, nread, 0,
                      (struct sockaddr *) &peer_addr,
                      peer_addr_len) != nread) {
@@ -227,5 +231,5 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgwMjEwODA3MiwtMTE1NTg3OTE1Nl19
+eyJoaXN0b3J5IjpbODYwMTEwOTM3LC0xMTU1ODc5MTU2XX0=
 -->
