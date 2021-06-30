@@ -490,25 +490,14 @@ Ejemplo:
         exit(EXIT_FAILURE);
     }
     for (;;) {
-     nread = read(0,)
-          if (len > BUF_SIZE) {
-              fprintf(stderr,
-                      "Ignoring long message in argument %d\n", j);
-              continue;
-          }
-
-          if (write(sfd, argv[j], len) != len) {
-              fprintf(stderr, "partial/failed write\n");
-              exit(EXIT_FAILURE);
-          }
-
-          nread = read(sfd, buf, BUF_SIZE);
-          if (nread == -1) {
-              perror("read");
-              exit(EXIT_FAILURE);
-          }
-
-          printf("Received %zd bytes: %s\n", nread, buf);
+     nread = read(0, buf, BUF_SIZE);
+      if (nread > BUF_SIZE) {
+          fprintf(stderr,
+                  "Ignoring long message in argument %d\n", j);
+          continue;
+      }     
+	 if(buf == 'Q')
+        printf("Received %zd bytes: %s\n", nread, buf);
       }
 
  }
@@ -521,7 +510,7 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTY4MDUwMzcsLTEzMDM5ODI0MjksMT
-UyNDY2NjcwNiwxMTA5NDEyNDc4LDIzMjU4Njk1NCwtMTE1NTg3
-OTE1Nl19
+eyJoaXN0b3J5IjpbMTQzNjYxNTcxMywtMTMwMzk4MjQyOSwxNT
+I0NjY2NzA2LDExMDk0MTI0NzgsMjMyNTg2OTU0LC0xMTU1ODc5
+MTU2XX0=
 -->
