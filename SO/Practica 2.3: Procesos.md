@@ -43,7 +43,7 @@ Un demonio es un proceso que se ejecuta en segundo plano para proporcionar un se
 #define OK_FORK 0
 #define KO_FORK -1
 
-#define errnoexit do
+#define errnoexit() do{printf("ERROR(%d): %s", errno, strerror(errno)); EXIT(EXIT_FAILURE);};while(0)
 void printattr(pid_t pid) {
 	print("pid(), parent pid(), group pid(), sesion pid()", pid, getppid(), getpgid(pid), getsid(pid));
 }
@@ -53,15 +53,13 @@ int main(int argc, int argv*[]) {
 	pid = fork();
 
 	if(pid < KO_FORK) {
-		printf("ERROR(%d): %s", errno, strerror);
-		EXIT(EXIT_FAILURE);
+		errnoexit();
 	}
 	if(pid > OK_FORK) { 	
 		umask(0);
 		sid = setsid();
 		if(chdir("/tmp")) < 0) {
-			printf("ERROR(%d): %s", errno, strerror);
-			EXIT(EXIT_FAILURE);
+			errnoexit();
 		}
 		printattr(pid);
 	}
@@ -172,7 +170,7 @@ int main(int argc, int argv*[]) {
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzMzM5MzY5OCwtMTA2OTQ0NzkzMCwtMT
+eyJoaXN0b3J5IjpbLTk1NDI4MDk2MCwtMTA2OTQ0NzkzMCwtMT
 Y2ODM4Mzg5MSwtMzAyMTc1MjAxLC0xMTE2Nzg5NjEyLC03NzEy
 ODIxOTAsLTEyNTAyMDk3Ml19
 -->
