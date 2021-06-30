@@ -95,12 +95,12 @@ Escribir un programa que consulte y muestre en pantalla el estado del cerrojo so
 - Si está bloqueado, terminará el programa.
 ```c
 #include <fcntl.h>
-#include <>
+#include <errno.h>
 #include <>
 #include <>
 
 int main(int argc, int argv*[]) {
-
+	struct flock flk;
 
 
 
@@ -128,5 +128,5 @@ Escribir un programa que cumpla las siguientes especificaciones:
 
 - Al final de la lista el programa escribirá el tamaño total que ocupan los ficheros (no directorios) en kilobytes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjcwNTI2NDY1LDE3ODU3NDUwNjFdfQ==
+eyJoaXN0b3J5IjpbOTExNzYzODc5LDE3ODU3NDUwNjFdfQ==
 -->
