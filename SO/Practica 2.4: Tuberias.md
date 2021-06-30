@@ -109,7 +109,7 @@ int main(int argc, int argv*[]) {
 		/*bloq confirmacion hijo*/
 		while((readbytes = read(h_p[1], &chr, 1)) > 0) {
 			if(chr == 'l') {
-				
+				print("estoy listo...");
 			}
 			else if(chr == 'q') {
 
@@ -147,7 +147,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDg0NDYwNzIyLC0xMTkzMzA1OTU3LC01Mj
+eyJoaXN0b3J5IjpbOTkzNzkzMTk2LC0xMTkzMzA1OTU3LC01Mj
 Q2MjA1NDcsLTM4NDY1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4
 OV19
 -->
