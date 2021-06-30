@@ -187,7 +187,7 @@ int max(int fd1, int fd2) {
 int main(int argc, int argv*[]) {
 	char pathname1 = "pìpe1.txt";
 	char pathname2 = "pìpe2.txt";
-	int fd1, fd2, retval, fd_max;
+	int fd1, fd2, retval, fd_max, readbytes;
 	fd_set rfds;
 	struct timeval tv;
 	
@@ -213,13 +213,13 @@ int main(int argc, int argv*[]) {
 			errnoexit();
 		}
 		
-		while() {}
+		while((readbytes = read() > 0) {}
 		
 	}while(retval != NO_ERROR);
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTA1MjM2ODc0MiwxOTMxNTE0MzQzLDE2Nj
-Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
-ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
+eyJoaXN0b3J5IjpbMjgyOTcxMTI4LDE5MzE1MTQzNDMsMTY2Nj
+cyODA4NSwtMTE5MzMwNTk1NywtNTI0NjIwNTQ3LC0zODQ2NTg4
+MTAsLTMwNTI0MzQxMCw0MTI2MjM0ODldfQ==
 -->
