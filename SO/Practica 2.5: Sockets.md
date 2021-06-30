@@ -614,7 +614,7 @@ Añadir la lógica necesaria en el servidor para que no quede ningún proceso en
  #define ERROR -1
  void handler() {
 	pid_t pid = wait(NULL);	
-	print()
+	print("pid(%d)", pid);
  }
  
  int main(int argc, char *argv[]) {
@@ -692,7 +692,7 @@ Añadir la lógica necesaria en el servidor para que no quede ningún proceso en
  }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkxOTgxNDc5MSwtOTA3Njk3Nzc1LDE1MD
-AxODEwNzQsLTEzMDM5ODI0MjksMTUyNDY2NjcwNiwxMTA5NDEy
-NDc4LDIzMjU4Njk1NCwtMTE1NTg3OTE1Nl19
+eyJoaXN0b3J5IjpbMjI4OTMwODAwLC05MDc2OTc3NzUsMTUwMD
+E4MTA3NCwtMTMwMzk4MjQyOSwxNTI0NjY2NzA2LDExMDk0MTI0
+NzgsMjMyNTg2OTU0LC0xMTU1ODc5MTU2XX0=
 -->
