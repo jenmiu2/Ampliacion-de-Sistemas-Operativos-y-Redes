@@ -120,7 +120,7 @@ void handler() {
 }
 
 int main(int argc, int argv*[]) {
-	sigset_t blk;
+	sigset_t blk, pending_blk;
 	
 	printf("ERROR(%d):%s\n", errno, strerror(errno));
 	EXIT(EXIT_FAILURE);
@@ -130,9 +130,10 @@ int main(int argc, int argv*[]) {
 	sigaddset(&blk, SIGTSTP);
 
 	sigprocmask(SIG_BLOCK, &blk, NULL);
-	char *sleep_sec = getenv("SLEEP_SECS");
-	
-	if(signal(SIGINT, handler)  ) {
+	char *sleep_sec_chr = getenv("SLEEP_SECS");
+	int sleep_sec = atoi(sleep_sec_chr);
+	sleep(sleep_sec);
+	if(sigsuspend(SIGINT, handler)  ) {
 
 	}
 	
@@ -147,7 +148,7 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNzgyOTYyNDQsLTE2NjgzODM4OTEsLT
-MwMjE3NTIwMSwtMTExNjc4OTYxMiwtNzcxMjgyMTkwLC0xMjUw
-MjA5NzJdfQ==
+eyJoaXN0b3J5IjpbMzkzODQwODg3LC0xNjY4MzgzODkxLC0zMD
+IxNzUyMDEsLTExMTY3ODk2MTIsLTc3MTI4MjE5MCwtMTI1MDIw
+OTcyXX0=
 -->
