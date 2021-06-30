@@ -88,23 +88,20 @@ int main(int argc, int argv*[]) {
 		errorexit();
 	}
 	else if(pid == OK_FORK) {
-		close(p_h[0]);
-		close(h_p[1]);
-		while((readbytes = read(p_h[0], &chr, 1)) > 0) {
+		close(p_h[0]); //el padre no va a leer
+		close(h_p[1]); //el padre no va a escribir
+		while((readbytes = read(h_p[0], &chr, 1)) > 0) {
 			printf("%s", chr);
 		}
 		printf("\n");
 		sleep(1000); /*1 segundo*/
 		while(count_msg < MAX_COUNT) {
-			write(h_p[1], "l", sizeof(char));
+			write(p_h[1], "l", sizeof(char));
 			count_msg = count_msg + 1;
 		}
-		write(h_p[1], "q", sizeof(char));
+		write(p_h[1], "q", sizeof(char));
 	}
 	else {
-	
-	/*padre: Entonces permanecerá bloqueado esperando la confirmación por parte del hijo en la otra tubería, h_p.*/
-		/*lee terminal a tuberia p_h*/
 		close(p_h[0]);
 		close(h_p[1]);
 		scanf("%c", &chr);
@@ -146,7 +143,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcwMDQ1NjE5LC0xMTkzMzA1OTU3LC01Mj
+eyJoaXN0b3J5IjpbNDQ3NTgzNTE1LC0xMTkzMzA1OTU3LC01Mj
 Q2MjA1NDcsLTM4NDY1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4
 OV19
 -->
