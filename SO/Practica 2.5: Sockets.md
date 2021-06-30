@@ -330,7 +330,24 @@ Crear un servidor TCP de eco que escuche por conexiones entrantes en una direcci
 | **Cliente** |
 |``` nc -6 fd00::a:0:0:0:1 222``` | Hola **Qué tal** Qué tal **^C** |
 ```c
+ #include <sys/types.h>
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+ #include <string.h>
+ #include <sys/socket.h>
+ #include <netdb.h>
+ #include <time.h>
+ 
+ #define errorexit() do{ printf("ERROR(%d): %d\n", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0)
+ #define BUF_SIZE 500
+ #define NO_ERROR 0
+ #define ERROR -1
+ int main(int argc, char *argv[]) {
 
+
+
+ }
 ```
 
 ### Ejercicio 7
@@ -351,6 +368,6 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwMjg1NjEzNiwxNTI0NjY2NzA2LDExMD
-k0MTI0NzgsMjMyNTg2OTU0LC0xMTU1ODc5MTU2XX0=
+eyJoaXN0b3J5IjpbLTE0NjIzMDM5NDEsMTUyNDY2NjcwNiwxMT
+A5NDEyNDc4LDIzMjU4Njk1NCwtMTE1NTg3OTE1Nl19
 -->
