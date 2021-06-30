@@ -280,8 +280,6 @@ int main(int argc, char *argv[]) {
 
         if (bind(sfd, rp->ai_addr, rp->ai_addrlen) == 0)
             break;                  /* Success */
-
-        close(sfd);
     }
 
     freeaddrinfo(result);           /* No longer needed */
@@ -463,7 +461,7 @@ Ejemplo:
     hints.ai_addr = NULL;
     hints.ai_next = NULL;
 
-    s = getaddrinfo(NULL, argv[2], &hints, &result);
+    s = getaddrinfo(argv[1], argv[2], &hints, &result);
     if (s != 0) {
         fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(s));
         exit(EXIT_FAILURE);
@@ -475,12 +473,11 @@ Ejemplo:
        and) try the next address. */
 
     for (rp = result; rp != NULL; rp = rp->ai_next) {
-        sfd = socket(rp->ai_family, rp->ai_socktype,
-                rp->ai_protocol);
+        sfd = socket(rp->ai_family, rp->ai_socktype,rp->ai_protocol);
         if (sfd == -1)
             continue;
 
-        if (bind(sfd, rp->ai_addr, rp->ai_addrlen) == 0)
+        if (connect(sfd, rp->ai_addr, rp->ai_addrlen) == 0)
             break;                  /* Success */
 
         close(sfd);
@@ -492,7 +489,7 @@ Ejemplo:
         fprintf(stderr, "Could not bind\n");
         exit(EXIT_FAILURE);
     }
-    listen(sc, 10); //MAX ESCUCHA
+   
 	for (;;) {
       int ac = accept(sc, (struct sockaddr *) &peer_addr, &peer_addr_len);
 
@@ -520,7 +517,7 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTI0MzI0ODU3LC0xMzAzOTgyNDI5LDE1Mj
-Q2NjY3MDYsMTEwOTQxMjQ3OCwyMzI1ODY5NTQsLTExNTU4Nzkx
-NTZdfQ==
+eyJoaXN0b3J5IjpbMTg5MDc0MzQ0NSwtMTMwMzk4MjQyOSwxNT
+I0NjY2NzA2LDExMDk0MTI0NzgsMjMyNTg2OTU0LC0xMTU1ODc5
+MTU2XX0=
 -->
