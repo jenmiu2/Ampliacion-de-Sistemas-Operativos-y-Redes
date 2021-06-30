@@ -181,12 +181,13 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 #define SIZE 256
 
 int max(int fd1, int fd2) {
-	return (fd1 >= fd2 ? fd1 : num2);
+	return (fd1 >= fd2 ? fd1 : fd2);
 }
+
 int main(int argc, int argv*[]) {
 	char pathname1 = "pìpe1.txt";
 	char pathname2 = "pìpe2.txt";
-	int fd1, fd2, retval;
+	int fd1, fd2, retval, fd_max;
 	fd_set rfds;
 	struct timeval tv;
 	
@@ -207,16 +208,18 @@ int main(int argc, int argv*[]) {
 		FD_ZERO(&rfds);
 		FD_SET(0,&rfds);
 		tv = (timeval) {.tv_sec = 5, tv_usec = 0};
-		
-		if((retval = select(, &rfds, NULL, NULL, &tv)) == -1) {
+	
+		if((retval = select(fd_max + 1, &rfds, NULL, NULL, &tv)) == -1) {
 			errnoexit();
 		}
+		
+		while() {}
 		
 	}while(retval != NO_ERROR);
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU0NTE1ODg0NCwxOTMxNTE0MzQzLDE2Nj
+eyJoaXN0b3J5IjpbMTA1MjM2ODc0MiwxOTMxNTE0MzQzLDE2Nj
 Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
 ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
