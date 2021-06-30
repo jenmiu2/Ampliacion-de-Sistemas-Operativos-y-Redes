@@ -107,7 +107,19 @@ Escribir un programa que bloquee las señales SIGINT y SIGTSTP. Después de bloq
 
 Después de despertar de sleep(3), el proceso debe informar de si recibió la señal SIGINT y/o SIGTSTP. En este último caso, debe desbloquearla con lo que el proceso se detendrá y podrá ser reanudado en la  _shell_  (imprimir una cadena antes de finalizar el programa para comprobar este comportamiento).
 ```c
+#include <errno.h>
+#include <stdio.h>
+#include <stlib.h>
+#include <sys/types.h>
 
+
+int main(int argc, int argv*[]) {
+	
+	printf("ERROR(%d):%s\n")
+
+
+
+}
 ```
 ### Ejercicio 12
 Escribir un programa que instale un manejador sencillo para las señales SIGINT y SIGTSTP. El manejador debe contar las veces que ha recibido cada señal. El programa principal permanecerá en un bucle que se detendrá cuando se hayan recibido 10 señales. El número de señales de cada tipo se mostrará al finalizar el programa.
@@ -118,6 +130,6 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTY3ODk2MTIsLTc3MTI4MjE5MCwtMT
-I1MDIwOTcyXX0=
+eyJoaXN0b3J5IjpbLTEyMDI0OTAwMTAsLTExMTY3ODk2MTIsLT
+c3MTI4MjE5MCwtMTI1MDIwOTcyXX0=
 -->
