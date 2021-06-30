@@ -197,13 +197,15 @@ int fd_available(fd_set rfds) {
 	return (IF_ISSET(pipesdetails[0].fd, &rfds) ? 0 : 1;
 }
 
-void initpipe() {
-	if(mkfifo(pathname2, 0777) < NO_ERROR) {
+int initpipe(char pathname) {
+	int fd;
+	if(mkfifo(pathname, 0777) < NO_ERROR) {
 		errnoexit();
 	}
-	if(fd2 = open(pathname2, O_RDONLY | O_NONBLOCK)) < NO_ERROR) {
+	if(fd = open(pathname, O_RDONLY | O_NONBLOCK)) < NO_ERROR) {
 		errnoexit();
 	}
+	return fd;
 }
 
 int main(int argc, int argv*[]) {
@@ -213,10 +215,9 @@ int main(int argc, int argv*[]) {
 	struct timeval tv;
 	
 	int i = 0;
-	for(;i<2) {
-		
-		pipesdetails[0].pathname = pathname1;
-		pipesdetails[0].fd = fd1;
+	for(;i<2;i++) {
+		pipesdetails[i].pathname = i == 0 ? pathname1 : pathame2;
+		pipesdetails[i].fd = initpipe();
 	}
 
 	do {
@@ -245,7 +246,7 @@ int main(int argc, int argv*[]) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkzMDE3NDEwLDEzMjQ3MTc2MDUsMTkzMT
+eyJoaXN0b3J5IjpbLTE2MjAzMTMyLDEzMjQ3MTc2MDUsMTkzMT
 UxNDM0MywxNjY2NzI4MDg1LC0xMTkzMzA1OTU3LC01MjQ2MjA1
 NDcsLTM4NDY1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
