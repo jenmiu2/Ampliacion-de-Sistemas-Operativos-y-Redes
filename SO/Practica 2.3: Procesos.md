@@ -148,15 +148,21 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 #include <sys/types.h>
 #include <signal.h>
 
-void handler(in)
+void handler(int signum) {
+	if(signum == SIGUSR1) {
+		print("recivido SIGUSR1\n");
+	}
+}
 int main(int argc, int argv*[]) {
 	sigset_t blk;
 	struct sigaction sigact;
 	sigemptyset(&blk);
 	sigaddset(&blk, SIGUSR1);
+	
 	sigemptyset(&sigact);
 	sigact = (sigaction) {.sa_flags = 0, sa_handler = handler};
 	
+	if(sigaction)
 	
 	if(sigsuspend(&blk) == -1) {
 		remove(argv[1]);
@@ -166,8 +172,8 @@ int main(int argc, int argv*[]) {
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTYxMDYyNzA2LC0xNjg5ODk5MTA1LC0xNj
-Q4ODk2NzY4LC05NTQyODA5NjAsLTEwNjk0NDc5MzAsLTE2Njgz
-ODM4OTEsLTMwMjE3NTIwMSwtMTExNjc4OTYxMiwtNzcxMjgyMT
-kwLC0xMjUwMjA5NzJdfQ==
+eyJoaXN0b3J5IjpbLTE4OTQ2MDUwODUsLTE2ODk4OTkxMDUsLT
+E2NDg4OTY3NjgsLTk1NDI4MDk2MCwtMTA2OTQ0NzkzMCwtMTY2
+ODM4Mzg5MSwtMzAyMTc1MjAxLC0xMTE2Nzg5NjEyLC03NzEyOD
+IxOTAsLTEyNTAyMDk3Ml19
 -->
