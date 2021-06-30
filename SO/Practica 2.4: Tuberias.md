@@ -177,8 +177,10 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 #define errnoexit() do{printf("ERROR(%d): %s", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0) 
 #define NO_ERROR 0
+#define ERROR -1
 #define SIZE 256
 
+int max 
 int main(int argc, int argv*[]) {
 	char pathname1 = "pìpe1.txt";
 	char pathname2 = "pìpe2.txt";
@@ -204,12 +206,15 @@ int main(int argc, int argv*[]) {
 		FD_SET(0,&rfds);
 		tv = (timeval) {.tv_sec = 5, tv_usec = 0};
 		
-		retval = select(1, &rfds, NULL, NULL, &tv);
+		if((retval = select(, &rfds, NULL, NULL, &tv)) == -1) {
+			errnoexit();
+		}
+		
 	}while(retval != NO_ERROR);
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI1NjcwMTY5NiwxOTMxNTE0MzQzLDE2Nj
+eyJoaXN0b3J5IjpbMTQ2MjkxNTc1MiwxOTMxNTE0MzQzLDE2Nj
 Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
 ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
