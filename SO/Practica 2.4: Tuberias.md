@@ -41,7 +41,7 @@ Para la comunicación bi-direccional, es necesario crear dos tuberías, una para
 int main(int argc, int argv*[]) {
 	int p_h[2]; //lectura padre: 0, escritura hijo: 1
 	int h_p[2]; //escritura padre: 1, lectura hijo: 0
-	int readbytes;
+	int readbytes, count_msg = 0;
 	pid_t pid;
 	char chr[MAX_SIZE];
 	
@@ -57,7 +57,8 @@ int main(int argc, int argv*[]) {
 		}
 		printf("\n");
 		sleep(1000); /*1 segundo*/
-		write(h_p[])
+		
+		write(h_p[1], "l", sizeof(char));
 	}
 	else {
 	
@@ -103,6 +104,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNDM0NTk3NTAsLTM4NDY1ODgxMCwtMz
+eyJoaXN0b3J5IjpbLTEyOTc2NzI5MzksLTM4NDY1ODgxMCwtMz
 A1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
