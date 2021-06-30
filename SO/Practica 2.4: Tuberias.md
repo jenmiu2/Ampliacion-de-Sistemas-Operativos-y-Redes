@@ -112,7 +112,7 @@ int main(int argc, int argv*[]) {
 				print("I am waiting");
 			}
 			else if(chr == 'q') {
-			
+				EXIT(EXIT_SUCCESS);
 			} 
 		}
 		
@@ -147,7 +147,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0Mjg2NzYyNTUsLTExOTMzMDU5NTcsLT
-UyNDYyMDU0NywtMzg0NjU4ODEwLC0zMDUyNDM0MTAsNDEyNjIz
-NDg5XX0=
+eyJoaXN0b3J5IjpbLTU5NzkzMzExNywtMTE5MzMwNTk1NywtNT
+I0NjIwNTQ3LC0zODQ2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0
+ODldfQ==
 -->
