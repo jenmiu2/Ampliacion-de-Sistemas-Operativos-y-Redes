@@ -165,14 +165,15 @@ int main(int argc, int argv*[]) {
 	int sleep_sec = atoi(sleep_sec_chr);
 	
 	sleep(sleep_sec);
-	
+	sigpending(&pending_blk);
+	if(sigismember())
 	sigprocmask(SIG_UNBLOCK, &set, NULL);
 }
 ```
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwNjk0NDc5MzAsLTE2NjgzODM4OTEsLT
-MwMjE3NTIwMSwtMTExNjc4OTYxMiwtNzcxMjgyMTkwLC0xMjUw
-MjA5NzJdfQ==
+eyJoaXN0b3J5IjpbLTEyNjAxNDIxLC0xMDY5NDQ3OTMwLC0xNj
+Y4MzgzODkxLC0zMDIxNzUyMDEsLTExMTY3ODk2MTIsLTc3MTI4
+MjE5MCwtMTI1MDIwOTcyXX0=
 -->
