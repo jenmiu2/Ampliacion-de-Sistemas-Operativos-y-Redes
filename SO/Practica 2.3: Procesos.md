@@ -40,9 +40,11 @@ Un demonio es un proceso que se ejecuta en segundo plano para proporcionar un se
 #include <unistd.h>
 #include <errno.h>
 
+#define OK_FORK 0
+#define KO_FORK -1
 
 int main(int argc, int argv*[]) {
-	pid_t pid = fork(b. );
+	pid_t pid = fork();
 
 	if(pid < 0) {
 		printf("ERROR(%d): %s", errno, strerror);
@@ -98,5 +100,5 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMTQ3MzkyODEsLTEyNTAyMDk3Ml19
+eyJoaXN0b3J5IjpbMTk5Njc5NzA2NSwtMTI1MDIwOTcyXX0=
 -->
