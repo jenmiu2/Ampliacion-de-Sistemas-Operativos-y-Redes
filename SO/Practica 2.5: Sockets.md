@@ -237,10 +237,6 @@ int max(int fd1, int fd2) {
 	return (fd1 >= fd2 ? fd1 : fd2);
 }
 
-int fd_available(int fd1, int fd2, fd_set rfds) {
-	return (IF_ISSET(fd, &rfds) ? fd1 : fd2;
-}
-
 int main(int argc, char *argv[]) {
     struct addrinfo hints;
     struct addrinfo *result, *rp;
@@ -305,36 +301,32 @@ int main(int argc, char *argv[]) {
     for (;;) {
         
         if((retval = select(max(sfd, 0) + 1, &rfds, NULL, NULL, &tv)) == -1) {
-			errnoexit();
+			continue; /* Ignore failed request */
 		}
 		
 		if(retval == NO_ERROR) {
-		select = fd_available(&rfds); 
+			if(IF_ISSET(sfd, &rfds)) {
 		
-		while((readbytes = read(pipesdetails[select].fd, buff, SIZE) > 0) {
-				buff[readbytes] = '\0';
-				printf("pipe: %s\n", select.pathname);
+
+				peer_addr_len = sizeof(peer_addr);
+		        nread = recvfrom(sfd, buf, BUF_SIZE, 0,
+		                (struct sockaddr *) &peer_addr, &peer_addr_len);
+		        if (nread == -1) 
+		            continue;               /* Ignore failed request */
+
+		        char host[NI_MAXHOST], service[NI_MAXSERV];
+
+		        
+		        if ((s = getnameinfo((struct sockaddr *) &peer_addr,
+		                        peer_addr_len, host, NI_MAXHOST,
+		                        service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
+				/*ejecutar comando*/
+				
+		        }
+		        else {
+		            fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
+				}
 			}
-		}
-
-		peer_addr_len = sizeof(peer_addr);
-        nread = recvfrom(sfd, buf, BUF_SIZE, 0,
-                (struct sockaddr *) &peer_addr, &peer_addr_len);
-        if (nread == -1)
-            continue;               /* Ignore failed request */
-
-        char host[NI_MAXHOST], service[NI_MAXSERV];
-
-        
-        if ((s = getnameinfo((struct sockaddr *) &peer_addr,
-                        peer_addr_len, host, NI_MAXHOST,
-                        service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
-		/*ejecutar comando*/
-		
-        }
-        else {
-            fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
-		}
     }
  }
 ```
@@ -371,6 +363,6 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzAwMzgwNzksMTEwOTQxMjQ3OCwyMz
-I1ODY5NTQsLTExNTU4NzkxNTZdfQ==
+eyJoaXN0b3J5IjpbLTE1OTQ2NTMyLDExMDk0MTI0NzgsMjMyNT
+g2OTU0LC0xMTU1ODc5MTU2XX0=
 -->
