@@ -114,10 +114,6 @@ Después de despertar de sleep(3), el proceso debe informar de si recibió la se
 #include <signal.h>
 
 #define errexit do{ printf("ERROR(%d):%s\n", errno, strerror(errno)); exit(EXIT_FAILURE)}; while(0)
-#define 
-void handler() {
-
-}
 
 int main(int argc, int argv*[]) {
 	sigset_t blk, pending_blk;
@@ -135,9 +131,10 @@ int main(int argc, int argv*[]) {
 	
 	sigpending(&pending_blk);
 	if(sigismember(&pending_blk, SIGINT) == 1 || sigismember(&pending_blk, SIGTSTP) == 1) {
-	
+		printf("Se ha recibido la señal SIGINT o SIGTSTP");
 	}
 	else {
+		printf("No se ha recibido la señal SIGINT o SIGTSTP");
 	}
 	sigprocmask(SIG_UNBLOCK, &set, NULL);
 }
@@ -151,7 +148,7 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyODg2OTE2NjgsLTE2NjgzODM4OTEsLT
+eyJoaXN0b3J5IjpbLTE5MDQzMzA4NjgsLTE2NjgzODM4OTEsLT
 MwMjE3NTIwMSwtMTExNjc4OTYxMiwtNzcxMjgyMTkwLC0xMjUw
 MjA5NzJdfQ==
 -->
