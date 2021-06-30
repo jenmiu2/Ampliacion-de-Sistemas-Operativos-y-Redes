@@ -30,12 +30,19 @@ Probar el funcionamiento con una sentencia similar a: ./ejercicio1 echo 12345 wc
 int main(int argc, int argv* []) {
 	pid_t pid;
 	pid = fork();
-	
+	int fd[2]; //tuberia: lectura[0], escritura[1]
+	if(argc != 5) {
+		printf("us")
+	}
 	if(pid == OK_FORK) {
+		printf();
+	}
+	else if(pid == KO_FORK) {
+		errorexit();
+	}
+	else {
 
 	}
-	else 
-
 }
 ```
 **Nota:** Antes de ejecutar el comando correspondiente, deben cerrarse todos los descriptores no necesarios.
@@ -129,6 +136,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzQwMjIyMTcsLTUyNDYyMDU0NywtMz
-g0NjU4ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
+eyJoaXN0b3J5IjpbLTk2NDg0Njk4MiwtNTI0NjIwNTQ3LC0zOD
+Q2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0ODldfQ==
 -->
