@@ -77,8 +77,8 @@ Para la comunicación bi-direccional, es necesario crear dos tuberías, una para
 #define MAX_COUNT 10 /*valor maximo del contador de mensajes*/
 
 int main(int argc, int argv*[]) {
-	int p_h[2]; //padre -> hijo: p_l: 0, h_e: 1
-	int h_p[2]; //hijo -> padre: h_l: 0, p_e: 1
+	int p_h[2]; //padre -> hijo:: p_e: 0, h_l: 1
+	int h_p[2]; //hijo -> padre:: h_e: 0, p_l: 1
 	int readbytes, count_msg = 0;
 	pid_t pid;
 	char chr[MAX_SIZE];
@@ -88,18 +88,18 @@ int main(int argc, int argv*[]) {
 		errorexit();
 	}
 	else if(pid == OK_FORK) {
-		close(p_h[0]); //el padre no va a leer
-		close(h_p[1]); //el padre no va a escribir
-		while((readbytes = read(h_p[0], &chr, 1)) > 0) {
+		close(h_p[0]); //el padre no va a leer
+		close(p_h[1]); //el padre no va a escribir
+		while((readbytes = read(p_h[0], &chr, 1)) > 0) {
 			printf("%s", chr);
 		}
 		printf("\n");
 		sleep(1000); /*1 segundo*/
 		while(count_msg < MAX_COUNT) {
-			write(p_h[1], "l", sizeof(char));
+			write(h_p[1], "l", sizeof(char));
 			count_msg = count_msg + 1;
 		}
-		write(p_h[1], "q", sizeof(char));
+		write(h_p[1], "q", sizeof(char));
 	}
 	else {
 		close(p_h[0]);
@@ -143,7 +143,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQ3NTgzNTE1LC0xMTkzMzA1OTU3LC01Mj
-Q2MjA1NDcsLTM4NDY1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4
-OV19
+eyJoaXN0b3J5IjpbLTI3NDAzMTMsLTExOTMzMDU5NTcsLTUyND
+YyMDU0NywtMzg0NjU4ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5
+XX0=
 -->
