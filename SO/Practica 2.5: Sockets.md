@@ -584,7 +584,8 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 		pid = fork();
 		 if(pid == NO_ERROR) {
 		 //hijo
-
+			nread = recv(sc, buf, sizeof(buf), 0);
+	        buf[nread] = '\0';
 		}
 		else if(pid == ERROR) {
 		 continue;
@@ -601,7 +602,7 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ5ODU1NjI1LDE1MDAxODEwNzQsLTEzMD
-M5ODI0MjksMTUyNDY2NjcwNiwxMTA5NDEyNDc4LDIzMjU4Njk1
-NCwtMTE1NTg3OTE1Nl19
+eyJoaXN0b3J5IjpbMTk0OTE2MDg5NCwxNTAwMTgxMDc0LC0xMz
+AzOTgyNDI5LDE1MjQ2NjY3MDYsMTEwOTQxMjQ3OCwyMzI1ODY5
+NTQsLTExNTU4NzkxNTZdfQ==
 -->
