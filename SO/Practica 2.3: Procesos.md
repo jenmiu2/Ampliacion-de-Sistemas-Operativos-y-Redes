@@ -113,8 +113,8 @@ Después de despertar de sleep(3), el proceso debe informar de si recibió la se
 #include <sys/types.h>
 #include <signal.h>
 
-#define errexit(msg) do{perror(msg) exit(EXIT_FAILURE)}; while(0)
-
+#define errexit do{ printf("ERROR(%d):%s\n", errno, strerror(errno)); exit(EXIT_FAILURE)}; while(0)
+#define 
 void handler() {
 
 }
@@ -122,9 +122,6 @@ void handler() {
 int main(int argc, int argv*[]) {
 	sigset_t blk, pending_blk;
 	
-	printf("ERROR(%d):%s\n", errno, strerror(errno));
-	EXIT(EXIT_FAILURE);
-	EXIT(EXIT_SUCCESS);
 	sigemptyset(&blk);
 	sigaddset(&blk, SIGINT);
 	sigaddset(&blk, SIGTSTP);
@@ -133,7 +130,9 @@ int main(int argc, int argv*[]) {
 	char *sleep_sec_chr = getenv("SLEEP_SECS");
 	int sleep_sec = atoi(sleep_sec_chr);
 	sleep(sleep_sec);
-	if(sigsuspend(SIGINT, handler)  ) {
+	sigpending(&pending_blk);
+	
+	if(sigismember(&pending_blk, SIGINT) == 1) {
 
 	}
 	
@@ -148,7 +147,7 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzkzODQwODg3LC0xNjY4MzgzODkxLC0zMD
+eyJoaXN0b3J5IjpbNTM4MTc3MTQ5LC0xNjY4MzgzODkxLC0zMD
 IxNzUyMDEsLTExMTY3ODk2MTIsLTc3MTI4MjE5MCwtMTI1MDIw
 OTcyXX0=
 -->
