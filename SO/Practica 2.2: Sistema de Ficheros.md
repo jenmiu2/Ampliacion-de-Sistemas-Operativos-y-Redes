@@ -122,11 +122,17 @@ int main(int argc, int argv*[]) {
 	}
 	if(flk.l_type == F_UNLCK) {
 		flk = (flock) {.l_type = F_WRLCK, .l_start = 0, .l_len = 0};
-		if (fcntl(fd, F_GETLK, &flk) < 0) {
-		printf("ERROR(%d): %s\n", errno, strerror(errno));
-		exit(EXIT_FAILURE);
+		if (fcntl(fd, F_SETLK, &flk) < 0) {
+			printf("ERROR(%d): %s\n", errno, strerror(errno));
+			exit(EXIT_FAILURE);
 		}
+		/*hora*/
 		sleep(30000);
+		flk = (flock) {.l_type = F_UNLCK};
+		if (fcntl(fd, F_SETLK, &flk) < 0) {
+			printf("ERROR(%d): %s\n", errno, strerror(errno));
+			exit(EXIT_FAILURE);
+		}
 		exit(EXIT_SUCCESS);
 
 	}
@@ -152,6 +158,6 @@ Escribir un programa que cumpla las siguientes especificaciones:
 
 - Al final de la lista el programa escribirá el tamaño total que ocupan los ficheros (no directorios) en kilobytes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MDcyMDU2MzksMTkwMjQ5OTU0MiwxNz
-g1NzQ1MDYxXX0=
+eyJoaXN0b3J5IjpbMTQzNTI4Mjc3NywxOTAyNDk5NTQyLDE3OD
+U3NDUwNjFdfQ==
 -->
