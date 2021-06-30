@@ -297,7 +297,10 @@ int main(int argc, char *argv[]) {
     }
 
     /* Read datagrams and echo them back to sender. */
-
+	FD_ZERO(&rfds);
+	FD_SET(0,&rfds);
+	tv = (timeval) {.tv_sec = 5, tv_usec = 0};
+	
     for (;;) {
         peer_addr_len = sizeof(peer_addr);
         nread = recvfrom(sfd, buf, BUF_SIZE, 0,
@@ -312,6 +315,7 @@ int main(int argc, char *argv[]) {
                         peer_addr_len, host, NI_MAXHOST,
                         service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
 		/*ejecutar comando*/
+		
         }
         else {
             fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
@@ -352,6 +356,6 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwOTQxMjQ3OCwyMzI1ODY5NTQsLTExNT
-U4NzkxNTZdfQ==
+eyJoaXN0b3J5IjpbLTIwMjkzNTUzOTEsMTEwOTQxMjQ3OCwyMz
+I1ODY5NTQsLTExNTU4NzkxNTZdfQ==
 -->
