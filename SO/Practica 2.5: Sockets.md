@@ -491,12 +491,13 @@ Ejemplo:
     }
     for (;;) {
 	      nread = read(0, buf, BUF_SIZE);
-	      send();
+	      send(peer_addr, buf, nread, 0);
 	      if (nread > BUF_SIZE) {
 	          fprintf(stderr,
 	                  "Ignoring long message in argument %d\n", j);
 	          continue;
 	      }     
+	      nread = recv(peer_addr, );
 		  if(buf == 'Q') {
 				EXIT(EXIT_SUCCESS);
 		  }
@@ -512,7 +513,7 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg0MTk2NzQ2OCwtMTMwMzk4MjQyOSwxNT
+eyJoaXN0b3J5IjpbMTUwMDE4MTA3NCwtMTMwMzk4MjQyOSwxNT
 I0NjY2NzA2LDExMDk0MTI0NzgsMjMyNTg2OTU0LC0xMTU1ODc5
 MTU2XX0=
 -->
