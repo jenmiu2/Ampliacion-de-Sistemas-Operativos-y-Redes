@@ -92,13 +92,11 @@ int main(int argc, int argv*[]) {
 		close(p_h[1]); //el padre no va a escribir
 		while((readbytes = read(p_h[0], &chr, 1)) > 0 && count_msg < MAX_COUNT) {
 			printf("%s", chr);
-		}
-		printf("\n");
-		sleep(1000); /*1 segundo*/
-		while() {
+			sleep(1); /*1 segundo*/
 			write(h_p[1], "l", sizeof(char));
 			count_msg = count_msg + 1;
 		}
+		printf("\n");
 		write(h_p[1], "q", sizeof(char));
 		close(h_p[0]);//el hijo no va a escribir
 		close(p_h[1]);//el hijo no va a leer
@@ -147,7 +145,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMDI1ODUxNTYsLTExOTMzMDU5NTcsLT
+eyJoaXN0b3J5IjpbLTE3ODQ1NTQ0NzgsLTExOTMzMDU5NTcsLT
 UyNDYyMDU0NywtMzg0NjU4ODEwLC0zMDUyNDM0MTAsNDEyNjIz
 NDg5XX0=
 -->
