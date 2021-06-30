@@ -93,6 +93,9 @@ Escribir un programa que consulte y muestre en pantalla el estado del cerrojo so
 - Si está desbloqueado, fijará un cerrojo y escribirá la hora actual. Después suspenderá su ejecución durante 30 segundos (función sleep(3)) y a continuación liberará el cerrojo.
 
 - Si está bloqueado, terminará el programa.
+```c
+
+```
 ### Ejercicio 17
 **(Opcional).** El comando flock proporciona funcionalidad de cerrojos antiguos BSD en guiones  _shell_. Consultar la página de manual y el funcionamiento del comando.
 
@@ -113,5 +116,5 @@ Escribir un programa que cumpla las siguientes especificaciones:
 
 - Al final de la lista el programa escribirá el tamaño total que ocupan los ficheros (no directorios) en kilobytes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4NTc0NTA2MV19
+eyJoaXN0b3J5IjpbMTM3ODgxOTMyNiwxNzg1NzQ1MDYxXX0=
 -->
