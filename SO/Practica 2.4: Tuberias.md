@@ -206,10 +206,9 @@ struct pipedetail fd_available(int fd1, int fd2, fd_set rfds) {
 
 int main(int argc, int argv*[]) {
 	char buff[SIZE];
-	int fd1, fd2, retval, fd, readbytes;
+	int fd1, fd2, retval, fd, readbytes, select;
 	fd_set rfds;
 	struct timeval tv;
-	pipesdetails[1].pathname = pathname1;
 	
 	if(mkfifo(pathname1, 0777) < NO_ERROR) {
 		errnoexit();
@@ -223,7 +222,11 @@ int main(int argc, int argv*[]) {
 	if(fd2 = open(pathname2, O_RDONLY | O_NONBLOCK)) < NO_ERROR) {
 		errnoexit();
 	}
-
+	pipesdetails[0].pathname = pathname1;
+	pipesdetails[0].fd = fd1;
+	pipesdetails[1].pathname = pathname2;
+	pipesdetails[1].fd = fd2;
+	
 	do {
 		FD_ZERO(&rfds);
 		FD_SET(0,&rfds);
@@ -250,7 +253,7 @@ int main(int argc, int argv*[]) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwOTY5ODM2MiwxOTMxNTE0MzQzLDE2Nj
-Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
-ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
+eyJoaXN0b3J5IjpbLTE1NDcwNzI1NzUsMTkzMTUxNDM0MywxNj
+Y2NzI4MDg1LC0xMTkzMzA1OTU3LC01MjQ2MjA1NDcsLTM4NDY1
+ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
