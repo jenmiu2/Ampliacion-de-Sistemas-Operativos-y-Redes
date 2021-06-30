@@ -145,8 +145,8 @@ int main(int argc, int argv*[]) {
 	if((fd = open(pathname,O_WRONLY)) < NO_ERROR) {
 		errnoexit();
 	}
-	writebytes = write(fd, argv[1], sizeof(argv[1]);
-	if((writebytes = write(fd, argv[1], sizeof(argv[1])) < NO_ERROR) {
+	
+	if((writebytes = write(fd, argv[1], strlen(argv[1])) < NO_ERROR) {
 		errnoexit();
 	}
 	EXIT(EXIT_SECCESS);
@@ -154,7 +154,7 @@ int main(int argc, int argv*[]) {
 ```
 En otro terminal escribir:
 ```bash
-cat tub
+cat pipe.txt
 ```
 # Multiplexación síncrona de entrada/salida
 
@@ -173,7 +173,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ3OTUxNTUwMiwtMTE5MzMwNTk1NywtNT
-I0NjIwNTQ3LC0zODQ2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0
-ODldfQ==
+eyJoaXN0b3J5IjpbODk1NDM4MjcxLC0xMTkzMzA1OTU3LC01Mj
+Q2MjA1NDcsLTM4NDY1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4
+OV19
 -->
