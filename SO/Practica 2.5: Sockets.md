@@ -101,7 +101,6 @@ Ejemplo:
  #include <sys/socket.h>
  #include <netdb.h>
  #include <time.h>
- struct tm *tmp;
  
  #define errorexit() do{ printf("ERROR(%d): %d\n", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0)
  #define BUF_SIZE 500
@@ -226,7 +225,6 @@ Modificar el servidor para que, además de poder recibir comandos por red, los p
  #include <sys/socket.h>
  #include <netdb.h>
  #include <time.h>
- struct tm *tmp;
  
  #define errorexit() do{ printf("ERROR(%d): %d\n", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0)
  #define BUF_SIZE 500
@@ -297,7 +295,6 @@ int main(int argc, char *argv[]) {
 	FD_ZERO(&rfds);
 	FD_SET(0,&rfds);
 	tv = (timeval) {.tv_sec = 5, tv_usec = 0};
-	
     for (;;) {
         if((retval = select(max(sfd, 0) + 1, &rfds, NULL, NULL, &tv)) == -1) {
 			continue; /* Ignore failed request */
@@ -332,6 +329,9 @@ Crear un servidor TCP de eco que escuche por conexiones entrantes en una direcci
 |```./echo_server :: 2222 ```| Conexión desde fd00::a:0:0:0:1 53456 Conexión terminada  |
 | **Cliente** |
 |``` nc -6 fd00::a:0:0:0:1 222``` | Hola **Qué tal** Qué tal **^C** |
+```c
+
+```
 
 ### Ejercicio 7
 Escribir el cliente para conectarse con el servidor del ejercicio anterior. El cliente recibirá la dirección y el puerto del servidor como argumentos y, una vez establecida la conexión con el servidor, le enviará lo que el usuario escriba por teclado. Mostrará en la consola la respuesta recibida desde el servidor. Cuando el usuario escriba el carácter ‘Q’ como único carácter de una línea, el cliente cerrará la conexión con el servidor.
@@ -351,6 +351,6 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMyOTI0MjAxMywxNTI0NjY2NzA2LDExMD
+eyJoaXN0b3J5IjpbMTAwMjg1NjEzNiwxNTI0NjY2NzA2LDExMD
 k0MTI0NzgsMjMyNTg2OTU0LC0xMTU1ODc5MTU2XX0=
 -->
