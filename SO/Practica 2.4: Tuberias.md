@@ -137,6 +137,7 @@ int main(int argc, int argv*[]) {
 	if(mkfifo(pathname, 0777) < NO_ERROR) {
 		errnoexit();
 	}
+	
 }
 ```
 ### Ejercicio 4
@@ -161,7 +162,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDMwMDI0NjUsLTExOTMzMDU5NTcsLT
+eyJoaXN0b3J5IjpbLTE3MTc2MjM3MzUsLTExOTMzMDU5NTcsLT
 UyNDYyMDU0NywtMzg0NjU4ODEwLC0zMDUyNDM0MTAsNDEyNjIz
 NDg5XX0=
 -->
