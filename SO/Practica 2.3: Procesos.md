@@ -167,7 +167,7 @@ int main(int argc, int argv*[]) {
 	sleep(sleep_sec);
 	
 	if(sigaction(SIGUSR1, &sigact, NULL) > 0) {
-		sigsuspend(&blk)
+		sigsuspend(&blk);
 	}
 	else {
 		remove(argv[1]);
@@ -177,8 +177,8 @@ int main(int argc, int argv*[]) {
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDQzMTk2NTk2LC0xNjg5ODk5MTA1LC0xNj
-Q4ODk2NzY4LC05NTQyODA5NjAsLTEwNjk0NDc5MzAsLTE2Njgz
-ODM4OTEsLTMwMjE3NTIwMSwtMTExNjc4OTYxMiwtNzcxMjgyMT
-kwLC0xMjUwMjA5NzJdfQ==
+eyJoaXN0b3J5IjpbLTE1NzQ4NTYzNyw0NDMxOTY1OTYsLTE2OD
+k4OTkxMDUsLTE2NDg4OTY3NjgsLTk1NDI4MDk2MCwtMTA2OTQ0
+NzkzMCwtMTY2ODM4Mzg5MSwtMzAyMTc1MjAxLC0xMTE2Nzg5Nj
+EyLC03NzEyODIxOTAsLTEyNTAyMDk3Ml19
 -->
