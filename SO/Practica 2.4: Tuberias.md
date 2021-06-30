@@ -27,7 +27,7 @@ Probar el funcionamiento con una sentencia similar a: ./ejercicio1 echo 12345 wc
 #define errorexit() do{ printf("ERROR(%d): %s\n", errno, sterror(errno));EXIT(EXIT_FAILURE);}; while(0)
 #define MAX_SIZE 100
 
-int main(int argc, int argv* []) {
+int main(int argc, char argv* []) {
 	pid_t pid;
 	pid = fork();
 	int fd[2]; //tuberia: lectura[0], escritura[1]
@@ -76,7 +76,7 @@ Para la comunicación bi-direccional, es necesario crear dos tuberías, una para
 #define MAX_SIZE 100
 #define MAX_COUNT 10 /*valor maximo del contador de mensajes*/
 
-int main(int argc, int argv*[]) {
+int main(int argc, char argv*[]) {
 	int p_h[2]; //padre -> hijo:: p_escribe: 0, h_lee: 1
 	int h_p[2]; //hijo -> padre:: h_escribre: 0, p_lee: 1
 	int readbytes, count_msg = 0;
@@ -136,7 +136,7 @@ Escribir un programa que abra la tubería con el nombre anterior en modo sólo e
 #define errnoexit() do{printf("ERROR(%d): %s", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0) 
 #define NO_ERROR 0
 
-int main(int argc, int argv*[]) {
+int main(int argc, char argv*[]) {
 	char pathname = "pìpe.txt";
 	int fd, writebytes;
 	if(mkfifo(pathname, 0777) < NO_ERROR) {
@@ -197,7 +197,7 @@ int fd_available(fd_set rfds) {
 	return (IF_ISSET(pipesdetails[0].fd, &rfds) ? 0 : 1;
 }
 
-int initpipe(char pathname) {
+int initpipe(char *pathname) {
 	int fd;
 	if(mkfifo(pathname, 0777) < NO_ERROR) {
 		errnoexit();
@@ -208,16 +208,16 @@ int initpipe(char pathname) {
 	return fd;
 }
 
-int main(int argc, int argv*[]) {
+int main(int argc, char argv*[]) {
 	char buff[SIZE];
-	int fd1, fd2, retval, fd, readbytes, select;
+	int retval, readbytes, select;
 	fd_set rfds;
 	struct timeval tv;
 	
 	int i = 0;
 	for(;i<2;i++) {
 		pipesdetails[i].pathname = i == 0 ? pathname1 : pathame2;
-		pipesdetails[i].fd = initpipe();
+		pipesdetails[i].fd = initpipe(pipesdetails[i].pathname);
 	}
 
 	do {
@@ -246,7 +246,8 @@ int main(int argc, int argv*[]) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MjAzMTMyLDEzMjQ3MTc2MDUsMTkzMT
-UxNDM0MywxNjY2NzI4MDg1LC0xMTkzMzA1OTU3LC01MjQ2MjA1
-NDcsLTM4NDY1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4OV19
+eyJoaXN0b3J5IjpbLTIwMTc2ODc4MTMsMTMyNDcxNzYwNSwxOT
+MxNTE0MzQzLDE2NjY3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYy
+MDU0NywtMzg0NjU4ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX
+0=
 -->
