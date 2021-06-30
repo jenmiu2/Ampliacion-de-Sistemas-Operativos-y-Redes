@@ -117,14 +117,12 @@ int main(int argc, int argv*[]) {
 		exit(EXIT_FAILURE);
 	}
 	
-	if(flk.l_type == F_RDLCK) {
-		printf("modo lectura\n")
-		exit(EXIT_SUCCESS);
-	}
-	if(flk.l_type == F_WRLCK) {
+	if(flk.l_type == F_RDLCK || flk.l_type == F_WRLCK) {
 		exit(EXIT_SUCCESS);
 	}
 	if(flk.l_type == F_UNLCK) {
+		int 
+		sleep(30000);
 		exit(EXIT_SUCCESS);
 
 	}
@@ -150,6 +148,6 @@ Escribir un programa que cumpla las siguientes especificaciones:
 
 - Al final de la lista el programa escribirá el tamaño total que ocupan los ficheros (no directorios) en kilobytes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQxMjkyNzA5LDE5MDI0OTk1NDIsMTc4NT
-c0NTA2MV19
+eyJoaXN0b3J5IjpbMTI1NTg5MTg1OSwxOTAyNDk5NTQyLDE3OD
+U3NDUwNjFdfQ==
 -->
