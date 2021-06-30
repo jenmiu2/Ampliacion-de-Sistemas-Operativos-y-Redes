@@ -403,7 +403,7 @@ Crear un servidor TCP de eco que escuche por conexiones entrantes en una direcci
 	                         service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
 	              nread = recv(sc, buf, sizeof(buf), 0);
 	              buf[nread] = '\0';
-	              send(peer_addr, buf, nread, 0);
+	              send(ac, buf, nread, 0);
 	         }
 	         else {
 	             fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
@@ -497,7 +497,8 @@ Ejemplo:
 	                  "Ignoring long message in argument %d\n", j);
 	          continue;
 	      }     
-	      nread = recv(peer_addr, );
+	      nread = recv(sfd, buf, BUF_SIZE, 0);
+	      b
 		  if(buf == 'Q') {
 				EXIT(EXIT_SUCCESS);
 		  }
@@ -513,7 +514,7 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUwMDE4MTA3NCwtMTMwMzk4MjQyOSwxNT
-I0NjY2NzA2LDExMDk0MTI0NzgsMjMyNTg2OTU0LC0xMTU1ODc5
-MTU2XX0=
+eyJoaXN0b3J5IjpbLTQwMTE3MzM4MSwxNTAwMTgxMDc0LC0xMz
+AzOTgyNDI5LDE1MjQ2NjY3MDYsMTEwOTQxMjQ3OCwyMzI1ODY5
+NTQsLTExNTU4NzkxNTZdfQ==
 -->
