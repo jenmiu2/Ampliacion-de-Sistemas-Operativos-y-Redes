@@ -200,12 +200,12 @@ int main(int argc, int argv*[]) {
 	}
 
 	do {
-
-	}while(retval )
+		FD_ZERO()
+	}while(retval != NO_ERROR);
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYyNjA5MzQyNywxOTMxNTE0MzQzLDE2Nj
+eyJoaXN0b3J5IjpbMTM5ODE2NDQ3MiwxOTMxNTE0MzQzLDE2Nj
 Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
 ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
