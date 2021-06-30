@@ -36,6 +36,7 @@ Para la comunicación bi-direccional, es necesario crear dos tuberías, una para
 #define OK_FORK 0
 #define KO_FORK -1
 #define errorexit() do{ printf("ERROR(%d): %s\n", errno, sterror(errno));}; while(0)
+
 int main(int argc, int argv*[]) {
 	int tuberia[2];
 	pid_t pid;
@@ -83,6 +84,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM4NDY1ODgxMCwtMzA1MjQzNDEwLDQxMj
-YyMzQ4OV19
+eyJoaXN0b3J5IjpbLTE3Njg4NzQzODAsLTM4NDY1ODgxMCwtMz
+A1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
