@@ -198,7 +198,7 @@ Ejemplo:
 			}
 	        if(buf == 'q') {
 		        freeaddrinfo(result);
-		        //acabar el programa
+		        EXIT(EXIT_SUCCESS);
 			}
          }
          else {
@@ -250,6 +250,6 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI4NjgxOTU3OCwyMzI1ODY5NTQsLTExNT
-U4NzkxNTZdfQ==
+eyJoaXN0b3J5IjpbNzUxMzQ3MDAsMjMyNTg2OTU0LC0xMTU1OD
+c5MTU2XX0=
 -->
