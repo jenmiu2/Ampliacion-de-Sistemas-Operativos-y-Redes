@@ -191,6 +191,7 @@ int fd_available(int fd1, int fd2, fd_set &rfds) {
 int main(int argc, int argv*[]) {
 	char pathname1 = "pìpe1.txt";
 	char pathname2 = "pìpe2.txt";
+	char buff[SIZE];
 	int fd1, fd2, retval, fd, readbytes;
 	fd_set rfds;
 	struct timeval tv;
@@ -217,15 +218,17 @@ int main(int argc, int argv*[]) {
 		}
 		
 		if(retval == NO_ERROR) {
-		fd = fd_available(fd1, fd2, max)
-			while((readbytes = read() > 0) {}
+		fd = fd_available(fd1, fd2, &rfds); 
+			while((readbytes = read(fd, buff, SIZE) > 0) {
+				buff[readbytes] = '\'
+			}
 		}
 		
 	}while(retval != ERROR);
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTUwMjE5MjU3NCwxOTMxNTE0MzQzLDE2Nj
+eyJoaXN0b3J5IjpbLTQxNTcyOTI2NCwxOTMxNTE0MzQzLDE2Nj
 Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
 ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
