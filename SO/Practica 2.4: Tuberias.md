@@ -27,7 +27,8 @@ Para la comunicación bi-direccional, es necesario crear dos tuberías, una para
 
 - El hijo leerá de la tubería p_h, escribirá el mensaje por la salida estándar y esperará 1 segundo. Entonces, enviará el carácter ‘l’ al proceso padre, escribiéndolo en la tubería h_p, para indicar que está listo. Después de 10 mensajes enviará el carácter ‘q’ para indicar al padre que finalice.
 
-
+```c
+```
 # Tuberias con nombre
 Las tuberías con nombre son un mecanismo de comunicación unidireccional, con acceso de tipo FIFO, útil para procesos sin relación de parentesco. La gestión de las tuberías con nombre es igual a la de un archivo ordinario (open, write, read…). Revisar la información en fifo(7).
 
@@ -36,6 +37,8 @@ Usar la orden mkfifo para crear una tubería con nombre. Usar las herramientas d
 ### Ejercicio 4
 
 Escribir un programa que abra la tubería con el nombre anterior en modo sólo escritura, y escriba en ella el primer argumento del programa. En otro terminal, leer de la tubería usando un comando adecuado.
+```c
+```
 # Multiplexación síncrona de entrada/salida
 
 Es habitual que un proceso lea o escriba de diferentes flujos. La llamada select(2) permite multiplexar las diferentes operaciones de E/S sobre múltiples flujos.
@@ -53,5 +56,5 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5ODczNDY5OTYsNDEyNjIzNDg5XX0=
+eyJoaXN0b3J5IjpbLTIwNjkzNzMwMDIsNDEyNjIzNDg5XX0=
 -->
