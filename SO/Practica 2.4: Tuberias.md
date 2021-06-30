@@ -180,11 +180,14 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 int main(int argc, int argv*[]) {
 	char pathname = "pìpe.txt"
-
+	int fd, writebytes;
+	if(mkfifo(pathname, 0777) < NO_ERROR) {
+		errnoexit();
+	}
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY1MTc0NzY5MywxNjY2NzI4MDg1LC0xMT
-kzMzA1OTU3LC01MjQ2MjA1NDcsLTM4NDY1ODgxMCwtMzA1MjQz
-NDEwLDQxMjYyMzQ4OV19
+eyJoaXN0b3J5IjpbNzY3ODY3NzIxLDE2NjY3MjgwODUsLTExOT
+MzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4ODEwLC0zMDUyNDM0
+MTAsNDEyNjIzNDg5XX0=
 -->
