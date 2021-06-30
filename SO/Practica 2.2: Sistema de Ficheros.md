@@ -117,9 +117,16 @@ int main(int argc, int argv*[]) {
 		exit(EXIT_FAILURE);
 	}
 	
-	if(flk.l_type == F_RDLK) {}
-	if() {}
-	if() {}
+	if(flk.l_type == F_RDLCK) {
+		exit(EXIT_);
+	}
+	if(flk.l_type == F_WRLCK) {
+		exit(EXIT_FAILURE);
+	}
+	if(flk.l_type == F_UNLCK) {
+		exit(EXIT_FAILURE);
+
+	}
 }
 ```
 ### Ejercicio 17
@@ -142,6 +149,6 @@ Escribir un programa que cumpla las siguientes especificaciones:
 
 - Al final de la lista el programa escribirá el tamaño total que ocupan los ficheros (no directorios) en kilobytes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NDIzMDcwNzcsMTkwMjQ5OTU0MiwxNz
-g1NzQ1MDYxXX0=
+eyJoaXN0b3J5IjpbLTgzNDM4MzYxMywxOTAyNDk5NTQyLDE3OD
+U3NDUwNjFdfQ==
 -->
