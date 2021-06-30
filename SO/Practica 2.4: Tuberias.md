@@ -51,7 +51,8 @@ int main(int argc, int argv*[]) {
 	}
 	else {
 	/*padre: El padre leerá de la entrada estándar (terminal) y enviará el mensaje al proceso hijo, escribiéndolo en la tubería p_h. Entonces permanecerá bloqueado esperando la confirmación por parte del hijo en la otra tubería, h_p.*/
-
+		int fd_parent = open();
+		dup2();
 	}
 	
 
@@ -85,6 +86,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjgwNDY0MjksLTM4NDY1ODgxMCwtMz
-A1MjQzNDEwLDQxMjYyMzQ4OV19
+eyJoaXN0b3J5IjpbMTI0Njk1MzcxMywtMzg0NjU4ODEwLC0zMD
+UyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
