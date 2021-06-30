@@ -113,6 +113,7 @@ Después de despertar de sleep(3), el proceso debe informar de si recibió la se
 #include <sys/types.h>
 #include <signal.h>
 
+#define errexit(msg) do{perror()}; while(0)
 void handler() {
 
 }
@@ -143,7 +144,7 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODgyOTQ2LC0xNjY4MzgzODkxLC0zMD
+eyJoaXN0b3J5IjpbMzI0MzMxMzgyLC0xNjY4MzgzODkxLC0zMD
 IxNzUyMDEsLTExMTY3ODk2MTIsLTc3MTI4MjE5MCwtMTI1MDIw
 OTcyXX0=
 -->
