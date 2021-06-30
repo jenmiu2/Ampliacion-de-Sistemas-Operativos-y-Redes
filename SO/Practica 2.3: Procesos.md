@@ -157,8 +157,7 @@ int main(int argc, int argv*[]) {
 	sigset_t blk, pending_blk;
 	
 	sigemptyset(&blk);
-	sigaddset(&blk, SIGINT);
-	sigaddset(&blk, SIGTSTP);
+	sigaddset(&blk, SIGUSR1);
 
 	sigprocmask(SIG_BLOCK, &blk, NULL);
 	
@@ -167,20 +166,13 @@ int main(int argc, int argv*[]) {
 	
 	sleep(sleep_sec);
 	
-	sigpending(&pending_blk);
-	if(sigismember(&pending_blk, SIGINT) == 1 || sigismember(&pending_blk, SIGTSTP) == 1) {
-		printf("Se ha recibido la señal SIGINT o SIGTSTP");
-	}
-	else {
-		printf("No se ha recibido la señal SIGINT o SIGTSTP");
-	}
 	sigprocmask(SIG_UNBLOCK, &set, NULL);
 }
 ```
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwMjM0OTkwNTgsLTE2NjgzODM4OTEsLT
+eyJoaXN0b3J5IjpbLTEwNjk0NDc5MzAsLTE2NjgzODM4OTEsLT
 MwMjE3NTIwMSwtMTExNjc4OTYxMiwtNzcxMjgyMTkwLC0xMjUw
 MjA5NzJdfQ==
 -->
