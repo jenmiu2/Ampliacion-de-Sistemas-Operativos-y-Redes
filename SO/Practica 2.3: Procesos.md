@@ -59,12 +59,17 @@ int main(int argc, int argv*[]) {
 		umask(0);
 		sid = setsid();
 		if(chdir("/tmp")) < 0) {
-		
+			printf("ERROR(%d): %s", errno, strerror);
+			EXIT(EXIT_FAILURE);
 		}
+		sleep(3);
 	}
 }
 ```
-
+1. ¿Qué sucede si el proceso padre termina antes que el hijo (observar el PPID del proceso hijo)? 
+	La ejecución es correcta.
+2. ¿Y si el proceso que termina antes es el hijo (observar el estado del proceso hijo con ps)?
+	El proceso hijo se convier
 **Nota:** Usar sleep(3) o pause(3) para forzar el orden de finalización deseado.
 
 # Ejecución de programas
@@ -107,6 +112,6 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA2NjU0NTgxNywtNzcxMjgyMTkwLC0xMj
-UwMjA5NzJdfQ==
+eyJoaXN0b3J5IjpbMzA2MjE0NTc1LC03NzEyODIxOTAsLTEyNT
+AyMDk3Ml19
 -->
