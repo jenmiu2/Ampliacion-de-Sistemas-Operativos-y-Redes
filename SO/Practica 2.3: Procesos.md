@@ -36,6 +36,10 @@ Escribir un programa que muestre los identificadores del proceso: identificador 
 Un demonio es un proceso que se ejecuta en segundo plano para proporcionar un servicio. Normalmente, un demonio está en su propia sesión y grupo. Para garantizar que es posible crear la sesión y el grupo, el demonio crea un nuevo proceso para ejecutar la lógica del servicio y crear la nueva sesión. Escribir una plantilla de demonio (creación del nuevo proceso y de la sesión) en el que únicamente se muestren los atributos del proceso (como en el ejercicio anterior). Además, fijar el directorio de trabajo del demonio a /tmp.
 ¿Qué sucede si el proceso padre termina antes que el hijo (observar el PPID del proceso hijo)? ¿Y si el proceso que termina antes es el hijo (observar el estado del proceso hijo con ps)?
 
+```c
+
+```
+
 **Nota:** Usar sleep(3) o pause(3) para forzar el orden de finalización deseado.
 
 # Ejecución de programas
@@ -78,5 +82,5 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyNTAyMDk3Ml19
+eyJoaXN0b3J5IjpbMjEwMDUzMjU1OSwtMTI1MDIwOTcyXX0=
 -->
