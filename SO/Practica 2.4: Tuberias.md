@@ -225,6 +225,7 @@ int main(int argc, int argv*[]) {
 		FD_ZERO(&rfds);
 		FD_SET(0,&rfds);
 		tv = (timeval) {.tv_sec = 5, tv_usec = 0};
+		
 		if((retval = select(max(fd1, fd2) + 1, &rfds, NULL, NULL, &tv)) == -1) {
 			errnoexit();
 		}
@@ -232,20 +233,22 @@ int main(int argc, int argv*[]) {
 		if(retval == NO_ERROR) {
 		struct selectpipe select;
 		select = fd_available(fd1, fd2, &rfds); 
-			while((readbytes = read(select.fd, buff, SIZE) > 0) {
+		
+		while((readbytes = read(select.fd, buff, SIZE) > 0) {
 				buff[readbytes] = '\0';
 				printf("pipe: %s\n", select.pathname);
 			}
 		}
+		
 		close(select.fd);
-		if(open(pathname2, O_RDONLY | O_NONBLOCK)) < NO_ERROR) {
+		if(open(select.pathname, O_RDONLY | O_NONBLOCK)) < NO_ERROR) {
 			errnoexit();
 		}
 	}while(retval != ERROR);
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODM0MzYwMiwxOTMxNTE0MzQzLDE2Nj
+eyJoaXN0b3J5IjpbMTgxODgzNTc3NiwxOTMxNTE0MzQzLDE2Nj
 Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
 ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
