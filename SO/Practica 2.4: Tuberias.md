@@ -23,8 +23,7 @@ Probar el funcionamiento con una sentencia similar a: ./ejercicio1 echo 12345 wc
 
 Para la comunicación bi-direccional, es necesario crear dos tuberías, una para cada sentido: p_h y h_p. Escribir un programa que implemente el mecanismo de sincronización de parada y espera:
 
-- El padre leerá de la entrada estándar (terminal) y enviará el mensaje al proceso hijo, escribiéndolo en la tubería p_h. Entonces permanecerá bloqueado esperando la confirmación por parte del hijo en la otra tubería, h_p.
-
+-   El padre leerá de la entrada estándar (terminal) y enviará el mensaje al proceso hijo, escribiéndolo en la tubería p_h. Entonces permanecerá bloqueado esperando la confirmación por parte del hijo en la otra tubería, h_p.
 - El hijo leerá de la tubería p_h, escribirá el mensaje por la salida estándar y esperará 1 segundo. Entonces, enviará el carácter ‘l’ al proceso padre, escribiéndolo en la tubería h_p, para indicar que está listo. Después de 10 mensajes enviará el carácter ‘q’ para indicar al padre que finalice.
 
 ```c
@@ -37,6 +36,7 @@ Para la comunicación bi-direccional, es necesario crear dos tuberías, una para
 #define KO_FORK -1
 #define errorexit() do{ printf("ERROR(%d): %s\n", errno, sterror(errno));}; while(0)
 #define MAX_SIZE 100
+
 int main(int argc, int argv*[]) {
 	int p_h[2]; //lectura padre: 0, escritura hijo: 1
 	int h_p[2]; //escritura padre: 1, lectura hijo: 0
@@ -52,8 +52,9 @@ int main(int argc, int argv*[]) {
 	/*hijo: El hijo leerá de la tubería p_h, escribirá el mensaje por la salida estándar y esperará 1 segundo. Entonces, enviará el carácter ‘l’ al proceso padre, escribiéndolo en la tubería h_p, para indicar que está listo. Después de 10 mensajes enviará el carácter ‘q’ para indicar al padre que finalice.*/
 		close(h_p[1]);
 		while((readbytes = read(p_h[0], &chr, MAX_SIZE)) > 0) {
-			write(STDOUT_FILENO, &chr, MAX_SIZE);
+			printf()
 		}
+		
 		sleep(1000); /*1 segundo*/
 	}
 	else {
@@ -100,6 +101,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc0NDYwOTY0MCwtMzg0NjU4ODEwLC0zMD
+eyJoaXN0b3J5IjpbLTgxNzA1MDk5MSwtMzg0NjU4ODEwLC0zMD
 UyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
