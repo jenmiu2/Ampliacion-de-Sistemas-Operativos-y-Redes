@@ -64,12 +64,14 @@ int main(int argc, int argv*[]) {
 		}
 		sleep(3);
 	}
+	el
 }
 ```
 1. ¿Qué sucede si el proceso padre termina antes que el hijo (observar el PPID del proceso hijo)? 
 	La ejecución es correcta.
 2. ¿Y si el proceso que termina antes es el hijo (observar el estado del proceso hijo con ps)?
-	El proceso hijo se convier
+	El proceso hijo se convierte en un proceso zombie, sonde el nuevo identificador padre pertenece al SO.
+	 
 **Nota:** Usar sleep(3) o pause(3) para forzar el orden de finalización deseado.
 
 # Ejecución de programas
@@ -102,7 +104,9 @@ En un terminal, arrancar un proceso de larga duración (ej. sleep 600). En otra 
 Escribir un programa que bloquee las señales SIGINT y SIGTSTP. Después de bloquearlas el programa debe suspender su ejecución con sleep(3) un número de segundos que se obtendrán de la variable de entorno SLEEP_SECS.
 
 Después de despertar de sleep(3), el proceso debe informar de si recibió la señal SIGINT y/o SIGTSTP. En este último caso, debe desbloquearla con lo que el proceso se detendrá y podrá ser reanudado en la  _shell_  (imprimir una cadena antes de finalizar el programa para comprobar este comportamiento).
+```c
 
+```
 ### Ejercicio 12
 Escribir un programa que instale un manejador sencillo para las señales SIGINT y SIGTSTP. El manejador debe contar las veces que ha recibido cada señal. El programa principal permanecerá en un bucle que se detendrá cuando se hayan recibido 10 señales. El número de señales de cada tipo se mostrará al finalizar el programa.
 
@@ -112,6 +116,6 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzA2MjE0NTc1LC03NzEyODIxOTAsLTEyNT
+eyJoaXN0b3J5IjpbMjI1OTMwNzIzLC03NzEyODIxOTAsLTEyNT
 AyMDk3Ml19
 -->
