@@ -170,14 +170,14 @@ int main(int argc, int argv*[]) {
 		sigsuspend(&blk);
 	}
 	else {
-		remove(argv[1]);
+		rmdir(argv[1]);
 	}
 }
 ```
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NzQ4NTYzNyw0NDMxOTY1OTYsLTE2OD
+eyJoaXN0b3J5IjpbMTA5NDg5ODA3MSw0NDMxOTY1OTYsLTE2OD
 k4OTkxMDUsLTE2NDg4OTY3NjgsLTk1NDI4MDk2MCwtMTA2OTQ0
 NzkzMCwtMTY2ODM4Mzg5MSwtMzAyMTc1MjAxLC0xMTE2Nzg5Nj
 EyLC03NzEyODIxOTAsLTEyNTAyMDk3Ml19
