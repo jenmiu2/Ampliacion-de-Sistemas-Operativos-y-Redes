@@ -92,6 +92,9 @@ Ejemplo:
 
 **Nota:** El servidor no envía ‘\n’, por lo que se muestra la respuesta y el siguiente comando (en negrita en el ejemplo) en la misma línea.
 ```c
+**#include <sys/types.h>**
+       **#include <sys/socket.h>**
+       **#include <netdb.h>**
 ```
 
 ### Ejercicio 3
@@ -135,5 +138,5 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMxMTgxMDY0OSwtMTE1NTg3OTE1Nl19
+eyJoaXN0b3J5IjpbMzU1MTk4MjQxLC0xMTU1ODc5MTU2XX0=
 -->
