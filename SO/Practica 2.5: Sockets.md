@@ -218,7 +218,6 @@ Escribir el cliente para el servidor de hora. El cliente recibirá como argument
 Modificar el servidor para que, además de poder recibir comandos por red, los pueda recibir directamente por el terminal, leyendo dos caracteres (el comando y ‘\n’) de la entrada estándar. Multiplexar el uso de ambos canales usando select(2).
 
 ```c
-
  #include <sys/types.h>
  #include <stdio.h>
  #include <stdlib.h>
@@ -239,94 +238,83 @@ int max(int fd1, int fd2) {
 	return (fd1 >= fd2 ? fd1 : fd2);
 }
 
-int fd_available(fd_set rfds) {
-	return (IF_ISSET(pipesdetails[0].fd, &rfds) ? 0 : 1;
+int fd_available(int fd, fd_set rfds) {
+	return (IF_ISSET(fd, &rfds) ? 0 : 1;
 }
+int main(int argc, char *argv[]) {
+    struct addrinfo hints;
+    struct addrinfo *result, *rp;
+    int sfd, s;
+    struct sockaddr_storage peer_addr;
+    socklen_t peer_addr_len;
+    ssize_t nread;
+    char buf[BUF_SIZE];
+ 
+    if (argc != 2) {
+        fprintf(stderr, "Usage: port %s\n", argv[0]);
+        exit(EXIT_FAILURE);
+    }
 
-int initpipe(char *pathname) {
-	int fd;
-	if(mkfifo(pathname, 0777) < NO_ERROR) {
-		errnoexit();
-	}
-	if(fd = open(pathname, O_RDONLY | O_NONBLOCK)) < NO_ERROR) {
-		errnoexit();
-	}
-	return fd;
-}
- int main(int argc, char *argv[]) {
-     struct addrinfo hints;
-     struct addrinfo *result, *rp;
-     int sfd, s;
-     struct sockaddr_storage peer_addr;
-     socklen_t peer_addr_len;
-     ssize_t nread;
-     char buf[BUF_SIZE];
-	 
-     if (argc != 2) {
-         fprintf(stderr, "Usage: port %s\n", argv[0]);
-         exit(EXIT_FAILURE);
-     }
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_family = AF_UNSPEC;    /* Allow IPv4 or IPv6 */
+    hints.ai_socktype = SOCK_DGRAM; /* Datagram socket */
+    hints.ai_flags = AI_PASSIVE;    /* For wildcard IP address */
+    hints.ai_protocol = 0;          /* Any protocol */
+    hints.ai_canonname = NULL;
+    hints.ai_addr = NULL;
+    hints.ai_next = NULL;
 
-     memset(&hints, 0, sizeof(hints));
-     hints.ai_family = AF_UNSPEC;    /* Allow IPv4 or IPv6 */
-     hints.ai_socktype = SOCK_DGRAM; /* Datagram socket */
-     hints.ai_flags = AI_PASSIVE;    /* For wildcard IP address */
-     hints.ai_protocol = 0;          /* Any protocol */
-     hints.ai_canonname = NULL;
-     hints.ai_addr = NULL;
-     hints.ai_next = NULL;
+    s = getaddrinfo(NULL, argv[2], &hints, &result);
+    if (s != 0) {
+        fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(s));
+        exit(EXIT_FAILURE);
+    }
 
-     s = getaddrinfo(NULL, argv[2], &hints, &result);
-     if (s != 0) {
-         fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(s));
-         exit(EXIT_FAILURE);
-     }
+    /* getaddrinfo() returns a list of address structures.
+       Try each address until we successfully bind(2).
+       If socket(2) (or bind(2)) fails, we (close the socket
+       and) try the next address. */
 
-     /* getaddrinfo() returns a list of address structures.
-        Try each address until we successfully bind(2).
-        If socket(2) (or bind(2)) fails, we (close the socket
-        and) try the next address. */
+    for (rp = result; rp != NULL; rp = rp->ai_next) {
+        sfd = socket(rp->ai_family, rp->ai_socktype,
+                rp->ai_protocol);
+        if (sfd == -1)
+            continue;
 
-     for (rp = result; rp != NULL; rp = rp->ai_next) {
-         sfd = socket(rp->ai_family, rp->ai_socktype,
-                 rp->ai_protocol);
-         if (sfd == -1)
-             continue;
+        if (bind(sfd, rp->ai_addr, rp->ai_addrlen) == 0)
+            break;                  /* Success */
 
-         if (bind(sfd, rp->ai_addr, rp->ai_addrlen) == 0)
-             break;                  /* Success */
+        close(sfd);
+    }
 
-         close(sfd);
-     }
+    freeaddrinfo(result);           /* No longer needed */
 
-     freeaddrinfo(result);           /* No longer needed */
+    if (rp == NULL) {               /* No address succeeded */
+        fprintf(stderr, "Could not bind\n");
+        exit(EXIT_FAILURE);
+    }
 
-     if (rp == NULL) {               /* No address succeeded */
-         fprintf(stderr, "Could not bind\n");
-         exit(EXIT_FAILURE);
-     }
+    /* Read datagrams and echo them back to sender. */
 
-     /* Read datagrams and echo them back to sender. */
+    for (;;) {
+        peer_addr_len = sizeof(peer_addr);
+        nread = recvfrom(sfd, buf, BUF_SIZE, 0,
+                (struct sockaddr *) &peer_addr, &peer_addr_len);
+        if (nread == -1)
+            continue;               /* Ignore failed request */
 
-     for (;;) {
-         peer_addr_len = sizeof(peer_addr);
-         nread = recvfrom(sfd, buf, BUF_SIZE, 0,
-                 (struct sockaddr *) &peer_addr, &peer_addr_len);
-         if (nread == -1)
-             continue;               /* Ignore failed request */
+        char host[NI_MAXHOST], service[NI_MAXSERV];
 
-         char host[NI_MAXHOST], service[NI_MAXSERV];
-
-         
-         if ((s = getnameinfo((struct sockaddr *) &peer_addr,
-                         peer_addr_len, host, NI_MAXHOST,
-                         service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
-			
-         }
-         else {
-             fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
+        
+        if ((s = getnameinfo((struct sockaddr *) &peer_addr,
+                        peer_addr_len, host, NI_MAXHOST,
+                        service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
+		/*ejecutar comando*/
+        }
+        else {
+            fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
 		}
-     }
+    }
  }
 ```
 ### Ejercicio 5
@@ -362,6 +350,6 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjI4OTA2NTEsMjMyNTg2OTU0LC0xMTU1OD
-c5MTU2XX0=
+eyJoaXN0b3J5IjpbLTExMDkyMDY5MywyMzI1ODY5NTQsLTExNT
+U4NzkxNTZdfQ==
 -->
