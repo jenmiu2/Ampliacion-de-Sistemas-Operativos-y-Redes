@@ -103,7 +103,7 @@ Ejemplo:
  #include <time.h>
  struct tm *tmp;
  
- #define exitaddr() do{ printf("ERROR(%d): %d\n", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0)
+ #define errorexit() do{ printf("ERROR(%d): %d\n", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0)
  #define BUF_SIZE 500
 
  int main(int argc, char *argv[]) {
@@ -177,9 +177,14 @@ Ejemplo:
                          peer_addr_len, host, NI_MAXHOST,
                          service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
 			t = time(NULL);
-			if((tmp = localtime(&t)) )
+			if((tmp = localtime(&t)) == NULL){
+				errorexit();
+			}
 			if(buf == 't') {
-				
+				if (strftime(outstr, sizeof(outstr), argv[1], tmp) == 0) {
+        fprintf(stderr, "strftime returned 0");
+        exit(EXIT_FAILURE);
+    }
 			}
 			if(buf == 'd') {
 			}
@@ -240,6 +245,6 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5NzY5NzgzNCwyMzI1ODY5NTQsLTExNT
+eyJoaXN0b3J5IjpbLTI3Nzk3MTk5MSwyMzI1ODY5NTQsLTExNT
 U4NzkxNTZdfQ==
 -->
