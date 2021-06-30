@@ -42,7 +42,9 @@ int main(int argc, int argv* []) {
 		errorexit();
 	}
 	else {
-		/*padre*/
+		/*padreEl proceso padre redireccionará la salida estándar al extremo de escritura de la tubería y ejecutará comando1 argumento1*/
+		close(fd[0]);
+		
 	}
 }
 ```
@@ -137,6 +139,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQwNDIzMTIxLC01MjQ2MjA1NDcsLTM4ND
+eyJoaXN0b3J5IjpbOTY2MTgzNjIzLC01MjQ2MjA1NDcsLTM4ND
 Y1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
