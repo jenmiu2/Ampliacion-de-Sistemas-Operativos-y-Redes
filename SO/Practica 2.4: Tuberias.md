@@ -36,7 +36,7 @@ Para la comunicación bi-direccional, es necesario crear dos tuberías, una para
 int main(int argc, int argv*[]) {
 	int tuberia[2];
 
-
+	
 
 
 }
@@ -68,5 +68,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwNTI0MzQxMCw0MTI2MjM0ODldfQ==
+eyJoaXN0b3J5IjpbODc4NjEyMDU0LC0zMDUyNDM0MTAsNDEyNj
+IzNDg5XX0=
 -->
