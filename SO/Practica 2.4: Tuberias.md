@@ -40,6 +40,7 @@ Para la comunicación bi-direccional, es necesario crear dos tuberías, una para
 int main(int argc, int argv*[]) {
 	int p_h[2]; //lectura padre: 0, escritura hijo: 1
 	int h_p[2]; //escritura padre: 1, lectura hijo: 0
+	int readbytes;
 	pid_t pid;
 	char chr[MAX_SIZE];
 	
@@ -50,8 +51,9 @@ int main(int argc, int argv*[]) {
 	else if(pid == OK_FORK) {
 	/*hijo: El hijo leerá de la tubería p_h, escribirá el mensaje por la salida estándar y esperará 1 segundo. Entonces, enviará el carácter ‘l’ al proceso padre, escribiéndolo en la tubería h_p, para indicar que está listo. Después de 10 mensajes enviará el carácter ‘q’ para indicar al padre que finalice.*/
 		close(h_p[1]);
-		print();
-		sleep();
+		while(readbytes = read() ) {
+		}
+		sleep(1000); /*1 segundo*/
 	}
 	else {
 	
@@ -97,6 +99,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTMzNjc2NzQ0LC0zODQ2NTg4MTAsLTMwNT
-I0MzQxMCw0MTI2MjM0ODldfQ==
+eyJoaXN0b3J5IjpbLTE1MzQ0NDIzOTAsLTM4NDY1ODgxMCwtMz
+A1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
