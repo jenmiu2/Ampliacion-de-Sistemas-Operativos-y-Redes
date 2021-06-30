@@ -52,12 +52,12 @@ int main(int argc, int argv*[]) {
 	else if(pid == OK_FORK) {
 	/*hijo: El hijo leerá de la tubería p_h, escribirá el mensaje por la salida estándar y esperará 1 segundo. Entonces, enviará el carácter ‘l’ al proceso padre, escribiéndolo en la tubería h_p, para indicar que está listo. Después de 10 mensajes enviará el carácter ‘q’ para indicar al padre que finalice.*/
 		close(h_p[1]);
-		while((readbytes = read(p_h[0], &chr, MAX_SIZE)) > 0) {
+		while((readbytes = read(p_h[0], &chr, 1)) > 0) {
 			printf("%s", chr);
 		}
 		printf("\n");
 		sleep(1000); /*1 segundo*/
-		
+		write(h_p[])
 	}
 	else {
 	
@@ -103,6 +103,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMTQ4NzY1MTAsLTM4NDY1ODgxMCwtMz
+eyJoaXN0b3J5IjpbLTEzNDM0NTk3NTAsLTM4NDY1ODgxMCwtMz
 A1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
