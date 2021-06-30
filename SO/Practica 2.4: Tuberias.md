@@ -180,7 +180,9 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 #define ERROR -1
 #define SIZE 256
 
-int max 
+int max(int fd1, int fd2) {
+	return (fd1 >= fd2 ? fd1 : num2);
+}
 int main(int argc, int argv*[]) {
 	char pathname1 = "pìpe1.txt";
 	char pathname2 = "pìpe2.txt";
@@ -214,7 +216,7 @@ int main(int argc, int argv*[]) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ2MjkxNTc1MiwxOTMxNTE0MzQzLDE2Nj
+eyJoaXN0b3J5IjpbLTU0NTE1ODg0NCwxOTMxNTE0MzQzLDE2Nj
 Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
 ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
