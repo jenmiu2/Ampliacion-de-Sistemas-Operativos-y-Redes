@@ -151,22 +151,18 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 
 #define errnoexit() do{printf("ERROR(%d): %s", errno, strerror(errno)); EXIT(EXIT_FAILURE);};while(0)
 
-void handler(int signum) {
-	if(signum == SIGUSR1) {
-		print("recivido SIGUSR1\n");
-	}
-}
-
 int main(int argc, int argv*[]) {
 	sigset_t blk;
 	struct sigaction sigact;
+
+	
 	sigemptyset(&blk);
 	sigaddset(&blk, SIGUSR1);
 	
 	sigemptyset(&sigact);
-	sigact = (sigaction) {.sa_flags = SA_SIGINFO, sa_handler = handler};
+	sigact = (sigaction) {.sa_flags = SA_SIGINFO};
 	
-	int sleep_sec = atoi(arg);
+	int sleep_sec = atoi(argv[2]);
 	
 	sleep(sleep_sec);
 	
@@ -181,8 +177,8 @@ int main(int argc, int argv*[]) {
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0ODE3NTgxOCwtMTY4OTg5OTEwNSwtMT
-Y0ODg5Njc2OCwtOTU0MjgwOTYwLC0xMDY5NDQ3OTMwLC0xNjY4
-MzgzODkxLC0zMDIxNzUyMDEsLTExMTY3ODk2MTIsLTc3MTI4Mj
-E5MCwtMTI1MDIwOTcyXX0=
+eyJoaXN0b3J5IjpbNDQzMTk2NTk2LC0xNjg5ODk5MTA1LC0xNj
+Q4ODk2NzY4LC05NTQyODA5NjAsLTEwNjk0NDc5MzAsLTE2Njgz
+ODM4OTEsLTMwMjE3NTIwMSwtMTExNjc4OTYxMiwtNzcxMjgyMT
+kwLC0xMjUwMjA5NzJdfQ==
 -->
