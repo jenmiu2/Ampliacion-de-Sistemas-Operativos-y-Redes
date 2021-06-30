@@ -44,6 +44,7 @@ Un demonio es un proceso que se ejecuta en segundo plano para proporcionar un se
 #define KO_FORK -1
 
 #define errnoexit() do{printf("ERROR(%d): %s", errno, strerror(errno)); EXIT(EXIT_FAILURE);};while(0)
+
 void printattr(pid_t pid) {
 	print("pid(), parent pid(), group pid(), sesion pid()", pid, getppid(), getpgid(pid), getsid(pid));
 }
@@ -148,6 +149,8 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 #include <sys/types.h>
 #include <signal.h>
 
+#define errnoexit() do{printf("ERROR(%d): %s", errno, strerror(errno)); EXIT(EXIT_FAILURE);};while(0)
+
 void handler(int signum) {
 	if(signum == SIGUSR1) {
 		print("recivido SIGUSR1\n");
@@ -173,8 +176,8 @@ int main(int argc, int argv*[]) {
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk5MDczMjAsLTE2ODk4OTkxMDUsLTE2ND
-g4OTY3NjgsLTk1NDI4MDk2MCwtMTA2OTQ0NzkzMCwtMTY2ODM4
-Mzg5MSwtMzAyMTc1MjAxLC0xMTE2Nzg5NjEyLC03NzEyODIxOT
-AsLTEyNTAyMDk3Ml19
+eyJoaXN0b3J5IjpbMzU0MzcyOTYzLC0xNjg5ODk5MTA1LC0xNj
+Q4ODk2NzY4LC05NTQyODA5NjAsLTEwNjk0NDc5MzAsLTE2Njgz
+ODM4OTEsLTMwMjE3NTIwMSwtMTExNjc4OTYxMiwtNzcxMjgyMT
+kwLC0xMjUwMjA5NzJdfQ==
 -->
