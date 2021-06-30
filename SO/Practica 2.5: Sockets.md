@@ -580,31 +580,17 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
     listen(sc, 10); //MAX ESCUCHA
     pid = getpid();
 	while(pid) {
+		int ac = accept(sc, (struct sockaddr *) &peer_addr, &peer_addr_len);
 		pid = fork();
 		 if(pid == NO_ERROR) {
 		 //hijo
 
 		}
-		else if() {
-		
+		else if(pid == ERROR) {
+		 continue;
 		}
 		else {
-
-		}
-		 
-      int ac = accept(sc, (struct sockaddr *) &peer_addr, &peer_addr_len);
-
-         for (;;) {
-	         if ((s = getnameinfo((struct sockaddr *) &peer_addr,
-	                         peer_addr_len, host, NI_MAXHOST,
-	                         service, NI_MAXSERV, NI_NUMERICSERV)) > 0) {
-	              nread = recv(sc, buf, sizeof(buf), 0);
-	              buf[nread] = '\0';
-	              send(ac, buf, nread, 0);
-	         }
-	         else {
-	             fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
-			}
+		//padre
 		}
      }
 
@@ -615,7 +601,7 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjE4ODYzMDMyLDE1MDAxODEwNzQsLTEzMD
+eyJoaXN0b3J5IjpbMzQ5ODU1NjI1LDE1MDAxODEwNzQsLTEzMD
 M5ODI0MjksMTUyNDY2NjcwNiwxMTA5NDEyNDc4LDIzMjU4Njk1
 NCwtMTE1NTg3OTE1Nl19
 -->
