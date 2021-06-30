@@ -39,7 +39,7 @@ Para la comunicación bi-direccional, es necesario crear dos tuberías, una para
 #define MAX_SIZE 100
 int main(int argc, int argv*[]) {
 	int p_h[2]; //lectura padre: 0, escritura hijo: 1
-	int h_p[2]; //escritura padre: 0, lectura hijo: 1
+	int h_p[2]; //escritura padre: 1, lectura hijo: 0
 	pid_t pid;
 	char chr[MAX_SIZE];
 	
@@ -57,7 +57,8 @@ int main(int argc, int argv*[]) {
 		/*lee terminal a tuberia p_h*/
 		close(p_h[0]);
 		scanf("%c", &chr);
-		write(h_p[0], chr, sizeof(chr));
+		write(h_p[1], chr, sizeof(chr));
+		close(h_p[1]);
 		/*bloq confirmacion hijo*/
 		
 		
@@ -94,6 +95,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExNDU2NTc4MDgsLTM4NDY1ODgxMCwtMz
-A1MjQzNDEwLDQxMjYyMzQ4OV19
+eyJoaXN0b3J5IjpbMTQxMzM5Njg2MywtMzg0NjU4ODEwLC0zMD
+UyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
