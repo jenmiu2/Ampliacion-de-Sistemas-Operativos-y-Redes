@@ -244,7 +244,7 @@ int main(int argc, char *argv[]) {
     struct sockaddr_storage peer_addr;
     socklen_t peer_addr_len;
     ssize_t nread;
-    char buf[BUF_SIZE];
+    char buf[BUF_SIZE], cmd;
 	int retval, readbytes, select;
 	fd_set rfds;
 	struct timeval tv;
@@ -324,6 +324,10 @@ int main(int argc, char *argv[]) {
 		            fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
 				}
 			}
+			else {
+				scanf("%c", cmd);
+				
+			}
     }
  }
 ```
@@ -360,6 +364,6 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzNjg2MDg2LDExMDk0MTI0NzgsMjMyNT
-g2OTU0LC0xMTU1ODc5MTU2XX0=
+eyJoaXN0b3J5IjpbMTUyNDY2NjcwNiwxMTA5NDEyNDc4LDIzMj
+U4Njk1NCwtMTE1NTg3OTE1Nl19
 -->
