@@ -77,8 +77,8 @@ Para la comunicación bi-direccional, es necesario crear dos tuberías, una para
 #define MAX_COUNT 10 /*valor maximo del contador de mensajes*/
 
 int main(int argc, int argv*[]) {
-	int p_h[2]; //lectura padre: 0, escritura hijo: 1
-	int h_p[2]; //escritura padre: 1, lectura hijo: 0
+	int p_h[2]; //padre -> hijo: p_l: 0, h_e: 1
+	int h_p[2]; //hijo -> padre: h_l: 0, p_e: 1
 	int readbytes, count_msg = 0;
 	pid_t pid;
 	char chr[MAX_SIZE];
@@ -146,6 +146,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMz
-g0NjU4ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
+eyJoaXN0b3J5IjpbLTQ4ODIwODg0NSwtMTE5MzMwNTk1NywtNT
+I0NjIwNTQ3LC0zODQ2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0
+ODldfQ==
 -->
