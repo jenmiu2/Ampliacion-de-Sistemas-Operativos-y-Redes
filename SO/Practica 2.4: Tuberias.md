@@ -179,8 +179,8 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 #define NO_ERROR 0
 #define ERROR -1
 #define SIZE 256
-#define pathname1 = "pìpe1.txt";
-#define pathname2 = "pìpe2.txt";
+#define pathname1 pìpe1.txt
+#define pathname2 pìpe2.txt
 
 struct pipedetail {
 	int fd;
@@ -249,10 +249,12 @@ int main(int argc, int argv*[]) {
 			errnoexit();
 		}
 	}while(retval != ERROR);
+	close(pipesdetails[0].fd);
+	close(pipesdetails[1].fd);
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM0MTMwNDQyMiwxOTMxNTE0MzQzLDE2Nj
+eyJoaXN0b3J5IjpbMTMyNDcxNzYwNSwxOTMxNTE0MzQzLDE2Nj
 Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
 ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
