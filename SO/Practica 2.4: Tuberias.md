@@ -123,6 +123,8 @@ Las tuberías con nombre son un mecanismo de comunicación unidireccional, con a
 
 ### Ejercicio 3
 Usar la orden mkfifo para crear una tubería con nombre. Usar las herramientas del sistema de ficheros (stat, ls…) para determinar sus propiedades. Comprobar su funcionamiento usando utilidades para escribir y leer de ficheros (ej. echo, cat, tee...).
+```c
+```
 ### Ejercicio 4
 
 Escribir un programa que abra la tubería con el nombre anterior en modo sólo escritura, y escriba en ella el primer argumento del programa. En otro terminal, leer de la tubería usando un comando adecuado.
@@ -145,7 +147,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NTE5Njc3MDYsLTExOTMzMDU5NTcsLT
-UyNDYyMDU0NywtMzg0NjU4ODEwLC0zMDUyNDM0MTAsNDEyNjIz
-NDg5XX0=
+eyJoaXN0b3J5IjpbMTE3Nzc4NDU1MywtMTE5MzMwNTk1NywtNT
+I0NjIwNTQ3LC0zODQ2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0
+ODldfQ==
 -->
