@@ -129,15 +129,17 @@ Usar la orden mkfifo para crear una tubería con nombre. Usar las herramientas d
 #include <stdlib.h>
 #include <errno.h>
 
-#define errnoexit do{printf("ERROR(%d): %s", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0) 
+#define errnoexit() do{printf("ERROR(%d): %s", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0) 
 #define NO_ERROR 0
 int main(int argc, int argv*[]) {
 	char pathname = "tub_name.txt"
-	
+	int fd;
 	if(mkfifo(pathname, 0777) < NO_ERROR) {
 		errnoexit();
 	}
-	
+	if((fd = open(pathname,O_WRONLY)) < NO_ERROR) {
+		errnoexit();
+	}
 }
 ```
 ### Ejercicio 4
@@ -162,7 +164,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3MTc2MjM3MzUsLTExOTMzMDU5NTcsLT
-UyNDYyMDU0NywtMzg0NjU4ODEwLC0zMDUyNDM0MTAsNDEyNjIz
-NDg5XX0=
+eyJoaXN0b3J5IjpbMTg2ODY0NTQxMCwtMTE5MzMwNTk1NywtNT
+I0NjIwNTQ3LC0zODQ2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0
+ODldfQ==
 -->
