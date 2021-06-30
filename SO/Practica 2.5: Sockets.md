@@ -184,23 +184,26 @@ Ejemplo:
 				if (strftime(buf, sizeof(buf), "%k", tmp) == 0) {
 			        errorexit();
 			    }
+			    if (sendto(sfd, buf, nread, 0,(struct sockaddr *) &peer_addr,peer_addr_len) != nread) {
+		            errorexit();
+	            }
 			}
 			if(buf == 'd') {
 				if (strftime(buf, sizeof(buf), "%j-%m-%y", tmp) == 0) {
 			        errorexit();
 			    }
+			    if (sendto(sfd, buf, nread, 0,(struct sockaddr *) &peer_addr,peer_addr_len) != nread) {
+             fprintf(stderr, "Error sending response\n");
+            }
 			}
 	        if(buf == 'q') {
+		        //liberar direccion
+		        //acabar el programa
 			}
          }
          else {
              fprintf(stderr, "getnameinfo: %s\n", gai_strerror(s));
-		 }
-         if (sendto(sfd, buf, nread, 0,
-                     (struct sockaddr *) &peer_addr,
-                     peer_addr_len) != nread) {
-             fprintf(stderr, "Error sending response\n");
-            }
+		}
      }
  }
 ```
@@ -247,6 +250,6 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYzOTQxMTAzOSwyMzI1ODY5NTQsLTExNT
+eyJoaXN0b3J5IjpbMTAwNzU1MzUyOSwyMzI1ODY5NTQsLTExNT
 U4NzkxNTZdfQ==
 -->
