@@ -397,7 +397,7 @@ Crear un servidor TCP de eco que escuche por conexiones entrantes en una direcci
     }
     listen(sc, 10); //MAX ESCUCHA
 	for (;;) {
-      int ac = accept(sc, (struct sockaddr *) );
+      int ac = accept(sc, (struct sockaddr *) &peer_addr, &peer_addr_len);
 
          
          if ((s = getnameinfo((struct sockaddr *) &peer_addr,
@@ -430,7 +430,7 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkwNjc2MTQ4OCwtMTMwMzk4MjQyOSwxNT
-I0NjY2NzA2LDExMDk0MTI0NzgsMjMyNTg2OTU0LC0xMTU1ODc5
-MTU2XX0=
+eyJoaXN0b3J5IjpbLTE4NTE1MTYwMTAsLTEzMDM5ODI0MjksMT
+UyNDY2NjcwNiwxMTA5NDEyNDc4LDIzMjU4Njk1NCwtMTE1NTg3
+OTE1Nl19
 -->
