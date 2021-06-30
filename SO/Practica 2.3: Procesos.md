@@ -62,9 +62,11 @@ int main(int argc, int argv*[]) {
 			printf("ERROR(%d): %s", errno, strerror);
 			EXIT(EXIT_FAILURE);
 		}
-		sleep(3);
+		printattr(pid);
 	}
-	el
+	else {
+		sleep(30000);
+	}
 }
 ```
 1. ¿Qué sucede si el proceso padre termina antes que el hijo (observar el PPID del proceso hijo)? 
@@ -116,6 +118,6 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjI1OTMwNzIzLC03NzEyODIxOTAsLTEyNT
-AyMDk3Ml19
+eyJoaXN0b3J5IjpbLTExMTY3ODk2MTIsLTc3MTI4MjE5MCwtMT
+I1MDIwOTcyXX0=
 -->
