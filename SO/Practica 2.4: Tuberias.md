@@ -38,7 +38,7 @@ Para la comunicación bi-direccional, es necesario crear dos tuberías, una para
 #define errorexit() do{ printf("ERROR(%d): %s\n", errno, sterror(errno));}; while(0)
 
 int main(int argc, int argv*[]) {
-	int tuberia[2];
+	int p_h[2], h_p[2];
 	pid_t pid;
 	
 	pid = fork();
@@ -47,9 +47,10 @@ int main(int argc, int argv*[]) {
 	}
 	else if(pid == OK_FORK) {
 	/*hijo*/
+		
 	}
 	else {
-	/*padre*/
+	/*padre: El padre leerá de la entrada estándar (terminal) y enviará el mensaje al proceso hijo, escribiéndolo en la tubería p_h. Entonces permanecerá bloqueado esperando la confirmación por parte del hijo en la otra tubería, h_p.*/
 
 	}
 	
@@ -84,6 +85,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Njg4NzQzODAsLTM4NDY1ODgxMCwtMz
+eyJoaXN0b3J5IjpbLTEzMjgwNDY0MjksLTM4NDY1ODgxMCwtMz
 A1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
