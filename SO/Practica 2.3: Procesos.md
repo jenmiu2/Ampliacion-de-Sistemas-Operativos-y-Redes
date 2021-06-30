@@ -43,6 +43,7 @@ Un demonio es un proceso que se ejecuta en segundo plano para proporcionar un se
 #define OK_FORK 0
 #define KO_FORK -1
 
+#define errnoexit do
 void printattr(pid_t pid) {
 	print("pid(), parent pid(), group pid(), sesion pid()", pid, getppid(), getpgid(pid), getsid(pid));
 }
@@ -113,8 +114,6 @@ Después de despertar de sleep(3), el proceso debe informar de si recibió la se
 #include <sys/types.h>
 #include <signal.h>
 
-#define errexit do{ printf("ERROR(%d):%s\n", errno, strerror(errno)); exit(EXIT_FAILURE)}; while(0)
-
 int main(int argc, int argv*[]) {
 	sigset_t blk, pending_blk;
 	
@@ -151,8 +150,6 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 #include <sys/types.h>
 #include <signal.h>
 
-#define errexit do{ printf("ERROR(%d):%s\n", errno, strerror(errno)); exit(EXIT_FAILURE)}; while(0)
-
 int main(int argc, int argv*[]) {
 	sigset_t blk, pending_blk;
 	
@@ -161,13 +158,13 @@ int main(int argc, int argv*[]) {
 
 	sigprocmask(SIG_BLOCK, &blk, NULL);
 	
-	char *sleep_sec_chr = getenv(argv[1]);
+	char *sleep_sec_chr = getenv(argv[2]);
 	int sleep_sec = atoi(sleep_sec_chr);
 	
 	sleep(sleep_sec);
 	sigpending(&pending_blk);
 	if(sigismember(&pending_blk, SIGUSR1) != 1) {
-		remove
+		remove(argv[1]);
 	}
 	sigprocmask(SIG_UNBLOCK, &set, NULL);
 }
@@ -175,7 +172,7 @@ int main(int argc, int argv*[]) {
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0NTQwMTA4MSwtMTA2OTQ0NzkzMCwtMT
+eyJoaXN0b3J5IjpbMTMzMzM5MzY5OCwtMTA2OTQ0NzkzMCwtMT
 Y2ODM4Mzg5MSwtMzAyMTc1MjAxLC0xMTE2Nzg5NjEyLC03NzEy
 ODIxOTAsLTEyNTAyMDk3Ml19
 -->
