@@ -683,8 +683,7 @@ Añadir la lógica necesaria en el servidor para que no quede ningún proceso en
 		 continue;
 		}
 		else {
-			
-			SIGCHLD 
+		
 		}
 		close(ac);
      }
@@ -692,7 +691,7 @@ Añadir la lógica necesaria en el servidor para que no quede ningún proceso en
  }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTAyOTAxMzg5LDE1MDAxODEwNzQsLTEzMD
-M5ODI0MjksMTUyNDY2NjcwNiwxMTA5NDEyNDc4LDIzMjU4Njk1
-NCwtMTE1NTg3OTE1Nl19
+eyJoaXN0b3J5IjpbLTkwNzY5Nzc3NSwxNTAwMTgxMDc0LC0xMz
+AzOTgyNDI5LDE1MjQ2NjY3MDYsMTEwOTQxMjQ3OCwyMzI1ODY5
+NTQsLTExNTU4NzkxNTZdfQ==
 -->
