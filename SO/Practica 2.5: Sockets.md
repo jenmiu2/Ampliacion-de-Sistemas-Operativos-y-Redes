@@ -237,8 +237,8 @@ int max(int fd1, int fd2) {
 	return (fd1 >= fd2 ? fd1 : fd2);
 }
 
-int fd_available(int fd, fd_set rfds) {
-	return (IF_ISSET(fd, &rfds) ? 0 : 1;
+int fd_available(int fd1, int fd2, fd_set rfds) {
+	return (IF_ISSET(fd, &rfds) ? fd1 : fd2;
 }
 
 int main(int argc, char *argv[]) {
@@ -249,7 +249,10 @@ int main(int argc, char *argv[]) {
     socklen_t peer_addr_len;
     ssize_t nread;
     char buf[BUF_SIZE];
- 
+	int retval, readbytes, select;
+	fd_set rfds;
+	struct timeval tv;
+	
     if (argc != 2) {
         fprintf(stderr, "Usage: port %s\n", argv[0]);
         exit(EXIT_FAILURE);
@@ -305,7 +308,14 @@ int main(int argc, char *argv[]) {
 			errnoexit();
 		}
 		
-
+		if(retval == NO_ERROR) {
+		select = fd_available(&rfds); 
+		
+		while((readbytes = read(pipesdetails[select].fd, buff, SIZE) > 0) {
+				buff[readbytes] = '\0';
+				printf("pipe: %s\n", select.pathname);
+			}
+		}
 
 		peer_addr_len = sizeof(peer_addr);
         nread = recvfrom(sfd, buf, BUF_SIZE, 0,
@@ -361,6 +371,6 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0MDAxOTMzNjQsMTEwOTQxMjQ3OCwyMz
+eyJoaXN0b3J5IjpbLTIwNzAwMzgwNzksMTEwOTQxMjQ3OCwyMz
 I1ODY5NTQsLTExNTU4NzkxNTZdfQ==
 -->
