@@ -102,8 +102,11 @@ Escribir un programa que consulte y muestre en pantalla el estado del cerrojo so
 int main(int argc, int argv*[]) {
 	struct flock flk;
 	
-	if (argc < 1) 
+	if (argc < 1) {
+		exit(EXIT_FAILURE);
+	}
 	
+	int fd = open(argv[1], O_CREAT | O_);
 	if (fcntl() < 0) {}
 	
 	
@@ -129,5 +132,5 @@ Escribir un programa que cumpla las siguientes especificaciones:
 
 - Al final de la lista el programa escribirá el tamaño total que ocupan los ficheros (no directorios) en kilobytes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM1MDA5Njg1LDE3ODU3NDUwNjFdfQ==
+eyJoaXN0b3J5IjpbLTE1NDQ1NzA0MDAsMTc4NTc0NTA2MV19
 -->
