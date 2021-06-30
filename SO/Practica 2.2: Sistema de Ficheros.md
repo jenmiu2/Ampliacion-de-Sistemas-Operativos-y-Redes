@@ -96,7 +96,7 @@ Escribir un programa que consulte y muestre en pantalla el estado del cerrojo so
 ```c
 #include <fcntl.h>
 #include <errno.h>
-#include <>
+#include <stdlib.h>
 #include <>
 
 int main(int argc, int argv*[]) {
@@ -118,13 +118,14 @@ int main(int argc, int argv*[]) {
 	}
 	
 	if(flk.l_type == F_RDLCK) {
-		exit(EXIT_);
+		printf("modo lectura\n")
+		exit(EXIT_SUCCESS);
 	}
 	if(flk.l_type == F_WRLCK) {
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 	}
 	if(flk.l_type == F_UNLCK) {
-		exit(EXIT_FAILURE);
+		exit(EXIT_SUCCESS);
 
 	}
 }
@@ -149,6 +150,6 @@ Escribir un programa que cumpla las siguientes especificaciones:
 
 - Al final de la lista el programa escribirá el tamaño total que ocupan los ficheros (no directorios) en kilobytes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTgzNDM4MzYxMywxOTAyNDk5NTQyLDE3OD
-U3NDUwNjFdfQ==
+eyJoaXN0b3J5IjpbMzQxMjkyNzA5LDE5MDI0OTk1NDIsMTc4NT
+c0NTA2MV19
 -->
