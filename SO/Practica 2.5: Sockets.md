@@ -606,7 +606,7 @@ Añadir la lógica necesaria en el servidor para que no quede ningún proceso en
  #include <string.h>
  #include <sys/socket.h>
  #include <netdb.h>
- #include <time.h>
+ #include <signal.h>
  
  #define errorexit() do{ printf("ERROR(%d): %d\n", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0)
  #define BUF_SIZE 500
@@ -621,6 +621,7 @@ Añadir la lógica necesaria en el servidor para que no quede ningún proceso en
     ssize_t nread;
     char buf[BUF_SIZE];
     pid_t pid;
+	struct sigaction sigact;
 	
     if (argc != 2) {
         fprintf(stderr, "Usage: port %s\n", argv[0]);
@@ -678,13 +679,17 @@ Añadir la lógica necesaria en el servidor para que no quede ningún proceso en
 		else if(pid == ERROR) {
 		 continue;
 		}
+		else {
+			
+			SIGCHLD 
+		}
 		close(ac);
      }
 
  }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyOTI2MzgxMTQsMTUwMDE4MTA3NCwtMT
-MwMzk4MjQyOSwxNTI0NjY2NzA2LDExMDk0MTI0NzgsMjMyNTg2
-OTU0LC0xMTU1ODc5MTU2XX0=
+eyJoaXN0b3J5IjpbLTE1NjA0NzM2LDE1MDAxODEwNzQsLTEzMD
+M5ODI0MjksMTUyNDY2NjcwNiwxMTA5NDEyNDc4LDIzMjU4Njk1
+NCwtMTE1NTg3OTE1Nl19
 -->
