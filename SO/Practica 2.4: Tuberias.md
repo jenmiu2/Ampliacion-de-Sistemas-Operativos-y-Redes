@@ -213,13 +213,16 @@ int main(int argc, int argv*[]) {
 			errnoexit();
 		}
 		
-		while((readbytes = read() > 0) {}
+		if(retval == NO_ERROR) {
+			while((readbytes = read() > 0) {}
+		}
 		
-	}while(retval != NO_ERROR);
+		
+	}while(retval != ERROR);
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjgyOTcxMTI4LDE5MzE1MTQzNDMsMTY2Nj
-cyODA4NSwtMTE5MzMwNTk1NywtNTI0NjIwNTQ3LC0zODQ2NTg4
-MTAsLTMwNTI0MzQxMCw0MTI2MjM0ODldfQ==
+eyJoaXN0b3J5IjpbLTE1MzY4MjA2OTIsMTkzMTUxNDM0MywxNj
+Y2NzI4MDg1LC0xMTkzMzA1OTU3LC01MjQ2MjA1NDcsLTM4NDY1
+ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
