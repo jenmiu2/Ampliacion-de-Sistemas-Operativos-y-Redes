@@ -70,10 +70,12 @@ int main(int argc, int argv*[]) {
 		close(p_h[0]);
 		close(h_p[1]);
 		scanf("%c", &chr);
-		write(h_p[1], chr, sizeof(chr));
-		close(h_p[1]);
+		write(p_h[1], chr, sizeof(chr));
+		close(h_p[0]);
 		/*bloq confirmacion hijo*/
-		
+		while((readbytes = read(p_h[0], &chr, 1)) > 0) {
+			printf("%s", chr);
+		}
 		
 	}
 	
@@ -108,6 +110,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwNTU3NzEwNywtNTI0NjIwNTQ3LC0zOD
+eyJoaXN0b3J5IjpbMTA1NDQ1ODY3MywtNTI0NjIwNTQ3LC0zOD
 Q2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0ODldfQ==
 -->
