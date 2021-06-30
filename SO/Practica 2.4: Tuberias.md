@@ -186,7 +186,8 @@ struct pipedetail {
 	int fd;
 	char pathname;
 }; 
-struct pipedetail pipesdetails[2]
+struct pipedetail pipesdetails[2];
+
 int max(int fd1, int fd2) {
 	return (fd1 >= fd2 ? fd1 : fd2);
 }
@@ -248,7 +249,7 @@ int main(int argc, int argv*[]) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk4NTc0ODIyNCwxOTMxNTE0MzQzLDE2Nj
+eyJoaXN0b3J5IjpbLTQ2MTUwMjMyMSwxOTMxNTE0MzQzLDE2Nj
 Y3MjgwODUsLTExOTMzMDU5NTcsLTUyNDYyMDU0NywtMzg0NjU4
 ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
