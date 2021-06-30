@@ -17,7 +17,26 @@ Escribir un programa que emule el comportamiento de la shell en la ejecución de
 
 Probar el funcionamiento con una sentencia similar a: ./ejercicio1 echo 12345 wc -c
 ```c
+#include <errno.h>
+#include <stdio.h>
+#include <stlib.h>
+#include <sys/types.h>
 
+#define OK_FORK 0
+#define KO_FORK -1
+#define errorexit() do{ printf("ERROR(%d): %s\n", errno, sterror(errno));}; while(0)
+#define MAX_SIZE 100
+
+int main(int argc, int argv* []) {
+	pid_t pid;
+	pid = fork();
+	
+	if(pid == OK_FORK) {
+
+	}
+	else 
+
+}
 ```
 **Nota:** Antes de ejecutar el comando correspondiente, deben cerrarse todos los descriptores no necesarios.
 
@@ -110,6 +129,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQyNzg2NzEsLTUyNDYyMDU0NywtMzg0Nj
-U4ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
+eyJoaXN0b3J5IjpbLTE0NzQwMjIyMTcsLTUyNDYyMDU0NywtMz
+g0NjU4ODEwLC0zMDUyNDM0MTAsNDEyNjIzNDg5XX0=
 -->
