@@ -102,6 +102,7 @@ Escribir un programa que consulte y muestre en pantalla el estado del cerrojo so
 int main(int argc, int argv*[]) {
 	struct flock flk;
 	time_t t;
+	struct tm *tm;
 	
 	if (argc < 1) {
 		printf("Usage: path_file.txt\n");
@@ -119,6 +120,7 @@ int main(int argc, int argv*[]) {
 	}
 	
 	if(flk.l_type == F_RDLCK || flk.l_type == F_WRLCK) {
+		printf();
 		exit(EXIT_SUCCESS);
 	}
 	
@@ -129,7 +131,8 @@ int main(int argc, int argv*[]) {
 			exit(EXIT_FAILURE);
 		}
 		/*hora*/
-		time
+		time(&t);
+		struct tm
 		sleep(30000);
 		flk = (flock) {.l_type = F_UNLCK};
 		if (fcntl(fd, F_SETLK, &flk) < 0) {
@@ -161,6 +164,6 @@ Escribir un programa que cumpla las siguientes especificaciones:
 
 - Al final de la lista el programa escribirá el tamaño total que ocupan los ficheros (no directorios) en kilobytes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwOTc0MjY2LDE5MDI0OTk1NDIsMTc4NT
-c0NTA2MV19
+eyJoaXN0b3J5IjpbLTE0NzQxODUxMzEsMTAwOTc0MjY2LDE5MD
+I0OTk1NDIsMTc4NTc0NTA2MV19
 -->
