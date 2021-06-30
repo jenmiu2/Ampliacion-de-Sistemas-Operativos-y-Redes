@@ -36,17 +36,20 @@ int main(int argc, int argv* []) {
 		EXIT(EXIT_FAILURE);
 	}
 	if(pid == OK_FORK) {
-		/*hijo*/
+		/*hijoEl proceso hijo redireccionará la entrada estándar al extremo de lectura de la tubería y ejecutará comando2 argumento2.*/
+		close(fd[1]);
+		
 	}
 	else if(pid == KO_FORK) {
 		errorexit();
 	}
 	else {
-		/*padreEl proceso padre redireccionará la salida estándar al extremo de escritura de la tubería y ejecutará comando1 argumento1*/
+	/*padre*/
 		close(fd[0]);
 		dup2(fd[1], 0); //redirecciona la salida
-		if (execlp(argv[1], argv[1], argv[2]) == -1) {
-	}
+		if (execlp(argv[1], argv[1], argv[2]) == ERROR) {
+			errorexit();
+		}
 	}
 }
 ```
@@ -141,6 +144,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjM1NDQ4NTQwLC01MjQ2MjA1NDcsLTM4ND
-Y1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4OV19
+eyJoaXN0b3J5IjpbMTM5ODY1MTMyMiwtNTI0NjIwNTQ3LC0zOD
+Q2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0ODldfQ==
 -->
