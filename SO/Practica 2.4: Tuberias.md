@@ -90,22 +90,23 @@ int main(int argc, int argv*[]) {
 	else if(pid == OK_FORK) {
 		close(h_p[0]); //el padre no va a leer
 		close(p_h[1]); //el padre no va a escribir
-		while((readbytes = read(p_h[0], &chr, 1)) > 0) {
+		while((readbytes = read(p_h[0], &chr, 1)) > 0 && count_msg < MAX_COUNT) {
 			printf("%s", chr);
 		}
 		printf("\n");
 		sleep(1000); /*1 segundo*/
-		while(count_msg < MAX_COUNT) {
+		while() {
 			write(h_p[1], "l", sizeof(char));
 			count_msg = count_msg + 1;
 		}
 		write(h_p[1], "q", sizeof(char));
+		close(h_p[0]);//el hijo no va a escribir
+		close(p_h[1]);//el hijo no va a leer
 		EXIT(EXIT_SUCCESS);
 	}
 	else {
 		close(h_p[0]);//el hijo no va a escribir
 		close(p_h[1]);//el hijo no va a leer
-		
 		while((readbytes = read(h_p[1], &chr, 1)) > 0) {
 			scanf("%c", &chr);
 			write(p_h[0], chr, sizeof(chr));
@@ -114,8 +115,9 @@ int main(int argc, int argv*[]) {
 			} 
 		}
 		waitpid(pid, NULL, 0);
+		close(h_p[0]); //el padre no va a leer
+		close(p_h[1]); //el padre no va a escribir
 	}
-
 }
 ```
 # Tuberias con nombre
@@ -145,7 +147,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk3MzIzNDgxOCwtMTE5MzMwNTk1NywtNT
-I0NjIwNTQ3LC0zODQ2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0
-ODldfQ==
+eyJoaXN0b3J5IjpbLTEzMDI1ODUxNTYsLTExOTMzMDU5NTcsLT
+UyNDYyMDU0NywtMzg0NjU4ODEwLC0zMDUyNDM0MTAsNDEyNjIz
+NDg5XX0=
 -->
