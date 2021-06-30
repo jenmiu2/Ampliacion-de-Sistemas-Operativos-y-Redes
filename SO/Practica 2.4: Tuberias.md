@@ -137,7 +137,7 @@ Escribir un programa que abra la tubería con el nombre anterior en modo sólo e
 #define NO_ERROR 0
 
 int main(int argc, int argv*[]) {
-	char pathname = "tub_name.txt"
+	char pathname = "pìpe.txt"
 	int fd, writebytes;
 	if(mkfifo(pathname, 0777) < NO_ERROR) {
 		errnoexit();
@@ -146,8 +146,15 @@ int main(int argc, int argv*[]) {
 		errnoexit();
 	}
 	writebytes = write(fd, argv[1], sizeof(argv[1]);
-	if(writebytes)
+	if((writebytes = write(fd, argv[1], sizeof(argv[1])) < NO_ERROR) {
+		errnoexit();
+	}
+	EXIT(EXIT_SECCESS);
 }
+```
+En otro terminal escribir:
+```bash
+cat tub
 ```
 # Multiplexación síncrona de entrada/salida
 
@@ -166,7 +173,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAzNDA5MTkyMywtMTE5MzMwNTk1NywtNT
+eyJoaXN0b3J5IjpbLTQ3OTUxNTUwMiwtMTE5MzMwNTk1NywtNT
 I0NjIwNTQ3LC0zODQ2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0
 ODldfQ==
 -->
