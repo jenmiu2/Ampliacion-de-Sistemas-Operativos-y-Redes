@@ -115,6 +115,7 @@ Después de despertar de sleep(3), el proceso debe informar de si recibió la se
 
 
 int main(int argc, int argv*[]) {
+	sigset_t blk;
 	
 	printf("ERROR(%d):%s\n", errno, strerror(errno));
 	EXIT(EXIT_FAILURE);
@@ -135,6 +136,6 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMwMjE3NTIwMSwtMTExNjc4OTYxMiwtNz
-cxMjgyMTkwLC0xMjUwMjA5NzJdfQ==
+eyJoaXN0b3J5IjpbMzQzMzQzMzUsLTMwMjE3NTIwMSwtMTExNj
+c4OTYxMiwtNzcxMjgyMTkwLC0xMjUwMjA5NzJdfQ==
 -->
