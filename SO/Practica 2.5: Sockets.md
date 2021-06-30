@@ -230,11 +230,9 @@ Modificar el servidor para que, además de poder recibir comandos por red, los p
  
  #define errorexit() do{ printf("ERROR(%d): %d\n", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0)
  #define BUF_SIZE 500
- const char* generatecmd(char * buf) {
-	for
-
-}
-
+ #define NO_ERROR 0
+ #define ERROR -1
+ 
 int max(int fd1, int fd2) {
 	return (fd1 >= fd2 ? fd1 : fd2);
 }
@@ -302,7 +300,14 @@ int main(int argc, char *argv[]) {
 	tv = (timeval) {.tv_sec = 5, tv_usec = 0};
 	
     for (;;) {
-        peer_addr_len = sizeof(peer_addr);
+        
+        if((retval = select(max(sfd, 0) + 1, &rfds, NULL, NULL, &tv)) == -1) {
+			errnoexit();
+		}
+		
+
+
+		peer_addr_len = sizeof(peer_addr);
         nread = recvfrom(sfd, buf, BUF_SIZE, 0,
                 (struct sockaddr *) &peer_addr, &peer_addr_len);
         if (nread == -1)
@@ -356,6 +361,6 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMjkzNTUzOTEsMTEwOTQxMjQ3OCwyMz
+eyJoaXN0b3J5IjpbLTE0MDAxOTMzNjQsMTEwOTQxMjQ3OCwyMz
 I1ODY5NTQsLTExNTU4NzkxNTZdfQ==
 -->
