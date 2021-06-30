@@ -123,6 +123,10 @@ Las tuberías con nombre son un mecanismo de comunicación unidireccional, con a
 
 ### Ejercicio 3
 Usar la orden mkfifo para crear una tubería con nombre. Usar las herramientas del sistema de ficheros (stat, ls…) para determinar sus propiedades. Comprobar su funcionamiento usando utilidades para escribir y leer de ficheros (ej. echo, cat, tee...).
+
+### Ejercicio 4
+
+Escribir un programa que abra la tubería con el nombre anterior en modo sólo escritura, y escriba en ella el primer argumento del programa. En otro terminal, leer de la tubería usando un comando adecuado.
 ```c
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -131,21 +135,20 @@ Usar la orden mkfifo para crear una tubería con nombre. Usar las herramientas d
 
 #define errnoexit() do{printf("ERROR(%d): %s", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0) 
 #define NO_ERROR 0
+
 int main(int argc, int argv*[]) {
 	char pathname = "tub_name.txt"
-	int fd;
+	int fd, readbytes;
 	if(mkfifo(pathname, 0777) < NO_ERROR) {
 		errnoexit();
 	}
 	if((fd = open(pathname,O_WRONLY)) < NO_ERROR) {
 		errnoexit();
 	}
-}
-```
-### Ejercicio 4
+	while((readbytes = write(fd, argv[1], 1)) > 0 {
 
-Escribir un programa que abra la tubería con el nombre anterior en modo sólo escritura, y escriba en ella el primer argumento del programa. En otro terminal, leer de la tubería usando un comando adecuado.
-```c
+	}
+}
 ```
 # Multiplexación síncrona de entrada/salida
 
@@ -164,7 +167,7 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2ODY0NTQxMCwtMTE5MzMwNTk1NywtNT
-I0NjIwNTQ3LC0zODQ2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0
-ODldfQ==
+eyJoaXN0b3J5IjpbNDQ2NjU4NTcwLC0xMTkzMzA1OTU3LC01Mj
+Q2MjA1NDcsLTM4NDY1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4
+OV19
 -->
