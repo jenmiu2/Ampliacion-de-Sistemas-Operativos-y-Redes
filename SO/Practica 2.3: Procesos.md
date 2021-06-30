@@ -111,6 +111,7 @@ Después de despertar de sleep(3), el proceso debe informar de si recibió la se
 #include <stdio.h>
 #include <stlib.h>
 #include <sys/types.h>
+#include <signal.h>
 
 
 int main(int argc, int argv*[]) {
@@ -119,6 +120,9 @@ int main(int argc, int argv*[]) {
 	EXIT(EXIT_FAILURE);
 	EXIT(EXIT_SUCCESS);
 	
+	if() {
+
+	}
 	
 }
 ```
@@ -131,6 +135,6 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE1MjEwOTI2MiwtMTExNjc4OTYxMiwtNz
+eyJoaXN0b3J5IjpbLTMwMjE3NTIwMSwtMTExNjc4OTYxMiwtNz
 cxMjgyMTkwLC0xMjUwMjA5NzJdfQ==
 -->
