@@ -127,15 +127,19 @@ int main(int argc, int argv*[]) {
 	sigaddset(&blk, SIGTSTP);
 
 	sigprocmask(SIG_BLOCK, &blk, NULL);
+	
 	char *sleep_sec_chr = getenv("SLEEP_SECS");
 	int sleep_sec = atoi(sleep_sec_chr);
+	
 	sleep(sleep_sec);
+	
 	sigpending(&pending_blk);
+	if(sigismember(&pending_blk, SIGINT) == 1 || sigismember(&pending_blk, SIGTSTP) == 1) {
 	
-	if(sigismember(&pending_blk, SIGINT) == 1) {
-
 	}
-	
+	else {
+	}
+	sigprocmask(SIG_UNBLOCK, &set, NULL);
 }
 ```
 ### Ejercicio 12
@@ -147,7 +151,7 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTM4MTc3MTQ5LC0xNjY4MzgzODkxLC0zMD
-IxNzUyMDEsLTExMTY3ODk2MTIsLTc3MTI4MjE5MCwtMTI1MDIw
-OTcyXX0=
+eyJoaXN0b3J5IjpbLTEyODg2OTE2NjgsLTE2NjgzODM4OTEsLT
+MwMjE3NTIwMSwtMTExNjc4OTYxMiwtNzcxMjgyMTkwLC0xMjUw
+MjA5NzJdfQ==
 -->
