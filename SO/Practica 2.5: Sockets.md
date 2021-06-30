@@ -181,15 +181,13 @@ Ejemplo:
 				errorexit();
 			}
 			if(buf == 't') {
-				if (strftime(buf, sizeof(buf), "%H", tmp) == 0) {
-			        fprintf(stderr, "strftime returned 0");
-			        exit(EXIT_FAILURE);
+				if (strftime(buf, sizeof(buf), "%k", tmp) == 0) {
+			        errorexit();
 			    }
 			}
 			if(buf == 'd') {
-				if (strftime(buf, sizeof(buf), "", tmp) == 0) {
-			        fprintf(stderr, "strftime returned 0");
-			        exit(EXIT_FAILURE);
+				if (strftime(buf, sizeof(buf), "%j-%m-%y", tmp) == 0) {
+			        errorexit();
 			    }
 			}
 	        if(buf == 'q') {
@@ -249,6 +247,6 @@ Modificar el código del servidor para que acepte varias conexiones simultáneas
 ### Ejercicio 9
 Añadir la lógica necesaria en el servidor para que no quede ningún proceso en estado  _zombie_. Para ello, se deberá capturar la señal SIGCHLD y obtener la información de estado de los procesos hijos finalizados.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NzA1NTQyODksMjMyNTg2OTU0LC0xMT
-U1ODc5MTU2XX0=
+eyJoaXN0b3J5IjpbLTYzOTQxMTAzOSwyMzI1ODY5NTQsLTExNT
+U4NzkxNTZdfQ==
 -->
