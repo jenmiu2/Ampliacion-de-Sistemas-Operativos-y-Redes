@@ -198,10 +198,12 @@ int fd_available(fd_set rfds) {
 }
 
 void initpipe() {
-if(mkfifo(pathname2, 0777) < NO_ERROR) {
+	if(mkfifo(pathname2, 0777) < NO_ERROR) {
 		errnoexit();
 	}
-
+	if(fd2 = open(pathname2, O_RDONLY | O_NONBLOCK)) < NO_ERROR) {
+		errnoexit();
+	}
 }
 
 int main(int argc, int argv*[]) {
@@ -210,21 +212,13 @@ int main(int argc, int argv*[]) {
 	fd_set rfds;
 	struct timeval tv;
 	
-	if(mkfifo(pathname1, 0777) < NO_ERROR) {
-		errnoexit();
+	int i = 0;
+	for(;i<2) {
+		
+		pipesdetails[0].pathname = pathname1;
+		pipesdetails[0].fd = fd1;
 	}
-	
-	if(fd1 = open(pathname1, O_RDONLY | O_NONBLOCK)) < NO_ERROR {
-		errnoexit();
-	}
-	if(fd2 = open(pathname2, O_RDONLY | O_NONBLOCK)) < NO_ERROR) {
-		errnoexit();
-	}
-	pipesdetails[0].pathname = pathname1;
-	pipesdetails[0].fd = fd1;
-	pipesdetails[1].pathname = pathname2;
-	pipesdetails[1].fd = fd2;
-	
+
 	do {
 		FD_ZERO(&rfds);
 		FD_SET(0,&rfds);
@@ -251,7 +245,7 @@ int main(int argc, int argv*[]) {
 }
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjQ5NTM0OTI3LDEzMjQ3MTc2MDUsMTkzMT
+eyJoaXN0b3J5IjpbMTkzMDE3NDEwLDEzMjQ3MTc2MDUsMTkzMT
 UxNDM0MywxNjY2NzI4MDg1LC0xMTkzMzA1OTU3LC01MjQ2MjA1
 NDcsLTM4NDY1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
