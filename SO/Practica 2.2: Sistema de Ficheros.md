@@ -103,7 +103,7 @@ int main(int argc, int argv*[]) {
 	struct flock flk;
 	
 	if (argc < 1) {
-		printf("Usage: path_file  ");
+		printf("Usage: path_file.txt\n");
 		exit(EXIT_FAILURE);
 	}
 	
@@ -120,6 +120,7 @@ int main(int argc, int argv*[]) {
 	if(flk.l_type == F_RDLCK || flk.l_type == F_WRLCK) {
 		exit(EXIT_SUCCESS);
 	}
+	
 	if(flk.l_type == F_UNLCK) {
 		flk = (flock) {.l_type = F_WRLCK, .l_start = 0, .l_len = 0};
 		if (fcntl(fd, F_SETLK, &flk) < 0) {
@@ -127,6 +128,7 @@ int main(int argc, int argv*[]) {
 			exit(EXIT_FAILURE);
 		}
 		/*hora*/
+		
 		sleep(30000);
 		flk = (flock) {.l_type = F_UNLCK};
 		if (fcntl(fd, F_SETLK, &flk) < 0) {
@@ -158,6 +160,6 @@ Escribir un programa que cumpla las siguientes especificaciones:
 
 - Al final de la lista el programa escribirá el tamaño total que ocupan los ficheros (no directorios) en kilobytes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQzNTI4Mjc3NywxOTAyNDk5NTQyLDE3OD
+eyJoaXN0b3J5IjpbMTg2MTUyNDc3NSwxOTAyNDk5NTQyLDE3OD
 U3NDUwNjFdfQ==
 -->
