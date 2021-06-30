@@ -135,7 +135,8 @@ int main(int argc, int argv*[]) {
 		/*hora*/
 		time(&t);
 		tm = localtime(&t);
-		strtime(str, 100, );
+		strtime(str, MAX_CHAR, "%d-%B-%y", tm);
+		write(fd, str, MAX_CHAR);
 		sleep(30000);
 		flk = (flock) {.l_type = F_UNLCK};
 		if (fcntl(fd, F_SETLK, &flk) < 0) {
@@ -167,6 +168,6 @@ Escribir un programa que cumpla las siguientes especificaciones:
 
 - Al final de la lista el programa escribirá el tamaño total que ocupan los ficheros (no directorios) en kilobytes.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzMxMDA5ODcxLDEwMDk3NDI2NiwxOTAyND
+eyJoaXN0b3J5IjpbNDY3ODc0MTc3LDEwMDk3NDI2NiwxOTAyND
 k5NTQyLDE3ODU3NDUwNjFdfQ==
 -->
