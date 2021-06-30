@@ -22,8 +22,8 @@ Probar el funcionamiento con una sentencia similar a: ./ejercicio1 echo 12345 wc
 #include <stlib.h>
 #include <sys/types.h>
 
-#define OK_FORK 0
-#define KO_FORK -1
+#define NO_ERROR 0
+#define ERROR -1
 #define errorexit() do{ printf("ERROR(%d): %s\n", errno, sterror(errno));EXIT(EXIT_FAILURE);}; while(0)
 #define MAX_SIZE 100
 
@@ -44,7 +44,9 @@ int main(int argc, int argv* []) {
 	else {
 		/*padreEl proceso padre redireccionará la salida estándar al extremo de escritura de la tubería y ejecutará comando1 argumento1*/
 		close(fd[0]);
-		
+		dup2(fd[1], 0); //redirecciona la salida
+		if (execlp(argv[1], argv[1], argv[2]) == -1) {
+	}
 	}
 }
 ```
@@ -139,6 +141,6 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTY2MTgzNjIzLC01MjQ2MjA1NDcsLTM4ND
+eyJoaXN0b3J5IjpbMjM1NDQ4NTQwLC01MjQ2MjA1NDcsLTM4ND
 Y1ODgxMCwtMzA1MjQzNDEwLDQxMjYyMzQ4OV19
 -->
