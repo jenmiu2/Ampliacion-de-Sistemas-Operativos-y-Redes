@@ -169,10 +169,22 @@ Crear otra tubería con nombre. Escribir un programa que espere hasta que haya d
 
 - Cuando el escritor termina y cierra la tubería, read(2) devolverá 0, indicando el fin de fichero, por lo que hay que cerrar la tubería y volver a abrirla. Si no, select(2) considerará el descriptor siempre listo para lectura y no se bloqueará.
 ```c
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <sys/select.h>
 
+#define errnoexit() do{printf("ERROR(%d): %s", errno, strerror(errno)); EXIT(EXIT_FAILURE);} while(0) 
+#define NO_ERROR 0
+
+int main(int argc, int argv*[]) {
+	char pathname = "pìpe.txt"
+
+}
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY2NjcyODA4NSwtMTE5MzMwNTk1NywtNT
-I0NjIwNTQ3LC0zODQ2NTg4MTAsLTMwNTI0MzQxMCw0MTI2MjM0
-ODldfQ==
+eyJoaXN0b3J5IjpbMTY1MTc0NzY5MywxNjY2NzI4MDg1LC0xMT
+kzMzA1OTU3LC01MjQ2MjA1NDcsLTM4NDY1ODgxMCwtMzA1MjQz
+NDEwLDQxMjYyMzQ4OV19
 -->
