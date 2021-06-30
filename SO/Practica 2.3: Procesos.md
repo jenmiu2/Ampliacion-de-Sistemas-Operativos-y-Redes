@@ -55,10 +55,7 @@ int main(int argc, int argv*[]) {
 		EXIT(EXIT_FAILURE);
 	}
 	if(pid > OK_FORK) { 	
-		int setpgid();
-
-
-
+		umask(0);
 	}
 }
 ```
@@ -105,5 +102,5 @@ Escribir un programa que realice el borrado programado del propio ejecutable. El
 **Nota:** Usar sigsuspend(2) para suspender el proceso y la llamada al sistema apropiada para borrar el fichero.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzc4MjQ4OTYsLTEyNTAyMDk3Ml19
+eyJoaXN0b3J5IjpbLTc3MTI4MjE5MCwtMTI1MDIwOTcyXX0=
 -->
